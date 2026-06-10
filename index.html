@@ -1,13 +1,11 @@
-bash
-
-cat > /mnt/user-data/outputs/webspide.html << 'HTMLEOF'
+cat > /home/claude/integrated.html << 'HTMLEOF'
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Custom Web Development — Webspide</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Exo+2:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Exo+2:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&family=Rajdhani:wght@500;600;700&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
 <style>
 /* ═══════════════════════════════════ RESET & ROOT ═══════════════════════════════════ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -18,6 +16,9 @@ cat > /mnt/user-data/outputs/webspide.html << 'HTMLEOF'
   --text-main:#ede9fe;--text-muted:#a78bca;
   --card-bg:rgba(147,51,234,0.07);--card-border:rgba(147,51,234,0.3);
   --nav-h:70px;
+  /* legacy vars from file 1 */
+  --white:#fff;--grey:#a78bca;--violet:#7c3aed;
+  --glow-p:rgba(123,47,247,0.4);--glow-c:rgba(0,207,255,0.3);
 }
 html{scroll-behavior:smooth}
 body{background:var(--navy);color:var(--text-main);font-family:'Exo 2',sans-serif;overflow-x:hidden;min-height:100vh}
@@ -33,7 +34,7 @@ body{background:var(--navy);color:var(--text-main);font-family:'Exo 2',sans-seri
   background-size:60px 60px}
 
 /* ═══ HEADER ═══ */
-.site-header{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(6,5,26,0.98);backdrop-filter:blur(22px);border-bottom:1px solid rgba(147,51,234,0.28)}
+.site-header{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(6,5,26,0.98);backdrop-filter:blur(22px);border-bottom:1px solid rgba(147,51,234,.28)}
 .site-header::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#7c3aed 20%,#c084fc 50%,#e879f9 70%,transparent);background-size:200% 100%;animation:headerLine 4s linear infinite}
 @keyframes headerLine{0%{background-position:200% 0}100%{background-position:-200% 0}}
 
@@ -48,29 +49,26 @@ body{background:var(--navy);color:var(--text-main);font-family:'Exo 2',sans-seri
 .nav-links-new{display:flex;align-items:center;gap:2px;list-style:none;flex:1;justify-content:center}
 .nav-links-new li{position:relative}
 .nav-links-new a,.nav-links-new>li>button{display:flex;align-items:center;gap:6px;text-decoration:none;color:#c8c0e8;font-size:.82rem;font-weight:500;letter-spacing:.4px;padding:7px 12px;border-radius:8px;transition:color .2s,background .2s;white-space:nowrap;cursor:pointer;background:transparent;border:none;font-family:'Exo 2',sans-serif}
-.nav-links-new a:hover,.nav-links-new>li>button:hover{color:#fff;background:rgba(147,51,234,0.18)}
+.nav-links-new a:hover,.nav-links-new>li>button:hover{color:#fff;background:rgba(147,51,234,.18)}
 .nav-icon{width:15px;height:15px;stroke:#9575cd;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:stroke .2s;flex-shrink:0}
 .nav-links-new a:hover .nav-icon,.nav-links-new>li>button:hover .nav-icon{stroke:#c084fc}
 .nav-arrow{width:13px;height:13px;stroke:#9575cd;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s,stroke .2s;flex-shrink:0}
 
-/* Services button */
-.nav-item-services>button{background:rgba(124,58,237,0.22);border:1px solid rgba(147,51,234,0.55);color:#fff;animation:svcPulse 3s ease-in-out infinite}
+.nav-item-services>button{background:rgba(124,58,237,.22);border:1px solid rgba(147,51,234,.55);color:#fff;animation:svcPulse 3s ease-in-out infinite}
 @keyframes svcPulse{0%,100%{border-color:rgba(147,51,234,.55)}50%{border-color:rgba(192,132,252,.8);box-shadow:0 0 12px rgba(147,51,234,.25)}}
 .nav-item-services>button .nav-icon,.nav-item-services>button .nav-arrow{stroke:#c084fc}
 .nav-item-services:hover>button .nav-arrow,.nav-item-products:hover>button .nav-arrow{transform:rotate(180deg)}
-.nav-item-services:hover>button{background:rgba(124,58,237,0.32)}
+.nav-item-services:hover>button{background:rgba(124,58,237,.32)}
 .nav-item-products>button{display:flex;align-items:center;gap:6px;color:#c8c0e8;font-size:.82rem;font-weight:500;padding:7px 12px;border-radius:8px;cursor:pointer;background:transparent;border:none;font-family:'Exo 2',sans-serif;transition:color .2s,background .2s}
 .nav-item-products:hover>button{color:#fff;background:rgba(147,51,234,.18)}
 .nav-item-products:hover>button .nav-icon{stroke:#c084fc}
 
-/* CTA */
-.nav-cta-new{display:flex;align-items:center;gap:7px;padding:9px 20px;border-radius:30px;background:linear-gradient(135deg,#7c3aed,#c026d3);color:#fff;font-weight:700;font-size:.82rem;letter-spacing:.5px;text-decoration:none;cursor:pointer;border:none;font-family:'Exo 2',sans-serif;white-space:nowrap;flex-shrink:0;box-shadow:0 4px 20px rgba(147,51,234,0.45);transition:transform .2s,box-shadow .2s;animation:ctaGlow 3s ease-in-out infinite}
+.nav-cta-new{display:flex;align-items:center;gap:7px;padding:9px 20px;border-radius:30px;background:linear-gradient(135deg,#7c3aed,#c026d3);color:#fff;font-weight:700;font-size:.82rem;letter-spacing:.5px;text-decoration:none;cursor:pointer;border:none;font-family:'Exo 2',sans-serif;white-space:nowrap;flex-shrink:0;box-shadow:0 4px 20px rgba(147,51,234,.45);transition:transform .2s,box-shadow .2s;animation:ctaGlow 3s ease-in-out infinite}
 @keyframes ctaGlow{0%,100%{box-shadow:0 4px 20px rgba(147,51,234,.4)}50%{box-shadow:0 4px 32px rgba(192,132,252,.75)}}
 .nav-cta-new:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(192,132,252,.7)!important;animation:none}
 .nav-cta-new svg{width:14px;height:14px;stroke:#fff;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
 .nav-cta-new:hover svg{transform:translateX(3px)}
 
-/* Hamburger */
 .hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;border:1px solid rgba(147,51,234,.4);border-radius:8px;background:rgba(124,58,237,.1);cursor:pointer;flex-shrink:0;transition:border-color .2s,background .2s}
 .hamburger:hover{border-color:#c084fc;background:rgba(124,58,237,.2)}
 .hamburger span{display:block;width:20px;height:2px;background:#c084fc;border-radius:2px;transition:transform .3s,opacity .3s,width .3s}
@@ -78,7 +76,6 @@ body{background:var(--navy);color:var(--text-main);font-family:'Exo 2',sans-seri
 .hamburger.open span:nth-child(2){opacity:0;width:0}
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
-/* Mobile Menu */
 .mobile-menu{display:none;position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;z-index:199;background:rgba(6,5,26,.98);backdrop-filter:blur(24px);overflow-y:auto;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1)}
 .mobile-menu.open{transform:translateX(0)}
 .mobile-menu-inner{padding:20px 20px 40px;display:flex;flex-direction:column;gap:4px}
@@ -93,7 +90,6 @@ body{background:var(--navy);color:var(--text-main);font-family:'Exo 2',sans-seri
 .mob-sub-link:hover::before{background:#c084fc}
 .mob-cta{margin-top:20px;padding:14px;border-radius:12px;background:linear-gradient(135deg,#7c3aed,#c026d3);color:#fff;font-weight:700;font-size:.95rem;letter-spacing:1px;text-align:center;text-decoration:none;display:block;box-shadow:0 4px 20px rgba(147,51,234,.45)}
 
-/* Mega Dropdown */
 .mega-dropdown{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(8px);width:90vw;max-width:1200px;background:rgba(7,5,24,.98);border:1px solid rgba(147,51,234,.35);border-radius:16px;box-shadow:0 30px 80px rgba(0,0,0,.7);overflow:hidden;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .25s,visibility .25s,transform .25s;backdrop-filter:blur(24px)}
 .mega-dropdown::before{content:'';position:absolute;top:-8px;left:50%;transform:translateX(-50%);border-left:8px solid transparent;border-right:8px solid transparent;border-bottom:8px solid rgba(147,51,234,.5)}
 .nav-item-services:hover .mega-dropdown,.nav-item-services:focus-within .mega-dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}
@@ -112,13 +108,11 @@ body{background:var(--navy);color:var(--text-main);font-family:'Exo 2',sans-seri
 .mega-link:hover{color:#e8e0ff;padding-left:4px}
 .mega-link:hover::before{background:#c084fc;transform:scale(1.4)}
 
-/* Simple Dropdown */
 .simple-dropdown{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(4px);min-width:180px;background:rgba(7,5,24,.98);border:1px solid rgba(147,51,234,.3);border-radius:10px;padding:6px 0;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s,visibility .2s,transform .2s;box-shadow:0 20px 50px rgba(0,0,0,.5)}
 .nav-item-products:hover .simple-dropdown,.nav-item-products:focus-within .simple-dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}
 .simple-dropdown a{display:block;padding:8px 16px;color:#a78bca;font-size:.8rem;text-decoration:none;transition:color .2s,background .2s}
 .simple-dropdown a:hover{color:#fff;background:rgba(147,51,234,.15)}
 
-/* Scroll offset */
 section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--nav-h)}
 
 /* ═══ HERO ═══ */
@@ -226,13 +220,114 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
 .b2-card-title{font-family:'Exo 2',sans-serif;font-size:12.5px;font-weight:700;color:#e8e0ff;line-height:1.35;padding-top:4px}
 .b2-card-desc{font-size:11.5px;color:#8b93b8;line-height:1.7}
 
-/* ═══ PROCESS ═══ */
-.process-row{display:flex;gap:0;position:relative;margin-top:2.5rem;overflow-x:auto;padding-bottom:8px}
-.process-row::before{content:'';position:absolute;top:28px;left:0;right:0;height:2px;background:linear-gradient(90deg,#7c3aed,#c084fc,#e879f9);z-index:0}
-.process-step{flex:1;min-width:110px;display:flex;flex-direction:column;align-items:center;gap:.65rem;position:relative;z-index:1;padding:0 .4rem}
-.ps-num{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#7c3aed,#9333ea);border:2px solid rgba(192,132,252,.4);font-family:'Orbitron',sans-serif;font-size:.9rem;font-weight:900;box-shadow:0 0 20px rgba(147,51,234,.5)}
-.ps-title{font-size:.75rem;font-weight:700;letter-spacing:1px;text-align:center;color:#fff;text-transform:uppercase}
-.ps-desc{font-size:.7rem;color:var(--text-muted);text-align:center;line-height:1.6}
+/* ════════════════════════════════════════
+   INTEGRATED SERVICES SECTION (from File 1)
+════════════════════════════════════════ */
+.services-section{
+  position:relative;
+  z-index:1;
+  padding:0 0 40px;
+}
+
+/* Section header for services */
+.services-section-head{
+  text-align:center;
+  padding:70px 6% 0;
+  margin-bottom:0;
+}
+
+/* Each service row */
+.service-card{
+  display:flex;
+  align-items:center;
+  padding:60px 80px;
+  gap:60px;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+  position:relative;
+  overflow:hidden;
+  transition:background .3s;
+}
+.service-card:hover{background:rgba(123,47,247,0.04)}
+.service-card.reverse{flex-direction:row-reverse}
+
+/* radial glow per card */
+.service-card::before{
+  content:'';
+  position:absolute;width:600px;height:600px;
+  border-radius:50%;
+  pointer-events:none;
+  opacity:0;
+  transition:opacity .5s;
+}
+.service-card:nth-child(odd)::before{background:radial-gradient(circle,var(--glow-p) 0%,transparent 65%);right:-150px;top:-150px}
+.service-card:nth-child(even)::before{background:radial-gradient(circle,var(--glow-c) 0%,transparent 65%);left:-150px;top:-150px}
+.service-card:hover::before{opacity:1}
+
+/* Text block */
+.card-text{
+  flex:1 1 0;
+  min-width:0;
+}
+.card-num{
+  font-family:'Rajdhani',sans-serif;
+  font-size:15px;font-weight:700;
+  color:var(--purple);letter-spacing:2px;
+  margin-bottom:8px;
+}
+.card-title{
+  font-family:'Rajdhani',sans-serif;
+  font-size:30px;font-weight:700;line-height:1.2;
+  color:#fff;margin-bottom:4px;
+}
+.card-title span{color:var(--violet)}
+.card-desc{
+  color:var(--grey);font-size:14px;line-height:1.7;
+  margin-bottom:24px;
+}
+.card-btns{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.svc-btn-primary{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--purple);color:#fff;
+  border:none;border-radius:6px;
+  padding:11px 22px;font-size:13px;font-weight:700;
+  cursor:pointer;white-space:nowrap;
+  transition:background .2s,box-shadow .2s,transform .15s;
+  text-decoration:none;
+}
+.svc-btn-primary:hover{background:var(--violet);box-shadow:0 0 20px var(--glow-p);transform:translateY(-1px)}
+.svc-btn-link{
+  color:var(--grey);font-size:13px;font-weight:600;
+  text-decoration:none;letter-spacing:.3px;
+  transition:color .2s;
+}
+.svc-btn-link:hover{color:var(--cyan)}
+
+/* Illustration block */
+.card-visual{
+  flex:1 1 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+.illus-wrap{
+  width:100%;
+  max-width:320px;
+  aspect-ratio:5/4;
+  position:relative;
+}
+.illus-wrap svg{width:100%;height:100%;overflow:visible}
+
+/* SVG animation keyframes */
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes pulse-ring{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.5);opacity:0}}
+@keyframes spin-slow{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+.float-anim{animation:float 4s ease-in-out infinite}
+.float-anim-d{animation:float 4s ease-in-out infinite;animation-delay:-.8s}
+.float-anim-d2{animation:float 5s ease-in-out infinite;animation-delay:-2s}
+.spin{animation:spin-slow 12s linear infinite;transform-origin:center}
 
 /* ═══ TECH STACK ═══ */
 .ts-section-wrapper{width:100%;max-width:1100px;margin:0 auto;padding:60px 20px 80px;font-family:'Poppins',sans-serif}
@@ -287,7 +382,7 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
 .left-title{font-family:'Exo 2',sans-serif;font-size:clamp(22px,3vw,34px);font-weight:800;color:#e8e0ff;line-height:1.18;margin-bottom:14px}
 .left-title .purple{color:#9333ea}
 .title-underline{width:40px;height:3px;background:linear-gradient(90deg,#9333ea,#c084fc);margin:16px 0 20px;border-radius:2px}
-.left-desc{font-size:12px;color:#7b85a8;line-height:1.75;margin-bottom:28px,}
+.left-desc{font-size:12px;color:#7b85a8;line-height:1.75;margin-bottom:28px}
 .illustration{margin-top:auto;position:relative;height:150px;flex-shrink:0}
 .laptop{position:absolute;bottom:0;left:30%;transform:translateX(-50%);width:190px}
 .laptop-screen{width:150px;height:104px;background:linear-gradient(135deg,#0f0d2f,#1a1050);border:2px solid rgba(147,51,234,.5);border-radius:8px 8px 0 0;margin:0 auto;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
@@ -402,15 +497,18 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
 .fb-legal a{font-size:.72rem;color:var(--text-muted);text-decoration:none;transition:color .2s}
 .fb-legal a:hover{color:#c084fc}
 
-/* ═══ ANIMATIONS ═══ */
+/* ═══ REVEAL on scroll ═══ */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ═══ FADE IN ═══ */
 .fade-in{opacity:0;transform:translateY(28px);animation:fadeIn .8s ease forwards}
 @keyframes fadeIn{to{opacity:1;transform:none}}
 .delay-1{animation-delay:.1s}.delay-2{animation-delay:.2s}.delay-3{animation-delay:.3s}.delay-4{animation-delay:.4s}
-@keyframes iconFloat{0%,100%{margin-top:0}50%{margin-top:-6px}}
 
-/* ═══════════════════════════════════
-   RESPONSIVE — Tablet 1024px
-═══════════════════════════════════ */
+/* ════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════ */
 @media(max-width:1024px){
   .nav-links-new{gap:1px}
   .nav-links-new a,.nav-links-new>li>button{font-size:.78rem;padding:6px 9px}
@@ -418,11 +516,9 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
   .footer-top{grid-template-columns:1fr 1fr;gap:2rem}
   .mega-dropdown{width:95vw}
   .ts-row-label{width:90px}
+  .service-card{padding:50px 40px;gap:40px}
+  .card-title{font-size:26px}
 }
-
-/* ═══════════════════════════════════
-   RESPONSIVE — Tablet 900px
-═══════════════════════════════════ */
 @media(max-width:900px){
   :root{--nav-h:65px}
   .nav-links-new{display:none}
@@ -439,8 +535,6 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
   .banner-2{padding:28px 24px 40px}
   .b1-cards,.b2-cards{grid-template-columns:1fr 1fr;gap:12px}
   .section{padding:55px 5%}
-  .process-row{gap:0;padding-bottom:12px}
-  .process-step{min-width:100px}
   .ts-row-label{width:80px}
   .ts-row-label span{font-size:11px}
   .sections{flex-direction:column;gap:0;padding:40px 20px}
@@ -457,11 +551,12 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
   .contact-wrap{grid-template-columns:1fr}
   .con-right{padding:2.2rem 2rem}
   .footer-top{grid-template-columns:1fr 1fr;gap:1.8rem}
+  /* Services responsive */
+  .service-card,
+  .service-card.reverse{flex-direction:column;padding:40px 20px;gap:32px}
+  .card-visual{flex:none;width:100%}
+  .illus-wrap{max-width:280px;margin:0 auto}
 }
-
-/* ═══════════════════════════════════
-   RESPONSIVE — Mobile 600px
-═══════════════════════════════════ */
 @media(max-width:600px){
   :root{--nav-h:60px}
   .nav-bar{padding:0 16px}
@@ -488,12 +583,6 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
   .b1-cards,.b2-cards{grid-template-columns:1fr;gap:10px}
   .section{padding:48px 4%}
   .section-title{font-size:1.4rem}
-  .process-row{flex-direction:column;align-items:center;gap:20px;overflow-x:visible;padding-bottom:0}
-  .process-row::before{display:none}
-  .process-step{min-width:auto;width:100%;max-width:260px;flex-direction:row;text-align:left;gap:14px;align-items:flex-start}
-  .ps-num{min-width:48px;width:48px;height:48px;font-size:.8rem}
-  .ps-title{text-align:left}
-  .ps-desc{text-align:left}
   .cta-section{margin:0 3%;padding:2.2rem 1.8rem}
   .cta-img{height:160px}
   .ts-section-wrapper{padding:44px 14px 60px}
@@ -518,11 +607,12 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
   .footer-top{grid-template-columns:1fr;gap:1.5rem;padding:2.5rem 0 2rem}
   .footer-bottom{flex-direction:column;align-items:flex-start;gap:.7rem}
   .fb-legal{gap:.9rem}
+  /* Services mobile */
+  .service-card{padding:36px 16px}
+  .card-title{font-size:22px}
+  .card-num{font-size:13px}
+  .illus-wrap{max-width:240px}
 }
-
-/* ═══════════════════════════════════
-   RESPONSIVE — Small Mobile 380px
-═══════════════════════════════════ */
 @media(max-width:380px){
   .hero h1{font-size:1.4rem}
   .orbital-wrap{max-width:260px}
@@ -549,7 +639,6 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
         <span class="logo-sub">Technology</span>
       </div>
     </a>
-
     <ul class="nav-links-new">
       <li><a href="#"><svg class="nav-icon" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home</a></li>
       <li><a href="#"><svg class="nav-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>About Us</a></li>
@@ -579,7 +668,6 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
       <li><a href="#"><svg class="nav-icon" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>Blog</a></li>
       <li><a href="#contact"><svg class="nav-icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Contact Us</a></li>
     </ul>
-
     <a href="#contact" class="nav-cta-new">Get a Quote<svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
   </div>
@@ -635,7 +723,6 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
       <div class="stat"><span class="stat-num">5+</span><span class="stat-label">Years</span></div>
     </div>
   </div>
-
   <div class="orbital-wrap fade-in delay-3">
     <svg class="rings-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
       <circle class="dot-ring dot-ring-1" cx="250" cy="250" r="245" fill="none" stroke="#9333ea" stroke-width="2.5" stroke-dasharray="6 14" stroke-linecap="round"/>
@@ -669,7 +756,7 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
   </div>
 </section>
 
-<!-- Mobile Orbit Cards (shown below 900px) -->
+<!-- Mobile Orbit Cards -->
 <div class="orbit-cards-mobile">
   <div class="orb-card"><div class="orb-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><div><div class="orb-card-name">UI / UX Design</div><div class="orb-card-tag">Intuitive interfaces</div></div></div>
   <div class="orb-card"><div class="orb-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><div><div class="orb-card-name">Custom Dev</div><div class="orb-card-tag">Clean, scalable code</div></div></div>
@@ -707,22 +794,298 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
   </div>
 </div>
 
-<!-- ═══ PROCESS ═══ -->
-<section class="section" id="services" style="background:rgba(255,255,255,.01);border-top:1px solid rgba(147,51,234,.1);border-bottom:1px solid rgba(147,51,234,.1)">
-  <div class="section-head">
-    <div class="section-tag">Our Workflow</div>
-    <h2 class="section-title">How We Build Your Vision</h2>
-    <p class="section-sub">A transparent, agile process from discovery to launch — keeping you informed and in control at every stage.</p>
+<!-- ═══════════════════════════════════════════════════════════
+     SERVICES SECTION — integrated from File 1 (replaces Process)
+════════════════════════════════════════════════════════════ -->
+<section class="services-section" id="services">
+  <div class="services-section-head">
+    <div class="section-tag">What We Do</div>
+    <h2 class="section-title">Our Core Services</h2>
+    <p class="section-sub" style="margin-bottom:0">End-to-end web solutions engineered for performance, scalability, and seamless connectivity across every platform.</p>
   </div>
-  <div class="process-row">
-    <div class="process-step"><div class="ps-num">01</div><div><div class="ps-title">Discovery</div><div class="ps-desc">Deep-dive into your goals, audience, and competitive landscape.</div></div></div>
-    <div class="process-step"><div class="ps-num">02</div><div><div class="ps-title">Strategy</div><div class="ps-desc">Technical architecture, sitemap, and project roadmap planning.</div></div></div>
-    <div class="process-step"><div class="ps-num">03</div><div><div class="ps-title">Design</div><div class="ps-desc">Wireframes, UI prototypes, and brand-aligned visual design.</div></div></div>
-    <div class="process-step"><div class="ps-num">04</div><div><div class="ps-title">Develop</div><div class="ps-desc">Agile sprints with regular demos and iterative feedback.</div></div></div>
-    <div class="process-step"><div class="ps-num">05</div><div><div class="ps-title">Test &amp; QA</div><div class="ps-desc">Cross-browser, performance, and security testing.</div></div></div>
-    <div class="process-step"><div class="ps-num">06</div><div><div class="ps-title">Launch</div><div class="ps-desc">Smooth deployment with ongoing support and monitoring.</div></div></div>
+
+  <!-- 01: API Development -->
+  <div class="service-card reveal">
+    <div class="card-text">
+      <div class="card-num">01</div>
+      <h2 class="card-title">API Development &amp;<br><span>Third-Party Integrations</span></h2>
+      <p class="card-desc">Seamless connectivity is the backbone of modern web applications, and WebSpide Technologies specialises in API development &amp; third-party integrations to enhance your website's functionality. We ensure smooth communication between applications, platforms, and services using RESTful APIs, GraphQL, and secure payment gateways.</p>
+      <div class="card-btns">
+        <a href="#contact" class="svc-btn-primary">Connect Your Systems Seamlessly →</a>
+        <a href="#" class="svc-btn-link">Read More</a>
+      </div>
+    </div>
+    <div class="card-visual">
+      <div class="illus-wrap float-anim">
+        <svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="bg1" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#1a0a3e"/><stop offset="100%" stop-color="#060b1a"/></radialGradient>
+            <filter id="glow1"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7b2ff7"/><stop offset="100%" stop-color="#00cfff"/></linearGradient>
+          </defs>
+          <ellipse cx="150" cy="170" rx="120" ry="30" fill="rgba(123,47,247,0.18)"/>
+          <rect x="60" y="100" width="180" height="110" rx="8" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1.5"/>
+          <rect x="68" y="108" width="164" height="90" rx="4" fill="#060b1a"/>
+          <line x1="68" y1="130" x2="232" y2="130" stroke="#1a2a60" stroke-width=".8"/>
+          <line x1="68" y1="152" x2="232" y2="152" stroke="#1a2a60" stroke-width=".8"/>
+          <line x1="68" y1="174" x2="232" y2="174" stroke="#1a2a60" stroke-width=".8"/>
+          <line x1="110" y1="108" x2="110" y2="198" stroke="#1a2a60" stroke-width=".8"/>
+          <line x1="160" y1="108" x2="160" y2="198" stroke="#1a2a60" stroke-width=".8"/>
+          <line x1="200" y1="108" x2="200" y2="198" stroke="#1a2a60" stroke-width=".8"/>
+          <path d="M40 212 Q150 224 260 212" stroke="#7b2ff7" stroke-width="2" fill="none"/>
+          <rect x="40" y="210" width="220" height="8" rx="4" fill="#0d1b4b"/>
+          <circle cx="150" cy="60" r="44" fill="#10064a" stroke="url(#lg1)" stroke-width="2" filter="url(#glow1)"/>
+          <circle cx="150" cy="60" r="36" fill="#0d1b4b" opacity=".8"/>
+          <circle cx="150" cy="60" r="44" fill="none" stroke="#7b2ff7" stroke-width="1" stroke-dasharray="8 5" class="spin" opacity=".5"/>
+          <text x="150" y="56" text-anchor="middle" font-family="Rajdhani,sans-serif" font-weight="700" font-size="20" fill="url(#lg1)" filter="url(#glow1)">API</text>
+          <text x="150" y="72" text-anchor="middle" font-family="Nunito Sans,sans-serif" font-size="8" fill="#a0b0cc">&lt;/&gt;</text>
+          <line x1="106" y1="60" x2="60" y2="60" stroke="#7b2ff7" stroke-width="1" stroke-dasharray="4 3" opacity=".7"/>
+          <line x1="194" y1="60" x2="240" y2="60" stroke="#00cfff" stroke-width="1" stroke-dasharray="4 3" opacity=".7"/>
+          <line x1="150" y1="104" x2="150" y2="115" stroke="#ff3cac" stroke-width="1" stroke-dasharray="4 3" opacity=".7"/>
+          <rect x="32" y="48" width="26" height="24" rx="5" fill="#1a0842" stroke="#7b2ff7" stroke-width="1.5"/>
+          <text x="45" y="63" text-anchor="middle" font-size="11" fill="#7b2ff7">☁</text>
+          <rect x="242" y="48" width="26" height="24" rx="5" fill="#1a0842" stroke="#00cfff" stroke-width="1.5"/>
+          <text x="255" y="63" text-anchor="middle" font-size="11" fill="#00cfff">⚡</text>
+          <circle cx="150" cy="60" r="52" fill="none" stroke="#7b2ff7" stroke-width="1" opacity=".3" style="animation:pulse-ring 2.4s ease-out infinite"/>
+          <rect x="18" y="88" width="52" height="20" rx="5" fill="#1a0842" stroke="#7b2ff7" stroke-width="1" class="float-anim-d"/>
+          <text x="44" y="101" text-anchor="middle" font-size="8" font-family="Nunito Sans" fill="#a0b0cc">REST</text>
+          <rect x="230" y="88" width="60" height="20" rx="5" fill="#1a0842" stroke="#00cfff" stroke-width="1" class="float-anim-d2"/>
+          <text x="260" y="101" text-anchor="middle" font-size="8" font-family="Nunito Sans" fill="#a0b0cc">GraphQL</text>
+          <text x="90" y="148" text-anchor="middle" font-size="14" fill="#7b2ff7" opacity=".8">🛡</text>
+          <text x="150" y="148" text-anchor="middle" font-size="14" fill="#00cfff" opacity=".8">🔗</text>
+          <text x="210" y="148" text-anchor="middle" font-size="14" fill="#ff3cac" opacity=".8">⚙</text>
+        </svg>
+      </div>
+    </div>
   </div>
+
+  <!-- 02: Custom Web Portals (reversed) -->
+  <div class="service-card reverse reveal" style="background:rgba(9,14,34,0.6)">
+    <div class="card-text">
+      <div class="card-num">02</div>
+      <h2 class="card-title">Custom Web Portals &amp;<br><span>Enterprise Solutions</span></h2>
+      <p class="card-desc">Empower your business with custom web portals &amp; enterprise solutions designed to streamline operations and enhance user engagement. We build scalable, secure, and interactive web portals tailored to specific business needs with role-based access, advanced analytics, and real-time data management.</p>
+      <div class="card-btns">
+        <a href="#contact" class="svc-btn-primary">Build a Powerful Web Portal →</a>
+        <a href="#" class="svc-btn-link">Read More</a>
+      </div>
+    </div>
+    <div class="card-visual">
+      <div class="illus-wrap float-anim-d">
+        <svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="lg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00cfff"/><stop offset="100%" stop-color="#7b2ff7"/></linearGradient>
+            <filter id="glow2"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <ellipse cx="150" cy="195" rx="110" ry="22" fill="rgba(0,207,255,0.12)"/>
+          <rect x="50" y="30" width="200" height="140" rx="8" fill="#0a0e24" stroke="#00cfff" stroke-width="1.5"/>
+          <rect x="50" y="30" width="200" height="22" rx="8" fill="#0d1b4b"/>
+          <rect x="50" y="45" width="200" height="7" rx="0" fill="#0a0e24"/>
+          <circle cx="68" cy="41" r="4" fill="#ff3cac"/>
+          <circle cx="82" cy="41" r="4" fill="#7b2ff7"/>
+          <circle cx="96" cy="41" r="4" fill="#00cfff"/>
+          <rect x="112" y="35" width="120" height="12" rx="6" fill="#060b1a" stroke="#1a2a60" stroke-width="1"/>
+          <text x="120" y="44" font-size="6" font-family="Nunito Sans" fill="#a0b0cc">https://portal.webspide.com</text>
+          <rect x="58" y="60" width="42" height="100" rx="3" fill="#0d1b4b"/>
+          <rect x="64" y="68" width="30" height="6" rx="3" fill="#7b2ff7" opacity=".8"/>
+          <rect x="64" y="80" width="24" height="5" rx="3" fill="#1a2a60"/>
+          <rect x="64" y="91" width="27" height="5" rx="3" fill="#1a2a60"/>
+          <rect x="64" y="102" width="20" height="5" rx="3" fill="#1a2a60"/>
+          <rect x="64" y="113" width="25" height="5" rx="3" fill="#1a2a60"/>
+          <rect x="108" y="60" width="133" height="100" rx="3" fill="#070c1e"/>
+          <path d="M112 145 L130 120 L150 108 L170 115 L190 100 L210 92 L232 85 L235 145 Z" fill="url(#lg2)" opacity=".18"/>
+          <path d="M112 145 L130 120 L150 108 L170 115 L190 100 L210 92 L232 85" fill="none" stroke="#00cfff" stroke-width="2" filter="url(#glow2)"/>
+          <circle cx="150" cy="108" r="3.5" fill="#00cfff" filter="url(#glow2)"/>
+          <circle cx="190" cy="100" r="3.5" fill="#7b2ff7" filter="url(#glow2)"/>
+          <circle cx="232" cy="85" r="3.5" fill="#00cfff" filter="url(#glow2)"/>
+          <rect x="114" y="66" width="40" height="16" rx="3" fill="#0d1b4b"/>
+          <text x="134" y="78" text-anchor="middle" font-size="7" font-family="Rajdhani" fill="#00cfff" font-weight="700">+48%</text>
+          <rect x="160" y="66" width="40" height="16" rx="3" fill="#0d1b4b"/>
+          <text x="180" y="78" text-anchor="middle" font-size="7" font-family="Rajdhani" fill="#7b2ff7" font-weight="700">Active</text>
+          <rect x="140" y="170" width="20" height="14" rx="2" fill="#0d1b4b"/>
+          <rect x="125" y="183" width="50" height="6" rx="3" fill="#0d1b4b"/>
+          <rect x="18" y="80" width="60" height="50" rx="6" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1" class="float-anim-d"/>
+          <text x="48" y="98" text-anchor="middle" font-size="9" fill="#a0b0cc" font-family="Nunito Sans">Users</text>
+          <text x="48" y="115" text-anchor="middle" font-size="16" font-family="Rajdhani" font-weight="700" fill="#7b2ff7">2.4k</text>
+          <rect x="225" y="75" width="58" height="48" rx="6" fill="#0d1b4b" stroke="#00cfff" stroke-width="1" class="float-anim-d2"/>
+          <text x="254" y="93" text-anchor="middle" font-size="8" fill="#a0b0cc" font-family="Nunito Sans">Uptime</text>
+          <text x="254" y="110" text-anchor="middle" font-size="15" font-family="Rajdhani" font-weight="700" fill="#00cfff">99.9%</text>
+          <circle cx="34" cy="145" r="12" fill="#1a0842" stroke="#7b2ff7" stroke-width="1.5"/>
+          <text x="34" y="149" text-anchor="middle" font-size="12">👤</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- 03: PWAs -->
+  <div class="service-card reveal">
+    <div class="card-text">
+      <div class="card-num">03</div>
+      <h2 class="card-title">Progressive Web Apps (PWAs)<br><span>&amp; Web Apps</span></h2>
+      <p class="card-desc">Enhance user experience with Progressive Web Apps (PWAs) &amp; web apps that offer the speed and functionality of native applications. We build fast, reliable, and engaging web applications that work seamlessly across all devices, even in low-network conditions.</p>
+      <div class="card-btns">
+        <a href="#contact" class="svc-btn-primary">Build a High-Performance Web App →</a>
+        <a href="#" class="svc-btn-link">Read More</a>
+      </div>
+    </div>
+    <div class="card-visual">
+      <div class="illus-wrap float-anim">
+        <svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="lg3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7b2ff7"/><stop offset="100%" stop-color="#00cfff"/></linearGradient>
+            <filter id="glow3"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <ellipse cx="150" cy="195" rx="110" ry="22" fill="rgba(123,47,247,0.15)"/>
+          <rect x="90" y="20" width="120" height="200" rx="18" fill="#0a0e24" stroke="#7b2ff7" stroke-width="2"/>
+          <rect x="90" y="20" width="120" height="200" rx="18" fill="none" stroke="url(#lg3)" stroke-width="1.5" opacity=".6"/>
+          <rect x="97" y="34" width="106" height="172" rx="8" fill="#060b1a"/>
+          <rect x="130" y="26" width="40" height="8" rx="4" fill="#1a0842"/>
+          <circle cx="150" cy="100" r="38" fill="#10064a" stroke="url(#lg3)" stroke-width="2" filter="url(#glow3)"/>
+          <circle cx="150" cy="100" r="30" fill="#0d1b4b" opacity=".8"/>
+          <circle cx="150" cy="100" r="38" fill="none" stroke="#7b2ff7" stroke-dasharray="6 4" stroke-width="1" class="spin" opacity=".5"/>
+          <text x="150" y="95" text-anchor="middle" font-family="Rajdhani" font-weight="700" font-size="18" fill="url(#lg3)" filter="url(#glow3)">PWA</text>
+          <text x="150" y="112" text-anchor="middle" font-size="9" fill="#a0b0cc" font-family="Nunito Sans">Web App</text>
+          <rect x="103" y="150" width="30" height="22" rx="4" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1"/>
+          <text x="118" y="165" text-anchor="middle" font-size="10" fill="#7b2ff7">⚡</text>
+          <rect x="140" y="150" width="30" height="22" rx="4" fill="#0d1b4b" stroke="#00cfff" stroke-width="1"/>
+          <text x="155" y="165" text-anchor="middle" font-size="10" fill="#00cfff">📱</text>
+          <rect x="177" y="150" width="22" height="22" rx="4" fill="#0d1b4b" stroke="#ff3cac" stroke-width="1"/>
+          <text x="188" y="165" text-anchor="middle" font-size="10" fill="#ff3cac">🌐</text>
+          <rect x="130" y="196" width="40" height="4" rx="2" fill="#1a2a60"/>
+          <rect x="12" y="70" width="68" height="22" rx="6" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1" class="float-anim-d"/>
+          <text x="46" y="85" text-anchor="middle" font-size="8" font-family="Nunito Sans" fill="#a0b0cc">Offline Ready</text>
+          <rect x="224" y="70" width="68" height="22" rx="6" fill="#0d1b4b" stroke="#00cfff" stroke-width="1" class="float-anim-d2"/>
+          <text x="258" y="85" text-anchor="middle" font-size="8" font-family="Nunito Sans" fill="#a0b0cc">Fast Load</text>
+          <circle cx="38" cy="112" r="14" fill="#1a0842" stroke="#7b2ff7" stroke-width="1.5" class="float-anim-d"/>
+          <text x="38" y="117" text-anchor="middle" font-size="12">📡</text>
+          <circle cx="262" cy="112" r="14" fill="#1a0842" stroke="#00cfff" stroke-width="1.5" class="float-anim-d2"/>
+          <text x="262" y="117" text-anchor="middle" font-size="12">🔒</text>
+          <circle cx="150" cy="100" r="46" fill="none" stroke="#7b2ff7" stroke-width=".8" opacity=".25" style="animation:pulse-ring 2.8s ease-out infinite 0.5s"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- 04: Web Performance (reversed) -->
+  <div class="service-card reverse reveal" style="background:rgba(9,14,34,0.6)">
+    <div class="card-text">
+      <div class="card-num">04</div>
+      <h2 class="card-title">Web Performance<br><span>Optimization</span></h2>
+      <p class="card-desc">Speed and performance are critical for online success. We optimize your website for speed, mobile responsiveness, and SEO rankings. Our expert team leverages advanced techniques like image optimization, caching, lazy loading, and CDN integration to deliver a seamless and lightning-fast experience.</p>
+      <div class="card-btns">
+        <a href="#contact" class="svc-btn-primary">Optimize Your Website Performance →</a>
+        <a href="#" class="svc-btn-link">Read More</a>
+      </div>
+    </div>
+    <div class="card-visual">
+      <div class="illus-wrap float-anim-d">
+        <svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="lg4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00cfff"/><stop offset="100%" stop-color="#ff3cac"/></linearGradient>
+            <filter id="glow4"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <ellipse cx="150" cy="200" rx="115" ry="20" fill="rgba(0,207,255,0.1)"/>
+          <rect x="45" y="40" width="170" height="120" rx="6" fill="#0a0e24" stroke="#00cfff" stroke-width="1.5"/>
+          <rect x="45" y="40" width="170" height="18" rx="6" fill="#0d1b4b"/>
+          <rect x="45" y="52" width="170" height="6" fill="#0a0e24"/>
+          <circle cx="58" cy="49" r="3" fill="#ff3cac"/>
+          <circle cx="70" cy="49" r="3" fill="#7b2ff7"/>
+          <circle cx="82" cy="49" r="3" fill="#00cfff"/>
+          <rect x="52" y="65" width="156" height="85" rx="3" fill="#070c1e"/>
+          <line x1="52" y1="90" x2="208" y2="90" stroke="#1a2a60" stroke-width=".8"/>
+          <line x1="52" y1="110" x2="208" y2="110" stroke="#1a2a60" stroke-width=".8"/>
+          <line x1="52" y1="130" x2="208" y2="130" stroke="#1a2a60" stroke-width=".8"/>
+          <path d="M58 145 L80 130 L100 118 L120 110 L140 95 L160 82 L175 72 L200 68" fill="none" stroke="#00cfff" stroke-width="2.5" filter="url(#glow4)"/>
+          <path d="M58 145 L80 130 L100 118 L120 110 L140 95 L160 82 L175 72 L200 68 L200 145 Z" fill="url(#lg4)" opacity=".12"/>
+          <circle cx="140" cy="95" r="4" fill="#00cfff" filter="url(#glow4)"/>
+          <circle cx="200" cy="68" r="4" fill="#ff3cac" filter="url(#glow4)"/>
+          <rect x="123" y="160" width="14" height="12" rx="2" fill="#0d1b4b"/>
+          <rect x="112" y="171" width="36" height="5" rx="3" fill="#0d1b4b"/>
+          <circle cx="240" cy="90" r="40" fill="#0a0e24" stroke="#7b2ff7" stroke-width="1.5"/>
+          <circle cx="240" cy="90" r="32" fill="#060b1a"/>
+          <path d="M212 108 A32 32 0 1 1 268 108" fill="none" stroke="#1a2a60" stroke-width="6" stroke-linecap="round"/>
+          <path d="M212 108 A32 32 0 0 1 255 62" fill="none" stroke="url(#lg4)" stroke-width="6" stroke-linecap="round" filter="url(#glow4)"/>
+          <line x1="240" y1="90" x2="255" y2="66" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="240" cy="90" r="4" fill="#7b2ff7"/>
+          <text x="240" y="102" text-anchor="middle" font-size="9" font-family="Rajdhani" font-weight="700" fill="#00cfff">98</text>
+          <text x="240" y="114" text-anchor="middle" font-size="7" fill="#a0b0cc">Score</text>
+          <rect x="12" y="120" width="60" height="20" rx="5" fill="#0d1b4b" stroke="#00cfff" stroke-width="1" class="float-anim-d"/>
+          <text x="42" y="133" text-anchor="middle" font-size="7.5" fill="#00cfff" font-family="Nunito Sans">CDN ✓</text>
+          <rect x="12" y="148" width="60" height="20" rx="5" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1" class="float-anim-d2"/>
+          <text x="42" y="161" text-anchor="middle" font-size="7.5" fill="#7b2ff7" font-family="Nunito Sans">Cache ✓</text>
+          <rect x="80" y="190" width="90" height="22" rx="6" fill="#0d1b4b" stroke="#00cfff" stroke-width="1"/>
+          <text x="125" y="205" text-anchor="middle" font-size="9" fill="#00cfff" font-family="Rajdhani" font-weight="600">⚡ 0.8s Load Time</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- 05: Migration -->
+  <div class="service-card reveal">
+    <div class="card-text">
+      <div class="card-num">05</div>
+      <h2 class="card-title">Migration &amp;<br><span>Upgradation Services</span></h2>
+      <p class="card-desc">Stay ahead in the digital landscape with our migration &amp; upgradation services. We ensure your website remains updated, secure, and high-performing while migrating you to the latest platforms and technologies with zero data loss.</p>
+      <div class="card-btns">
+        <a href="#contact" class="svc-btn-primary">Upgrade Your Website Today →</a>
+        <a href="#" class="svc-btn-link">Read More</a>
+      </div>
+    </div>
+    <div class="card-visual">
+      <div class="illus-wrap float-anim-d2">
+        <svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="lg5" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7b2ff7"/><stop offset="100%" stop-color="#00cfff"/></linearGradient>
+            <filter id="glow5"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <ellipse cx="150" cy="205" rx="115" ry="18" fill="rgba(123,47,247,0.12)"/>
+          <rect x="20" y="80" width="90" height="20" rx="5" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1.5"/>
+          <rect x="24" y="84" width="12" height="12" rx="2" fill="#7b2ff7" opacity=".7"/>
+          <rect x="40" y="87" width="40" height="4" rx="2" fill="#1a2a60"/>
+          <rect x="84" y="87" width="10" height="4" rx="2" fill="#7b2ff7" style="animation:blink 1.5s ease-in-out infinite"/>
+          <rect x="20" y="104" width="90" height="20" rx="5" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1.5"/>
+          <rect x="24" y="108" width="12" height="12" rx="2" fill="#7b2ff7" opacity=".5"/>
+          <rect x="40" y="111" width="35" height="4" rx="2" fill="#1a2a60"/>
+          <rect x="84" y="111" width="10" height="4" rx="2" fill="#7b2ff7" opacity=".5" style="animation:blink 1.8s ease-in-out infinite 0.5s"/>
+          <rect x="20" y="128" width="90" height="20" rx="5" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1.5"/>
+          <rect x="24" y="132" width="12" height="12" rx="2" fill="#7b2ff7" opacity=".3"/>
+          <rect x="40" y="135" width="30" height="4" rx="2" fill="#1a2a60"/>
+          <text x="65" y="78" text-anchor="middle" font-size="9" fill="#a0b0cc" font-family="Nunito Sans">Old Server</text>
+          <path d="M115 110 L180 110" stroke="url(#lg5)" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#arr)"/>
+          <path d="M115 125 L180 125" stroke="url(#lg5)" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#arr)"/>
+          <defs>
+            <marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+              <path d="M0 0 L6 3 L0 6 Z" fill="#00cfff"/>
+            </marker>
+          </defs>
+          <ellipse cx="150" cy="55" rx="42" ry="26" fill="#0d1b4b" stroke="url(#lg5)" stroke-width="2" filter="url(#glow5)"/>
+          <path d="M138 55 L150 42 L162 55" fill="none" stroke="#00cfff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="150" y1="42" x2="150" y2="65" stroke="#00cfff" stroke-width="2.5" stroke-linecap="round"/>
+          <text x="150" y="78" text-anchor="middle" font-size="9" fill="#a0b0cc" font-family="Nunito Sans">Cloud Migration</text>
+          <rect x="190" y="80" width="90" height="20" rx="5" fill="#0d1b4b" stroke="#00cfff" stroke-width="1.5"/>
+          <rect x="194" y="84" width="12" height="12" rx="2" fill="#00cfff" opacity=".9"/>
+          <rect x="210" y="87" width="40" height="4" rx="2" fill="#1a2a60"/>
+          <rect x="254" y="87" width="10" height="4" rx="2" fill="#00cfff" style="animation:blink 1.2s ease-in-out infinite"/>
+          <rect x="190" y="104" width="90" height="20" rx="5" fill="#0d1b4b" stroke="#00cfff" stroke-width="1.5"/>
+          <rect x="194" y="108" width="12" height="12" rx="2" fill="#00cfff" opacity=".7"/>
+          <rect x="210" y="111" width="38" height="4" rx="2" fill="#1a2a60"/>
+          <rect x="254" y="111" width="10" height="4" rx="2" fill="#00cfff" opacity=".7" style="animation:blink 1.4s ease-in-out infinite 0.3s"/>
+          <rect x="190" y="128" width="90" height="20" rx="5" fill="#0d1b4b" stroke="#00cfff" stroke-width="1.5"/>
+          <rect x="194" y="132" width="12" height="12" rx="2" fill="#00cfff" opacity=".5"/>
+          <rect x="210" y="135" width="36" height="4" rx="2" fill="#1a2a60"/>
+          <text x="235" y="78" text-anchor="middle" font-size="9" fill="#a0b0cc" font-family="Nunito Sans">New Server</text>
+          <rect x="60" y="168" width="180" height="12" rx="6" fill="#0d1b4b"/>
+          <rect x="60" y="168" width="150" height="12" rx="6" fill="url(#lg5)" opacity=".85"/>
+          <text x="150" y="195" text-anchor="middle" font-size="9" fill="#00cfff" font-family="Rajdhani" font-weight="600">Migration: 83% Complete</text>
+          <rect x="104" y="215" width="92" height="18" rx="5" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1"/>
+          <text x="150" y="228" text-anchor="middle" font-size="8" fill="#7b2ff7" font-family="Nunito Sans">Zero Data Loss Guarantee</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
 </section>
+<!-- END SERVICES SECTION -->
 
 <!-- ═══ TECH STACK ═══ -->
 <section style="position:relative;z-index:1;background:rgba(255,255,255,.01);border-top:1px solid rgba(147,51,234,.1)">
@@ -811,7 +1174,7 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
     <div class="villan-badge">Why Choose Webspide</div>
     <div class="left-title">Why Choose<br>Webspide For<br><span class="purple">Custom Web<br>Development<br>Services?</span></div>
     <div class="title-underline"></div>
-    <p class="left-desc">At WebSpide Technologies, we specialize in custom website development tailored to meet unique<br> business needs. Our team ensures cutting-edge web design and development<br> with a focus on innovation, scalability, and seamless performance.</p>
+    <p class="left-desc">At WebSpide Technologies, we specialize in custom website development tailored to meet unique business needs. Our team ensures cutting-edge web design and development with a focus on innovation, scalability, and seamless performance.</p>
     <div class="illustration">
       <div class="gear-left">⚙</div>
       <div class="gear-sm">⚙</div>
@@ -875,6 +1238,7 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
     </div>
   </div>
 </div>
+
 <!-- ═══ CONTACT ═══ -->
 <section class="contact-section" id="contact">
   <div class="section-head" style="margin-bottom:2.5rem">
@@ -978,7 +1342,6 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 const mobCta = document.getElementById('mobCta');
-
 function closeMobile(){
   hamburger.classList.remove('open');
   mobileMenu.classList.remove('open');
@@ -1040,7 +1403,6 @@ document.querySelectorAll('.mob-link, .mob-sub-link').forEach(el => el.addEventL
   icons.forEach(el => {
     el.addEventListener('mouseenter', () => showInfo(el));
     el.addEventListener('mouseleave', () => { leaveTimer = setTimeout(hideInfo, 320); });
-    /* Touch support */
     el.addEventListener('touchstart', (e) => { e.preventDefault(); showInfo(el); }, {passive:false});
   });
   screen.addEventListener('mouseenter', () => { if(leaveTimer){ clearTimeout(leaveTimer); leaveTimer = null; } });
@@ -1049,6 +1411,16 @@ document.querySelectorAll('.mob-link, .mob-sub-link').forEach(el => el.addEventL
     if(!wrap.contains(e.target) && active) hideInfo();
   });
 })();
+
+/* ─── Scroll Reveal ─── */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if(entry.isIntersecting){
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
 /* ─── Form ─── */
 function updateChar(){
@@ -1080,3 +1452,5 @@ function resetForm(){
 </script>
 </body>
 </html>
+HTMLEOF
+echo "File
