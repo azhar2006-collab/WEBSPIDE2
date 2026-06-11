@@ -1,4 +1,4 @@
-cat > /home/claude/integrated.html << 'HTMLEOF'
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -624,6 +624,360 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
   .stat-num{font-size:1.3rem}
   .hero-stats{gap:.8rem}
 }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#06051a;--deep:#0a0820;--mid:#120d3a;
+  --purple:#9333ea;--cyan:#c084fc;--pink:#e879f9;
+  --accent1:#7c3aed;--accent2:#c026d3;
+  --text-main:#ede9fe;--text-muted:#a78bca;
+  --card-bg:rgba(147,51,234,0.07);--card-border:rgba(147,51,234,0.3);
+  --nav-h:70px;
+  /* legacy vars from file 1 */
+  --white:#fff;--grey:#a78bca;--violet:#7c3aed;
+  --glow-p:rgba(123,47,247,0.4);--glow-c:rgba(0,207,255,0.3);
+}
+html{scroll-behavior:smooth}
+body{background:var(--navy);color:var(--text-main);font-family:'Exo 2',sans-serif;overflow-x:hidden;min-height:100vh}
+
+
+/* ═══ INTERACTIVE PROCESS SECTION ═══ */
+.ipc-wrap {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  border: 1px solid rgba(147,51,234,.35);
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(7,5,24,.97);
+  max-width: 1100px;
+  margin: 0 auto;
+  min-height: 480px;
+  box-shadow: 0 30px 80px rgba(0,0,0,.5);
+}
+
+/* LEFT */
+.ipc-left {
+  background: linear-gradient(160deg,#080520 0%,#110d35 60%,#0c0928 100%);
+  border-right: 1px solid rgba(147,51,234,.2);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.ipc-left-head {
+  font-family: 'Exo 2', sans-serif;
+  font-size: .85rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 6px;
+  letter-spacing: .5px;
+}
+.ipc-left-sub {
+  font-size: .72rem;
+  color: #7b85a8;
+  line-height: 1.6;
+  margin-bottom: 22px;
+  max-width: 200px;
+}
+.ipc-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+.ipc-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 9px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all .22s;
+  position: relative;
+}
+.ipc-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) scaleY(0);
+  width: 3px;
+  height: 60%;
+  background: #c084fc;
+  border-radius: 0 3px 3px 0;
+  transition: transform .22s;
+}
+.ipc-item:hover,
+.ipc-item.active {
+  background: rgba(147,51,234,.14);
+  border-color: rgba(147,51,234,.38);
+}
+.ipc-item:hover::before,
+.ipc-item.active::before {
+  transform: translateY(-50%) scaleY(1);
+}
+.ipc-n {
+  font-family: 'Orbitron', sans-serif;
+  font-size: .6rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: #4a3a80;
+  background: rgba(147,51,234,.12);
+  border: 1px solid rgba(147,51,234,.25);
+  border-radius: 6px;
+  padding: 4px 7px;
+  flex-shrink: 0;
+  min-width: 36px;
+  text-align: center;
+  transition: all .22s;
+}
+.ipc-item:hover .ipc-n,
+.ipc-item.active .ipc-n {
+  color: #fff;
+  background: linear-gradient(135deg,#7c3aed,#c026d3);
+  border-color: transparent;
+  box-shadow: 0 0 12px rgba(147,51,234,.5);
+}
+.ipc-lbl {
+  font-size: .76rem;
+  font-weight: 600;
+  color: #8b90b8;
+  line-height: 1.45;
+  transition: color .22s;
+}
+.ipc-item:hover .ipc-lbl,
+.ipc-item.active .ipc-lbl {
+  color: #e8e0ff;
+  font-weight: 700;
+}
+
+/* RIGHT */
+.ipc-right {
+  position: relative;
+  overflow: hidden;
+}
+.ipc-panel {
+  position: absolute;
+  inset: 0;
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(14px);
+  transition: opacity .3s, transform .3s;
+}
+.ipc-panel.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+/* Panel header */
+.ipc-ph {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.ipc-badge {
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  background: linear-gradient(135deg,#6d28d9,#9333ea);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 0 18px rgba(147,51,234,.5);
+}
+.ipc-badge span {
+  font-family: 'Orbitron', sans-serif;
+  font-size: .72rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 1px;
+}
+.ipc-ph-text h3 {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+.ipc-ph-text p {
+  font-size: .78rem;
+  color: #8b93b8;
+  line-height: 1.65;
+  max-width: 520px;
+}
+
+/* Sub-items grid */
+.ipc-subs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.ipc-sub {
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(147,51,234,.2);
+  border-radius: 10px;
+  padding: 14px 12px;
+  transition: border-color .2s, background .2s;
+}
+.ipc-sub:hover {
+  border-color: rgba(192,132,252,.5);
+  background: rgba(147,51,234,.1);
+}
+.ipc-sub-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(147,51,234,.15);
+  border: 1px solid rgba(147,51,234,.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.ipc-sub-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: #c084fc;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.ipc-sub-title {
+  font-family: 'Exo 2', sans-serif;
+  font-size: .72rem;
+  font-weight: 700;
+  color: #e8e0ff;
+  line-height: 1.3;
+  margin-bottom: 5px;
+}
+.ipc-sub-desc {
+  font-size: .67rem;
+  color: #7b85a8;
+  line-height: 1.55;
+}
+
+/* Illustration + deliverables row */
+.ipc-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  flex: 1;
+  align-items: end;
+}
+.ipc-illus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.ipc-illus svg {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  filter: drop-shadow(0 0 18px rgba(147,51,234,.35));
+}
+
+/* Deliverables */
+.ipc-deliverables {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.ipc-del-title {
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #7c3aed;
+  margin-bottom: 4px;
+}
+.ipc-del-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 10px;
+}
+.ipc-del-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: .72rem;
+  color: #a0a8c8;
+  line-height: 1.4;
+}
+.ipc-del-item::before {
+  content: '';
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(147,51,234,.15);
+  border: 1.5px solid #7c3aed;
+  flex-shrink: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpolyline points='2 6 5 9 10 3' fill='none' stroke='%23c084fc' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 10px;
+}
+
+/* Mobile responsive */
+@media(max-width:900px) {
+  .ipc-wrap {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .ipc-left {
+    border-right: none;
+    border-bottom: 1px solid rgba(147,51,234,.2);
+    padding: 22px 18px;
+  }
+  .ipc-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .ipc-item {
+    flex: 1;
+    min-width: 140px;
+    padding: 8px 10px;
+  }
+  .ipc-right {
+    min-height: 560px;
+  }
+  .ipc-subs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ipc-bottom {
+    grid-template-columns: 1fr;
+  }
+  .ipc-illus {
+    display: none;
+  }
+}
+@media(max-width:600px) {
+  .ipc-panel {
+    padding: 20px 16px;
+    gap: 14px;
+  }
+  .ipc-ph-text h3 {
+    font-size: .95rem;
+  }
+  .ipc-subs {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .ipc-del-list {
+    grid-template-columns: 1fr;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -717,7 +1071,10 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
       <a href="#contact" class="btn-primary">Start Your Project</a>
       <a href="#services" class="btn-outline">Explore Services</a>
     </div>
-
+    <div class="hero-stats fade-in delay-4">
+      <div class="stat"><span class="stat-num">200+</span><span class="stat-label">Projects</span></div>
+      <div class="stat"><span class="stat-num">98%</span><span class="stat-label">Satisfaction</span></div>
+      <div class="stat"><span class="stat-num">5+</span><span class="stat-label">Years</span></div>
     </div>
   </div>
   <div class="orbital-wrap fade-in delay-3">
@@ -1083,6 +1440,37 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
 
 </section>
 <!-- END SERVICES SECTION -->
+ 
+<!-- ═══════════════════════════════════════════════════════════
+     INTERACTIVE PROCESS SECTION
+════════════════════════════════════════════════════════════ -->
+<section id="process" style="position:relative;z-index:1;padding:70px 5%;border-top:1px solid rgba(147,51,234,.1)">
+  <div class="section-head">
+    <div class="section-tag">How We Work</div>
+    <h2 class="section-title">Interactive Process – <span style="-webkit-text-fill-color:#c084fc">Hover To Explore</span></h2>
+    <p class="section-sub">As you hover each step, detailed information and relevant content are displayed seamlessly.</p>
+  </div>
+
+  <div class="ipc-wrap">
+    <!-- LEFT: step list -->
+    <div class="ipc-left">
+      <p class="ipc-left-head">Our Process</p>
+      <p class="ipc-left-sub">Step by step, we build digital experiences that make an impact.</p>
+      <ul class="ipc-list" id="ipcList">
+        <li class="ipc-item" data-idx="0"><span class="ipc-n">01</span><span class="ipc-lbl">Requirements &amp;<br>Design Analysis</span></li>
+        <li class="ipc-item" data-idx="1"><span class="ipc-n">02</span><span class="ipc-lbl">Project Setup &amp;<br>Configuration</span></li>
+        <li class="ipc-item" data-idx="2"><span class="ipc-n">03</span><span class="ipc-lbl">Component<br>Development</span></li>
+        <li class="ipc-item" data-idx="3"><span class="ipc-n">04</span><span class="ipc-lbl">Testing &amp;<br>Optimization</span></li>
+        <li class="ipc-item" data-idx="4"><span class="ipc-n">05</span><span class="ipc-lbl">Deployment &amp;<br>Launch</span></li>
+        <li class="ipc-item" data-idx="5"><span class="ipc-n">06</span><span class="ipc-lbl">Maintenance &amp;<br>Iteration</span></li>
+      </ul>
+    </div>
+
+    <!-- RIGHT: content panels -->
+    <div class="ipc-right" id="ipcRight"></div>
+  </div>
+</section>
+
 
 <!-- ═══ TECH STACK ═══ -->
 <section style="position:relative;z-index:1;background:rgba(255,255,255,.01);border-top:1px solid rgba(147,51,234,.1)">
@@ -1446,8 +1834,236 @@ function resetForm(){
   document.getElementById('agreeBox').checked = false;
   document.getElementById('charNum').textContent = '0';
 }
+
+/* ─── Interactive Process ─── */
+(function(){
+  const steps = [
+    {
+      num: '01',
+      title: 'Requirements & Design Analysis',
+      desc: 'We start by understanding your business, users, and goals. Our team conducts in-depth research and creates a solid blueprint to deliver the right solution that meets your expectations.',
+      subs: [
+        { title: 'Business Analysis', desc: 'Understand goals and challenges', icon: '<path d="M3 3h18v18H3zM3 9h18M9 21V9"/>' },
+        { title: 'Requirement Gathering', desc: 'Collect and analyze all requirements', icon: '<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>' },
+        { title: 'UI/UX Planning', desc: 'Create wireframes and user flows', icon: '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>' },
+        { title: 'Technology Selection', desc: 'Choose the best tech stack', icon: '<path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/>' }
+      ],
+      deliverables: ['Project requirements document', 'Technical architecture', 'Wireframes & mockups', 'Roadmap & timeline'],
+      svgIllus: `<svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+        <defs><linearGradient id="pg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#c084fc"/></linearGradient></defs>
+        <ellipse cx="100" cy="148" rx="80" ry="14" fill="rgba(124,58,237,.2)"/>
+        <rect x="30" y="50" width="140" height="90" rx="8" fill="#0d1b4b" stroke="url(#pg1)" stroke-width="1.5"/>
+        <rect x="30" y="50" width="140" height="18" rx="8" fill="#1a0842"/>
+        <rect x="40" y="57" width="8" height="8" rx="2" fill="#7c3aed"/>
+        <rect x="54" y="59" width="60" height="4" rx="2" fill="rgba(192,132,252,.4)"/>
+        <rect x="40" y="78" width="55" height="5" rx="2" fill="rgba(147,51,234,.4)"/>
+        <rect x="40" y="89" width="45" height="5" rx="2" fill="rgba(147,51,234,.25)"/>
+        <rect x="40" y="100" width="50" height="5" rx="2" fill="rgba(147,51,234,.25)"/>
+        <rect x="105" y="74" width="55" height="60" rx="4" fill="rgba(124,58,237,.1)" stroke="rgba(147,51,234,.3)" stroke-width="1"/>
+        <path d="M112 104 L118 96 L126 100 L135 88 L148 92 L155 84" fill="none" stroke="#c084fc" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="60" cy="25" r="18" fill="#1a0842" stroke="url(#pg1)" stroke-width="1.5"/>
+        <path d="M52 25 L58 31 L70 19" fill="none" stroke="#c084fc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>`
+    },
+    {
+      num: '02',
+      title: 'Project Setup & Configuration',
+      desc: 'We set up a solid foundation for your project with the best tools, frameworks, and coding standards. Our environment is optimized for performance, scalability, and long-term maintainability.',
+      subs: [
+        { title: 'Environment Setup', desc: 'Set up the development environment', icon: '<rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/>' },
+        { title: 'Build Tool Configuration', desc: 'Configure build tools and dependencies', icon: '<circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M4.93 4.93l1.41 1.41M4.93 19.07l1.41-1.41M19.07 19.07l-1.41-1.41M20 12h2M2 12h2M12 20v2M12 2v2"/>' },
+        { title: 'CI/CD Pipeline Setup', desc: 'Automate testing and deployment', icon: '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>' },
+        { title: 'Coding Standards', desc: 'Maintain clean and consistent code', icon: '<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>' }
+      ],
+      deliverables: ['Development environment', 'Project structure', 'CI/CD pipeline', 'Coding standards guide'],
+      svgIllus: `<svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+        <defs><linearGradient id="pg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00cfff"/><stop offset="100%" stop-color="#7c3aed"/></linearGradient></defs>
+        <ellipse cx="100" cy="148" rx="75" ry="12" fill="rgba(0,207,255,.15)"/>
+        <circle cx="100" cy="75" r="48" fill="#0a0e24" stroke="url(#pg2)" stroke-width="2"/>
+        <circle cx="100" cy="75" r="38" fill="#060b1a"/>
+        <circle cx="100" cy="75" r="48" fill="none" stroke="#7c3aed" stroke-dasharray="5 4" stroke-width="1" style="animation:spin-slow 15s linear infinite" opacity=".4"/>
+        <text x="100" y="70" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="13" font-weight="900" fill="url(#pg2)">SETUP</text>
+        <text x="100" y="86" text-anchor="middle" font-size="8" fill="#8b93b8" font-family="Nunito Sans,sans-serif">&lt;config /&gt;</text>
+        <rect x="10" y="50" width="40" height="22" rx="5" fill="#1a0842" stroke="#7c3aed" stroke-width="1"/>
+        <text x="30" y="64" text-anchor="middle" font-size="8" fill="#c084fc" font-family="Nunito Sans">Node.js</text>
+        <rect x="150" y="50" width="40" height="22" rx="5" fill="#1a0842" stroke="#00cfff" stroke-width="1"/>
+        <text x="170" y="64" text-anchor="middle" font-size="8" fill="#00cfff" font-family="Nunito Sans">Docker</text>
+        <rect x="50" y="128" width="100" height="18" rx="5" fill="#0d1b4b" stroke="url(#pg2)" stroke-width="1"/>
+        <text x="100" y="141" text-anchor="middle" font-size="8" fill="#a0b0cc" font-family="Rajdhani,sans-serif" font-weight="600">CI/CD Pipeline Active</text>
+      </svg>`
+    },
+    {
+      num: '03',
+      title: 'Component Development',
+      desc: 'We build reusable, modular, and accessible UI components following atomic design principles. Each component is crafted for flexibility, scalability, and a consistent user experience.',
+      subs: [
+        { title: 'Reusable Component Creation', desc: 'Build modular and reusable components', icon: '<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>' },
+        { title: 'State Management', desc: 'Manage application state effectively', icon: '<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>' },
+        { title: 'API Integration', desc: 'Integrate APIs and third-party services', icon: '<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>' },
+        { title: 'Design System Implementation', desc: 'Maintain a consistent design system', icon: '<circle cx="12" cy="12" r="3"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>' }
+      ],
+      deliverables: ['Reusable components', 'State management setup', 'API integration', 'Design system'],
+      svgIllus: `<svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+        <defs><linearGradient id="pg3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#9333ea"/><stop offset="100%" stop-color="#e879f9"/></linearGradient></defs>
+        <ellipse cx="100" cy="148" rx="75" ry="12" fill="rgba(147,51,234,.18)"/>
+        <rect x="20" y="30" width="75" height="50" rx="6" fill="#0d1b4b" stroke="url(#pg3)" stroke-width="1.5"/>
+        <rect x="28" y="40" width="30" height="5" rx="2" fill="#9333ea" opacity=".8"/>
+        <rect x="28" y="50" width="55" height="3" rx="2" fill="rgba(192,132,252,.3)"/>
+        <rect x="28" y="58" width="45" height="3" rx="2" fill="rgba(192,132,252,.2)"/>
+        <rect x="28" y="66" width="50" height="3" rx="2" fill="rgba(192,132,252,.2)"/>
+        <rect x="105" y="30" width="75" height="50" rx="6" fill="#0d1b4b" stroke="url(#pg3)" stroke-width="1.5"/>
+        <rect x="113" y="40" width="30" height="5" rx="2" fill="#e879f9" opacity=".7"/>
+        <rect x="113" y="50" width="50" height="3" rx="2" fill="rgba(232,121,249,.25)"/>
+        <rect x="113" y="58" width="40" height="3" rx="2" fill="rgba(232,121,249,.2)"/>
+        <rect x="62" y="95" width="75" height="50" rx="6" fill="#0d1b4b" stroke="url(#pg3)" stroke-width="1.5"/>
+        <rect x="70" y="105" width="35" height="5" rx="2" fill="#c084fc" opacity=".8"/>
+        <rect x="70" y="115" width="55" height="3" rx="2" fill="rgba(192,132,252,.3)"/>
+        <rect x="70" y="123" width="45" height="3" rx="2" fill="rgba(192,132,252,.2)"/>
+        <line x1="57" y1="55" x2="105" y2="55" stroke="rgba(147,51,234,.5)" stroke-width="1" stroke-dasharray="4 3"/>
+        <line x1="57" y1="80" x2="100" y2="95" stroke="rgba(147,51,234,.5)" stroke-width="1" stroke-dasharray="4 3"/>
+        <line x1="143" y1="80" x2="100" y2="95" stroke="rgba(147,51,234,.5)" stroke-width="1" stroke-dasharray="4 3"/>
+      </svg>`
+    },
+    {
+      num: '04',
+      title: 'Testing & Optimization',
+      desc: 'We run comprehensive tests and optimize performance to achieve excellent Lighthouse scores and Core Web Vitals for the best user experience.',
+      subs: [
+        { title: 'Unit & Integration Testing', desc: 'Ensure each part works as expected', icon: '<polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>' },
+        { title: 'Performance Optimization', desc: 'Improve speed and website performance', icon: '<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>' },
+        { title: 'Cross-Browser Testing', desc: 'Ensure compatibility across browsers', icon: '<circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>' },
+        { title: 'Security Testing', desc: 'Identify and fix vulnerabilities', icon: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>' }
+      ],
+      deliverables: ['Test reports', 'Bug-free application', 'Performance optimization', 'Lighthouse optimization'],
+      svgIllus: `<svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+        <defs><linearGradient id="pg4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00cfff"/><stop offset="100%" stop-color="#ff3cac"/></linearGradient></defs>
+        <ellipse cx="100" cy="148" rx="70" ry="12" fill="rgba(0,207,255,.12)"/>
+        <circle cx="100" cy="72" r="52" fill="#060b1a" stroke="url(#pg4)" stroke-width="2"/>
+        <circle cx="100" cy="72" r="42" fill="none" stroke="#1a2a60" stroke-width="8"/>
+        <path d="M60 100 A42 42 0 1 1 140 100" fill="none" stroke="url(#pg4)" stroke-width="8" stroke-linecap="round"/>
+        <line x1="100" y1="72" x2="126" y2="46" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="100" cy="72" r="5" fill="#7c3aed"/>
+        <text x="100" y="82" text-anchor="middle" font-size="16" font-family="Orbitron,sans-serif" font-weight="900" fill="#00cfff">98</text>
+        <text x="100" y="96" text-anchor="middle" font-size="8" fill="#8b93b8" font-family="Nunito Sans">Lighthouse Score</text>
+        <rect x="20" y="130" width="50" height="16" rx="4" fill="#0d1b4b" stroke="#7c3aed" stroke-width="1"/>
+        <text x="45" y="141" text-anchor="middle" font-size="7.5" fill="#c084fc" font-family="Nunito Sans">Tests Pass ✓</text>
+        <rect x="130" y="130" width="50" height="16" rx="4" fill="#0d1b4b" stroke="#00cfff" stroke-width="1"/>
+        <text x="155" y="141" text-anchor="middle" font-size="7.5" fill="#00cfff" font-family="Nunito Sans">0 Errors ✓</text>
+      </svg>`
+    },
+    {
+      num: '05',
+      title: 'Deployment & Launch',
+      desc: 'We deploy with zero-downtime strategies, CDN configuration, and performance monitoring setup to ensure your application goes live smoothly and securely.',
+      subs: [
+        { title: 'Production Deployment', desc: 'Deploy to live production environment', icon: '<path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>' },
+        { title: 'CDN & Caching Setup', desc: 'Configure CDN and caching for speed', icon: '<path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>' },
+        { title: 'Performance Monitoring', desc: 'Monitor performance in real-time', icon: '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>' },
+        { title: 'SSL & Security Setup', desc: 'Implement SSL and security best practices', icon: '<rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>' }
+      ],
+      deliverables: ['Live application', 'SSL configuration', 'CDN & caching setup', 'Monitoring setup'],
+      svgIllus: `<svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+        <defs><linearGradient id="pg5" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#00cfff"/></linearGradient></defs>
+        <ellipse cx="100" cy="150" rx="75" ry="12" fill="rgba(123,47,247,.15)"/>
+        <ellipse cx="100" cy="100" rx="55" ry="36" fill="#0a0e24" stroke="url(#pg5)" stroke-width="2"/>
+        <ellipse cx="100" cy="100" rx="45" ry="28" fill="#060b1a"/>
+        <path d="M75 100 L100 72 L125 100" fill="none" stroke="#00cfff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="100" y1="72" x2="100" y2="115" stroke="#00cfff" stroke-width="3" stroke-linecap="round"/>
+        <rect x="35" y="110" width="130" height="6" rx="3" fill="#1a2a60"/>
+        <rect x="35" y="110" width="100" height="6" rx="3" fill="url(#pg5)" opacity=".8"/>
+        <text x="100" y="140" text-anchor="middle" font-size="8.5" font-family="Rajdhani,sans-serif" font-weight="600" fill="#00cfff">Deployment: 78% Complete</text>
+        <circle cx="155" cy="48" r="18" fill="#0d1b4b" stroke="url(#pg5)" stroke-width="1.5"/>
+        <path d="M148 49 L153 54 L163 43" fill="none" stroke="#c084fc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="155" y="72" text-anchor="middle" font-size="7" fill="#8b93b8" font-family="Nunito Sans">Secure</text>
+      </svg>`
+    },
+    {
+      num: '06',
+      title: 'Maintenance & Iteration',
+      desc: 'We provide ongoing maintenance, feature updates, and continuous performance optimization to keep your application secure, up-to-date, and ahead of the curve.',
+      subs: [
+        { title: 'Dependency Updates', desc: 'Keep dependencies up-to-date', icon: '<polyline points="1 4 1 10 7 10"/><polyline points="23 20 23 14 17 14"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"/>' },
+        { title: 'Feature Enhancements', desc: 'Add new features and improvements', icon: '<circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>' },
+        { title: 'Performance Monitoring', desc: 'Continuously monitor and optimize', icon: '<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>' },
+        { title: 'Bug Fixes & Support', desc: 'Fix issues and provide ongoing support', icon: '<path d="M12 22v-4M12 2v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>' }
+      ],
+      deliverables: ['Regular updates', 'Performance optimization', 'Feature enhancements', 'Ongoing support'],
+      svgIllus: `<svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+        <defs><linearGradient id="pg6" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#c084fc"/><stop offset="100%" stop-color="#7c3aed"/></linearGradient></defs>
+        <ellipse cx="100" cy="148" rx="72" ry="12" fill="rgba(192,132,252,.15)"/>
+        <circle cx="100" cy="75" r="50" fill="none" stroke="rgba(147,51,234,.2)" stroke-width="1.5" stroke-dasharray="6 4"/>
+        <circle cx="100" cy="75" r="36" fill="none" stroke="rgba(192,132,252,.25)" stroke-width="1.5" stroke-dasharray="5 5"/>
+        <circle cx="100" cy="75" r="50" fill="none" stroke="url(#pg6)" stroke-width="2" stroke-dasharray="12 6" style="animation:spin-slow 10s linear infinite"/>
+        <circle cx="100" cy="75" r="22" fill="#0d1b4b" stroke="url(#pg6)" stroke-width="2"/>
+        <text x="100" y="71" text-anchor="middle" font-size="11" font-family="Orbitron,sans-serif" font-weight="900" fill="#c084fc">24/7</text>
+        <text x="100" y="85" text-anchor="middle" font-size="7" fill="#8b93b8" font-family="Nunito Sans">Support</text>
+        <circle cx="150" cy="35" r="14" fill="#1a0842" stroke="#c084fc" stroke-width="1.5"/>
+        <text x="150" y="39" text-anchor="middle" font-size="11">🔄</text>
+        <circle cx="50" cy="35" r="14" fill="#1a0842" stroke="#7c3aed" stroke-width="1.5"/>
+        <text x="50" y="39" text-anchor="middle" font-size="11">⚙</text>
+        <circle cx="30" cy="90" r="14" fill="#1a0842" stroke="#c084fc" stroke-width="1.5"/>
+        <text x="30" y="94" text-anchor="middle" font-size="11">🛡</text>
+        <circle cx="170" cy="90" r="14" fill="#1a0842" stroke="#7c3aed" stroke-width="1.5"/>
+        <text x="170" y="94" text-anchor="middle" font-size="11">📊</text>
+        <rect x="55" y="125" width="90" height="16" rx="5" fill="#0d1b4b" stroke="url(#pg6)" stroke-width="1"/>
+        <text x="100" y="137" text-anchor="middle" font-size="8" fill="#c084fc" font-family="Rajdhani,sans-serif" font-weight="600">Continuous Improvement</text>
+      </svg>`
+    }
+  ];
+
+  const right = document.getElementById('ipcRight');
+  const list  = document.getElementById('ipcList');
+  let current = 0;
+
+  // Build panels
+  steps.forEach((s, i) => {
+    const panel = document.createElement('div');
+    panel.className = 'ipc-panel' + (i === 0 ? ' show' : '');
+    panel.innerHTML = `
+      <div class="ipc-ph">
+        <div class="ipc-badge"><span>${s.num}</span></div>
+        <div class="ipc-ph-text">
+          <h3>${s.title}</h3>
+          <p>${s.desc}</p>
+        </div>
+      </div>
+      <div class="ipc-subs">
+        ${s.subs.map(sub => `
+          <div class="ipc-sub">
+            <div class="ipc-sub-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${sub.icon}</svg></div>
+            <div class="ipc-sub-title">${sub.title}</div>
+            <div class="ipc-sub-desc">${sub.desc}</div>
+          </div>`).join('')}
+      </div>
+      <div class="ipc-bottom">
+        <div class="ipc-illus">${s.svgIllus}</div>
+        <div class="ipc-deliverables">
+          <div class="ipc-del-title">What we deliver in this step</div>
+          <div class="ipc-del-list">
+            ${s.deliverables.map(d => `<div class="ipc-del-item">${d}</div>`).join('')}
+          </div>
+        </div>
+      </div>`;
+    right.appendChild(panel);
+  });
+
+  const panels = right.querySelectorAll('.ipc-panel');
+  const items  = list.querySelectorAll('.ipc-item');
+
+  function activate(idx) {
+    if (idx === current) return;
+    panels[current].classList.remove('show');
+    items[current].classList.remove('active');
+    current = idx;
+    panels[current].classList.add('show');
+    items[current].classList.add('active');
+  }
+
+  items.forEach(el => {
+    el.addEventListener('mouseenter', () => activate(+el.dataset.idx));
+    el.addEventListener('click',      () => activate(+el.dataset.idx));
+  });
+})();
 </script>
 </body>
 </html>
-HTMLEOF
-echo "File
