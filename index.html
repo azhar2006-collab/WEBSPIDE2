@@ -1,11 +1,4 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Custom Web Development — Webspide</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Exo+2:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&family=Rajdhani:wght@500;600;700&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+cat > /home/claude/webspide.html << 'HTMLEOF'
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -137,11 +130,10 @@ body{background:var(--navy);color:var(--text-main);font-family:'Exo 2',sans-seri
 .mob-sub-link:hover::before{background:#c084fc}
 .mob-cta{margin-top:20px;padding:14px;border-radius:12px;background:linear-gradient(135deg,#7c3aed,#c026d3);color:#fff;font-weight:700;font-size:.95rem;letter-spacing:1px;text-align:center;text-decoration:none;display:block;box-shadow:0 4px 20px rgba(147,51,234,.45)}
 
-/* ── Dropdowns: JS-controlled, no CSS hover ── */
 .mega-dropdown{
   position:absolute;top:calc(100% + 10px);left:50%;
   transform:translateX(-50%) translateY(8px);
-  width:92vw;max-width:1800px;
+  width:92vw;max-width:1600px;
   background:rgba(8,6,28,0.97);
   border:1px solid rgba(147,51,234,.35);
   border-radius:18px;
@@ -162,7 +154,6 @@ body{background:var(--navy);color:var(--text-main);font-family:'Exo 2',sans-seri
   border-left:8px solid transparent;border-right:8px solid transparent;
   border-bottom:8px solid rgba(8,6,28,0.97);
 }
-/* open class applied by JS */
 .nav-item-services.open .mega-dropdown{
   opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0);
 }
@@ -233,7 +224,11 @@ body{background:var(--navy);color:var(--text-main);font-family:'Exo 2',sans-seri
 .mega-link:hover{color:#e8e0ff;background:rgba(147,51,234,.1);padding-left:8px}
 .mega-link:hover::before{background:#c084fc;box-shadow:0 0 10px rgba(192,132,252,.8)}
 
-/* Products simple dropdown */
+/* ── App Development 2-column grid ── */
+.mega-col-app .mega-links{
+  display:grid;grid-template-columns:1fr 1fr;gap:0 4px;
+}
+
 .simple-dropdown{
   position:absolute;top:calc(100% + 8px);left:50%;
   transform:translateX(-50%) translateY(4px);
@@ -331,9 +326,12 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
 .b1-header{text-align:center;margin-bottom:28px}
 .b1-title{font-family:'Exo 2',sans-serif;font-size:clamp(16px,2.8vw,22px);font-weight:900;color:#e8e0ff;letter-spacing:1.5px;text-transform:uppercase;line-height:1.25}
 .b1-title span{color:#c084fc;display:block;text-shadow:0 0 18px rgba(192,132,252,.5)}
-.b1-desc{font-size:12.5px;color:#9ca3c8;line-height:1.75;max-width:680px;margin:10px auto 0}
-.b1-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;position:relative;z-index:1}
-.b1-card{background:linear-gradient(145deg,rgba(33,24,68,.85) 0%,rgba(10,8,35,.95) 100%);border:1px solid rgba(147,51,234,.35);border-radius:40px;padding:20px 24px;position:relative;z-index:1;box-shadow:0 0 28px rgba(147,51,234,.08);transition:border-color .3s,box-shadow .3s,transform .3s;width:100%}
+.b1-desc{font-size:12.5px;color:#9ca3c8;line-height:1.75;max-width:780px;margin:10px auto 0}
+
+/* ── CHANGED: increased gap from 12px to 20px ── */
+.b1-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:70px;position:relative;z-index:1}
+
+.b1-card{background:linear-gradient(145deg,rgba(33,24,68,.85) 0%,rgba(10,8,35,.95) 100%);border:1px solid rgba(147,51,234,.35);border-radius:40px;padding:30px 14px;position:relative;z-index:1;box-shadow:0 0 28px rgba(147,51,234,.08);transition:border-color .3s,box-shadow .3s,transform .3s;width:100%}
 .b1-card:hover{border-color:rgba(192,132,252,.55);box-shadow:0 8px 36px rgba(147,51,234,.18);transform:translateY(-3px)}
 .b1-card-hdr{display:flex;align-items:flex-start;gap:16px;margin-bottom:14px}
 .b1-icon{width:48px;height:48px;min-width:48px;border-radius:50%;border:2px solid rgba(147,51,234,.5);background:radial-gradient(circle at 38% 35%,rgba(82,0,214,.3),rgba(20,8,60,.85));display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 0 16px rgba(147,51,234,.2)}
@@ -341,10 +339,12 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
 .b1-card-title{font-family:'Exo 2',sans-serif;font-size:12.5px;font-weight:700;color:#e8e0ff;line-height:1.4;padding-top:4px}
 .b1-card-desc{font-size:11.5px;color:#8b93b8;line-height:1.7}
 
+/* ── CHANGED: increased gap from 14px to 20px ── */
 .banner-2{background:transparent;border-bottom:1px solid rgba(147,51,234,.2);padding:36px 44px 52px}
 .banner-2::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 80% at 15% 50%,rgba(80,30,180,.12) 0%,transparent 55%),radial-gradient(ellipse 50% 80% at 85% 50%,rgba(60,20,150,.10) 0%,transparent 55%);pointer-events:none;z-index:0}
 .b2-content{position:relative;z-index:1}
-.b2-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;position:relative;z-index:1}
+.b2-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:70px;position:relative;z-index:1}
+
 .b2-card{background:linear-gradient(135deg,rgba(255,255,255,.03) 0%,rgba(147,51,234,.05) 100%);border:1px solid rgba(147,51,234,.3);border-radius:10px;padding:18px 16px;position:relative;z-index:1;transition:border-color .3s,box-shadow .3s,transform .3s}
 .b2-card:hover{border-color:rgba(192,132,252,.55);box-shadow:0 8px 32px rgba(147,51,234,.15);transform:translateY(-3px)}
 .b2-card-hdr{display:flex;align-items:flex-start;gap:12px;margin-bottom:8px}
@@ -497,9 +497,9 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
 .cta-section p{color:var(--text-muted);margin-bottom:1.5rem;font-size:.93rem;line-height:1.7}
 .cta-btns{display:flex;gap:.9rem;flex-wrap:wrap}
 
-.sections{width:100%;max-width:3000px;margin:0 auto;display:flex;align-items:flex-start;justify-content:center;gap:6px;position:relative;overflow:visible;padding:52px 20px}
-.left{flex:1;padding:0 74px 0 240px;display:flex;flex-direction:column;justify-content:flex-start;position:sticky;top:var(--nav-h);align-self:flex-start;z-index:1;max-height:calc(100vh - 90px);overflow:hidden}
-.villan-badge{display:inline-block;border:1px solid rgba(147,51,234,.6);color:#c084fc;font-size:9.5px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;padding:5px 11px;border-radius:3px;margin-bottom:20px;width:fit-content}
+.sections{width:100%;max-width:3000px;margin:0 auto;display:flex;align-items:flex-start;justify-content:center;gap:6px;position:relative;overflow:visible;padding:82px 20px}
+.left{flex:1;padding:0 74px 0 40px;display:flex;flex-direction:column;justify-content:flex-start;position:sticky;top:var(--nav-h);align-self:flex-start;z-index:1;max-height:calc(100vh - 90px);overflow:hidden}
+.villan-badge{display:inline-block;border:1px solid rgba(147,51,234,.6);color:#c084fc;font-size:9.5px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;padding:5px 11px;border-radius:3px;margin-bottom:10px;width:fit-content}
 .left-title{font-family:'Exo 2',sans-serif;font-size:clamp(22px,3vw,34px);font-weight:1800;color:#e8e0ff;line-height:1.18;margin-bottom:14px}
 .left-title .purple{color:#9333ea}
 .title-underline{width:40px;height:3px;background:linear-gradient(90deg,#9333ea,#c084fc);margin:16px 0 20px;border-radius:2px}
@@ -512,10 +512,10 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
 .screen-code span{color:#60a5fa}.screen-code em{color:#34d399;font-style:normal}
 .laptop-base{width:170px;height:9px;background:linear-gradient(180deg,#1a1050,#0f0d2f);border:1px solid rgba(147,51,234,.4);border-radius:0 0 4px 4px;margin:0 auto}
 .laptop-bottom{width:190px;height:5px;background:linear-gradient(90deg,transparent,rgba(147,51,234,.3),transparent);border-radius:4px;margin:0 auto}
-.gear-left{position:absolute;left:6px;bottom:36px;width:40px;height:40px;border:2px solid rgba(147,51,234,.5);border-radius:50%;background:rgba(147,51,234,.1);display:flex;align-items:center;justify-content:center;color:#9333ea;font-size:18px}
+.gear-left{position:absolute;left:16px;bottom:36px;width:40px;height:40px;border:2px solid rgba(147,51,234,.5);border-radius:50%;background:rgba(147,51,234,.1);display:flex;align-items:center;justify-content:center;color:#9333ea;font-size:18px}
 .gear-sm{position:absolute;left:36px;bottom:72px;width:24px;height:24px;border:1.5px solid rgba(147,51,234,.4);border-radius:50%;background:rgba(147,51,234,.08);display:flex;align-items:center;justify-content:center;color:#7c3aed;font-size:11px}
 .code-tag{position:absolute;right:18px;bottom:44px;font-family:'Exo 2',sans-serif;font-size:20px;font-weight:700;color:rgba(147,51,234,.5)}
-.right{flex:2;padding:0px 70px 0 10px;position:relative;z-index:1;display:flex;flex-direction:column;align-self:flex-start}
+.right{flex:2;padding:0px 70px 0 40px;position:relative;z-index:1;display:flex;flex-direction:column;align-self:flex-start}
 .process-timeline{position:relative;display:flex;flex-direction:column;gap:0}
 .process-timeline::before{content:'';position:absolute;left:40px;top:28px;bottom:28px;width:1px;background:linear-gradient(180deg,transparent,rgba(147,51,234,.5) 10%,rgba(147,51,234,.5) 90%,transparent)}
 .feature-row{display:flex;align-items:center;gap:0;padding:30px 0;position:relative;cursor:default}
@@ -533,14 +533,6 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
 .feature-title .accent{color:#c084fc}
 .feature-desc{font-size:16.5px;color:#7b85a8;line-height:1.7}
 
-.section-tag{display:inline-block;background:rgba(192,132,252,.1);border:1px solid rgba(192,132,252,.3);color:#c084fc;font-size:.68rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:.28rem .9rem;border-radius:20px;margin-bottom:.9rem}
-.section-title{font-family:'Orbitron',sans-serif;font-size:clamp(1.4rem,3vw,2.3rem);font-weight:900;line-height:1.2;background:linear-gradient(90deg,#fff,#c084fc 50%,#9333ea);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:.65rem}
-.section-sub{color:var(--text-muted);max-width:560px;margin:0 auto;line-height:1.7;font-size:.9rem}
-.section-head{text-align:center;margin-bottom:3rem}
- 
-/* ═══════════════════════════════════════════════════
-   HOW WE WORK — Vertical sidebar tabs + right content
-   ═══════════════════════════════════════════════════ */
 .how-we-work{
   position:relative;z-index:1;
   padding:80px 5%;
@@ -553,8 +545,6 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
     radial-gradient(ellipse 60% 50% at 20% 50%,rgba(124,58,237,.08) 0%,transparent 60%),
     radial-gradient(ellipse 50% 60% at 80% 50%,rgba(147,51,234,.06) 0%,transparent 60%);
 }
- 
-/* ── Flex row: sidebar tabs LEFT + content RIGHT ── */
 .hww-body{
   display:flex;
   align-items:flex-start;
@@ -562,8 +552,6 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
   position:relative;
   z-index:1;
 }
- 
-/* ── Vertical sidebar tabs ── */
 .hww-tabs{
   display:flex;
   flex-direction:column;
@@ -574,8 +562,6 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
   top:calc(var(--nav-h) + 24px);
   z-index:1;
 }
- 
-/* Vertical connecting line down the left side of tabs */
 .hww-tabs::before{
   content:'';
   position:absolute;
@@ -590,8 +576,6 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
     transparent);
   z-index:0;
 }
- 
-/* Each tab pill */
 .hww-tab{
   display:flex;
   align-items:center;
@@ -613,8 +597,6 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
   border-color:rgba(192,132,252,.6);
   box-shadow:0 0 20px rgba(147,51,234,.2);
 }
- 
-/* Step number circle */
 .hww-tab-num{
   width:34px;height:34px;min-width:34px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
@@ -632,8 +614,6 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
   border-color:transparent;color:#fff;
   box-shadow:0 0 14px rgba(147,51,234,.5);
 }
- 
-/* Step label text */
 .hww-tab-label{
   font-size:.72rem;
   font-weight:600;
@@ -646,16 +626,12 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
 }
 .hww-tab:hover .hww-tab-label,
 .hww-tab.active .hww-tab-label{color:#e8e0ff;font-weight:700}
- 
-/* ── Content area fills remaining space ── */
 .hww-content-area{
   position:relative;
   z-index:1;
   flex:1;
   min-width:0;
 }
- 
-/* Panel animation */
 .hww-panel-item{
   display:none;
   flex-direction:column;
@@ -663,10 +639,7 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
   animation:hwwFadeIn .3s ease;
 }
 .hww-panel-item.active{display:flex}
- 
 @keyframes hwwFadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
- 
-/* Panel header */
 .hww-ph{display:flex;align-items:flex-start;gap:22px}
 .hww-badge{
   width:56px;height:56px;min-width:56px;border-radius:14px;
@@ -677,8 +650,6 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
 .hww-badge-num{font-family:'Orbitron',sans-serif;font-size:.82rem;font-weight:900;color:#fff;letter-spacing:1px}
 .hww-ph-text h3{font-family:'Exo 2',sans-serif;font-size:1.3rem;font-weight:900;color:#fff;line-height:1.2;margin-bottom:8px}
 .hww-ph-text p{font-size:.85rem;color:#8b93b8;line-height:1.75;max-width:620px}
- 
-/* 4 sub-feature cards */
 .hww-subs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .hww-sub{
   background:rgba(255,255,255,.025);
@@ -699,8 +670,6 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
 .hww-sub-icon svg{width:18px;height:18px;fill:none;stroke:#c084fc;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .hww-sub-title{font-family:'Exo 2',sans-serif;font-size:.76rem;font-weight:700;color:#e8e0ff;line-height:1.3;margin-bottom:5px}
 .hww-sub-desc{font-size:.68rem;color:#7b85a8;line-height:1.6}
- 
-/* Bottom: illustration + deliverables */
 .hww-bottom{display:grid;grid-template-columns:200px 1fr;gap:24px;align-items:center}
 .hww-illus{display:flex;align-items:center;justify-content:center}
 .hww-illus svg{width:100%;max-width:200px;height:auto;filter:drop-shadow(0 0 20px rgba(147,51,234,.35))}
@@ -720,14 +689,11 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpolyline points='2 6 5 9 10 3' fill='none' stroke='%23c084fc' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat:no-repeat;background-position:center;background-size:10px;
 }
- 
-/* Divider line */
 .hww-divider{
   width:100%;height:1px;
   background:linear-gradient(90deg,transparent,rgba(147,51,234,.25) 20%,rgba(192,132,252,.3) 50%,rgba(147,51,234,.25) 80%,transparent);
 }
- 
-/* ── RESPONSIVE ── */
+
 @media(max-width:1100px){
   .hww-body{gap:22px}
   .hww-tabs{width:190px;min-width:190px}
@@ -736,7 +702,6 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
   .hww-illus{display:none}
 }
 @media(max-width:900px){
-  /* Switch back to horizontal pill row on tablet/mobile */
   .hww-body{flex-direction:column;gap:0}
   .hww-tabs{
     flex-direction:row;flex-wrap:wrap;
@@ -768,9 +733,7 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
   .hww-subs{grid-template-columns:1fr 1fr;gap:8px}
   .hww-del-grid{grid-template-columns:1fr}
 }
- 
-/* Animation helpers */
-@keyframes spin-slow{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+
 .contact-section{position:relative;z-index:1;padding:80px 5%;background:rgba(255,255,255,.01);border-top:1px solid rgba(147,51,234,.1)}
 .contact-wrap{display:grid;grid-template-columns:1fr 1.55fr;border-radius:22px;overflow:hidden;border:1px solid rgba(147,51,234,.25);box-shadow:0 30px 80px rgba(0,0,0,.4);max-width:1100px;margin:0 auto}
 .con-left{background:linear-gradient(160deg,#06051a 0%,#120d3a 50%,#1a0840 100%);padding:2.8rem 2.2rem;display:flex;flex-direction:column;gap:1.8rem;position:relative;overflow:hidden}
@@ -869,9 +832,6 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
   .ts-row-label{width:90px}
   .service-card{padding:50px 40px;gap:40px}
   .card-title{font-size:26px}
-  .hww-subs{grid-template-columns:repeat(2,1fr)}
-  .hww-bottom{grid-template-columns:1fr}
-  .hww-illus{display:none}
 }
 @media(max-width:900px){
   :root{--nav-h:65px}
@@ -887,7 +847,7 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
   .orbit-cards-mobile{display:grid}
   .banner{padding:36px 24px 44px}
   .banner-2{padding:28px 24px 40px}
-  .b1-cards,.b2-cards{grid-template-columns:1fr 1fr;gap:12px}
+  .b1-cards,.b2-cards{grid-template-columns:1fr 1fr;gap:14px}
   .section{padding:55px 5%}
   .ts-row-label{width:80px}
   .ts-row-label span{font-size:11px}
@@ -909,14 +869,7 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
   .card-visual{flex:none;width:100%}
   .illus-wrap{max-width:280px;margin:0 auto}
   .mega-inner{grid-template-columns:1fr}
-  .mega-col:first-child .mega-links{grid-template-columns:1fr 1fr}
-  .hww-tabs{gap:6px;margin-bottom:36px}
-  .hww-tab{padding:8px 12px}
-  .hww-tab-label{display:none}
-  .hww-tab-icon{display:none}
-  .hww-subs{grid-template-columns:1fr 1fr}
-  .hww-bottom{grid-template-columns:1fr}
-  .hww-illus{display:none}
+  .mega-col:first-child .mega-links,.mega-col-app .mega-links{grid-template-columns:1fr 1fr}
 }
 @media(max-width:600px){
   :root{--nav-h:60px}
@@ -937,7 +890,7 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
   .orb-card{padding:10px}
   .banner{padding:28px 16px 36px}
   .banner-2{padding:20px 16px 32px}
-  .b1-cards,.b2-cards{grid-template-columns:1fr;gap:10px}
+  .b1-cards,.b2-cards{grid-template-columns:1fr;gap:12px}
   .section{padding:48px 4%}
   .section-title{font-size:1.4rem}
   .cta-section{margin:0 3%;padding:2.2rem 1.8rem}
@@ -968,11 +921,6 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
   .card-title{font-size:22px}
   .card-num{font-size:13px}
   .illus-wrap{max-width:240px}
-  .hww-panel-item{gap:20px}
-  .hww-ph-text h3{font-size:1rem}
-  .hww-subs{grid-template-columns:1fr 1fr;gap:8px}
-  .hww-del-grid{grid-template-columns:1fr}
-  .hww-tab{padding:8px 10px;border-radius:30px}
 }
 @media(max-width:380px){
   .hero h1{font-size:1.4rem}
@@ -994,7 +942,7 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
 <header class="site-header">
   <div class="nav-bar">
     <a href="#" class="logo-wrap">
-     
+    
         <defs>
           <linearGradient id="wGrad1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#c084fc"/><stop offset="50%" stop-color="#9333ea"/><stop offset="100%" stop-color="#6d28d9"/></linearGradient>
           <linearGradient id="wGrad2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#e879f9"/><stop offset="100%" stop-color="#c084fc"/></linearGradient>
@@ -1025,6 +973,7 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
         </button>
         <div class="mega-dropdown" id="megaDropdown">
           <div class="mega-inner">
+            <!-- Col 1: Web Development — 2 cols -->
             <div class="mega-col">
               <div class="mega-col-header">
                 <div class="mega-col-icon"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
@@ -1040,7 +989,8 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
                 <a href="#services" class="mega-link">Front End Development</a>
               </div>
             </div>
-            <div class="mega-col">
+            <!-- Col 2: App Development — 2 cols via mega-col-app -->
+            <div class="mega-col mega-col-app">
               <div class="mega-col-header">
                 <div class="mega-col-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
                 <div class="mega-col-title">App Development</div>
@@ -1050,8 +1000,10 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
                 <a href="#services" class="mega-link">Flutter App Development</a>
                 <a href="#services" class="mega-link">iOS App Development</a>
                 <a href="#services" class="mega-link">React Native App Development</a>
+          
               </div>
             </div>
+            <!-- Col 3: Digital Marketing — 2 cols -->
             <div class="mega-col">
               <div class="mega-col-header">
                 <div class="mega-col-icon"><svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2L15 22l-4-9-9-4 20-7z"/></svg></div>
@@ -1114,6 +1066,8 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
     <a href="#services" class="mob-sub-link">Flutter App Development</a>
     <a href="#services" class="mob-sub-link">iOS App Development</a>
     <a href="#services" class="mob-sub-link">React Native Development</a>
+    <a href="#services" class="mob-sub-link">Hybrid App Development</a>
+    <a href="#services" class="mob-sub-link">Progressive Web Apps</a>
     <div class="mob-section-title">Digital Marketing</div>
     <a href="#services" class="mob-sub-link">SEO Services</a>
     <a href="#services" class="mob-sub-link">Social Media Marketing</a>
@@ -1126,7 +1080,6 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
     <a href="#contact" class="mob-cta" id="mobCta">Get a Free Quote →</a>
   </div>
 </nav>
-
 
 <!-- HERO -->
 <section class="hero">
@@ -1142,7 +1095,6 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
       <a href="#contact" class="btn-primary">Start Your Project</a>
       <a href="#services" class="btn-outline">Explore Services</a>
     </div>
-   
   </div>
   <div class="orbital-wrap fade-in delay-3">
     <svg class="rings-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
@@ -1216,9 +1168,7 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════════
-     SERVICES SECTION — integrated from File 1 (replaces Process)
-════════════════════════════════════════════════════════════ -->
+<!-- SERVICES SECTION -->
 <section class="services-section" id="services">
   <div class="services-section-head">
     <div class="section-tag">What We Do</div>
@@ -1226,7 +1176,6 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
     <p class="section-sub" style="margin-bottom:0">End-to-end web solutions engineered for performance, scalability, and seamless connectivity across every platform.</p>
   </div>
 
-  <!-- 01: API Development -->
   <div class="service-card reveal">
     <div class="card-text">
       <div class="card-num">01</div>
@@ -1240,22 +1189,12 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
     <div class="card-visual">
       <div class="illus-wrap float-anim">
         <svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <radialGradient id="bg1" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#1a0a3e"/><stop offset="100%" stop-color="#060b1a"/></radialGradient>
-            <filter id="glow1"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-            <linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7b2ff7"/><stop offset="100%" stop-color="#00cfff"/></linearGradient>
-          </defs>
+          <defs><radialGradient id="bg1" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#1a0a3e"/><stop offset="100%" stop-color="#060b1a"/></radialGradient><filter id="glow1"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter><linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7b2ff7"/><stop offset="100%" stop-color="#00cfff"/></linearGradient></defs>
           <ellipse cx="150" cy="170" rx="120" ry="30" fill="rgba(123,47,247,0.18)"/>
           <rect x="60" y="100" width="180" height="110" rx="8" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1.5"/>
           <rect x="68" y="108" width="164" height="90" rx="4" fill="#060b1a"/>
-          <line x1="68" y1="130" x2="232" y2="130" stroke="#1a2a60" stroke-width=".8"/>
-          <line x1="68" y1="152" x2="232" y2="152" stroke="#1a2a60" stroke-width=".8"/>
-          <line x1="68" y1="174" x2="232" y2="174" stroke="#1a2a60" stroke-width=".8"/>
-          <line x1="110" y1="108" x2="110" y2="198" stroke="#1a2a60" stroke-width=".8"/>
-          <line x1="160" y1="108" x2="160" y2="198" stroke="#1a2a60" stroke-width=".8"/>
-          <line x1="200" y1="108" x2="200" y2="198" stroke="#1a2a60" stroke-width=".8"/>
-          <path d="M40 212 Q150 224 260 212" stroke="#7b2ff7" stroke-width="2" fill="none"/>
-          <rect x="40" y="210" width="220" height="8" rx="4" fill="#0d1b4b"/>
+          <line x1="68" y1="130" x2="232" y2="130" stroke="#1a2a60" stroke-width=".8"/><line x1="68" y1="152" x2="232" y2="152" stroke="#1a2a60" stroke-width=".8"/><line x1="68" y1="174" x2="232" y2="174" stroke="#1a2a60" stroke-width=".8"/>
+          <line x1="110" y1="108" x2="110" y2="198" stroke="#1a2a60" stroke-width=".8"/><line x1="160" y1="108" x2="160" y2="198" stroke="#1a2a60" stroke-width=".8"/><line x1="200" y1="108" x2="200" y2="198" stroke="#1a2a60" stroke-width=".8"/>
           <circle cx="150" cy="60" r="44" fill="#10064a" stroke="url(#lg1)" stroke-width="2" filter="url(#glow1)"/>
           <circle cx="150" cy="60" r="36" fill="#0d1b4b" opacity=".8"/>
           <circle cx="150" cy="60" r="44" fill="none" stroke="#7b2ff7" stroke-width="1" stroke-dasharray="8 5" class="spin" opacity=".5"/>
@@ -1264,15 +1203,11 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
           <line x1="106" y1="60" x2="60" y2="60" stroke="#7b2ff7" stroke-width="1" stroke-dasharray="4 3" opacity=".7"/>
           <line x1="194" y1="60" x2="240" y2="60" stroke="#00cfff" stroke-width="1" stroke-dasharray="4 3" opacity=".7"/>
           <line x1="150" y1="104" x2="150" y2="115" stroke="#ff3cac" stroke-width="1" stroke-dasharray="4 3" opacity=".7"/>
-          <rect x="32" y="48" width="26" height="24" rx="5" fill="#1a0842" stroke="#7b2ff7" stroke-width="1.5"/>
-          <text x="45" y="63" text-anchor="middle" font-size="11" fill="#7b2ff7">☁</text>
-          <rect x="242" y="48" width="26" height="24" rx="5" fill="#1a0842" stroke="#00cfff" stroke-width="1.5"/>
-          <text x="255" y="63" text-anchor="middle" font-size="11" fill="#00cfff">⚡</text>
+          <rect x="32" y="48" width="26" height="24" rx="5" fill="#1a0842" stroke="#7b2ff7" stroke-width="1.5"/><text x="45" y="63" text-anchor="middle" font-size="11" fill="#7b2ff7">☁</text>
+          <rect x="242" y="48" width="26" height="24" rx="5" fill="#1a0842" stroke="#00cfff" stroke-width="1.5"/><text x="255" y="63" text-anchor="middle" font-size="11" fill="#00cfff">⚡</text>
           <circle cx="150" cy="60" r="52" fill="none" stroke="#7b2ff7" stroke-width="1" opacity=".3" style="animation:pulse-ring 2.4s ease-out infinite"/>
-          <rect x="18" y="88" width="52" height="20" rx="5" fill="#1a0842" stroke="#7b2ff7" stroke-width="1" class="float-anim-d"/>
-          <text x="44" y="101" text-anchor="middle" font-size="8" font-family="Nunito Sans" fill="#a0b0cc">REST</text>
-          <rect x="230" y="88" width="60" height="20" rx="5" fill="#1a0842" stroke="#00cfff" stroke-width="1" class="float-anim-d2"/>
-          <text x="260" y="101" text-anchor="middle" font-size="8" font-family="Nunito Sans" fill="#a0b0cc">GraphQL</text>
+          <rect x="18" y="88" width="52" height="20" rx="5" fill="#1a0842" stroke="#7b2ff7" stroke-width="1" class="float-anim-d"/><text x="44" y="101" text-anchor="middle" font-size="8" font-family="Nunito Sans" fill="#a0b0cc">REST</text>
+          <rect x="230" y="88" width="60" height="20" rx="5" fill="#1a0842" stroke="#00cfff" stroke-width="1" class="float-anim-d2"/><text x="260" y="101" text-anchor="middle" font-size="8" font-family="Nunito Sans" fill="#a0b0cc">GraphQL</text>
           <text x="90" y="148" text-anchor="middle" font-size="14" fill="#7b2ff7" opacity=".8">🛡</text>
           <text x="150" y="148" text-anchor="middle" font-size="14" fill="#00cfff" opacity=".8">🔗</text>
           <text x="210" y="148" text-anchor="middle" font-size="14" fill="#ff3cac" opacity=".8">⚙</text>
@@ -1281,7 +1216,6 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
     </div>
   </div>
 
-  <!-- 02: Custom Web Portals (reversed) -->
   <div class="service-card reverse reveal" style="background:rgba(9,14,34,0.6)">
     <div class="card-text">
       <div class="card-num">02</div>
@@ -1295,51 +1229,36 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
     <div class="card-visual">
       <div class="illus-wrap float-anim-d">
         <svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="lg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00cfff"/><stop offset="100%" stop-color="#7b2ff7"/></linearGradient>
-            <filter id="glow2"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-          </defs>
+          <defs><linearGradient id="lg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00cfff"/><stop offset="100%" stop-color="#7b2ff7"/></linearGradient><filter id="glow2"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
           <ellipse cx="150" cy="195" rx="110" ry="22" fill="rgba(0,207,255,0.12)"/>
           <rect x="50" y="30" width="200" height="140" rx="8" fill="#0a0e24" stroke="#00cfff" stroke-width="1.5"/>
           <rect x="50" y="30" width="200" height="22" rx="8" fill="#0d1b4b"/>
           <rect x="50" y="45" width="200" height="7" rx="0" fill="#0a0e24"/>
-          <circle cx="68" cy="41" r="4" fill="#ff3cac"/>
-          <circle cx="82" cy="41" r="4" fill="#7b2ff7"/>
-          <circle cx="96" cy="41" r="4" fill="#00cfff"/>
+          <circle cx="68" cy="41" r="4" fill="#ff3cac"/><circle cx="82" cy="41" r="4" fill="#7b2ff7"/><circle cx="96" cy="41" r="4" fill="#00cfff"/>
           <rect x="112" y="35" width="120" height="12" rx="6" fill="#060b1a" stroke="#1a2a60" stroke-width="1"/>
           <text x="120" y="44" font-size="6" font-family="Nunito Sans" fill="#a0b0cc">https://portal.webspide.com</text>
           <rect x="58" y="60" width="42" height="100" rx="3" fill="#0d1b4b"/>
           <rect x="64" y="68" width="30" height="6" rx="3" fill="#7b2ff7" opacity=".8"/>
-          <rect x="64" y="80" width="24" height="5" rx="3" fill="#1a2a60"/>
-          <rect x="64" y="91" width="27" height="5" rx="3" fill="#1a2a60"/>
-          <rect x="64" y="102" width="20" height="5" rx="3" fill="#1a2a60"/>
-          <rect x="64" y="113" width="25" height="5" rx="3" fill="#1a2a60"/>
+          <rect x="64" y="80" width="24" height="5" rx="3" fill="#1a2a60"/><rect x="64" y="91" width="27" height="5" rx="3" fill="#1a2a60"/><rect x="64" y="102" width="20" height="5" rx="3" fill="#1a2a60"/><rect x="64" y="113" width="25" height="5" rx="3" fill="#1a2a60"/>
           <rect x="108" y="60" width="133" height="100" rx="3" fill="#070c1e"/>
           <path d="M112 145 L130 120 L150 108 L170 115 L190 100 L210 92 L232 85 L235 145 Z" fill="url(#lg2)" opacity=".18"/>
           <path d="M112 145 L130 120 L150 108 L170 115 L190 100 L210 92 L232 85" fill="none" stroke="#00cfff" stroke-width="2" filter="url(#glow2)"/>
-          <circle cx="150" cy="108" r="3.5" fill="#00cfff" filter="url(#glow2)"/>
-          <circle cx="190" cy="100" r="3.5" fill="#7b2ff7" filter="url(#glow2)"/>
-          <circle cx="232" cy="85" r="3.5" fill="#00cfff" filter="url(#glow2)"/>
-          <rect x="114" y="66" width="40" height="16" rx="3" fill="#0d1b4b"/>
-          <text x="134" y="78" text-anchor="middle" font-size="7" font-family="Rajdhani" fill="#00cfff" font-weight="700">+48%</text>
-          <rect x="160" y="66" width="40" height="16" rx="3" fill="#0d1b4b"/>
-          <text x="180" y="78" text-anchor="middle" font-size="7" font-family="Rajdhani" fill="#7b2ff7" font-weight="700">Active</text>
-          <rect x="140" y="170" width="20" height="14" rx="2" fill="#0d1b4b"/>
-          <rect x="125" y="183" width="50" height="6" rx="3" fill="#0d1b4b"/>
+          <circle cx="150" cy="108" r="3.5" fill="#00cfff" filter="url(#glow2)"/><circle cx="190" cy="100" r="3.5" fill="#7b2ff7" filter="url(#glow2)"/><circle cx="232" cy="85" r="3.5" fill="#00cfff" filter="url(#glow2)"/>
+          <rect x="114" y="66" width="40" height="16" rx="3" fill="#0d1b4b"/><text x="134" y="78" text-anchor="middle" font-size="7" font-family="Rajdhani" fill="#00cfff" font-weight="700">+48%</text>
+          <rect x="160" y="66" width="40" height="16" rx="3" fill="#0d1b4b"/><text x="180" y="78" text-anchor="middle" font-size="7" font-family="Rajdhani" fill="#7b2ff7" font-weight="700">Active</text>
+          <rect x="140" y="170" width="20" height="14" rx="2" fill="#0d1b4b"/><rect x="125" y="183" width="50" height="6" rx="3" fill="#0d1b4b"/>
           <rect x="18" y="80" width="60" height="50" rx="6" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1" class="float-anim-d"/>
           <text x="48" y="98" text-anchor="middle" font-size="9" fill="#a0b0cc" font-family="Nunito Sans">Users</text>
           <text x="48" y="115" text-anchor="middle" font-size="16" font-family="Rajdhani" font-weight="700" fill="#7b2ff7">2.4k</text>
           <rect x="225" y="75" width="58" height="48" rx="6" fill="#0d1b4b" stroke="#00cfff" stroke-width="1" class="float-anim-d2"/>
           <text x="254" y="93" text-anchor="middle" font-size="8" fill="#a0b0cc" font-family="Nunito Sans">Uptime</text>
           <text x="254" y="110" text-anchor="middle" font-size="15" font-family="Rajdhani" font-weight="700" fill="#00cfff">99.9%</text>
-          <circle cx="34" cy="145" r="12" fill="#1a0842" stroke="#7b2ff7" stroke-width="1.5"/>
-          <text x="34" y="149" text-anchor="middle" font-size="12">👤</text>
+          <circle cx="34" cy="145" r="12" fill="#1a0842" stroke="#7b2ff7" stroke-width="1.5"/><text x="34" y="149" text-anchor="middle" font-size="12">👤</text>
         </svg>
       </div>
     </div>
   </div>
 
-  <!-- 03: PWAs -->
   <div class="service-card reveal">
     <div class="card-text">
       <div class="card-num">03</div>
@@ -1353,10 +1272,7 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
     <div class="card-visual">
       <div class="illus-wrap float-anim">
         <svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="lg3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7b2ff7"/><stop offset="100%" stop-color="#00cfff"/></linearGradient>
-            <filter id="glow3"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-          </defs>
+          <defs><linearGradient id="lg3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7b2ff7"/><stop offset="100%" stop-color="#00cfff"/></linearGradient><filter id="glow3"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
           <ellipse cx="150" cy="195" rx="110" ry="22" fill="rgba(123,47,247,0.15)"/>
           <rect x="90" y="20" width="120" height="200" rx="18" fill="#0a0e24" stroke="#7b2ff7" stroke-width="2"/>
           <rect x="90" y="20" width="120" height="200" rx="18" fill="none" stroke="url(#lg3)" stroke-width="1.5" opacity=".6"/>
@@ -1367,28 +1283,19 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
           <circle cx="150" cy="100" r="38" fill="none" stroke="#7b2ff7" stroke-dasharray="6 4" stroke-width="1" class="spin" opacity=".5"/>
           <text x="150" y="95" text-anchor="middle" font-family="Rajdhani" font-weight="700" font-size="18" fill="url(#lg3)" filter="url(#glow3)">PWA</text>
           <text x="150" y="112" text-anchor="middle" font-size="9" fill="#a0b0cc" font-family="Nunito Sans">Web App</text>
-          <rect x="103" y="150" width="30" height="22" rx="4" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1"/>
-          <text x="118" y="165" text-anchor="middle" font-size="10" fill="#7b2ff7">⚡</text>
-          <rect x="140" y="150" width="30" height="22" rx="4" fill="#0d1b4b" stroke="#00cfff" stroke-width="1"/>
-          <text x="155" y="165" text-anchor="middle" font-size="10" fill="#00cfff">📱</text>
-          <rect x="177" y="150" width="22" height="22" rx="4" fill="#0d1b4b" stroke="#ff3cac" stroke-width="1"/>
-          <text x="188" y="165" text-anchor="middle" font-size="10" fill="#ff3cac">🌐</text>
+          <rect x="103" y="150" width="30" height="22" rx="4" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1"/><text x="118" y="165" text-anchor="middle" font-size="10" fill="#7b2ff7">⚡</text>
+          <rect x="140" y="150" width="30" height="22" rx="4" fill="#0d1b4b" stroke="#00cfff" stroke-width="1"/><text x="155" y="165" text-anchor="middle" font-size="10" fill="#00cfff">📱</text>
+          <rect x="177" y="150" width="22" height="22" rx="4" fill="#0d1b4b" stroke="#ff3cac" stroke-width="1"/><text x="188" y="165" text-anchor="middle" font-size="10" fill="#ff3cac">🌐</text>
           <rect x="130" y="196" width="40" height="4" rx="2" fill="#1a2a60"/>
-          <rect x="12" y="70" width="68" height="22" rx="6" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1" class="float-anim-d"/>
-          <text x="46" y="85" text-anchor="middle" font-size="8" font-family="Nunito Sans" fill="#a0b0cc">Offline Ready</text>
-          <rect x="224" y="70" width="68" height="22" rx="6" fill="#0d1b4b" stroke="#00cfff" stroke-width="1" class="float-anim-d2"/>
-          <text x="258" y="85" text-anchor="middle" font-size="8" font-family="Nunito Sans" fill="#a0b0cc">Fast Load</text>
-          <circle cx="38" cy="112" r="14" fill="#1a0842" stroke="#7b2ff7" stroke-width="1.5" class="float-anim-d"/>
-          <text x="38" y="117" text-anchor="middle" font-size="12">📡</text>
-          <circle cx="262" cy="112" r="14" fill="#1a0842" stroke="#00cfff" stroke-width="1.5" class="float-anim-d2"/>
-          <text x="262" y="117" text-anchor="middle" font-size="12">🔒</text>
-          <circle cx="150" cy="100" r="46" fill="none" stroke="#7b2ff7" stroke-width=".8" opacity=".25" style="animation:pulse-ring 2.8s ease-out infinite 0.5s"/>
+          <rect x="12" y="70" width="68" height="22" rx="6" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1" class="float-anim-d"/><text x="46" y="85" text-anchor="middle" font-size="8" font-family="Nunito Sans" fill="#a0b0cc">Offline Ready</text>
+          <rect x="224" y="70" width="68" height="22" rx="6" fill="#0d1b4b" stroke="#00cfff" stroke-width="1" class="float-anim-d2"/><text x="258" y="85" text-anchor="middle" font-size="8" font-family="Nunito Sans" fill="#a0b0cc">Fast Load</text>
+          <circle cx="38" cy="112" r="14" fill="#1a0842" stroke="#7b2ff7" stroke-width="1.5" class="float-anim-d"/><text x="38" y="117" text-anchor="middle" font-size="12">📡</text>
+          <circle cx="262" cy="112" r="14" fill="#1a0842" stroke="#00cfff" stroke-width="1.5" class="float-anim-d2"/><text x="262" y="117" text-anchor="middle" font-size="12">🔒</text>
         </svg>
       </div>
     </div>
   </div>
 
-  <!-- 04: Web Performance (reversed) -->
   <div class="service-card reverse reveal" style="background:rgba(9,14,34,0.6)">
     <div class="card-text">
       <div class="card-num">04</div>
@@ -1402,27 +1309,18 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
     <div class="card-visual">
       <div class="illus-wrap float-anim-d">
         <svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="lg4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00cfff"/><stop offset="100%" stop-color="#ff3cac"/></linearGradient>
-            <filter id="glow4"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-          </defs>
+          <defs><linearGradient id="lg4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00cfff"/><stop offset="100%" stop-color="#ff3cac"/></linearGradient><filter id="glow4"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
           <ellipse cx="150" cy="200" rx="115" ry="20" fill="rgba(0,207,255,0.1)"/>
           <rect x="45" y="40" width="170" height="120" rx="6" fill="#0a0e24" stroke="#00cfff" stroke-width="1.5"/>
           <rect x="45" y="40" width="170" height="18" rx="6" fill="#0d1b4b"/>
           <rect x="45" y="52" width="170" height="6" fill="#0a0e24"/>
-          <circle cx="58" cy="49" r="3" fill="#ff3cac"/>
-          <circle cx="70" cy="49" r="3" fill="#7b2ff7"/>
-          <circle cx="82" cy="49" r="3" fill="#00cfff"/>
+          <circle cx="58" cy="49" r="3" fill="#ff3cac"/><circle cx="70" cy="49" r="3" fill="#7b2ff7"/><circle cx="82" cy="49" r="3" fill="#00cfff"/>
           <rect x="52" y="65" width="156" height="85" rx="3" fill="#070c1e"/>
-          <line x1="52" y1="90" x2="208" y2="90" stroke="#1a2a60" stroke-width=".8"/>
-          <line x1="52" y1="110" x2="208" y2="110" stroke="#1a2a60" stroke-width=".8"/>
-          <line x1="52" y1="130" x2="208" y2="130" stroke="#1a2a60" stroke-width=".8"/>
+          <line x1="52" y1="90" x2="208" y2="90" stroke="#1a2a60" stroke-width=".8"/><line x1="52" y1="110" x2="208" y2="110" stroke="#1a2a60" stroke-width=".8"/><line x1="52" y1="130" x2="208" y2="130" stroke="#1a2a60" stroke-width=".8"/>
           <path d="M58 145 L80 130 L100 118 L120 110 L140 95 L160 82 L175 72 L200 68" fill="none" stroke="#00cfff" stroke-width="2.5" filter="url(#glow4)"/>
           <path d="M58 145 L80 130 L100 118 L120 110 L140 95 L160 82 L175 72 L200 68 L200 145 Z" fill="url(#lg4)" opacity=".12"/>
-          <circle cx="140" cy="95" r="4" fill="#00cfff" filter="url(#glow4)"/>
-          <circle cx="200" cy="68" r="4" fill="#ff3cac" filter="url(#glow4)"/>
-          <rect x="123" y="160" width="14" height="12" rx="2" fill="#0d1b4b"/>
-          <rect x="112" y="171" width="36" height="5" rx="3" fill="#0d1b4b"/>
+          <circle cx="140" cy="95" r="4" fill="#00cfff" filter="url(#glow4)"/><circle cx="200" cy="68" r="4" fill="#ff3cac" filter="url(#glow4)"/>
+          <rect x="123" y="160" width="14" height="12" rx="2" fill="#0d1b4b"/><rect x="112" y="171" width="36" height="5" rx="3" fill="#0d1b4b"/>
           <circle cx="240" cy="90" r="40" fill="#0a0e24" stroke="#7b2ff7" stroke-width="1.5"/>
           <circle cx="240" cy="90" r="32" fill="#060b1a"/>
           <path d="M212 108 A32 32 0 1 1 268 108" fill="none" stroke="#1a2a60" stroke-width="6" stroke-linecap="round"/>
@@ -1431,10 +1329,8 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
           <circle cx="240" cy="90" r="4" fill="#7b2ff7"/>
           <text x="240" y="102" text-anchor="middle" font-size="9" font-family="Rajdhani" font-weight="700" fill="#00cfff">98</text>
           <text x="240" y="114" text-anchor="middle" font-size="7" fill="#a0b0cc">Score</text>
-          <rect x="12" y="120" width="60" height="20" rx="5" fill="#0d1b4b" stroke="#00cfff" stroke-width="1" class="float-anim-d"/>
-          <text x="42" y="133" text-anchor="middle" font-size="7.5" fill="#00cfff" font-family="Nunito Sans">CDN ✓</text>
-          <rect x="12" y="148" width="60" height="20" rx="5" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1" class="float-anim-d2"/>
-          <text x="42" y="161" text-anchor="middle" font-size="7.5" fill="#7b2ff7" font-family="Nunito Sans">Cache ✓</text>
+          <rect x="12" y="120" width="60" height="20" rx="5" fill="#0d1b4b" stroke="#00cfff" stroke-width="1" class="float-anim-d"/><text x="42" y="133" text-anchor="middle" font-size="7.5" fill="#00cfff" font-family="Nunito Sans">CDN ✓</text>
+          <rect x="12" y="148" width="60" height="20" rx="5" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1" class="float-anim-d2"/><text x="42" y="161" text-anchor="middle" font-size="7.5" fill="#7b2ff7" font-family="Nunito Sans">Cache ✓</text>
           <rect x="80" y="190" width="90" height="22" rx="6" fill="#0d1b4b" stroke="#00cfff" stroke-width="1"/>
           <text x="125" y="205" text-anchor="middle" font-size="9" fill="#00cfff" font-family="Rajdhani" font-weight="600">⚡ 0.8s Load Time</text>
         </svg>
@@ -1442,7 +1338,6 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
     </div>
   </div>
 
-  <!-- 05: Migration -->
   <div class="service-card reveal">
     <div class="card-text">
       <div class="card-num">05</div>
@@ -1456,48 +1351,24 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
     <div class="card-visual">
       <div class="illus-wrap float-anim-d2">
         <svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="lg5" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7b2ff7"/><stop offset="100%" stop-color="#00cfff"/></linearGradient>
-            <filter id="glow5"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-          </defs>
+          <defs><linearGradient id="lg5" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7b2ff7"/><stop offset="100%" stop-color="#00cfff"/></linearGradient><filter id="glow5"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
           <ellipse cx="150" cy="205" rx="115" ry="18" fill="rgba(123,47,247,0.12)"/>
-          <rect x="20" y="80" width="90" height="20" rx="5" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1.5"/>
-          <rect x="24" y="84" width="12" height="12" rx="2" fill="#7b2ff7" opacity=".7"/>
-          <rect x="40" y="87" width="40" height="4" rx="2" fill="#1a2a60"/>
-          <rect x="84" y="87" width="10" height="4" rx="2" fill="#7b2ff7" style="animation:blink 1.5s ease-in-out infinite"/>
-          <rect x="20" y="104" width="90" height="20" rx="5" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1.5"/>
-          <rect x="24" y="108" width="12" height="12" rx="2" fill="#7b2ff7" opacity=".5"/>
-          <rect x="40" y="111" width="35" height="4" rx="2" fill="#1a2a60"/>
-          <rect x="84" y="111" width="10" height="4" rx="2" fill="#7b2ff7" opacity=".5" style="animation:blink 1.8s ease-in-out infinite 0.5s"/>
-          <rect x="20" y="128" width="90" height="20" rx="5" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1.5"/>
-          <rect x="24" y="132" width="12" height="12" rx="2" fill="#7b2ff7" opacity=".3"/>
-          <rect x="40" y="135" width="30" height="4" rx="2" fill="#1a2a60"/>
+          <rect x="20" y="80" width="90" height="20" rx="5" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1.5"/><rect x="24" y="84" width="12" height="12" rx="2" fill="#7b2ff7" opacity=".7"/><rect x="40" y="87" width="40" height="4" rx="2" fill="#1a2a60"/><rect x="84" y="87" width="10" height="4" rx="2" fill="#7b2ff7" style="animation:blink 1.5s ease-in-out infinite"/>
+          <rect x="20" y="104" width="90" height="20" rx="5" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1.5"/><rect x="24" y="108" width="12" height="12" rx="2" fill="#7b2ff7" opacity=".5"/><rect x="40" y="111" width="35" height="4" rx="2" fill="#1a2a60"/><rect x="84" y="111" width="10" height="4" rx="2" fill="#7b2ff7" opacity=".5" style="animation:blink 1.8s ease-in-out infinite 0.5s"/>
+          <rect x="20" y="128" width="90" height="20" rx="5" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1.5"/><rect x="24" y="132" width="12" height="12" rx="2" fill="#7b2ff7" opacity=".3"/><rect x="40" y="135" width="30" height="4" rx="2" fill="#1a2a60"/>
           <text x="65" y="78" text-anchor="middle" font-size="9" fill="#a0b0cc" font-family="Nunito Sans">Old Server</text>
           <path d="M115 110 L180 110" stroke="url(#lg5)" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#arr)"/>
           <path d="M115 125 L180 125" stroke="url(#lg5)" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#arr)"/>
-          <defs>
-            <marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-              <path d="M0 0 L6 3 L0 6 Z" fill="#00cfff"/>
-            </marker>
-          </defs>
+          <defs><marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#00cfff"/></marker></defs>
           <ellipse cx="150" cy="55" rx="42" ry="26" fill="#0d1b4b" stroke="url(#lg5)" stroke-width="2" filter="url(#glow5)"/>
           <path d="M138 55 L150 42 L162 55" fill="none" stroke="#00cfff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
           <line x1="150" y1="42" x2="150" y2="65" stroke="#00cfff" stroke-width="2.5" stroke-linecap="round"/>
           <text x="150" y="78" text-anchor="middle" font-size="9" fill="#a0b0cc" font-family="Nunito Sans">Cloud Migration</text>
-          <rect x="190" y="80" width="90" height="20" rx="5" fill="#0d1b4b" stroke="#00cfff" stroke-width="1.5"/>
-          <rect x="194" y="84" width="12" height="12" rx="2" fill="#00cfff" opacity=".9"/>
-          <rect x="210" y="87" width="40" height="4" rx="2" fill="#1a2a60"/>
-          <rect x="254" y="87" width="10" height="4" rx="2" fill="#00cfff" style="animation:blink 1.2s ease-in-out infinite"/>
-          <rect x="190" y="104" width="90" height="20" rx="5" fill="#0d1b4b" stroke="#00cfff" stroke-width="1.5"/>
-          <rect x="194" y="108" width="12" height="12" rx="2" fill="#00cfff" opacity=".7"/>
-          <rect x="210" y="111" width="38" height="4" rx="2" fill="#1a2a60"/>
-          <rect x="254" y="111" width="10" height="4" rx="2" fill="#00cfff" opacity=".7" style="animation:blink 1.4s ease-in-out infinite 0.3s"/>
-          <rect x="190" y="128" width="90" height="20" rx="5" fill="#0d1b4b" stroke="#00cfff" stroke-width="1.5"/>
-          <rect x="194" y="132" width="12" height="12" rx="2" fill="#00cfff" opacity=".5"/>
-          <rect x="210" y="135" width="36" height="4" rx="2" fill="#1a2a60"/>
+          <rect x="190" y="80" width="90" height="20" rx="5" fill="#0d1b4b" stroke="#00cfff" stroke-width="1.5"/><rect x="194" y="84" width="12" height="12" rx="2" fill="#00cfff" opacity=".9"/><rect x="210" y="87" width="40" height="4" rx="2" fill="#1a2a60"/><rect x="254" y="87" width="10" height="4" rx="2" fill="#00cfff" style="animation:blink 1.2s ease-in-out infinite"/>
+          <rect x="190" y="104" width="90" height="20" rx="5" fill="#0d1b4b" stroke="#00cfff" stroke-width="1.5"/><rect x="194" y="108" width="12" height="12" rx="2" fill="#00cfff" opacity=".7"/><rect x="210" y="111" width="38" height="4" rx="2" fill="#1a2a60"/><rect x="254" y="111" width="10" height="4" rx="2" fill="#00cfff" opacity=".7" style="animation:blink 1.4s ease-in-out infinite 0.3s"/>
+          <rect x="190" y="128" width="90" height="20" rx="5" fill="#0d1b4b" stroke="#00cfff" stroke-width="1.5"/><rect x="194" y="132" width="12" height="12" rx="2" fill="#00cfff" opacity=".5"/><rect x="210" y="135" width="36" height="4" rx="2" fill="#1a2a60"/>
           <text x="235" y="78" text-anchor="middle" font-size="9" fill="#a0b0cc" font-family="Nunito Sans">New Server</text>
-          <rect x="60" y="168" width="180" height="12" rx="6" fill="#0d1b4b"/>
-          <rect x="60" y="168" width="150" height="12" rx="6" fill="url(#lg5)" opacity=".85"/>
+          <rect x="60" y="168" width="180" height="12" rx="6" fill="#0d1b4b"/><rect x="60" y="168" width="150" height="12" rx="6" fill="url(#lg5)" opacity=".85"/>
           <text x="150" y="195" text-anchor="middle" font-size="9" fill="#00cfff" font-family="Rajdhani" font-weight="600">Migration: 83% Complete</text>
           <rect x="104" y="215" width="92" height="18" rx="5" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1"/>
           <text x="150" y="228" text-anchor="middle" font-size="8" fill="#7b2ff7" font-family="Nunito Sans">Zero Data Loss Guarantee</text>
@@ -1505,27 +1376,19 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
       </div>
     </div>
   </div>
-
 </section>
-<!-- END SERVICES SECTION -->
-<!-- HOW WE WORK — open page layout with VERTICAL sidebar tabs -->
+
+<!-- HOW WE WORK -->
 <section class="how-we-work" id="process">
   <div class="section-head" style="margin-bottom:2rem;position:relative;z-index:1">
     <div class="section-tag">How We Work</div>
     <h2 class="section-title">Our Development Process</h2>
     <p class="section-sub">Step by step, we build digital experiences that make an impact. Click each step to explore in detail.</p>
   </div>
- 
-  <!-- ▼ CHANGED: .hww-body wraps both sidebar + content -->
   <div class="hww-body">
- 
-    <!-- ▼ CHANGED: vertical sidebar tabs (populated by JS) -->
     <div class="hww-tabs" id="hwwTabs"></div>
- 
-    <!-- Content area -->
     <div class="hww-content-area" id="hwwContent"></div>
- 
-  </div><!-- end .hww-body -->
+  </div>
 </section>
 
 <!-- TECH STACK -->
@@ -1610,7 +1473,7 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
     <div class="villan-badge">Why Choose Webspide</div>
     <div class="left-title">Why Choose<br>Webspide For<br><span class="purple">Custom Web<br>Development<br>Services?</span></div>
     <div class="title-underline"></div>
-    <p class="left-desc">At WebSpide Technologies, we specialize in custom website development tailored to meet <br>unique business needs. Our team ensures cutting-edge web design and development<br> with a focus on innovation, scalability, and seamless performance.</p>
+    <p class="left-desc">At WebSpide Technologies, we specialize in custom website development tailored to meet unique business needs. Our team ensures cutting-edge web design and development with a focus on innovation, scalability, and seamless performance.</p>
     <div class="illustration">
       <div class="gear-left">⚙</div>
       <div class="gear-sm">⚙</div>
@@ -1632,7 +1495,7 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
         <div class="icon-circle"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 8l3 3-3 3M11 14h6"/></svg></div>
         <div class="feature-content">
           <div class="feature-title">Expertise in <span class="accent">Full-Stack Development</span></div>
-          <p class="feature-desc">Our services cover the fullIf you're asking about DIRAC at Airbus, manage complex computing tasks across cloud, grid, and on-premise resources. Organizations such as Airbus have used DIRAC-r spectrum of front-end and back-end technologies, ensuring a cohesive and high-performing website.</p>
+          <p class="feature-desc">Our services If you're asking about DIRAC at Airbus, DIRAC is a distributed computing and workload management platform used by large scientific and engineering organizations to managecover the full spectrum of front-end and back-end technologies, ensuring a cohesive and high-performing website.</p>
         </div>
       </div>
       <div class="feature-row">
@@ -1641,7 +1504,7 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
         <div class="icon-circle"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><polyline points="3 20 21 20"/></svg></div>
         <div class="feature-content">
           <div class="feature-title">Data-Driven <span class="accent">Approach</span></div>
-          <p class="feature-desc">We integrate advanced analytics to ensure data-driven improvements for better user engagement and sales.manage complex computing tasks across cloud, grid, and on-premise resources. Organizations such as Airbus have used DIRAC-r spectrum of front-end and back-end technologies,</p>
+          <p class="feature-desc">We integrateIf you're asking about DIRAC at Airbus, DIRAC is a distributed computing and workload management platform used by large scientific and engineering organizations to manageadvanced analytics to ensure data-driven improvements for better user engagement and sales.</p>
         </div>
       </div>
       <div class="feature-row">
@@ -1650,7 +1513,7 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
         <div class="icon-circle"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
         <div class="feature-content">
           <div class="feature-title">Security-First <span class="accent">Development</span></div>
-          <p class="feature-desc">We implement advanced encryption, firewalls, and multi-layer authentication to protect sensitive data.manage complex computing tasks across cloud, grid, and on-premise resources. Organizations such as Airbus have used DIRAC-r spectrum of front-end and back-end technologies,</p>
+          <p class="feature-desc">We implement If you're asking about DIRAC at Airbus, DIRAC is a distributed computing and workload management platform used by large scientific and engineering organizations to manageadvanced encryption, firewalls, and multi-layer authentication to protect sensitive data.</p>
         </div>
       </div>
       <div class="feature-row">
@@ -1659,7 +1522,7 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
         <div class="icon-circle"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg></div>
         <div class="feature-content">
           <div class="feature-title">Scalable &amp; <span class="accent">Future-Proof Solutions</span></div>
-          <p class="feature-desc">We build scalable websites that grow with your business using cloud-based architecture and modular components.manage complex computing tasks across cloud, grid, and on-premise resources. Organizations such as Airbus have used DIRAC-r spectrum of front-end and back-end technologies,</p>
+          <p class="feature-desc">We build scalable websitesIf you're asking about DIRAC at Airbus, DIRAC is a distributed computing and workload management platform used by large scientific and engineering organizations to manage that grow with your business using cloud-based architecture and modular components.</p>
         </div>
       </div>
       <div class="feature-row">
@@ -1668,7 +1531,7 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
         <div class="icon-circle"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
         <div class="feature-content">
           <div class="feature-title">Dedicated <span class="accent">Support &amp; Maintenance</span></div>
-          <p class="feature-desc">We provide continuous post-launch support ensuring your website remains optimized, updated, and securemanage complex computing tasks across cloud, grid, and on-premise resources. Organizations such as Airbus have used DIRAC-r spectrum of front-end and back-end technologies,.</p>
+          <p class="feature-desc">We provide If you're asking about DIRAC at Airbus, DIRAC is a distributed computing and workload management platform used by large scientific and engineering organizations to manageccontinuous post-launch support ensuring your website remains optimized, updated, and secure.</p>
         </div>
       </div>
     </div>
@@ -1774,12 +1637,7 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
 </footer>
 
 <script>
-/* ═══════════════════════════════════════════════
-   NAV DROPDOWNS — JS-controlled hover with delay
-   The dropdown stays open while cursor is anywhere
-   inside the li OR inside the dropdown panel.
-   Closes only after leaving both, with a 200ms grace.
-   ═══════════════════════════════════════════════ */
+/* ── NAV DROPDOWNS — fixed hover logic ── */
 (function(){
   function setupDropdown(liId){
     const li = document.getElementById(liId);
@@ -1791,28 +1649,21 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
       li.classList.add('open');
     }
     function scheduleClose(){
-      closeTimer = setTimeout(()=>{ li.classList.remove('open'); }, 12000);
+      closeTimer = setTimeout(function(){ li.classList.remove('open'); }, 200);
     }
     function cancelClose(){
-      if(closeTimer){ clearTimeout(closeTimer); closeTimer = 500; }
+      if(closeTimer){ clearTimeout(closeTimer); closeTimer = null; }
     }
 
-
-    // Hover the trigger li (button + surrounding area)
     li.addEventListener('mouseenter', open);
     li.addEventListener('mouseleave', scheduleClose);
 
-    // While moving into the dropdown panel, cancel close
     const dropdown = li.querySelector('.mega-dropdown, .simple-dropdown');
     if(dropdown){
       dropdown.addEventListener('mouseenter', cancelClose);
       dropdown.addEventListener('mouseleave', scheduleClose);
-    }
-
-    // Close when clicking a link inside the dropdown
-    if(dropdown){
-      dropdown.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', ()=>{ li.classList.remove('open'); });
+      dropdown.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click', function(){ li.classList.remove('open'); });
       });
     }
   }
@@ -1820,25 +1671,24 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
   setupDropdown('navServices');
   setupDropdown('navProducts');
 
-  // Close dropdowns when clicking outside
   document.addEventListener('click', function(e){
-    ['navServices','navProducts'].forEach(id=>{
+    ['navServices','navProducts'].forEach(function(id){
       const li = document.getElementById(id);
       if(li && !li.contains(e.target)) li.classList.remove('open');
     });
   });
 })();
 
-/* Hamburger */
+/* ── Hamburger ── */
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 const mobCta = document.getElementById('mobCta');
 function closeMobile(){hamburger.classList.remove('open');mobileMenu.classList.remove('open');document.body.style.overflow='';}
-hamburger.addEventListener('click',()=>{const isOpen=hamburger.classList.toggle('open');mobileMenu.classList.toggle('open',isOpen);document.body.style.overflow=isOpen?'hidden':'';});
+hamburger.addEventListener('click',function(){const isOpen=hamburger.classList.toggle('open');mobileMenu.classList.toggle('open',isOpen);document.body.style.overflow=isOpen?'hidden':'';});
 mobCta.addEventListener('click',closeMobile);
-document.querySelectorAll('.mob-link,.mob-sub-link').forEach(el=>el.addEventListener('click',closeMobile));
+document.querySelectorAll('.mob-link,.mob-sub-link').forEach(function(el){el.addEventListener('click',closeMobile);});
 
-/* Orbital Widget */
+/* ── Orbital Widget ── */
 (function(){
   const wrap=document.querySelector('.orbital-wrap');
   const icons=document.querySelectorAll('.orbit-icon');
@@ -1850,174 +1700,81 @@ document.querySelectorAll('.mob-link,.mob-sub-link').forEach(el=>el.addEventList
   const ciIcon=document.getElementById('ciIconWrap');
   const tapHint=document.getElementById('ciTapHint');
   const N=icons.length;let leaveTimer=null,active=null,isTouchDevice=false;
-  function place(){const W=wrap.offsetWidth,r=W*.46,cx=W/2,cy=W/2;icons.forEach((el,i)=>{const a=-Math.PI/2+(2*Math.PI/N)*i;el.style.left=(cx+r*Math.cos(a))+'px';el.style.top=(cy+r*Math.sin(a))+'px';});}
+  function place(){const W=wrap.offsetWidth,r=W*.46,cx=W/2,cy=W/2;icons.forEach(function(el,i){const a=-Math.PI/2+(2*Math.PI/N)*i;el.style.left=(cx+r*Math.cos(a))+'px';el.style.top=(cy+r*Math.sin(a))+'px';});}
   place();window.addEventListener('resize',place);
   function showInfo(el){if(leaveTimer){clearTimeout(leaveTimer);leaveTimer=null;}if(active===el)return;if(active)active.classList.remove('selected');active=el;el.classList.add('selected');const color=el.dataset.color||'#c084fc';const svg=el.querySelector('svg').cloneNode(true);ciName.textContent=el.dataset.name;ciTag.textContent=el.dataset.tag;ciIcon.innerHTML='';ciIcon.appendChild(svg);ciIcon.style.borderColor=color+'80';ciIcon.style.background=color+'18';tapHint.style.display=isTouchDevice?'block':'none';idle.style.opacity='0';idle.style.pointerEvents='none';info.classList.add('show');screen.classList.add('active');}
-  function hideInfo(){info.classList.remove('show');screen.classList.remove('active');setTimeout(()=>{idle.style.opacity='1';idle.style.pointerEvents='';},350);if(active){active.classList.remove('selected');active=null;}}
+  function hideInfo(){info.classList.remove('show');screen.classList.remove('active');setTimeout(function(){idle.style.opacity='1';idle.style.pointerEvents='';},350);if(active){active.classList.remove('selected');active=null;}}
   function navigateTo(href){if(!href)return;const target=document.querySelector(href);if(target){target.scrollIntoView({behavior:'smooth',block:'start'});}}
-  icons.forEach(el=>{
-    el.addEventListener('mouseenter',()=>{if(!isTouchDevice)showInfo(el);});
-    el.addEventListener('mouseleave',()=>{if(!isTouchDevice)leaveTimer=setTimeout(hideInfo,320);});
-    el.addEventListener('click',()=>{if(!isTouchDevice)navigateTo(el.dataset.href);});
-    el.addEventListener('touchstart',(e)=>{isTouchDevice=true;e.preventDefault();if(active===el){navigateTo(el.dataset.href);hideInfo();}else{showInfo(el);}},{passive:false});
+  icons.forEach(function(el){
+    el.addEventListener('mouseenter',function(){if(!isTouchDevice)showInfo(el);});
+    el.addEventListener('mouseleave',function(){if(!isTouchDevice)leaveTimer=setTimeout(hideInfo,320);});
+    el.addEventListener('click',function(){if(!isTouchDevice)navigateTo(el.dataset.href);});
+    el.addEventListener('touchstart',function(e){isTouchDevice=true;e.preventDefault();if(active===el){navigateTo(el.dataset.href);hideInfo();}else{showInfo(el);}},{passive:false});
   });
-  screen.addEventListener('click',()=>{if(active&&active.dataset.href){navigateTo(active.dataset.href);hideInfo();}});
-  screen.addEventListener('mouseenter',()=>{if(!isTouchDevice&&leaveTimer){clearTimeout(leaveTimer);leaveTimer=null;}});
-  screen.addEventListener('mouseleave',()=>{if(!isTouchDevice)leaveTimer=setTimeout(hideInfo,320);});
-  document.addEventListener('touchstart',(e)=>{if(!wrap.contains(e.target)&&active)hideInfo();});
+  screen.addEventListener('click',function(){if(active&&active.dataset.href){navigateTo(active.dataset.href);hideInfo();}});
+  screen.addEventListener('mouseenter',function(){if(!isTouchDevice&&leaveTimer){clearTimeout(leaveTimer);leaveTimer=null;}});
+  screen.addEventListener('mouseleave',function(){if(!isTouchDevice)leaveTimer=setTimeout(hideInfo,320);});
+  document.addEventListener('touchstart',function(e){if(!wrap.contains(e.target)&&active)hideInfo();});
 })();
 
-/* Scroll Reveal */
-const observer=new IntersectionObserver((entries)=>{entries.forEach((entry,i)=>{if(entry.isIntersecting){setTimeout(()=>entry.target.classList.add('visible'),i*80);}});},{threshold:0.1});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+/* ── Scroll Reveal ── */
+const observer=new IntersectionObserver(function(entries){entries.forEach(function(entry,i){if(entry.isIntersecting){setTimeout(function(){entry.target.classList.add('visible');},i*80);}});},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(function(el){observer.observe(el);});
 
-/* Form */
+/* ── Form ── */
 function updateChar(){const ta=document.getElementById('msgBox');const n=document.getElementById('charNum');if(ta.value.length>500)ta.value=ta.value.slice(0,500);n.textContent=ta.value.length;}
 function handleSend(){const name=document.getElementById('firstName').value.trim();const email=document.getElementById('emailField').value.trim();const agree=document.getElementById('agreeBox').checked;if(!name||!email||!agree){alert('Please fill in your name, email address, and agree to our Terms before submitting.');return;}document.getElementById('formBody').style.display='none';const s=document.getElementById('successBox');s.style.display='flex';s.classList.add('show');}
-function resetForm(){document.getElementById('formBody').style.display='';const s=document.getElementById('successBox');s.style.display='none';s.classList.remove('show');['firstName','emailField','msgBox'].forEach(id=>document.getElementById(id).value='');document.getElementById('agreeBox').checked=false;document.getElementById('charNum').textContent='0';}
+function resetForm(){document.getElementById('formBody').style.display='';const s=document.getElementById('successBox');s.style.display='none';s.classList.remove('show');['firstName','emailField','msgBox'].forEach(function(id){document.getElementById(id).value='';});document.getElementById('agreeBox').checked=false;document.getElementById('charNum').textContent='0';}
 
-/* HOW WE WORK — Tab-based, open page style */
+/* ── HOW WE WORK ── */
 (function(){
   const steps=[
-    {num:'01',label:'Requirements & Design',
-     title:'Requirements & Design Analysis',
-     desc:'We start by deeply understanding your business goals, target users, and technical constraints. Our team conducts in-depth discovery sessions and creates a solid blueprint that aligns technology with your vision.',
-     subs:[
-       {title:'Business Analysis',desc:'Understand goals and pain points',icon:'<path d="M3 3h18v18H3zM3 9h18M9 21V9"/>'},
-       {title:'Requirement Gathering',desc:'Collect and document all requirements',icon:'<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>'},
-       {title:'UI/UX Planning',desc:'Create wireframes and user flows',icon:'<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>'},
-       {title:'Tech Stack Selection',desc:'Choose the best technology fit',icon:'<path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/>'}
-     ],
-     deliverables:['Project scope document','Technical architecture plan','Wireframes & mockups','Sprint roadmap'],
-     illus:`<svg viewBox="0 0 180 140" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="i1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#c084fc"/></linearGradient></defs><ellipse cx="90" cy="130" rx="70" ry="12" fill="rgba(124,58,237,.18)"/><rect x="25" y="45" width="130" height="82" rx="8" fill="#0d1b4b" stroke="url(#i1)" stroke-width="1.5"/><rect x="25" y="45" width="130" height="16" rx="8" fill="#1a0842"/><rect x="35" y="52" width="8" height="8" rx="2" fill="#7c3aed"/><rect x="48" y="55" width="50" height="3" rx="2" fill="rgba(192,132,252,.4)"/><rect x="35" y="72" width="50" height="4" rx="2" fill="rgba(147,51,234,.4)"/><rect x="35" y="82" width="40" height="4" rx="2" fill="rgba(147,51,234,.2)"/><rect x="35" y="92" width="45" height="4" rx="2" fill="rgba(147,51,234,.2)"/><rect x="95" y="68" width="48" height="52" rx="4" fill="rgba(124,58,237,.1)" stroke="rgba(147,51,234,.3)" stroke-width="1"/><path d="M102 115 L110 100 L120 93 L132 98 L138 88" fill="none" stroke="#c084fc" stroke-width="1.5" stroke-linecap="round"/><circle cx="55" cy="24" r="16" fill="#1a0842" stroke="url(#i1)" stroke-width="1.5"/><path d="M48 24 L53 29 L63 19" fill="none" stroke="#c084fc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`},
- 
-    {num:'02',label:'Project Setup',
-     title:'Project Setup & Configuration',
-     desc:'We lay a solid technical foundation — environment setup, build tool configuration, and CI/CD pipelines — ensuring every developer can work efficiently from day one.',
-     subs:[
-       {title:'Environment Setup',desc:'Configure dev, staging, production',icon:'<rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/>'},
-       {title:'Build Tools',desc:'Webpack, Vite, and bundler setup',icon:'<circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M4.93 4.93l1.41 1.41"/>'},
-       {title:'CI/CD Pipeline',desc:'Automate builds, tests, deploys',icon:'<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>'},
-       {title:'Code Standards',desc:'Linting, formatting, conventions',icon:'<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>'}
-     ],
-     deliverables:['Dev environment ready','CI/CD pipeline live','Code style guide','Project scaffolding'],
-     illus:`<svg viewBox="0 0 180 140" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="i2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00cfff"/><stop offset="100%" stop-color="#7c3aed"/></linearGradient></defs><ellipse cx="90" cy="130" rx="65" ry="10" fill="rgba(0,207,255,.12)"/><circle cx="90" cy="65" r="45" fill="#0a0e24" stroke="url(#i2)" stroke-width="2"/><circle cx="90" cy="65" r="35" fill="#060b1a"/><text x="90" y="60" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="12" font-weight="900" fill="url(#i2)">SETUP</text><text x="90" y="76" text-anchor="middle" font-size="7.5" fill="#8b93b8" font-family="Nunito Sans">&lt;config /&gt;</text><rect x="10" y="40" width="36" height="18" rx="5" fill="#1a0842" stroke="#7c3aed" stroke-width="1"/><text x="28" y="52" text-anchor="middle" font-size="7" fill="#c084fc" font-family="Nunito Sans">Node.js</text><rect x="134" y="40" width="36" height="18" rx="5" fill="#1a0842" stroke="#00cfff" stroke-width="1"/><text x="152" y="52" text-anchor="middle" font-size="7" fill="#00cfff" font-family="Nunito Sans">Docker</text></svg>`},
- 
-    {num:'03',label:'Component Dev',
-     title:'Component Development',
-     desc:'We build reusable, modular, and accessible UI components following atomic design principles. Each component is crafted for flexibility, scalability, and a consistent experience across the entire application.',
-     subs:[
-       {title:'Component Library',desc:'Build modular, reusable UI blocks',icon:'<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>'},
-       {title:'State Management',desc:'Redux, Zustand, or Context API',icon:'<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>'},
-       {title:'API Integration',desc:'Connect to REST and GraphQL APIs',icon:'<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>'},
-       {title:'Design System',desc:'Tokens, themes, consistent visuals',icon:'<circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="9"/>'}
-     ],
-     deliverables:['Component library','State management','API layer','Design tokens'],
-     illus:`<svg viewBox="0 0 180 140" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="i3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#9333ea"/><stop offset="100%" stop-color="#e879f9"/></linearGradient></defs><ellipse cx="90" cy="130" rx="65" ry="10" fill="rgba(147,51,234,.15)"/><rect x="15" y="25" width="65" height="46" rx="6" fill="#0d1b4b" stroke="url(#i3)" stroke-width="1.5"/><rect x="23" y="34" width="28" height="4" rx="2" fill="#9333ea" opacity=".8"/><rect x="23" y="44" width="48" height="3" rx="2" fill="rgba(192,132,252,.25)"/><rect x="23" y="52" width="40" height="3" rx="2" fill="rgba(192,132,252,.18)"/><rect x="100" y="25" width="65" height="46" rx="6" fill="#0d1b4b" stroke="url(#i3)" stroke-width="1.5"/><rect x="108" y="34" width="28" height="4" rx="2" fill="#e879f9" opacity=".7"/><rect x="108" y="44" width="45" height="3" rx="2" fill="rgba(232,121,249,.2)"/><rect x="57" y="86" width="65" height="46" rx="6" fill="#0d1b4b" stroke="url(#i3)" stroke-width="1.5"/><rect x="65" y="95" width="32" height="4" rx="2" fill="#c084fc" opacity=".8"/><line x1="48" y1="48" x2="100" y2="48" stroke="rgba(147,51,234,.5)" stroke-width="1" stroke-dasharray="4 3"/><line x1="48" y1="70" x2="90" y2="86" stroke="rgba(147,51,234,.5)" stroke-width="1" stroke-dasharray="4 3"/><line x1="132" y1="70" x2="90" y2="86" stroke="rgba(147,51,234,.5)" stroke-width="1" stroke-dasharray="4 3"/></svg>`},
- 
-    {num:'04',label:'Testing & Optimization',
-     title:'Testing & Optimization',
-     desc:'We run comprehensive automated and manual tests, then optimize for Lighthouse scores, Core Web Vitals, and cross-browser compatibility. Every release meets our strict quality gates before it ships.',
-     subs:[
-       {title:'Unit Testing',desc:'Jest, Vitest component tests',icon:'<polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>'},
-       {title:'Performance',desc:'Lighthouse & Core Web Vitals',icon:'<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>'},
-       {title:'Cross-Browser',desc:'Chrome, Firefox, Safari, Edge',icon:'<circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"/>'},
-       {title:'Security Audit',desc:'OWASP checks, pen testing',icon:'<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>'}
-     ],
-     deliverables:['Test coverage report','Lighthouse 90+ score','0 critical bugs','Security clearance'],
-     illus:`<svg viewBox="0 0 180 140" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="i4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00cfff"/><stop offset="100%" stop-color="#ff3cac"/></linearGradient></defs><ellipse cx="90" cy="130" rx="60" ry="10" fill="rgba(0,207,255,.1)"/><circle cx="90" cy="66" r="48" fill="#060b1a" stroke="url(#i4)" stroke-width="2"/><circle cx="90" cy="66" r="38" fill="none" stroke="#1a2a60" stroke-width="8"/><path d="M54 92 A38 38 0 1 1 126 92" fill="none" stroke="url(#i4)" stroke-width="8" stroke-linecap="round"/><line x1="90" y1="66" x2="114" y2="42" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/><circle cx="90" cy="66" r="4" fill="#7c3aed"/><text x="90" y="76" text-anchor="middle" font-size="18" font-family="Orbitron,sans-serif" font-weight="900" fill="#00cfff">98</text><text x="90" y="98" text-anchor="middle" font-size="7.5" fill="#8b93b8" font-family="Nunito Sans">Lighthouse Score</text></svg>`},
- 
-    {num:'05',label:'Deployment & Launch',
-     title:'Deployment & Launch',
-     desc:'We use zero-downtime deployment strategies with CDN configuration, SSL setup, and real-time monitoring to ensure your application goes live smoothly, securely, and at peak performance.',
-     subs:[
-       {title:'Production Deploy',desc:'Zero-downtime deployment strategy',icon:'<path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>'},
-       {title:'CDN & Caching',desc:'Global content delivery network',icon:'<path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>'},
-       {title:'Monitoring',desc:'Uptime, errors, performance alerts',icon:'<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>'},
-       {title:'SSL & Security',desc:'HTTPS, headers, WAF setup',icon:'<rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>'}
-     ],
-     deliverables:['Live production site','SSL certificate','CDN configured','Monitoring dashboard'],
-     illus:`<svg viewBox="0 0 180 140" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="i5" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#00cfff"/></linearGradient></defs><ellipse cx="90" cy="132" rx="65" ry="10" fill="rgba(123,47,247,.12)"/><ellipse cx="90" cy="90" rx="50" ry="32" fill="#0a0e24" stroke="url(#i5)" stroke-width="2"/><ellipse cx="90" cy="90" rx="40" ry="24" fill="#060b1a"/><path d="M68 90 L90 65 L112 90" fill="none" stroke="#00cfff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="90" y1="65" x2="90" y2="103" stroke="#00cfff" stroke-width="2.5" stroke-linecap="round"/><rect x="30" y="108" width="120" height="6" rx="3" fill="#1a2a60"/><rect x="30" y="108" width="90" height="6" rx="3" fill="url(#i5)" opacity=".9"/><text x="90" y="125" text-anchor="middle" font-size="8" font-family="Rajdhani,sans-serif" font-weight="600" fill="#00cfff">Deployment: 78% Complete</text><circle cx="145" cy="40" r="16" fill="#0d1b4b" stroke="url(#i5)" stroke-width="1.5"/><path d="M139 41 L143 45 L152 35" fill="none" stroke="#c084fc" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`},
- 
-    {num:'06',label:'Maintenance',
-     title:'Maintenance & Iteration',
-     desc:"Our relationship doesn't end at launch. We provide ongoing maintenance, dependency updates, feature enhancements, and continuous performance monitoring to keep your application secure and evolving.",
-     subs:[
-       {title:'Dependency Updates',desc:'Keep all packages current & safe',icon:'<polyline points="1 4 1 10 7 10"/><polyline points="23 20 23 14 17 14"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"/>'},
-       {title:'Feature Releases',desc:'Agile sprints for new features',icon:'<circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>'},
-       {title:'Performance Watch',desc:'Monthly audits and optimization',icon:'<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>'},
-       {title:'24/7 Support',desc:'SLA-backed bug fixes and patches',icon:'<path d="M12 22v-4M12 2v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83"/>'}
-     ],
-     deliverables:['Monthly update report','Performance metrics','Feature changelog','Support response SLA'],
-     illus:`<svg viewBox="0 0 180 140" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="i6" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#c084fc"/><stop offset="100%" stop-color="#7c3aed"/></linearGradient></defs><ellipse cx="90" cy="130" rx="65" ry="10" fill="rgba(192,132,252,.12)"/><circle cx="90" cy="68" r="46" fill="none" stroke="rgba(147,51,234,.15)" stroke-width="1.5" stroke-dasharray="5 4"/><circle cx="90" cy="68" r="32" fill="none" stroke="rgba(192,132,252,.2)" stroke-width="1.5" stroke-dasharray="4 5"/><circle cx="90" cy="68" r="46" fill="none" stroke="url(#i6)" stroke-width="2" stroke-dasharray="10 6" style="animation:spin-slow 10s linear infinite"/><circle cx="90" cy="68" r="20" fill="#0d1b4b" stroke="url(#i6)" stroke-width="2"/><text x="90" y="63" text-anchor="middle" font-size="10" font-family="Orbitron,sans-serif" font-weight="900" fill="#c084fc">24/7</text><text x="90" y="77" text-anchor="middle" font-size="6.5" fill="#8b93b8" font-family="Nunito Sans">Support</text><circle cx="136" cy="28" r="12" fill="#1a0842" stroke="#c084fc" stroke-width="1.5"/><text x="136" y="33" text-anchor="middle" font-size="10">🔄</text><circle cx="44" cy="28" r="12" fill="#1a0842" stroke="#7c3aed" stroke-width="1.5"/><text x="44" y="33" text-anchor="middle" font-size="10">⚙</text><rect x="50" y="115" width="80" height="14" rx="5" fill="#0d1b4b" stroke="url(#i6)" stroke-width="1"/><text x="90" y="125" text-anchor="middle" font-size="7.5" fill="#c084fc" font-family="Rajdhani,sans-serif" font-weight="600">Continuous Improvement</text></svg>`}
+    {num:'01',label:'Requirements & Design',title:'Requirements & Design Analysis',desc:'We start by deeply understanding your business goals, target users, and technical constraints. Our team conducts in-depth discovery sessions and creates a solid blueprint that aligns technology with your vision.',subs:[{title:'Business Analysis',desc:'Understand goals and pain points',icon:'<path d="M3 3h18v18H3zM3 9h18M9 21V9"/>'},{title:'Requirement Gathering',desc:'Collect and document all requirements',icon:'<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>'},{title:'UI/UX Planning',desc:'Create wireframes and user flows',icon:'<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>'},{title:'Tech Stack Selection',desc:'Choose the best technology fit',icon:'<path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/>'}],deliverables:['Project scope document','Technical architecture plan','Wireframes & mockups','Sprint roadmap'],illus:`<svg viewBox="0 0 180 140" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="i1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#c084fc"/></linearGradient></defs><ellipse cx="90" cy="130" rx="70" ry="12" fill="rgba(124,58,237,.18)"/><rect x="25" y="45" width="130" height="82" rx="8" fill="#0d1b4b" stroke="url(#i1)" stroke-width="1.5"/><rect x="25" y="45" width="130" height="16" rx="8" fill="#1a0842"/><rect x="35" y="52" width="8" height="8" rx="2" fill="#7c3aed"/><rect x="48" y="55" width="50" height="3" rx="2" fill="rgba(192,132,252,.4)"/><rect x="35" y="72" width="50" height="4" rx="2" fill="rgba(147,51,234,.4)"/><rect x="35" y="82" width="40" height="4" rx="2" fill="rgba(147,51,234,.2)"/><rect x="35" y="92" width="45" height="4" rx="2" fill="rgba(147,51,234,.2)"/><rect x="95" y="68" width="48" height="52" rx="4" fill="rgba(124,58,237,.1)" stroke="rgba(147,51,234,.3)" stroke-width="1"/><path d="M102 115 L110 100 L120 93 L132 98 L138 88" fill="none" stroke="#c084fc" stroke-width="1.5" stroke-linecap="round"/><circle cx="55" cy="24" r="16" fill="#1a0842" stroke="url(#i1)" stroke-width="1.5"/><path d="M48 24 L53 29 L63 19" fill="none" stroke="#c084fc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`},
+    {num:'02',label:'Project Setup',title:'Project Setup & Configuration',desc:'We lay a solid technical foundation — environment setup, build tool configuration, and CI/CD pipelines — ensuring every developer can work efficiently from day one.',subs:[{title:'Environment Setup',desc:'Configure dev, staging, production',icon:'<rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/>'},{title:'Build Tools',desc:'Webpack, Vite, and bundler setup',icon:'<circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M4.93 4.93l1.41 1.41"/>'},{title:'CI/CD Pipeline',desc:'Automate builds, tests, deploys',icon:'<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>'},{title:'Code Standards',desc:'Linting, formatting, conventions',icon:'<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>'}],deliverables:['Dev environment ready','CI/CD pipeline live','Code style guide','Project scaffolding'],illus:`<svg viewBox="0 0 180 140" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="i2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00cfff"/><stop offset="100%" stop-color="#7c3aed"/></linearGradient></defs><ellipse cx="90" cy="130" rx="65" ry="10" fill="rgba(0,207,255,.12)"/><circle cx="90" cy="65" r="45" fill="#0a0e24" stroke="url(#i2)" stroke-width="2"/><circle cx="90" cy="65" r="35" fill="#060b1a"/><text x="90" y="60" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="12" font-weight="900" fill="url(#i2)">SETUP</text><text x="90" y="76" text-anchor="middle" font-size="7.5" fill="#8b93b8" font-family="Nunito Sans">&lt;config /&gt;</text><rect x="10" y="40" width="36" height="18" rx="5" fill="#1a0842" stroke="#7c3aed" stroke-width="1"/><text x="28" y="52" text-anchor="middle" font-size="7" fill="#c084fc" font-family="Nunito Sans">Node.js</text><rect x="134" y="40" width="36" height="18" rx="5" fill="#1a0842" stroke="#00cfff" stroke-width="1"/><text x="152" y="52" text-anchor="middle" font-size="7" fill="#00cfff" font-family="Nunito Sans">Docker</text></svg>`},
+    {num:'03',label:'Component Dev',title:'Component Development',desc:'We build reusable, modular, and accessible UI components following atomic design principles. Each component is crafted for flexibility, scalability, and a consistent experience across the entire application.',subs:[{title:'Component Library',desc:'Build modular, reusable UI blocks',icon:'<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>'},{title:'State Management',desc:'Redux, Zustand, or Context API',icon:'<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>'},{title:'API Integration',desc:'Connect to REST and GraphQL APIs',icon:'<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>'},{title:'Design System',desc:'Tokens, themes, consistent visuals',icon:'<circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="9"/>'}],deliverables:['Component library','State management','API layer','Design tokens'],illus:`<svg viewBox="0 0 180 140" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="i3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#9333ea"/><stop offset="100%" stop-color="#e879f9"/></linearGradient></defs><ellipse cx="90" cy="130" rx="65" ry="10" fill="rgba(147,51,234,.15)"/><rect x="15" y="25" width="65" height="46" rx="6" fill="#0d1b4b" stroke="url(#i3)" stroke-width="1.5"/><rect x="23" y="34" width="28" height="4" rx="2" fill="#9333ea" opacity=".8"/><rect x="23" y="44" width="48" height="3" rx="2" fill="rgba(192,132,252,.25)"/><rect x="23" y="52" width="40" height="3" rx="2" fill="rgba(192,132,252,.18)"/><rect x="100" y="25" width="65" height="46" rx="6" fill="#0d1b4b" stroke="url(#i3)" stroke-width="1.5"/><rect x="108" y="34" width="28" height="4" rx="2" fill="#e879f9" opacity=".7"/><rect x="108" y="44" width="45" height="3" rx="2" fill="rgba(232,121,249,.2)"/><rect x="57" y="86" width="65" height="46" rx="6" fill="#0d1b4b" stroke="url(#i3)" stroke-width="1.5"/><rect x="65" y="95" width="32" height="4" rx="2" fill="#c084fc" opacity=".8"/><line x1="48" y1="48" x2="100" y2="48" stroke="rgba(147,51,234,.5)" stroke-width="1" stroke-dasharray="4 3"/><line x1="48" y1="70" x2="90" y2="86" stroke="rgba(147,51,234,.5)" stroke-width="1" stroke-dasharray="4 3"/><line x1="132" y1="70" x2="90" y2="86" stroke="rgba(147,51,234,.5)" stroke-width="1" stroke-dasharray="4 3"/></svg>`},
+    {num:'04',label:'Testing & Optimization',title:'Testing & Optimization',desc:'We run comprehensive automated and manual tests, then optimize for Lighthouse scores, Core Web Vitals, and cross-browser compatibility. Every release meets our strict quality gates before it ships.',subs:[{title:'Unit Testing',desc:'Jest, Vitest component tests',icon:'<polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>'},{title:'Performance',desc:'Lighthouse & Core Web Vitals',icon:'<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>'},{title:'Cross-Browser',desc:'Chrome, Firefox, Safari, Edge',icon:'<circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"/>'},{title:'Security Audit',desc:'OWASP checks, pen testing',icon:'<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>'}],deliverables:['Test coverage report','Lighthouse 90+ score','0 critical bugs','Security clearance'],illus:`<svg viewBox="0 0 180 140" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="i4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00cfff"/><stop offset="100%" stop-color="#ff3cac"/></linearGradient></defs><ellipse cx="90" cy="130" rx="60" ry="10" fill="rgba(0,207,255,.1)"/><circle cx="90" cy="66" r="48" fill="#060b1a" stroke="url(#i4)" stroke-width="2"/><circle cx="90" cy="66" r="38" fill="none" stroke="#1a2a60" stroke-width="8"/><path d="M54 92 A38 38 0 1 1 126 92" fill="none" stroke="url(#i4)" stroke-width="8" stroke-linecap="round"/><line x1="90" y1="66" x2="114" y2="42" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/><circle cx="90" cy="66" r="4" fill="#7c3aed"/><text x="90" y="76" text-anchor="middle" font-size="18" font-family="Orbitron,sans-serif" font-weight="900" fill="#00cfff">98</text><text x="90" y="98" text-anchor="middle" font-size="7.5" fill="#8b93b8" font-family="Nunito Sans">Lighthouse Score</text></svg>`},
+    {num:'05',label:'Deployment & Launch',title:'Deployment & Launch',desc:'We use zero-downtime deployment strategies with CDN configuration, SSL setup, and real-time monitoring to ensure your application goes live smoothly, securely, and at peak performance.',subs:[{title:'Production Deploy',desc:'Zero-downtime deployment strategy',icon:'<path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>'},{title:'CDN & Caching',desc:'Global content delivery network',icon:'<path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>'},{title:'Monitoring',desc:'Uptime, errors, performance alerts',icon:'<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>'},{title:'SSL & Security',desc:'HTTPS, headers, WAF setup',icon:'<rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>'}],deliverables:['Live production site','SSL certificate','CDN configured','Monitoring dashboard'],illus:`<svg viewBox="0 0 180 140" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="i5" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#00cfff"/></linearGradient></defs><ellipse cx="90" cy="132" rx="65" ry="10" fill="rgba(123,47,247,.12)"/><ellipse cx="90" cy="90" rx="50" ry="32" fill="#0a0e24" stroke="url(#i5)" stroke-width="2"/><ellipse cx="90" cy="90" rx="40" ry="24" fill="#060b1a"/><path d="M68 90 L90 65 L112 90" fill="none" stroke="#00cfff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="90" y1="65" x2="90" y2="103" stroke="#00cfff" stroke-width="2.5" stroke-linecap="round"/><rect x="30" y="108" width="120" height="6" rx="3" fill="#1a2a60"/><rect x="30" y="108" width="90" height="6" rx="3" fill="url(#i5)" opacity=".9"/><text x="90" y="125" text-anchor="middle" font-size="8" font-family="Rajdhani,sans-serif" font-weight="600" fill="#00cfff">Deployment: 78% Complete</text><circle cx="145" cy="40" r="16" fill="#0d1b4b" stroke="url(#i5)" stroke-width="1.5"/><path d="M139 41 L143 45 L152 35" fill="none" stroke="#c084fc" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`},
+    {num:'06',label:'Maintenance',title:'Maintenance & Iteration',desc:"Our relationship doesn't end at launch. We provide ongoing maintenance, dependency updates, feature enhancements, and continuous performance monitoring to keep your application secure and evolving.",subs:[{title:'Dependency Updates',desc:'Keep all packages current & safe',icon:'<polyline points="1 4 1 10 7 10"/><polyline points="23 20 23 14 17 14"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"/>'},{title:'Feature Releases',desc:'Agile sprints for new features',icon:'<circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>'},{title:'Performance Watch',desc:'Monthly audits and optimization',icon:'<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>'},{title:'24/7 Support',desc:'SLA-backed bug fixes and patches',icon:'<path d="M12 22v-4M12 2v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83"/>'}],deliverables:['Monthly update report','Performance metrics','Feature changelog','Support response SLA'],illus:`<svg viewBox="0 0 180 140" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="i6" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#c084fc"/><stop offset="100%" stop-color="#7c3aed"/></linearGradient></defs><ellipse cx="90" cy="130" rx="65" ry="10" fill="rgba(192,132,252,.12)"/><circle cx="90" cy="68" r="46" fill="none" stroke="rgba(147,51,234,.15)" stroke-width="1.5" stroke-dasharray="5 4"/><circle cx="90" cy="68" r="32" fill="none" stroke="rgba(192,132,252,.2)" stroke-width="1.5" stroke-dasharray="4 5"/><circle cx="90" cy="68" r="46" fill="none" stroke="url(#i6)" stroke-width="2" stroke-dasharray="10 6" style="animation:spin-slow 10s linear infinite"/><circle cx="90" cy="68" r="20" fill="#0d1b4b" stroke="url(#i6)" stroke-width="2"/><text x="90" y="63" text-anchor="middle" font-size="10" font-family="Orbitron,sans-serif" font-weight="900" fill="#c084fc">24/7</text><text x="90" y="77" text-anchor="middle" font-size="6.5" fill="#8b93b8" font-family="Nunito Sans">Support</text><circle cx="136" cy="28" r="12" fill="#1a0842" stroke="#c084fc" stroke-width="1.5"/><text x="136" y="33" text-anchor="middle" font-size="10">🔄</text><circle cx="44" cy="28" r="12" fill="#1a0842" stroke="#7c3aed" stroke-width="1.5"/><text x="44" y="33" text-anchor="middle" font-size="10">⚙</text><rect x="50" y="115" width="80" height="14" rx="5" fill="#0d1b4b" stroke="url(#i6)" stroke-width="1"/><text x="90" y="125" text-anchor="middle" font-size="7.5" fill="#c084fc" font-family="Rajdhani,sans-serif" font-weight="600">Continuous Improvement</text></svg>`}
   ];
- 
-  const tabsEl  = document.getElementById('hwwTabs');
+
+  const tabsEl = document.getElementById('hwwTabs');
   const contentEl = document.getElementById('hwwContent');
   let current = 0;
- 
-  /* ── Build vertical sidebar tabs ── */
-  steps.forEach((s, i) => {
+
+  steps.forEach(function(s, i){
     const t = document.createElement('div');
     t.className = 'hww-tab' + (i === 0 ? ' active' : '');
     t.dataset.idx = i;
-    t.innerHTML = `<div class="hww-tab-num">${s.num}</div><div class="hww-tab-label">${s.label}</div>`;
+    t.innerHTML = '<div class="hww-tab-num">'+s.num+'</div><div class="hww-tab-label">'+s.label+'</div>';
     tabsEl.appendChild(t);
   });
- 
-  /* ── Build panel content ── */
-  steps.forEach((s, i) => {
+
+  steps.forEach(function(s, i){
     const panel = document.createElement('div');
     panel.className = 'hww-panel-item' + (i === 0 ? ' active' : '');
-    panel.innerHTML = `
-      <div class="hww-ph">
-        <div class="hww-badge"><span class="hww-badge-num">${s.num}</span></div>
-        <div class="hww-ph-text">
-          <h3>${s.title}</h3>
-          <p>${s.desc}</p>
-        </div>
-      </div>
-      <div class="hww-divider"></div>
-      <div class="hww-subs">
-        ${s.subs.map(sub => `
-          <div class="hww-sub">
-            <div class="hww-sub-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${sub.icon}</svg>
-            </div>
-            <div class="hww-sub-title">${sub.title}</div>
-            <div class="hww-sub-desc">${sub.desc}</div>
-          </div>`).join('')}
-      </div>
-      <div class="hww-bottom">
-        <div class="hww-illus">${s.illus}</div>
-        <div class="hww-deliverables">
-          <div class="hww-del-label">What we deliver</div>
-          <div class="hww-del-grid">
-            ${s.deliverables.map(d => `<div class="hww-del-item">${d}</div>`).join('')}
-          </div>
-        </div>
-      </div>`;
+    panel.innerHTML =
+      '<div class="hww-ph"><div class="hww-badge"><span class="hww-badge-num">'+s.num+'</span></div><div class="hww-ph-text"><h3>'+s.title+'</h3><p>'+s.desc+'</p></div></div>'+
+      '<div class="hww-divider"></div>'+
+      '<div class="hww-subs">'+s.subs.map(function(sub){return '<div class="hww-sub"><div class="hww-sub-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">'+sub.icon+'</svg></div><div class="hww-sub-title">'+sub.title+'</div><div class="hww-sub-desc">'+sub.desc+'</div></div>';}).join('')+'</div>'+
+      '<div class="hww-bottom"><div class="hww-illus">'+s.illus+'</div><div class="hww-deliverables"><div class="hww-del-label">What we deliver</div><div class="hww-del-grid">'+s.deliverables.map(function(d){return '<div class="hww-del-item">'+d+'</div>';}).join('')+'</div></div></div>';
     contentEl.appendChild(panel);
   });
- 
+
   const panels = contentEl.querySelectorAll('.hww-panel-item');
- 
-  /* ── Activate a step ── */
-  function activate(idx) {
-    if (idx === current) return;
-    document.querySelectorAll('.hww-tab').forEach(t => t.classList.remove('active'));
+
+  function activate(idx){
+    if(idx === current) return;
+    document.querySelectorAll('.hww-tab').forEach(function(t){t.classList.remove('active');});
     panels[current].classList.remove('active');
     current = idx;
     panels[current].classList.add('active');
-    document.querySelectorAll(`.hww-tab[data-idx="${idx}"]`).forEach(t => t.classList.add('active'));
+    document.querySelectorAll('.hww-tab[data-idx="'+idx+'"]').forEach(function(t){t.classList.add('active');});
   }
- 
-  /* ── Bind tabs: click + hover ── */
-  document.querySelectorAll('.hww-tab').forEach(el => {
-    el.addEventListener('click',      () => activate(+el.dataset.idx));
-    el.addEventListener('mouseenter', () => activate(+el.dataset.idx));
+
+  document.querySelectorAll('.hww-tab').forEach(function(el){
+    el.addEventListener('click', function(){activate(+el.dataset.idx);});
+    el.addEventListener('mouseenter', function(){activate(+el.dataset.idx);});
   });
- 
 })();
 </script>
 </body>
