@@ -1,10 +1,18 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
+  <title>Custom Web Development Services | Web Design and Development Company</title>
+
+  <meta name="description"
+        content="Looking for Custom Web Development Services? Our Web Design and Development Company specializes in creating tailored, high-performance websites for your business.">
+
+  <meta name="keywords"
+        content="custom web development, web design and development, custom web development services, web development companies near me,custom web design services, custom web design company,web development agency near me, custom website development services, custom website development,custom website development agency, website design and development services,
+URL: https://www.webspide.com/custom-web-development ">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Custom Web Development — Webspide</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Exo+2:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&family=Rajdhani:wght@500;600;700&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -224,7 +232,6 @@ body{background:var(--navy);color:var(--text-main);font-family:'Exo 2',sans-seri
 .mega-link:hover{color:#e8e0ff;background:rgba(147,51,234,.1);padding-left:8px}
 .mega-link:hover::before{background:#c084fc;box-shadow:0 0 10px rgba(192,132,252,.8)}
 
-/* ── App Development 2-column grid ── */
 .mega-col-app .mega-links{
   display:grid;grid-template-columns:1fr 1fr;gap:0 4px;
 }
@@ -265,18 +272,38 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
 .stat-num{font-family:'Orbitron',sans-serif;font-size:1.6rem;font-weight:900;background:linear-gradient(90deg,#c084fc,#e879f9);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .stat-label{font-size:.7rem;color:var(--text-muted);letter-spacing:1px;text-transform:uppercase}
 
-.orbital-wrap{position:relative;display:flex;align-items:center;justify-content:center;width:100%;aspect-ratio:1;max-width:520px;margin:0 auto}
+.orbital-wrap{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;max-width:520px;margin:0 auto;gap:12px}
+
+.orb-stage{position:relative;width:100%;aspect-ratio:1}
+
 .rings-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .dot-ring{transform-origin:50% 50%}
 .dot-ring-1{animation:spinR 10s linear infinite;filter:drop-shadow(0 0 5px rgba(147,51,234,.9))}
 .dot-ring-2{animation:spinR 7s linear infinite reverse;filter:drop-shadow(0 0 5px rgba(192,132,252,.9))}
 .dot-ring-3{animation:spinR 14s linear infinite;filter:drop-shadow(0 0 4px rgba(232,121,249,.8))}
 @keyframes spinR{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+
 .ring-glow{position:absolute;inset:3%;border-radius:50%;box-shadow:0 0 60px rgba(147,51,234,.28),inset 0 0 60px rgba(192,132,252,.1);border:2px solid transparent;background:linear-gradient(var(--navy),var(--navy)) padding-box,linear-gradient(135deg,#7c3aed,#c084fc) border-box}
-.center-device{position:relative;z-index:5;width:54%;aspect-ratio:1;display:flex;align-items:center;justify-content:center}
+
+.orb-svc-badge{
+  position:absolute;top:5%;right:6%;
+  background:rgba(147,51,234,.18);
+  border:1px solid rgba(192,132,252,.4);
+  border-radius:20px;padding:3px 11px;
+  font-size:.6rem;font-weight:700;letter-spacing:1px;color:#c084fc;
+  z-index:15;pointer-events:none;
+}
+.orb-svc-badge span{
+  font-family:'Orbitron',sans-serif;font-size:.75rem;font-weight:900;
+  background:linear-gradient(90deg,#c084fc,#e879f9);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  margin-right:3px;
+}
+
+.center-device{position:relative;z-index:5;width:36%;aspect-ratio:1;display:flex;align-items:center;justify-content:center;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}
 .device-glow{position:absolute;inset:-20%;border-radius:50%;background:radial-gradient(ellipse,rgba(147,51,234,.32) 0%,rgba(192,132,252,.15) 40%,transparent 70%);animation:breathe 4s ease-in-out infinite}
 @keyframes breathe{0%,100%{transform:scale(1);opacity:.8}50%{transform:scale(1.1);opacity:1}}
-.device-screen{position:relative;z-index:2;width:100%;aspect-ratio:1;background:linear-gradient(145deg,#0e0a2e 0%,#1a0840 50%,#0c0930 100%);border-radius:50%;border:2px solid rgba(147,51,234,.5);box-shadow:0 0 50px rgba(147,51,234,.35),inset 0 0 30px rgba(192,132,252,.06);overflow:hidden;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:border-color .4s}
+.device-screen{position:relative;z-index:2;width:100%;aspect-ratio:1;background:linear-gradient(145deg,#0e0a2e 0%,#1a0840 50%,#0c0930 100%);border-radius:50%;border:2px solid rgba(147,51,234,.5);box-shadow:0 0 50px rgba(147,51,234,.35),inset 0 0 30px rgba(192,132,252,.06);overflow:hidden;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:border-color .4s,box-shadow .4s;cursor:pointer}
 .device-screen.active{border-color:#c084fc;box-shadow:0 0 70px rgba(192,132,252,.5),inset 0 0 40px rgba(192,132,252,.1)}
 .circle-idle{display:flex;flex-direction:column;align-items:center;gap:.5rem;padding:1rem;text-align:center;transition:opacity .3s}
 .idle-bars{display:flex;flex-direction:column;gap:4px;width:65%}
@@ -285,21 +312,45 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
 .idle-bar:nth-child(3){animation-delay:.6s;opacity:.5;width:60%}
 @keyframes barPulse{0%,100%{transform:scaleX(.6);opacity:.5}50%{transform:scaleX(1);opacity:1}}
 .idle-label{font-family:'Orbitron',sans-serif;font-size:.38rem;letter-spacing:2px;color:#c084fc}
-.circle-info{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;padding:1.2rem;text-align:center;opacity:0;transform:scale(.85);transition:opacity .35s,transform .35s;pointer-events:none}
+.circle-info{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3rem;padding:1rem;text-align:center;opacity:0;transform:scale(.85);transition:opacity .35s,transform .35s;pointer-events:none}
 .circle-info.show{opacity:1;transform:scale(1);pointer-events:auto}
-.ci-icon-wrap{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(192,132,252,.12);border:1.5px solid rgba(192,132,252,.4);margin-bottom:.15rem}
-.ci-icon-wrap svg{width:22px;height:22px}
-.ci-name{font-family:'Orbitron',sans-serif;font-size:.6rem;font-weight:900;letter-spacing:1.5px;line-height:1.3;background:linear-gradient(90deg,#c084fc,#e879f9);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.ci-tagline{font-size:.5rem;color:var(--text-muted);line-height:1.5;letter-spacing:.5px}
-.ci-tap-hint{font-size:.42rem;color:#c084fc;letter-spacing:1px;margin-top:2px;animation:pulse 2s infinite}
+.ci-icon-wrap{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(192,132,252,.12);border:1.5px solid rgba(192,132,252,.4);margin-bottom:.1rem;flex-shrink:0}
+.ci-icon-wrap svg{width:18px;height:18px;fill:none;stroke:#c084fc;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.ci-num{font-family:'Orbitron',sans-serif;font-size:.45rem;font-weight:900;color:rgba(192,132,252,.6);letter-spacing:1px}
+.ci-name{font-family:'Orbitron',sans-serif;font-size:.48rem;font-weight:900;letter-spacing:1px;line-height:1.35;background:linear-gradient(90deg,#c084fc,#e879f9);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 
-.orbit-icon{position:absolute;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(14,10,46,.9),rgba(26,8,64,.9));border:1.5px solid rgba(147,51,234,.5);box-shadow:0 0 14px rgba(147,51,234,.3);cursor:pointer;transition:transform .3s,box-shadow .3s,border-color .3s;transform:translate(-50%,-50%);z-index:10;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.orbit-icon{position:absolute;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(14,10,46,.9),rgba(26,8,64,.9));border:1.5px solid rgba(147,51,234,.5);box-shadow:0 0 14px rgba(147,51,234,.3);cursor:pointer;transition:transform .3s,box-shadow .3s,border-color .3s;transform:translate(-50%,-50%);z-index:10;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
 .orbit-icon:hover{transform:translate(-50%,-50%) scale(1.2);box-shadow:0 0 24px rgba(192,132,252,.6);border-color:#c084fc}
 .orbit-icon.selected{border-color:#c084fc;box-shadow:0 0 24px rgba(192,132,252,.8);background:linear-gradient(135deg,rgba(192,132,252,.2),rgba(147,51,234,.2))}
-.orbit-icon svg{width:20px;height:20px}
-.oi-label{position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);font-size:.5rem;letter-spacing:1px;white-space:nowrap;color:var(--text-muted);font-weight:600;text-transform:uppercase}
+.orbit-icon svg{width:18px;height:18px;fill:none;stroke:#c084fc;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.oi-label{position:absolute;bottom:-18px;left:50%;transform:translateX(-50%);font-size:.44rem;letter-spacing:.8px;white-space:nowrap;color:var(--text-muted);font-weight:600;text-transform:uppercase}
+
 .platform{position:absolute;bottom:4%;left:50%;transform:translateX(-50%);width:55%;height:14px;background:linear-gradient(90deg,transparent,rgba(147,51,234,.6),#c084fc,rgba(232,121,249,.6),transparent);border-radius:50%;filter:blur(8px);animation:platformPulse 3s ease-in-out infinite}
 @keyframes platformPulse{0%,100%{opacity:.6}50%{opacity:1}}
+
+.orb-info-panel{
+  width:100%;
+  min-height:68px;
+  background:rgba(147,51,234,.08);
+  border:1px solid rgba(147,51,234,.28);
+  border-radius:14px;
+  padding:12px 16px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  transition:opacity .3s;
+}
+.orb-panel-icon{
+  width:40px;height:40px;min-width:40px;border-radius:10px;
+  background:linear-gradient(135deg,#5b21b6,#9333ea);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 0 16px rgba(147,51,234,.4);flex-shrink:0;
+}
+.orb-panel-icon svg{width:20px;height:20px;fill:none;stroke:#fff;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.orb-panel-num{font-size:.58rem;color:rgba(192,132,252,.7);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:2px}
+.orb-panel-name{font-family:'Orbitron',sans-serif;font-size:.65rem;font-weight:900;color:#e8e0ff;letter-spacing:.4px;margin-bottom:2px}
+.orb-panel-tag{font-size:.68rem;color:var(--text-muted);line-height:1.5}
+.orb-panel-empty{width:100%;text-align:center;font-size:.7rem;color:var(--text-muted);letter-spacing:.3px}
 
 .orbit-cards-mobile{display:none;grid-template-columns:repeat(2,1fr);gap:10px;padding:0 4%;margin-top:-10px;margin-bottom:20px}
 .orb-card{background:rgba(147,51,234,.08);border:1px solid rgba(147,51,234,.3);border-radius:12px;padding:12px;display:flex;align-items:center;gap:10px;cursor:pointer;text-decoration:none;transition:border-color .2s,background .2s}
@@ -327,10 +378,7 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
 .b1-title{font-family:'Exo 2',sans-serif;font-size:clamp(16px,2.8vw,22px);font-weight:900;color:#e8e0ff;letter-spacing:1.5px;text-transform:uppercase;line-height:1.25}
 .b1-title span{color:#c084fc;display:block;text-shadow:0 0 18px rgba(192,132,252,.5)}
 .b1-desc{font-size:12.5px;color:#9ca3c8;line-height:1.75;max-width:780px;margin:10px auto 0}
-
-/* ── CHANGED: increased gap from 12px to 20px ── */
 .b1-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:70px;position:relative;z-index:1}
-
 .b1-card{background:linear-gradient(145deg,rgba(33,24,68,.85) 0%,rgba(10,8,35,.95) 100%);border:1px solid rgba(147,51,234,.35);border-radius:40px;padding:30px 14px;position:relative;z-index:1;box-shadow:0 0 28px rgba(147,51,234,.08);transition:border-color .3s,box-shadow .3s,transform .3s;width:100%}
 .b1-card:hover{border-color:rgba(192,132,252,.55);box-shadow:0 8px 36px rgba(147,51,234,.18);transform:translateY(-3px)}
 .b1-card-hdr{display:flex;align-items:flex-start;gap:16px;margin-bottom:14px}
@@ -338,13 +386,10 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
 .b1-icon svg{width:22px;height:22px;fill:none;stroke:#c084fc;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .b1-card-title{font-family:'Exo 2',sans-serif;font-size:12.5px;font-weight:700;color:#e8e0ff;line-height:1.4;padding-top:4px}
 .b1-card-desc{font-size:11.5px;color:#8b93b8;line-height:1.7}
-
-/* ── CHANGED: increased gap from 14px to 20px ── */
 .banner-2{background:transparent;border-bottom:1px solid rgba(147,51,234,.2);padding:36px 44px 52px}
 .banner-2::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 80% at 15% 50%,rgba(80,30,180,.12) 0%,transparent 55%),radial-gradient(ellipse 50% 80% at 85% 50%,rgba(60,20,150,.10) 0%,transparent 55%);pointer-events:none;z-index:0}
 .b2-content{position:relative;z-index:1}
 .b2-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:70px;position:relative;z-index:1}
-
 .b2-card{background:linear-gradient(135deg,rgba(255,255,255,.03) 0%,rgba(147,51,234,.05) 100%);border:1px solid rgba(147,51,234,.3);border-radius:10px;padding:18px 16px;position:relative;z-index:1;transition:border-color .3s,box-shadow .3s,transform .3s}
 .b2-card:hover{border-color:rgba(192,132,252,.55);box-shadow:0 8px 32px rgba(147,51,234,.15);transform:translateY(-3px)}
 .b2-card-hdr{display:flex;align-items:flex-start;gap:12px;margin-bottom:8px}
@@ -353,101 +398,33 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
 .b2-card-title{font-family:'Exo 2',sans-serif;font-size:12.5px;font-weight:700;color:#e8e0ff;line-height:1.35;padding-top:4px}
 .b2-card-desc{font-size:11.5px;color:#8b93b8;line-height:1.7}
 
-.services-section{
-  position:relative;
-  z-index:1;
-  padding:0 0 40px;
-}
-
-.services-section-head{
-  text-align:center;
-  padding:70px 6% 0;
-  margin-bottom:0;
-}
-
-.service-card{
-  display:flex;
-  align-items:center;
-  padding:60px 80px;
-  gap:60px;
-  border-bottom:1px solid rgba(255,255,255,0.05);
-  position:relative;
-  overflow:hidden;
-  transition:background .3s;
-}
+.services-section{position:relative;z-index:1;padding:0 0 40px;}
+.services-section-head{text-align:center;padding:70px 6% 0;margin-bottom:0;}
+.service-card{display:flex;align-items:center;padding:60px 80px;gap:60px;border-bottom:1px solid rgba(255,255,255,0.05);position:relative;overflow:hidden;transition:background .3s;}
 .service-card:hover{background:rgba(123,47,247,0.04)}
 .service-card.reverse{flex-direction:row-reverse}
-
-.service-card::before{
-  content:'';
-  position:absolute;width:600px;height:600px;
-  border-radius:50%;
-  pointer-events:none;
-  opacity:0;
-  transition:opacity .5s;
-}
+.service-card::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;pointer-events:none;opacity:0;transition:opacity .5s;}
 .service-card:nth-child(odd)::before{background:radial-gradient(circle,var(--glow-p) 0%,transparent 65%);right:-150px;top:-150px}
 .service-card:nth-child(even)::before{background:radial-gradient(circle,var(--glow-c) 0%,transparent 65%);left:-150px;top:-150px}
 .service-card:hover::before{opacity:1}
-
-.card-text{
-  flex:1 1 0;
-  min-width:0;
-}
-.card-num{
-  font-family:'Rajdhani',sans-serif;
-  font-size:15px;font-weight:700;
-  color:var(--purple);letter-spacing:2px;
-  margin-bottom:8px;
-}
-.card-title{
-  font-family:'Rajdhani',sans-serif;
-  font-size:30px;font-weight:700;line-height:1.2;
-  color:#fff;margin-bottom:4px;
-}
+.card-text{flex:1 1 0;min-width:0;}
+.card-num{font-family:'Rajdhani',sans-serif;font-size:15px;font-weight:700;color:var(--purple);letter-spacing:2px;margin-bottom:8px;}
+.card-title{font-family:'Rajdhani',sans-serif;font-size:30px;font-weight:700;line-height:1.2;color:#fff;margin-bottom:4px;}
 .card-title span{color:var(--violet)}
-.card-desc{
-  color:var(--grey);font-size:14px;line-height:1.7;
-  margin-bottom:24px;
-}
+.card-desc{color:var(--grey);font-size:14px;line-height:1.7;margin-bottom:24px;}
 .card-btns{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
-.svc-btn-primary{
-  display:inline-flex;align-items:center;gap:8px;
-  background:var(--purple);color:#fff;
-  border:none;border-radius:6px;
-  padding:11px 22px;font-size:13px;font-weight:700;
-  cursor:pointer;white-space:nowrap;
-  transition:background .2s,box-shadow .2s,transform .15s;
-  text-decoration:none;
-}
+.svc-btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--purple);color:#fff;border:none;border-radius:6px;padding:11px 22px;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap;transition:background .2s,box-shadow .2s,transform .15s;text-decoration:none;}
 .svc-btn-primary:hover{background:var(--violet);box-shadow:0 0 20px var(--glow-p);transform:translateY(-1px)}
-.svc-btn-link{
-  color:var(--grey);font-size:13px;font-weight:600;
-  text-decoration:none;letter-spacing:.3px;
-  transition:color .2s;
-}
+.svc-btn-link{color:var(--grey);font-size:13px;font-weight:600;text-decoration:none;letter-spacing:.3px;transition:color .2s;}
 .svc-btn-link:hover{color:var(--cyan)}
-
-.card-visual{
-  flex:1 1 0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  position:relative;
-}
-.illus-wrap{
-  width:100%;
-  max-width:320px;
-  aspect-ratio:5/4;
-  position:relative;
-}
+.card-visual{flex:1 1 0;display:flex;align-items:center;justify-content:center;position:relative;}
+.illus-wrap{width:100%;max-width:320px;aspect-ratio:5/4;position:relative;}
 .illus-wrap svg{width:100%;height:100%;overflow:visible}
 
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 @keyframes pulse-ring{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.5);opacity:0}}
 @keyframes spin-slow{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
-
 .float-anim{animation:float 4s ease-in-out infinite}
 .float-anim-d{animation:float 4s ease-in-out infinite;animation-delay:-.8s}
 .float-anim-d2{animation:float 5s ease-in-out infinite;animation-delay:-2s}
@@ -533,206 +510,48 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
 .feature-title .accent{color:#c084fc}
 .feature-desc{font-size:16.5px;color:#7b85a8;line-height:1.7}
 
-.how-we-work{
-  position:relative;z-index:1;
-  padding:80px 5%;
-  border-top:1px solid rgba(147,51,234,.12);
-  border-bottom:1px solid rgba(147,51,234,.12);
-}
-.how-we-work::before{
-  content:'';position:absolute;inset:0;pointer-events:none;
-  background:
-    radial-gradient(ellipse 60% 50% at 20% 50%,rgba(124,58,237,.08) 0%,transparent 60%),
-    radial-gradient(ellipse 50% 60% at 80% 50%,rgba(147,51,234,.06) 0%,transparent 60%);
-}
-.hww-body{
-  display:flex;
-  align-items:flex-start;
-  gap:32px;
-  position:relative;
-  z-index:1;
-}
-.hww-tabs{
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-  width:230px;
-  min-width:230px;
-  position:sticky;
-  top:calc(var(--nav-h) + 24px);
-  z-index:1;
-}
-.hww-tabs::before{
-  content:'';
-  position:absolute;
-  left:16px;
-  top:36px;
-  bottom:36px;
-  width:1.5px;
-  background:linear-gradient(180deg,
-    transparent,
-    rgba(147,51,234,.4) 12%,
-    rgba(147,51,234,.4) 88%,
-    transparent);
-  z-index:0;
-}
-.hww-tab{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  padding:10px 14px;
-  border-radius:40px;
-  background:rgba(147,51,234,.06);
-  border:1px solid rgba(147,51,234,.2);
-  cursor:pointer;
-  transition:all .22s;
-  position:relative;
-  z-index:1;
-  width:100%;
-  text-align:left;
-}
+.how-we-work{position:relative;z-index:1;padding:80px 5%;border-top:1px solid rgba(147,51,234,.12);border-bottom:1px solid rgba(147,51,234,.12);}
+.how-we-work::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 50% at 20% 50%,rgba(124,58,237,.08) 0%,transparent 60%),radial-gradient(ellipse 50% 60% at 80% 50%,rgba(147,51,234,.06) 0%,transparent 60%);}
+.hww-body{display:flex;align-items:flex-start;gap:32px;position:relative;z-index:1;}
+.hww-tabs{display:flex;flex-direction:column;gap:8px;width:230px;min-width:230px;position:sticky;top:calc(var(--nav-h) + 24px);z-index:1;}
+.hww-tabs::before{content:'';position:absolute;left:16px;top:36px;bottom:36px;width:1.5px;background:linear-gradient(180deg,transparent,rgba(147,51,234,.4) 12%,rgba(147,51,234,.4) 88%,transparent);z-index:0;}
+.hww-tab{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:40px;background:rgba(147,51,234,.06);border:1px solid rgba(147,51,234,.2);cursor:pointer;transition:all .22s;position:relative;z-index:1;width:100%;text-align:left;}
 .hww-tab:hover{background:rgba(147,51,234,.12);border-color:rgba(192,132,252,.4)}
-.hww-tab.active{
-  background:rgba(147,51,234,.18);
-  border-color:rgba(192,132,252,.6);
-  box-shadow:0 0 20px rgba(147,51,234,.2);
-}
-.hww-tab-num{
-  width:34px;height:34px;min-width:34px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Orbitron',sans-serif;font-size:.58rem;font-weight:900;
-  letter-spacing:1px;
-  border:1.5px solid rgba(147,51,234,.3);
-  background:rgba(147,51,234,.08);
-  color:#5a6280;
-  transition:all .22s;
-  flex-shrink:0;
-}
+.hww-tab.active{background:rgba(147,51,234,.18);border-color:rgba(192,132,252,.6);box-shadow:0 0 20px rgba(147,51,234,.2);}
+.hww-tab-num{width:34px;height:34px;min-width:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Orbitron',sans-serif;font-size:.58rem;font-weight:900;letter-spacing:1px;border:1.5px solid rgba(147,51,234,.3);background:rgba(147,51,234,.08);color:#5a6280;transition:all .22s;flex-shrink:0;}
 .hww-tab:hover .hww-tab-num{color:#c084fc;border-color:rgba(192,132,252,.5);background:rgba(147,51,234,.15)}
-.hww-tab.active .hww-tab-num{
-  background:linear-gradient(135deg,#7c3aed,#c026d3);
-  border-color:transparent;color:#fff;
-  box-shadow:0 0 14px rgba(147,51,234,.5);
-}
-.hww-tab-label{
-  font-size:.72rem;
-  font-weight:600;
-  color:#5a6280;
-  line-height:1.3;
-  transition:color .22s;
-  flex:1;
-  text-align:left;
-  white-space:normal;
-}
-.hww-tab:hover .hww-tab-label,
-.hww-tab.active .hww-tab-label{color:#e8e0ff;font-weight:700}
-.hww-content-area{
-  position:relative;
-  z-index:1;
-  flex:1;
-  min-width:0;
-}
-.hww-panel-item{
-  display:none;
-  flex-direction:column;
-  gap:28px;
-  animation:hwwFadeIn .3s ease;
-}
+.hww-tab.active .hww-tab-num{background:linear-gradient(135deg,#7c3aed,#c026d3);border-color:transparent;color:#fff;box-shadow:0 0 14px rgba(147,51,234,.5);}
+.hww-tab-label{font-size:.72rem;font-weight:600;color:#5a6280;line-height:1.3;transition:color .22s;flex:1;text-align:left;white-space:normal;}
+.hww-tab:hover .hww-tab-label,.hww-tab.active .hww-tab-label{color:#e8e0ff;font-weight:700}
+.hww-content-area{position:relative;z-index:1;flex:1;min-width:0;}
+.hww-panel-item{display:none;flex-direction:column;gap:28px;animation:hwwFadeIn .3s ease;}
 .hww-panel-item.active{display:flex}
 @keyframes hwwFadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 .hww-ph{display:flex;align-items:flex-start;gap:22px}
-.hww-badge{
-  width:56px;height:56px;min-width:56px;border-radius:14px;
-  background:linear-gradient(135deg,#5b21b6,#9333ea);
-  display:flex;align-items:center;justify-content:center;
-  flex-shrink:0;box-shadow:0 0 28px rgba(147,51,234,.4);
-}
+.hww-badge{width:56px;height:56px;min-width:56px;border-radius:14px;background:linear-gradient(135deg,#5b21b6,#9333ea);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 0 28px rgba(147,51,234,.4);}
 .hww-badge-num{font-family:'Orbitron',sans-serif;font-size:.82rem;font-weight:900;color:#fff;letter-spacing:1px}
 .hww-ph-text h3{font-family:'Exo 2',sans-serif;font-size:1.3rem;font-weight:900;color:#fff;line-height:1.2;margin-bottom:8px}
 .hww-ph-text p{font-size:.85rem;color:#8b93b8;line-height:1.75;max-width:620px}
 .hww-subs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.hww-sub{
-  background:rgba(255,255,255,.025);
-  border:1px solid rgba(147,51,234,.2);
-  border-radius:14px;padding:18px 16px;
-  transition:border-color .2s,background .2s,transform .2s;
-}
-.hww-sub:hover{
-  border-color:rgba(192,132,252,.5);
-  background:rgba(147,51,234,.1);
-  transform:translateY(-3px);
-}
-.hww-sub-icon{
-  width:40px;height:40px;border-radius:10px;
-  background:rgba(147,51,234,.15);border:1px solid rgba(147,51,234,.35);
-  display:flex;align-items:center;justify-content:center;margin-bottom:12px;
-}
+.hww-sub{background:rgba(255,255,255,.025);border:1px solid rgba(147,51,234,.2);border-radius:14px;padding:18px 16px;transition:border-color .2s,background .2s,transform .2s;}
+.hww-sub:hover{border-color:rgba(192,132,252,.5);background:rgba(147,51,234,.1);transform:translateY(-3px);}
+.hww-sub-icon{width:40px;height:40px;border-radius:10px;background:rgba(147,51,234,.15);border:1px solid rgba(147,51,234,.35);display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
 .hww-sub-icon svg{width:18px;height:18px;fill:none;stroke:#c084fc;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .hww-sub-title{font-family:'Exo 2',sans-serif;font-size:.76rem;font-weight:700;color:#e8e0ff;line-height:1.3;margin-bottom:5px}
 .hww-sub-desc{font-size:.68rem;color:#7b85a8;line-height:1.6}
 .hww-bottom{display:grid;grid-template-columns:200px 1fr;gap:24px;align-items:center}
 .hww-illus{display:flex;align-items:center;justify-content:center}
 .hww-illus svg{width:100%;max-width:200px;height:auto;filter:drop-shadow(0 0 20px rgba(147,51,234,.35))}
-.hww-del-label{
-  font-size:.66rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;
-  color:#7c3aed;margin-bottom:12px;display:flex;align-items:center;gap:6px;
-}
+.hww-del-label{font-size:.66rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7c3aed;margin-bottom:12px;display:flex;align-items:center;gap:6px;}
 .hww-del-label::before{content:'';width:20px;height:1px;background:linear-gradient(90deg,#7c3aed,transparent)}
 .hww-del-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px}
-.hww-del-item{
-  display:flex;align-items:center;gap:9px;
-  font-size:.75rem;color:#a0a8c8;line-height:1.4;
-}
-.hww-del-item::before{
-  content:'';width:18px;height:18px;min-width:18px;border-radius:50%;
-  background:rgba(147,51,234,.15);border:1.5px solid #7c3aed;flex-shrink:0;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpolyline points='2 6 5 9 10 3' fill='none' stroke='%23c084fc' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:center;background-size:10px;
-}
-.hww-divider{
-  width:100%;height:1px;
-  background:linear-gradient(90deg,transparent,rgba(147,51,234,.25) 20%,rgba(192,132,252,.3) 50%,rgba(147,51,234,.25) 80%,transparent);
-}
+.hww-del-item{display:flex;align-items:center;gap:9px;font-size:.75rem;color:#a0a8c8;line-height:1.4;}
+.hww-del-item::before{content:'';width:18px;height:18px;min-width:18px;border-radius:50%;background:rgba(147,51,234,.15);border:1.5px solid #7c3aed;flex-shrink:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpolyline points='2 6 5 9 10 3' fill='none' stroke='%23c084fc' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center;background-size:10px;}
+.hww-divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(147,51,234,.25) 20%,rgba(192,132,252,.3) 50%,rgba(147,51,234,.25) 80%,transparent);}
 
-@media(max-width:1100px){
-  .hww-body{gap:22px}
-  .hww-tabs{width:190px;min-width:190px}
-  .hww-subs{grid-template-columns:repeat(2,1fr)}
-  .hww-bottom{grid-template-columns:1fr}
-  .hww-illus{display:none}
-}
-@media(max-width:900px){
-  .hww-body{flex-direction:column;gap:0}
-  .hww-tabs{
-    flex-direction:row;flex-wrap:wrap;
-    width:100%;min-width:unset;
-    position:static;
-    gap:6px;margin-bottom:28px;
-    justify-content:flex-start;
-  }
-  .hww-tabs::before{display:none}
-  .hww-tab{width:auto;padding:8px 12px;border-radius:40px}
-  .hww-tab-label{display:none}
-  .hww-subs{grid-template-columns:1fr 1fr}
-  .hww-bottom{grid-template-columns:1fr}
-  .hww-illus{display:none}
-}
-@media(max-width:600px){
-  .hww-body{flex-direction:column;gap:0}
-  .hww-tabs{
-    flex-direction:row;flex-wrap:wrap;
-    width:100%;min-width:unset;
-    position:static;
-    gap:5px;margin-bottom:20px;
-  }
-  .hww-tabs::before{display:none}
-  .hww-tab{width:auto;padding:7px 10px;border-radius:30px}
-  .hww-tab-label{display:none}
-  .hww-panel-item{gap:20px}
-  .hww-ph-text h3{font-size:1rem}
-  .hww-subs{grid-template-columns:1fr 1fr;gap:8px}
-  .hww-del-grid{grid-template-columns:1fr}
-}
+@media(max-width:1100px){.hww-body{gap:22px}.hww-tabs{width:190px;min-width:190px}.hww-subs{grid-template-columns:repeat(2,1fr)}.hww-bottom{grid-template-columns:1fr}.hww-illus{display:none}}
+@media(max-width:900px){.hww-body{flex-direction:column;gap:0}.hww-tabs{flex-direction:row;flex-wrap:wrap;width:100%;min-width:unset;position:static;gap:6px;margin-bottom:28px;justify-content:flex-start;}.hww-tabs::before{display:none}.hww-tab{width:auto;padding:8px 12px;border-radius:40px}.hww-tab-label{display:none}.hww-subs{grid-template-columns:1fr 1fr}.hww-bottom{grid-template-columns:1fr}.hww-illus{display:none}}
+@media(max-width:600px){.hww-body{flex-direction:column;gap:0}.hww-tabs{flex-direction:row;flex-wrap:wrap;width:100%;min-width:unset;position:static;gap:5px;margin-bottom:20px;}.hww-tabs::before{display:none}.hww-tab{width:auto;padding:7px 10px;border-radius:30px}.hww-tab-label{display:none}.hww-panel-item{gap:20px}.hww-ph-text h3{font-size:1rem}.hww-subs{grid-template-columns:1fr 1fr;gap:8px}.hww-del-grid{grid-template-columns:1fr}}
 
 .contact-section{position:relative;z-index:1;padding:80px 5%;background:rgba(255,255,255,.01);border-top:1px solid rgba(147,51,234,.1)}
 .contact-wrap{display:grid;grid-template-columns:1fr 1.55fr;border-radius:22px;overflow:hidden;border:1px solid rgba(147,51,234,.25);box-shadow:0 30px 80px rgba(0,0,0,.4);max-width:1100px;margin:0 auto}
@@ -884,10 +703,11 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
   .stat-num{font-size:1.4rem}
   .orbital-wrap{max-width:300px}
   .orbit-icon{width:38px;height:38px}
-  .orbit-icon svg{width:16px;height:16px}
-  .oi-label{font-size:.44rem;bottom:-18px}
+  .orbit-icon svg{width:15px;height:15px}
+  .oi-label{font-size:.4rem;bottom:-17px}
   .orbit-cards-mobile{grid-template-columns:1fr 1fr;gap:8px;padding:0 4%}
   .orb-card{padding:10px}
+  .orb-info-panel{padding:10px 12px;gap:10px}
   .banner{padding:28px 16px 36px}
   .banner-2{padding:20px 16px 32px}
   .b1-cards,.b2-cards{grid-template-columns:1fr;gap:12px}
@@ -926,7 +746,7 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
   .hero h1{font-size:1.4rem}
   .orbital-wrap{max-width:260px}
   .orbit-icon{width:34px;height:34px}
-  .orbit-icon svg{width:14px;height:14px}
+  .orbit-icon svg{width:13px;height:13px}
   .oi-label{display:none}
   .b1-card-hdr{gap:12px}
   .b1-icon{width:40px;height:40px;min-width:40px}
@@ -938,11 +758,11 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
 <body>
 <div class="bg-layer"></div>
 <div class="bg-grid"></div>
+
 <!-- HEADER -->
 <header class="site-header">
   <div class="nav-bar">
     <a href="#" class="logo-wrap">
-    
         <defs>
           <linearGradient id="wGrad1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#c084fc"/><stop offset="50%" stop-color="#9333ea"/><stop offset="100%" stop-color="#6d28d9"/></linearGradient>
           <linearGradient id="wGrad2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#e879f9"/><stop offset="100%" stop-color="#c084fc"/></linearGradient>
@@ -973,7 +793,6 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
         </button>
         <div class="mega-dropdown" id="megaDropdown">
           <div class="mega-inner">
-            <!-- Col 1: Web Development — 2 cols -->
             <div class="mega-col">
               <div class="mega-col-header">
                 <div class="mega-col-icon"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
@@ -989,7 +808,6 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
                 <a href="#services" class="mega-link">Front End Development</a>
               </div>
             </div>
-            <!-- Col 2: App Development — 2 cols via mega-col-app -->
             <div class="mega-col mega-col-app">
               <div class="mega-col-header">
                 <div class="mega-col-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
@@ -1000,10 +818,8 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
                 <a href="#services" class="mega-link">Flutter App Development</a>
                 <a href="#services" class="mega-link">iOS App Development</a>
                 <a href="#services" class="mega-link">React Native App Development</a>
-          
               </div>
             </div>
-            <!-- Col 3: Digital Marketing — 2 cols -->
             <div class="mega-col">
               <div class="mega-col-header">
                 <div class="mega-col-icon"><svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2L15 22l-4-9-9-4 20-7z"/></svg></div>
@@ -1090,54 +906,61 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
       <span class="grad">WEB DEVELOPMENT</span>
       <span class="outline">Elevate Brands</span>
     </h1>
-    <p class="hero-desc fade-in delay-2">We build high-performance, pixel-perfect websites and web applications tailored to your vision. From concept to deployment, our solutions align with your business goals and create a lasting digital presence.</p>
+    <p class="hero-desc fade-in delay-2">Build a high-performing website with our custom web development services. We specialize in web design and development, creating scalable, secure, and user-friendly websites. As a custom web design company, we craft solutions that align with your business needs. Partner with a web development agency near me to enhance your digital presence.</p>
     <div class="hero-btns fade-in delay-3">
       <a href="#contact" class="btn-primary">Start Your Project</a>
       <a href="#services" class="btn-outline">Explore Services</a>
     </div>
+
   </div>
+
   <div class="orbital-wrap fade-in delay-3">
-    <svg class="rings-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
-      <circle class="dot-ring dot-ring-1" cx="250" cy="250" r="245" fill="none" stroke="#9333ea" stroke-width="2.5" stroke-dasharray="6 14" stroke-linecap="round"/>
-      <circle class="dot-ring dot-ring-2" cx="250" cy="250" r="205" fill="none" stroke="#c084fc" stroke-width="2.5" stroke-dasharray="5 12" stroke-linecap="round"/>
-      <circle class="dot-ring dot-ring-3" cx="250" cy="250" r="165" fill="none" stroke="#e879f9" stroke-width="2" stroke-dasharray="4 16" stroke-linecap="round"/>
-    </svg>
-    <div class="ring-glow"></div>
-    <div class="center-device" id="centerDevice">
-      <div class="device-glow"></div>
-      <div class="device-screen" id="deviceScreen">
-        <div class="circle-idle" id="circleIdle">
-          <div class="idle-bars"><div class="idle-bar"></div><div class="idle-bar"></div><div class="idle-bar"></div></div>
-          <div class="idle-label">WEBSPIDE</div>
-        </div>
-        <div class="circle-info" id="circleInfo">
-          <div class="ci-icon-wrap" id="ciIconWrap"></div>
-          <div class="ci-name" id="ciName"></div>
-          <div class="ci-tagline" id="ciTagline"></div>
-          <div class="ci-tap-hint" id="ciTapHint">tap to go →</div>
+    <div class="orb-stage" id="orbStage">
+      <svg class="rings-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+        <circle class="dot-ring dot-ring-1" cx="250" cy="250" r="245" fill="none" stroke="#9333ea" stroke-width="2.5" stroke-dasharray="6 14" stroke-linecap="round"/>
+        <circle class="dot-ring dot-ring-2" cx="250" cy="250" r="205" fill="none" stroke="#c084fc" stroke-width="2.5" stroke-dasharray="5 12" stroke-linecap="round"/>
+        <circle class="dot-ring dot-ring-3" cx="250" cy="250" r="165" fill="none" stroke="#e879f9" stroke-width="2" stroke-dasharray="4 16" stroke-linecap="round"/>
+      </svg>
+      <div class="ring-glow"></div>
+      <div class="orb-svc-badge"><span>10</span> Services</div>
+      <div class="center-device">
+        <div class="device-glow"></div>
+        <div class="device-screen" id="deviceScreen">
+          <div class="circle-idle" id="circleIdle">
+            <div class="idle-bars">
+              <div class="idle-bar"></div>
+              <div class="idle-bar"></div>
+              <div class="idle-bar"></div>
+            </div>
+            <div class="idle-label">WEBSPIDE</div>
+          </div>
+          <div class="circle-info" id="circleInfo">
+            <div class="ci-icon-wrap" id="ciIconWrap"></div>
+            <div class="ci-num" id="ciNum"></div>
+            <div class="ci-name" id="ciName"></div>
+          </div>
         </div>
       </div>
+      <div class="platform"></div>
     </div>
-    <div class="platform"></div>
-    <div class="orbit-icon" id="oi0" data-name="UI / UX Design" data-tag="Intuitive interfaces that delight users and drive conversions" data-color="#c084fc" data-href="#services"><svg viewBox="0 0 24 24" fill="none" stroke="url(#g1)" stroke-width="1.5"><defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c084fc"/><stop offset="1" stop-color="#9333ea"/></linearGradient></defs><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span class="oi-label">UI/UX</span></div>
-    <div class="orbit-icon" id="oi1" data-name="Custom Dev" data-tag="Clean code built for speed, scale, and long-term maintainability" data-color="#9333ea" data-href="#services"><svg viewBox="0 0 24 24" fill="none" stroke="url(#g2)" stroke-width="1.5"><defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9333ea"/><stop offset="1" stop-color="#e879f9"/></linearGradient></defs><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg><span class="oi-label">Dev</span></div>
-    <div class="orbit-icon" id="oi2" data-name="Cloud Hosting" data-tag="Managed AWS & cloud deployments with 99.9% uptime SLAs" data-color="#7c3aed" data-href="#services"><svg viewBox="0 0 24 24" fill="none" stroke="url(#g3)" stroke-width="1.5"><defs><linearGradient id="g3" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c084fc"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs><path d="M17.5 19a4.5 4.5 0 0 0 0-9 4.5 4.5 0 0 0-8.4-2A3.5 3.5 0 0 0 3 11.5a3.5 3.5 0 0 0 3.5 3.5"/><polyline points="12 12 12 21"/><polyline points="8 17 12 21 16 17"/></svg><span class="oi-label">Cloud</span></div>
-    <div class="orbit-icon" id="oi3" data-name="Mobile Ready" data-tag="Pixel-perfect responsive design across every device and screen" data-color="#e879f9" data-href="#services"><svg viewBox="0 0 24 24" fill="none" stroke="url(#g4)" stroke-width="1.5"><defs><linearGradient id="g4" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e879f9"/><stop offset="1" stop-color="#9333ea"/></linearGradient></defs><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg><span class="oi-label">Mobile</span></div>
-    <div class="orbit-icon" id="oi4" data-name="API Integration" data-tag="RESTful & GraphQL APIs connecting your digital ecosystem" data-color="#c084fc" data-href="#services"><svg viewBox="0 0 24 24" fill="none" stroke="url(#g5)" stroke-width="1.5"><defs><linearGradient id="g5" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c084fc"/><stop offset="1" stop-color="#e879f9"/></linearGradient></defs><path d="M6 3h12l3 9H3L6 3z"/><path d="M3 12v7a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><line x1="12" y1="12" x2="12" y2="21"/></svg><span class="oi-label">API</span></div>
-    <div class="orbit-icon" id="oi5" data-name="E-Commerce" data-tag="High-converting stores with secure checkout & inventory tools" data-color="#9333ea" data-href="#services"><svg viewBox="0 0 24 24" fill="none" stroke="url(#g6)" stroke-width="1.5"><defs><linearGradient id="g6" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9333ea"/><stop offset="1" stop-color="#c084fc"/></linearGradient></defs><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><span class="oi-label">Ecomm</span></div>
-    <div class="orbit-icon" id="oi6" data-name="CMS Platform" data-tag="Headless CMS & WordPress solutions for effortless content control" data-color="#e879f9" data-href="#services"><svg viewBox="0 0 24 24" fill="none" stroke="url(#g7)" stroke-width="1.5"><defs><linearGradient id="g7" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e879f9"/><stop offset="1" stop-color="#c084fc"/></linearGradient></defs><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg><span class="oi-label">CMS</span></div>
-    <div class="orbit-icon" id="oi7" data-name="SEO & Speed" data-tag="Core Web Vitals, technical SEO & performance audits" data-color="#7c3aed" data-href="#services"><svg viewBox="0 0 24 24" fill="none" stroke="url(#g8)" stroke-width="1.5"><defs><linearGradient id="g8" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#7c3aed"/><stop offset="1" stop-color="#e879f9"/></linearGradient></defs><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span class="oi-label">SEO</span></div>
+    <div class="orb-info-panel" id="orbInfoPanel">
+      <div class="orb-panel-empty">Hover or tap a service icon to explore</div>
+    </div>
   </div>
 </section>
 
-<!-- Mobile Orbit Cards -->
+
 <div class="orbit-cards-mobile">
-  <a href="#services" class="orb-card"><div class="orb-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><div><div class="orb-card-name">UI / UX Design</div><div class="orb-card-tag">Intuitive interfaces</div></div></a>
-  <a href="#services" class="orb-card"><div class="orb-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><div><div class="orb-card-name">Custom Dev</div><div class="orb-card-tag">Clean, scalable code</div></div></a>
-  <a href="#services" class="orb-card"><div class="orb-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 0-9 4.5 4.5 0 0 0-8.4-2A3.5 3.5 0 0 0 3 11.5a3.5 3.5 0 0 0 3.5 3.5"/></svg></div><div><div class="orb-card-name">Cloud Hosting</div><div class="orb-card-tag">99.9% uptime SLAs</div></div></a>
-  <a href="#services" class="orb-card"><div class="orb-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div><div><div class="orb-card-name">Mobile Ready</div><div class="orb-card-tag">All devices perfect</div></div></a>
-  <a href="#services" class="orb-card"><div class="orb-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div><div><div class="orb-card-name">E-Commerce</div><div class="orb-card-tag">High-converting stores</div></div></a>
-  <a href="#services" class="orb-card"><div class="orb-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><div><div class="orb-card-name">SEO & Speed</div><div class="orb-card-tag">Core Web Vitals</div></div></a>
+  <a href="svc card2" class="orb-card"><div class="orb-card-icon"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><div><div class="orb-card-name">Full-Stack Dev</div><div class="orb-card-tag">End-to-end custom build</div></div></a>
+  <a href="#services" class="orb-card"><div class="orb-card-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><div><div class="orb-card-name">Front-End</div><div class="orb-card-tag">React, Vue, Angular</div></div></a>
+  <a href="#services" class="orb-card"><div class="orb-card-icon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/></svg></div><div><div class="orb-card-name">Back-End</div><div class="orb-card-tag">APIs & server logic</div></div></a>
+  <a href="#services" class="orb-card"><div class="orb-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div><div><div class="orb-card-name">Custom CMS</div><div class="orb-card-tag">Full content control</div></div></a>
+  <a href="#services" class="orb-card"><div class="orb-card-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div><div><div class="orb-card-name">E-Commerce</div><div class="orb-card-tag">High-converting stores</div></div></a>
+  <a href="#services" class="orb-card"><div class="orb-card-icon"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div><div><div class="orb-card-name">API & Integrations</div><div class="orb-card-tag">REST & GraphQL</div></div></a>
+  <a href="#services" class="orb-card"><div class="orb-card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></div><div><div class="orb-card-name">Web Portals</div><div class="orb-card-tag">Enterprise solutions</div></div></a>
+  <a href="#services" class="orb-card"><div class="orb-card-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div><div><div class="orb-card-name">PWAs & Web Apps</div><div class="orb-card-tag">Offline-ready apps</div></div></a>
+  <a href="#services" class="orb-card"><div class="orb-card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="orb-card-name">Performance Opt</div><div class="orb-card-tag">Core Web Vitals</div></div></a>
+  <a href="#services" class="orb-card"><div class="orb-card-icon"><svg viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><polyline points="23 20 23 14 17 14"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"/></svg></div><div><div class="orb-card-name">Migration</div><div class="orb-card-tag">Zero data loss</div></div></a>
 </div>
 
 <!-- BANNER 1 -->
@@ -1172,18 +995,21 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
 <section class="services-section" id="services">
   <div class="services-section-head">
     <div class="section-tag">What We Do</div>
-    <h2 class="section-title">Our Core Services</h2>
+    <h2 class="section-title">Our Custom Web Development Services</h2>
     <p class="section-sub" style="margin-bottom:0">End-to-end web solutions engineered for performance, scalability, and seamless connectivity across every platform.</p>
   </div>
 
-  <div class="service-card reveal">
+
+  
+  <!-- CARD 01 -->
+  <div class="service-card reveal" id="svc-card-1">
     <div class="card-text">
       <div class="card-num">01</div>
-      <h2 class="card-title">API Development &amp;<br><span>Third-Party Integrations</span></h2>
-      <p class="card-desc">Seamless connectivity is the backbone of modern web applications, and WebSpide Technologies specialises in API development &amp; third-party integrations to enhance your website's functionality. We ensure smooth communication between applications, platforms, and services using RESTful APIs, GraphQL, and secure payment gateways.</p>
-      <div class="card-btns">
+      <h2 class="card-title">API Development & Third-Party Integrations</h2>
+      <p class="card-desc"> Seamless connectivity is the backbone of modern web applications, and WebSpide Technologies specializes in API development & third-party integrations to enhance your website’s functionality. Our custom web development services ensure secure and scalable API solutions that enable smooth communication between applications, platforms, and services. Whether you need a RESTful API, GraphQL integration, or third-party payment gateway, we design custom website development services tailored to your business needs. Our web development agency near me provides expert solutions for integrating CRM, ERP, social media, and cloud services, ensuring a unified digital experience. As a custom web design company, we focus on secure authentication, real-time data exchange, and robust API architecture, delivering high-performance solutions that streamline workflows and enhance user experience. Whether you’re building an enterprise platform or an eCommerce store, our custom website development agency ensures that third-party integrations improve efficiency, scalability, and overall functionality. With our expertise in web design and development, your business can leverage automation and enhanced connectivity to drive digital growth.</p>
+           <div class="card-btns">
         <a href="#contact" class="svc-btn-primary">Connect Your Systems Seamlessly →</a>
-        <a href="#" class="svc-btn-link">Read More</a>
+        <a href="#" class="svc-btn-link"></a>
       </div>
     </div>
     <div class="card-visual">
@@ -1216,11 +1042,13 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
     </div>
   </div>
 
-  <div class="service-card reverse reveal" style="background:rgba(9,14,34,0.6)">
+  <!-- CARD 02 -->
+  <div class="service-card reverse reveal" id="svc-card-2" style="background:rgba(9,14,34,0.6)">
     <div class="card-text">
       <div class="card-num">02</div>
-      <h2 class="card-title">Custom Web Portals &amp;<br><span>Enterprise Solutions</span></h2>
-      <p class="card-desc">Empower your business with custom web portals &amp; enterprise solutions designed to streamline operations and enhance user engagement. We build scalable, secure, and interactive web portals tailored to specific business needs with role-based access, advanced analytics, and real-time data management.</p>
+      <h2 class="card-title">Frontend Development</span></h2>
+      <p class="card-desc"> Enhance user engagement with visually stunning and interactive front-end development services from WebSpide Technologies. We specialize in crafting intuitive and responsive custom web design services, ensuring that your website provides a seamless user experience across all devices. Our expertise in modern frameworks allows us to create dynamic, fast-loading, and SEO-optimized websites that keep visitors engaged. As a leading custom web development company, we focus on building interactive user interfaces that align with your brand identity and business objectives. Whether you're launching a new website or revamping an existing one, our web development agency near me ensures pixel-perfect designs with optimized performance. We incorporate the latest technologies to deliver custom website development solutions that are visually appealing, functionally rich, and highly responsive. With a mobile-first approach, our custom web development services ensure that your website remains fully optimized for speed, accessibility, and usability. Let us transform your ideas into an engaging online experience that enhances user interaction and conversion rates.
+CTA: Get a Stunning UI</p>
       <div class="card-btns">
         <a href="#contact" class="svc-btn-primary">Build a Powerful Web Portal →</a>
         <a href="#" class="svc-btn-link">Read More</a>
@@ -1259,11 +1087,12 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
     </div>
   </div>
 
-  <div class="service-card reveal">
+  <!-- CARD 03 -->
+  <div class="service-card reveal" id="svc-card-3">
     <div class="card-text">
       <div class="card-num">03</div>
-      <h2 class="card-title">Progressive Web Apps (PWAs)<br><span>&amp; Web Apps</span></h2>
-      <p class="card-desc">Enhance user experience with Progressive Web Apps (PWAs) &amp; web apps that offer the speed and functionality of native applications. We build fast, reliable, and engaging web applications that work seamlessly across all devices, even in low-network conditions.</p>
+      <h2 class="card-title">BackEnd Development<br></h2>
+      <p class="card-desc"> A strong digital presence requires a robust and scalable back-end, and WebSpide Technologies specializes in back-end development that ensures seamless functionality and performance. Our custom web development team builds powerful server-side architectures that handle complex processes efficiently. Whether you need a secure database, API integration, or a custom content management system, we create reliable custom website development services tailored to your business needs. Our custom web design company ensures seamless communication between the front-end and back-end, providing an uninterrupted user experience. As a web development agency near me, we develop scalable solutions using modern frameworks, ensuring your website or application can handle growing traffic and business operations smoothly. We implement security best practices to safeguard your data while optimizing performance with advanced caching and server management techniques. With our custom web development services, your business can leverage high-performance architecture, seamless API integrations, and future-proof solutions to stay ahead in the digital landscape.</p>
       <div class="card-btns">
         <a href="#contact" class="svc-btn-primary">Build a High-Performance Web App →</a>
         <a href="#" class="svc-btn-link">Read More</a>
@@ -1296,11 +1125,12 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
     </div>
   </div>
 
-  <div class="service-card reverse reveal" style="background:rgba(9,14,34,0.6)">
+  <!-- CARD 04 -->
+  <div class="service-card reverse reveal" id="svc-card-4" style="background:rgba(9,14,34,0.6)">
     <div class="card-text">
       <div class="card-num">04</div>
-      <h2 class="card-title">Web Performance<br><span>Optimization</span></h2>
-      <p class="card-desc">Speed and performance are critical for online success. We optimize your website for speed, mobile responsiveness, and SEO rankings. Our expert team leverages advanced techniques like image optimization, caching, lazy loading, and CDN integration to deliver a seamless and lightning-fast experience.</p>
+      <h2 class="card-title">Custom CMS Development</span></h2>
+      <p class="card-desc"> Managing your website content efficiently is crucial for digital success, and WebSpide Technologies provides custom CMS development solutions tailored to your business needs. Our custom web development services ensure that your website is not only visually appealing but also easy to manage and update. Whether you need a bespoke custom website development solution or an advanced enterprise CMS, we create user-friendly platforms that allow you to control content with ease. Our custom web design services focus on creating intuitive dashboards, ensuring seamless navigation and efficient content management. As a trusted web development agency near me, we integrate advanced features like multi-user access, SEO tools, and security enhancements into our custom website development services. Our CMS platforms support scalability, making it easy for businesses to expand their online presence. Whether you require a CMS for blogging, eCommerce, or corporate websites, our team delivers a custom web development solution that aligns with your business objectives, ensuring flexibility and efficiency.</p>
       <div class="card-btns">
         <a href="#contact" class="svc-btn-primary">Optimize Your Website Performance →</a>
         <a href="#" class="svc-btn-link">Read More</a>
@@ -1338,11 +1168,12 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
     </div>
   </div>
 
-  <div class="service-card reveal">
+  <!-- CARD 05 -->
+  <div class="service-card reveal" id="svc-card-5">
     <div class="card-text">
       <div class="card-num">05</div>
       <h2 class="card-title">Migration &amp;<br><span>Upgradation Services</span></h2>
-      <p class="card-desc">Stay ahead in the digital landscape with our migration &amp; upgradation services. We ensure your website remains updated, secure, and high-performing while migrating you to the latest platforms and technologies with zero data loss.</p>
+      <p class="card-desc"> Stay ahead in the digital landscape with our migration & upgradation services, ensuring your website remains updated, secure, and high-performing. WebSpide Technologies specializes in custom web development services that seamlessly migrate your website to the latest platforms and technologies without any downtime or data loss. Whether you need to upgrade your CMS, move to a more powerful hosting solution, or transition to a new framework, our custom website development agency ensures a smooth and efficient migration process. Our web development agency near me focuses on improving security, speed, and scalability while preserving your website’s integrity and functionality. As a custom web design company, we handle everything from database migration to UI/UX enhancements, ensuring that your website meets modern standards. Our custom web development team ensures that your website remains competitive with enhanced features, mobile responsiveness, and improved performance. Let us help you future-proof your website with seamless upgrades and secure migrations.</p>
       <div class="card-btns">
         <a href="#contact" class="svc-btn-primary">Upgrade Your Website Today →</a>
         <a href="#" class="svc-btn-link">Read More</a>
@@ -1376,13 +1207,310 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
       </div>
     </div>
   </div>
+
+  <!-- ═══════════════════════════════════════════
+       5 NEW SERVICE CARDS (06–10)
+       ═══════════════════════════════════════════ -->
+
+  <!-- CARD 06 — WordPress & CMS Development -->
+  <div class="service-card reverse reveal" id="svc-card-6" style="background:rgba(9,14,34,0.6)">
+    <div class="card-text">
+      <div class="card-num">06</div>
+      <h2 class="card-title">Web Performance Optimization</span></h2>
+      <p class="card-desc"> Speed and performance are critical factors for online success, and WebSpide Technologies specializes in web performance optimization to enhance user experience and SEO rankings. Our custom web development services ensure that your website is optimized for speed, mobile responsiveness, and seamless navigation. As a leading custom web design company, we implement advanced techniques like image optimization, caching, lazy loading, and CDN integration to boost website speed. Our web development agency near me focuses on reducing page load times, improving server response, and ensuring smooth functionality across all devices. Whether you have an eCommerce store, a corporate website, or a web application, our custom website development services optimize site performance to reduce bounce rates and increase conversions. By leveraging the latest tools and technologies, we enhance the speed, security, and accessibility of your website, ensuring a seamless user experience. With our expertise in web design and development, your website will perform at its best, delivering an optimized experience that keeps visitors engaged.</p>
+      <div class="card-btns">
+        <a href="#contact" class="svc-btn-primary">Get a Custom CMS Built →</a>
+        <a href="#" class="svc-btn-link">Read More</a>
+      </div>
+    </div>
+    <div class="card-visual">
+      <div class="illus-wrap float-anim-d">
+        <svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="lg6" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7b2ff7"/><stop offset="100%" stop-color="#00cfff"/></linearGradient>
+            <filter id="glow6"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <ellipse cx="150" cy="205" rx="115" ry="20" fill="rgba(123,47,247,0.14)"/>
+          <rect x="30" y="30" width="240" height="165" rx="9" fill="#0a0e24" stroke="#7b2ff7" stroke-width="1.5"/>
+          <rect x="30" y="30" width="240" height="22" rx="9" fill="#0d1b4b"/>
+          <rect x="30" y="46" width="240" height="6" fill="#0a0e24"/>
+          <circle cx="48" cy="41" r="4" fill="#ff3cac"/><circle cx="62" cy="41" r="4" fill="#7b2ff7"/><circle cx="76" cy="41" r="4" fill="#00cfff"/>
+          <rect x="88" y="34" width="140" height="14" rx="7" fill="#060b1a" stroke="#1a2a60" stroke-width="1"/>
+          <text x="94" y="44" font-size="6.5" font-family="Nunito Sans" fill="#a0b0cc">cms.webspide.com/wp-admin</text>
+          <rect x="38" y="60" width="55" height="125" rx="4" fill="#0d1b4b"/>
+          <rect x="46" y="70" width="30" height="5" rx="2" fill="#7b2ff7" opacity=".9"/>
+          <rect x="46" y="82" width="28" height="4" rx="2" fill="#1a2a60"/>
+          <rect x="46" y="92" width="24" height="4" rx="2" fill="#1a2a60"/>
+          <rect x="46" y="102" width="32" height="4" rx="2" fill="#1a2a60"/>
+          <rect x="46" y="112" width="26" height="4" rx="2" fill="#1a2a60"/>
+          <rect x="46" y="122" width="30" height="4" rx="2" fill="#7b2ff7" opacity=".4"/>
+          <rect x="46" y="132" width="22" height="4" rx="2" fill="#1a2a60"/>
+          <rect x="100" y="60" width="162" height="125" rx="4" fill="#070c1e"/>
+          <rect x="108" y="68" width="120" height="6" rx="2" fill="#7b2ff7" opacity=".7"/>
+          <rect x="108" y="80" width="145" height="3" rx="1" fill="#1a2a60" opacity=".6"/>
+          <rect x="108" y="88" width="130" height="3" rx="1" fill="#1a2a60" opacity=".4"/>
+          <rect x="108" y="100" width="68" height="50" rx="4" fill="#0d1b4b" stroke="rgba(123,47,247,.3)" stroke-width="1"/>
+          <text x="142" y="128" text-anchor="middle" font-size="18" fill="#7b2ff7" opacity=".7">🖼</text>
+          <rect x="182" y="100" width="68" height="22" rx="4" fill="#0d1b4b" stroke="rgba(123,47,247,.3)" stroke-width="1"/>
+          <rect x="190" y="107" width="48" height="3" rx="1" fill="#1a2a60"/>
+          <rect x="190" y="113" width="40" height="3" rx="1" fill="#1a2a60" opacity=".7"/>
+          <rect x="182" y="128" width="68" height="22" rx="4" fill="#0d1b4b" stroke="rgba(0,207,255,.3)" stroke-width="1"/>
+          <rect x="190" y="135" width="44" height="3" rx="1" fill="#1a2a60"/>
+          <rect x="190" y="141" width="36" height="3" rx="1" fill="#1a2a60" opacity=".7"/>
+          <rect x="108" y="156" width="142" height="22" rx="4" fill="#7b2ff7" opacity=".2" stroke="#7b2ff7" stroke-width="1"/>
+          <text x="179" y="171" text-anchor="middle" font-size="8" fill="#c084fc" font-family="Rajdhani" font-weight="700">+ Add New Block</text>
+          <rect x="195" y="20" width="75" height="26" rx="6" fill="#0d1b4b" stroke="#00cfff" stroke-width="1" class="float-anim-d"/>
+          <text x="232" y="31" text-anchor="middle" font-size="7.5" fill="#00cfff" font-family="Nunito Sans">Plugin Ready</text>
+          <text x="232" y="41" text-anchor="middle" font-size="6.5" fill="#a0b0cc" font-family="Nunito Sans">1,200+ Available</text>
+          <circle cx="30" cy="200" r="14" fill="#1a0842" stroke="#7b2ff7" stroke-width="1.5" class="float-anim-d2"/>
+          <text x="30" y="205" text-anchor="middle" font-size="12" fill="#c084fc" font-weight="900" font-family="Orbitron">W</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 07 — E-Commerce Development -->
+  <div class="service-card reveal" id="svc-card-7">
+    <div class="card-text">
+      <div class="card-num">07</div>
+      <h2 class="card-title">E-Commerce<br><span>Development</span></h2>
+      <p class="card-desc"> Expand your online business with our expert eCommerce development services at WebSpide Technologies. We specialize in custom web development solutions that create powerful and scalable eCommerce platforms, ensuring a seamless shopping experience. Whether you're launching a new online store or upgrading an existing one, our custom website development services provide robust solutions with secure payment gateways, inventory management, and mobile-friendly interfaces. As a custom web design company, we focus on creating engaging product displays, easy navigation, and optimized checkout processes that enhance user experience and drive conversions. Our custom website development agency ensures seamless third-party integrations, allowing businesses to connect with CRM, ERP, and marketing tools effortlessly. With a focus on security and performance, our web development agency near me builds feature-rich eCommerce solutions that support business growth. From small businesses to large enterprises, our custom web development services help you establish a strong online presence and maximize your revenue potential.</p>
+      <div class="card-btns">
+        <a href="#contact" class="svc-btn-primary">Build Your Online Store →</a>
+        <a href="#" class="svc-btn-link">Read More</a>
+      </div>
+    </div>
+    <div class="card-visual">
+      <div class="illus-wrap float-anim">
+        <svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="lg7" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00cfff"/><stop offset="100%" stop-color="#ff3cac"/></linearGradient>
+            <filter id="glow7"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <ellipse cx="150" cy="205" rx="115" ry="18" fill="rgba(0,207,255,0.12)"/>
+          <rect x="35" y="35" width="230" height="160" rx="9" fill="#0a0e24" stroke="#00cfff" stroke-width="1.5"/>
+          <rect x="35" y="35" width="230" height="22" rx="9" fill="#0d1b4b"/>
+          <rect x="35" y="51" width="230" height="6" fill="#0a0e24"/>
+          <circle cx="53" cy="46" r="4" fill="#ff3cac"/><circle cx="67" cy="46" r="4" fill="#7b2ff7"/><circle cx="81" cy="46" r="4" fill="#00cfff"/>
+          <rect x="43" y="63" width="165" height="12" rx="3" fill="#0d1b4b"/>
+          <rect x="48" y="67" width="40" height="4" rx="2" fill="#00cfff" opacity=".7"/>
+          <rect x="95" y="67" width="25" height="4" rx="2" fill="#1a2a60"/>
+          <rect x="127" y="67" width="25" height="4" rx="2" fill="#1a2a60"/>
+          <rect x="159" y="67" width="25" height="4" rx="2" fill="#1a2a60"/>
+          <rect x="213" y="61" width="44" height="16" rx="6" fill="#00cfff" opacity=".15" stroke="#00cfff" stroke-width="1"/>
+          <text x="235" y="72" text-anchor="middle" font-size="8" fill="#00cfff" font-family="Rajdhani" font-weight="700">🛒 3</text>
+          <rect x="43" y="82" width="64" height="80" rx="5" fill="#0d1b4b" stroke="rgba(0,207,255,.3)" stroke-width="1"/>
+          <rect x="43" y="82" width="64" height="44" rx="5" fill="#10103a"/>
+          <text x="75" y="110" text-anchor="middle" font-size="22">👟</text>
+          <rect x="50" y="131" width="40" height="4" rx="2" fill="#a0b0cc" opacity=".7"/>
+          <rect x="50" y="140" width="28" height="5" rx="2" fill="#00cfff" opacity=".8"/>
+          <rect x="50" y="148" width="48" height="9" rx="4" fill="#00cfff" opacity=".2"/>
+          <text x="74" y="156" text-anchor="middle" font-size="6.5" fill="#00cfff" font-family="Rajdhani">ADD TO CART</text>
+          <rect x="115" y="82" width="64" height="80" rx="5" fill="#0d1b4b" stroke="rgba(123,47,247,.4)" stroke-width="1"/>
+          <rect x="115" y="82" width="64" height="44" rx="5" fill="#10103a"/>
+          <text x="147" y="110" text-anchor="middle" font-size="22">👜</text>
+          <rect x="122" y="131" width="40" height="4" rx="2" fill="#a0b0cc" opacity=".7"/>
+          <rect x="122" y="140" width="28" height="5" rx="2" fill="#7b2ff7" opacity=".8"/>
+          <rect x="122" y="148" width="48" height="9" rx="4" fill="#7b2ff7" opacity=".2"/>
+          <text x="146" y="156" text-anchor="middle" font-size="6.5" fill="#c084fc" font-family="Rajdhani">ADD TO CART</text>
+          <rect x="187" y="82" width="64" height="80" rx="5" fill="#0d1b4b" stroke="rgba(255,60,172,.3)" stroke-width="1"/>
+          <rect x="187" y="82" width="64" height="44" rx="5" fill="#10103a"/>
+          <text x="219" y="110" text-anchor="middle" font-size="22">⌚</text>
+          <rect x="194" y="131" width="40" height="4" rx="2" fill="#a0b0cc" opacity=".7"/>
+          <rect x="194" y="140" width="28" height="5" rx="2" fill="#ff3cac" opacity=".8"/>
+          <rect x="194" y="148" width="48" height="9" rx="4" fill="#ff3cac" opacity=".15"/>
+          <text x="218" y="156" text-anchor="middle" font-size="6.5" fill="#ff3cac" font-family="Rajdhani">ADD TO CART</text>
+          <rect x="43" y="170" width="230" height="16" rx="4" fill="#0a0e24"/>
+          <text x="65" y="181" font-size="7" fill="#a0b0cc" font-family="Nunito Sans">🔒 SSL</text>
+          <text x="110" y="181" font-size="7" fill="#a0b0cc" font-family="Nunito Sans">💳 Stripe</text>
+          <text x="158" y="181" font-size="7" fill="#a0b0cc" font-family="Nunito Sans">📦 Inventory</text>
+          <text x="213" y="181" font-size="7" fill="#a0b0cc" font-family="Nunito Sans">🚀 Fast</text>
+          <rect x="0" y="90" width="62" height="28" rx="6" fill="#0d1b4b" stroke="#00cfff" stroke-width="1" class="float-anim-d2"/>
+          <text x="31" y="104" text-anchor="middle" font-size="7.5" fill="#a0b0cc" font-family="Nunito Sans">Revenue</text>
+          <text x="31" y="114" text-anchor="middle" font-size="9" fill="#00cfff" font-family="Rajdhani" font-weight="700">+142%</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 08 — UI/UX Design -->
+  <div class="service-card reverse reveal" id="svc-card-8" style="background:rgba(9,14,34,0.6)">
+    <div class="card-text">
+      <div class="card-num">08</div>
+      <h2 class="card-title">Full Stack<br><span>Web Development </span></h2>
+      <p class="card-desc">At WebSpide Technologies, we offer full-stack custom website development solutions designed to meet your business’s unique needs. Our expertise in web design and development ensures that both front-end and back-end systems work seamlessly together, delivering a high-performance website. Whether you're looking for a simple informational website or a complex web application, our team builds scalable, secure, and feature-rich solutions tailored to your goals. We use the latest technologies to create custom website development services that enhance user experience and optimize performance. As a custom web design company, we focus on delivering a responsive and engaging website that adapts to various devices effortlessly. Our web development agency near me provides integrated solutions, from interactive UI/UX designs to database management and API development. Whether you need a custom website development agency to build an enterprise-level platform or an eCommerce solution, we ensure robust architecture, seamless third-party integrations, and long-term scalability. Elevate your online presence with our custom web development services and experience a digital transformation that drives results.</p>
+            <div class="card-btns">
+        <a href="#contact" class="svc-btn-primary">Design Your Experience Today →</a>
+        <a href="#" class="svc-btn-link">Read More</a>
+      </div>
+    </div>
+    <div class="card-visual">
+      <div class="illus-wrap float-anim-d2">
+        <svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="lg8" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#9333ea"/><stop offset="100%" stop-color="#e879f9"/></linearGradient>
+            <filter id="glow8"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <ellipse cx="150" cy="210" rx="110" ry="18" fill="rgba(147,51,234,0.14)"/>
+          <rect x="30" y="25" width="240" height="170" rx="8" fill="#0a0e24" stroke="url(#lg8)" stroke-width="1.5"/>
+          <rect x="30" y="25" width="28" height="170" rx="8" fill="#0d1b4b"/>
+          <circle cx="44" cy="45" r="6" fill="#9333ea" opacity=".8" filter="url(#glow8)"/>
+          <rect x="37" y="58" width="14" height="2" rx="1" fill="#1a2a60"/>
+          <rect x="37" y="64" width="14" height="2" rx="1" fill="#1a2a60"/>
+          <rect x="37" y="70" width="14" height="2" rx="1" fill="#1a2a60"/>
+          <circle cx="44" cy="82" r="4" fill="none" stroke="#c084fc" stroke-width="1.5"/>
+          <rect x="38" y="92" width="12" height="10" rx="2" fill="none" stroke="#7b2ff7" stroke-width="1.5"/>
+          <line x1="37" y1="110" x2="51" y2="110" stroke="#1a2a60" stroke-width="1.5"/>
+          <line x1="37" y1="116" x2="51" y2="116" stroke="#1a2a60" stroke-width="1.5" opacity=".5"/>
+          <rect x="62" y="32" width="200" height="156" rx="4" fill="#060b1a"/>
+          <rect x="70" y="40" width="185" height="50" rx="4" fill="rgba(147,51,234,.08)" stroke="rgba(147,51,234,.3)" stroke-width="1" stroke-dasharray="4 3"/>
+          <rect x="80" y="50" width="60" height="8" rx="2" fill="#9333ea" opacity=".5"/>
+          <rect x="80" y="64" width="100" height="4" rx="2" fill="#1a2a60" opacity=".7"/>
+          <rect x="80" y="73" width="80" height="4" rx="2" fill="#1a2a60" opacity=".4"/>
+          <rect x="185" y="55" width="52" height="22" rx="11" fill="#9333ea" opacity=".3" stroke="#9333ea" stroke-width="1"/>
+          <text x="211" y="69" text-anchor="middle" font-size="7" fill="#e879f9" font-family="Rajdhani" font-weight="600">CTA Button</text>
+          <rect x="70" y="97" width="56" height="40" rx="4" fill="rgba(147,51,234,.05)" stroke="rgba(147,51,234,.25)" stroke-width="1" stroke-dasharray="3 3"/>
+          <rect x="133" y="97" width="56" height="40" rx="4" fill="rgba(0,207,255,.05)" stroke="rgba(0,207,255,.25)" stroke-width="1" stroke-dasharray="3 3"/>
+          <rect x="196" y="97" width="56" height="40" rx="4" fill="rgba(255,60,172,.05)" stroke="rgba(255,60,172,.25)" stroke-width="1" stroke-dasharray="3 3"/>
+          <text x="98" y="121" text-anchor="middle" font-size="14">📐</text>
+          <text x="161" y="121" text-anchor="middle" font-size="14">🎨</text>
+          <text x="224" y="121" text-anchor="middle" font-size="14">✨</text>
+          <rect x="70" y="144" width="185" height="18" rx="3" fill="rgba(147,51,234,.06)" stroke="rgba(147,51,234,.2)" stroke-width="1"/>
+          <rect x="78" y="150" width="30" height="3" rx="1" fill="#1a2a60"/>
+          <rect x="115" y="150" width="30" height="3" rx="1" fill="#1a2a60"/>
+          <rect x="152" y="150" width="30" height="3" rx="1" fill="#1a2a60"/>
+          <circle cx="211" cy="66" r="3.5" fill="#fff" filter="url(#glow8)" class="float-anim-d" opacity=".8"/>
+          <line x1="196" y1="117" x2="168" y2="148" stroke="#9333ea" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/>
+          <rect x="0" y="55" width="52" height="52" rx="7" fill="#0d1b4b" stroke="#9333ea" stroke-width="1" class="float-anim-d"/>
+          <circle cx="11" cy="66" r="5" fill="#9333ea"/>
+          <circle cx="24" cy="66" r="5" fill="#e879f9"/>
+          <circle cx="37" cy="66" r="5" fill="#c084fc"/>
+          <circle cx="11" cy="79" r="5" fill="#00cfff"/>
+          <circle cx="24" cy="79" r="5" fill="#ff3cac"/>
+          <circle cx="37" cy="79" r="5" fill="#fff" opacity=".4"/>
+          <text x="26" y="96" text-anchor="middle" font-size="6.5" fill="#a0b0cc" font-family="Nunito Sans">Palette</text>
+          <rect x="248" y="95" width="50" height="22" rx="5" fill="#0d1b4b" stroke="#e879f9" stroke-width="1" class="float-anim-d2"/>
+          <text x="273" y="109" text-anchor="middle" font-size="7.5" fill="#e879f9" font-family="Nunito Sans">UX Audit ✓</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 09 — Mobile App Development -->
+  <div class="service-card reveal" id="svc-card-9">
+    <div class="card-text">
+      <div class="card-num">09</div>
+      <h2 class="card-title"> Progressive Web Apps (PWAs) & Web Apps</span></h2>
+      <p class="card-desc"> Enhance user experience with Progressive Web Apps (PWAs) & web apps that offer the speed and functionality of native applications. WebSpide Technologies specializes in custom web development solutions that create fast, reliable, and engaging web applications that work seamlessly across all devices. Our custom web design services ensure that PWAs load instantly, even in low-network conditions, providing users with an app-like experience. As a custom website development agency, we leverage the latest technologies to build highly responsive and feature-rich PWAs that drive engagement and retention. Our web development agency near me ensures that web apps are optimized for performance, security, and offline functionality, making them a cost-effective alternative to native apps. Whether you need an eCommerce PWA, an enterprise application, or a business-specific solution, our custom web development services guarantee an intuitive and smooth experience. Transform your website into a high-performing web application that keeps users engaged and improves conversions.</p>
+      <div class="card-btns">
+        <a href="#contact" class="svc-btn-primary">Launch Your Mobile App →</a>
+        <a href="#" class="svc-btn-link">Read More</a>
+      </div>
+    </div>
+    <div class="card-visual">
+      <div class="illus-wrap float-anim">
+        <svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="lg9" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7b2ff7"/><stop offset="100%" stop-color="#ff3cac"/></linearGradient>
+            <filter id="glow9"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <ellipse cx="150" cy="210" rx="110" ry="18" fill="rgba(123,47,247,0.14)"/>
+          <rect x="95" y="15" width="110" height="205" rx="18" fill="#0a0e24" stroke="url(#lg9)" stroke-width="2" filter="url(#glow9)"/>
+          <rect x="100" y="22" width="100" height="191" rx="12" fill="#060b1a"/>
+          <rect x="128" y="22" width="44" height="9" rx="4" fill="#0a0e24"/>
+          <rect x="106" y="38" width="88" height="20" rx="4" fill="#0d1b4b"/>
+          <text x="150" y="51" text-anchor="middle" font-size="9" fill="#c084fc" font-family="Rajdhani" font-weight="700">Dashboard</text>
+          <rect x="106" y="63" width="40" height="30" rx="4" fill="rgba(123,47,247,.15)" stroke="rgba(123,47,247,.4)" stroke-width="1"/>
+          <text x="126" y="74" text-anchor="middle" font-size="7.5" fill="#a0b0cc" font-family="Nunito Sans">Users</text>
+          <text x="126" y="86" text-anchor="middle" font-size="10" fill="#7b2ff7" font-family="Rajdhani" font-weight="700">2.4k</text>
+          <rect x="154" y="63" width="40" height="30" rx="4" fill="rgba(0,207,255,.1)" stroke="rgba(0,207,255,.4)" stroke-width="1"/>
+          <text x="174" y="74" text-anchor="middle" font-size="7.5" fill="#a0b0cc" font-family="Nunito Sans">Sales</text>
+          <text x="174" y="86" text-anchor="middle" font-size="10" fill="#00cfff" font-family="Rajdhani" font-weight="700">98%</text>
+          <rect x="106" y="99" width="88" height="40" rx="4" fill="rgba(123,47,247,.06)" stroke="rgba(123,47,247,.25)" stroke-width="1"/>
+          <path d="M112 132 L120 124 L130 118 L140 122 L150 112 L160 106 L170 100 L185 96" fill="none" stroke="#7b2ff7" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M112 132 L120 124 L130 118 L140 122 L150 112 L160 106 L170 100 L185 96 L185 138 L112 138 Z" fill="url(#lg9)" opacity=".1"/>
+          <rect x="106" y="145" width="88" height="12" rx="3" fill="#0d1b4b"/>
+          <circle cx="115" cy="151" r="3.5" fill="#7b2ff7"/>
+          <rect x="122" y="149" width="50" height="3" rx="1" fill="#1a2a60"/>
+          <rect x="106" y="162" width="88" height="12" rx="3" fill="#0d1b4b"/>
+          <circle cx="115" cy="168" r="3.5" fill="#ff3cac"/>
+          <rect x="122" y="166" width="44" height="3" rx="1" fill="#1a2a60"/>
+          <rect x="106" y="179" width="88" height="12" rx="3" fill="#0d1b4b"/>
+          <circle cx="115" cy="185" r="3.5" fill="#00cfff"/>
+          <rect x="122" y="183" width="48" height="3" rx="1" fill="#1a2a60"/>
+          <rect x="132" y="200" width="36" height="4" rx="2" fill="#1a2a60"/>
+          <rect x="5" y="80" width="72" height="24" rx="7" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1" class="float-anim-d"/>
+          <text x="41" y="94" text-anchor="middle" font-size="8.5" fill="#c084fc" font-family="Nunito Sans"> iOS &amp; Android</text>
+          <rect x="225" y="80" width="68" height="24" rx="7" fill="#0d1b4b" stroke="#ff3cac" stroke-width="1" class="float-anim-d2"/>
+          <text x="259" y="94" text-anchor="middle" font-size="8" fill="#ff3cac" font-family="Nunito Sans">React Native</text>
+          <rect x="225" y="112" width="68" height="24" rx="7" fill="#0d1b4b" stroke="#00cfff" stroke-width="1" class="float-anim-d"/>
+          <text x="259" y="127" text-anchor="middle" font-size="8.5" fill="#00cfff" font-family="Nunito Sans">Flutter ✓</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 10 — Digital Marketing & SEO -->
+  <div class="service-card reverse reveal" id="svc-card-10" style="background:rgba(9,14,34,0.6)">
+    <div class="card-text">
+      <div class="card-num">10</div>
+      <h2 class="card-title"><br>Custom Web Portals<span>&amp; & Enterprise Solutions</span></h2>
+      <p class="card-desc"> Empower your business with custom web portals & enterprise solutions designed to streamline operations and enhance user engagement. WebSpide Technologies provides custom web development services that build scalable, secure, and interactive web portals tailored to specific business needs. Whether you require a customer portal, employee dashboard, or an enterprise-level solution, our web design and development experts create feature-rich applications that improve accessibility and efficiency. As a custom web design company, we ensure seamless data management, role-based access control, and advanced analytics to help businesses manage their workflows effortlessly. Our custom website development services include integration with CRMs, ERPs, and third-party tools, ensuring smooth business operations. Whether you’re looking for an internal enterprise portal or a customer-facing solution, our web development agency near me delivers high-performance platforms that optimize business processes. With our expertise in custom website development, we ensure a seamless, user-friendly experience that enhances productivity and drives business growth.</p>
+            <div class="card-btns">
+        <a href="#contact" class="svc-btn-primary">Grow Your Digital Presence →</a>
+        <a href="#" class="svc-btn-link">Read More</a>
+      </div>
+    </div>
+    <div class="card-visual">
+      <div class="illus-wrap float-anim-d">
+        <svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="lg10" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00cfff"/><stop offset="100%" stop-color="#7b2ff7"/></linearGradient>
+            <filter id="glow10"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <ellipse cx="150" cy="210" rx="115" ry="18" fill="rgba(0,207,255,0.12)"/>
+          <circle cx="150" cy="100" r="52" fill="#0a0e24" stroke="url(#lg10)" stroke-width="2" filter="url(#glow10)"/>
+          <circle cx="150" cy="100" r="42" fill="#060b1a"/>
+          <circle cx="150" cy="100" r="52" fill="none" stroke="#00cfff" stroke-dasharray="8 5" stroke-width="1" class="spin" opacity=".4"/>
+          <circle cx="147" cy="97" r="10" fill="none" stroke="#00cfff" stroke-width="2.2"/>
+          <line x1="154" y1="104" x2="161" y2="111" stroke="#00cfff" stroke-width="2.5" stroke-linecap="round"/>
+          <text x="150" y="118" text-anchor="middle" font-size="7.5" fill="#a0b0cc" font-family="Nunito Sans">SEO Engine</text>
+          <rect x="36" y="62" width="72" height="76" rx="6" fill="#0d1b4b" stroke="rgba(0,207,255,.3)" stroke-width="1" class="float-anim-d"/>
+          <text x="72" y="78" text-anchor="middle" font-size="7.5" fill="#a0b0cc" font-family="Nunito Sans">SERP Rank</text>
+          <rect x="44" y="84" width="16" height="44" rx="2" fill="#1a2a60"/>
+          <rect x="44" y="107" width="16" height="21" rx="2" fill="#00cfff" opacity=".3"/>
+          <rect x="65" y="84" width="16" height="44" rx="2" fill="#1a2a60"/>
+          <rect x="65" y="97" width="16" height="31" rx="2" fill="#00cfff" opacity=".5"/>
+          <rect x="86" y="84" width="16" height="44" rx="2" fill="#1a2a60"/>
+          <rect x="86" y="88" width="16" height="40" rx="2" fill="#00cfff" opacity=".85" filter="url(#glow10)"/>
+          <text x="94" y="83" text-anchor="middle" font-size="7" fill="#00cfff" font-family="Rajdhani" font-weight="700">#1</text>
+          <rect x="196" y="62" width="72" height="76" rx="6" fill="#0d1b4b" stroke="rgba(123,47,247,.3)" stroke-width="1" class="float-anim-d2"/>
+          <text x="232" y="78" text-anchor="middle" font-size="7.5" fill="#a0b0cc" font-family="Nunito Sans">Traffic</text>
+          <path d="M204 127 L214 118 L222 108 L232 100 L240 90 L248 80 L258 72" fill="none" stroke="#7b2ff7" stroke-width="2" stroke-linecap="round"/>
+          <path d="M204 127 L214 118 L222 108 L232 100 L240 90 L248 80 L258 72 L258 127 Z" fill="url(#lg10)" opacity=".12"/>
+          <text x="232" y="124" text-anchor="middle" font-size="9" fill="#7b2ff7" font-family="Rajdhani" font-weight="700">+380%</text>
+          <rect x="38" y="155" width="46" height="18" rx="6" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1"/>
+          <text x="61" y="167" text-anchor="middle" font-size="7.5" fill="#c084fc" font-family="Nunito Sans">SEO</text>
+          <rect x="92" y="155" width="46" height="18" rx="6" fill="#0d1b4b" stroke="#00cfff" stroke-width="1"/>
+          <text x="115" y="167" text-anchor="middle" font-size="7.5" fill="#00cfff" font-family="Nunito Sans">PPC</text>
+          <rect x="146" y="155" width="46" height="18" rx="6" fill="#0d1b4b" stroke="#ff3cac" stroke-width="1"/>
+          <text x="169" y="167" text-anchor="middle" font-size="7.5" fill="#ff3cac" font-family="Nunito Sans">Social</text>
+          <rect x="200" y="155" width="60" height="18" rx="6" fill="#0d1b4b" stroke="#9333ea" stroke-width="1"/>
+          <text x="230" y="167" text-anchor="middle" font-size="7.5" fill="#c084fc" font-family="Nunito Sans">Content</text>
+          <rect x="100" y="185" width="100" height="22" rx="7" fill="#0d1b4b" stroke="#00cfff" stroke-width="1"/>
+          <text x="150" y="200" text-anchor="middle" font-size="9" fill="#00cfff" font-family="Rajdhani" font-weight="700">⚡ Avg. ROI 320%</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
 </section>
 
 <!-- HOW WE WORK -->
 <section class="how-we-work" id="process">
   <div class="section-head" style="margin-bottom:2rem;position:relative;z-index:1">
     <div class="section-tag">How We Work</div>
-    <h2 class="section-title">Our Development Process</h2>
+    <h2 class="section-title">Our Custom Web Development Process</h2>
     <p class="section-sub">Step by step, we build digital experiences that make an impact. Click each step to explore in detail.</p>
   </div>
   <div class="hww-body">
@@ -1473,8 +1601,8 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
     <div class="villan-badge">Why Choose Webspide</div>
     <div class="left-title">Why Choose<br>Webspide For<br><span class="purple">Custom Web<br>Development<br>Services?</span></div>
     <div class="title-underline"></div>
-    <p class="left-desc">At WebSpide Technologies, we specialize in custom website development tailored to meet unique business needs. Our team ensures cutting-edge web design and development with a focus on innovation, scalability, and seamless performance.</p>
-    <div class="illustration">
+    <p class="left-desc"> At WebSpide Technologies, we specialize in custom website development tailored to meet unique business needs. Our team ensures cutting-edge web design and development with a focus on innovation, scalability, and seamless performance. As a trusted custom web design company, we deliver high-performing solutions that align with industry trends, providing businesses with custom website development services that enhance digital success.</p>
+         <div class="illustration">
       <div class="gear-left">⚙</div>
       <div class="gear-sm">⚙</div>
       <div class="code-tag">&lt;/&gt;</div>
@@ -1495,7 +1623,7 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
         <div class="icon-circle"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 8l3 3-3 3M11 14h6"/></svg></div>
         <div class="feature-content">
           <div class="feature-title">Expertise in <span class="accent">Full-Stack Development</span></div>
-          <p class="feature-desc">Our services If you're asking about DIRAC at Airbus, DIRAC is a distributed computing and workload management platform used by large scientific and engineering organizations to managecover the full spectrum of front-end and back-end technologies, ensuring a cohesive and high-performing website.</p>
+          <p class="feature-desc"> Our custom web development services cover the full spectrum of front-end and back-end technologies, ensuring a cohesive and high-performing website. As a custom website development agency, we build robust web applications with intuitive custom web design services that enhance user experience. Whether it’s interactive UI or scalable server-side architecture, our web development agency near me ensures flawless execution.</p>
         </div>
       </div>
       <div class="feature-row">
@@ -1504,8 +1632,8 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
         <div class="icon-circle"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><polyline points="3 20 21 20"/></svg></div>
         <div class="feature-content">
           <div class="feature-title">Data-Driven <span class="accent">Approach</span></div>
-          <p class="feature-desc">We integrateIf you're asking about DIRAC at Airbus, DIRAC is a distributed computing and workload management platform used by large scientific and engineering organizations to manageadvanced analytics to ensure data-driven improvements for better user engagement and sales.</p>
-        </div>
+          <p class="feature-desc"> We integrate advanced analytics into our custom website development services, ensuring data-driven improvements for better user engagement. By analyzing visitor behavior, conversion rates, and performance metrics, our custom web design company optimizes websites for higher engagement and sales. As a web development agency near me, we ensure strategic improvements that enhance user interaction and business growth.</p>
+         </div>
       </div>
       <div class="feature-row">
         <div class="num">03</div>
@@ -1513,8 +1641,7 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
         <div class="icon-circle"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
         <div class="feature-content">
           <div class="feature-title">Security-First <span class="accent">Development</span></div>
-          <p class="feature-desc">We implement If you're asking about DIRAC at Airbus, DIRAC is a distributed computing and workload management platform used by large scientific and engineering organizations to manageadvanced encryption, firewalls, and multi-layer authentication to protect sensitive data.</p>
-        </div>
+          <p class="feature-desc">Security is at the core of our custom web development approach. We implement advanced encryption, firewalls, and multi-layer authentication to protect sensitive data. As a custom website development agency, we ensure compliance with security standards, safeguarding websites from cyber threats. Our custom web design company prioritizes safe transactions, data privacy, and secure integrations for seamless operations.</p>  </div>
       </div>
       <div class="feature-row">
         <div class="num">04</div>
@@ -1522,8 +1649,7 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
         <div class="icon-circle"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg></div>
         <div class="feature-content">
           <div class="feature-title">Scalable &amp; <span class="accent">Future-Proof Solutions</span></div>
-          <p class="feature-desc">We build scalable websitesIf you're asking about DIRAC at Airbus, DIRAC is a distributed computing and workload management platform used by large scientific and engineering organizations to manage that grow with your business using cloud-based architecture and modular components.</p>
-        </div>
+          <p class="feature-desc"> Our custom website development solutions are designed for long-term success, ensuring flexibility for future enhancements. As a custom web development company, we build scalable websites that grow with your business needs. Our custom web design services focus on responsive layouts, cloud-based architecture, and modular components that enable seamless upgrades and optimizations.</p> </div>
       </div>
       <div class="feature-row">
         <div class="num">05</div>
@@ -1531,8 +1657,7 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
         <div class="icon-circle"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
         <div class="feature-content">
           <div class="feature-title">Dedicated <span class="accent">Support &amp; Maintenance</span></div>
-          <p class="feature-desc">We provide If you're asking about DIRAC at Airbus, DIRAC is a distributed computing and workload management platform used by large scientific and engineering organizations to manageccontinuous post-launch support ensuring your website remains optimized, updated, and secure.</p>
-        </div>
+          <p class="feature-desc">We provide continuous post-launch support, ensuring your website remains optimized, updated, and secure. Our custom web development services include bug fixes, performance monitoring, and feature enhancements for long-term stability. As a custom website development agency, we offer proactive solutions to minimize downtime and ensure smooth operations. With WebSpide’s web development agency near me, your website stays future-ready.</p>  </div>
       </div>
     </div>
   </div>
@@ -1637,85 +1762,134 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
 </footer>
 
 <script>
-/* ── NAV DROPDOWNS — fixed hover logic ── */
+/* ── NAV DROPDOWNS ── */
 (function(){
   function setupDropdown(liId){
-    const li = document.getElementById(liId);
-    if(!li) return;
-    let closeTimer = null;
-
-    function open(){
-      if(closeTimer){ clearTimeout(closeTimer); closeTimer = null; }
-      li.classList.add('open');
-    }
-    function scheduleClose(){
-      closeTimer = setTimeout(function(){ li.classList.remove('open'); }, 200);
-    }
-    function cancelClose(){
-      if(closeTimer){ clearTimeout(closeTimer); closeTimer = null; }
-    }
-
-    li.addEventListener('mouseenter', open);
-    li.addEventListener('mouseleave', scheduleClose);
-
-    const dropdown = li.querySelector('.mega-dropdown, .simple-dropdown');
+    const li=document.getElementById(liId);if(!li)return;
+    let closeTimer=null;
+    function open(){if(closeTimer){clearTimeout(closeTimer);closeTimer=null;}li.classList.add('open');}
+    function scheduleClose(){closeTimer=setTimeout(function(){li.classList.remove('open');},200);}
+    function cancelClose(){if(closeTimer){clearTimeout(closeTimer);closeTimer=null;}}
+    li.addEventListener('mouseenter',open);li.addEventListener('mouseleave',scheduleClose);
+    const dropdown=li.querySelector('.mega-dropdown, .simple-dropdown');
     if(dropdown){
-      dropdown.addEventListener('mouseenter', cancelClose);
-      dropdown.addEventListener('mouseleave', scheduleClose);
-      dropdown.querySelectorAll('a').forEach(function(a){
-        a.addEventListener('click', function(){ li.classList.remove('open'); });
-      });
+      dropdown.addEventListener('mouseenter',cancelClose);dropdown.addEventListener('mouseleave',scheduleClose);
+      dropdown.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){li.classList.remove('open');});});
     }
   }
-
-  setupDropdown('navServices');
-  setupDropdown('navProducts');
-
-  document.addEventListener('click', function(e){
-    ['navServices','navProducts'].forEach(function(id){
-      const li = document.getElementById(id);
-      if(li && !li.contains(e.target)) li.classList.remove('open');
-    });
-  });
+  setupDropdown('navServices');setupDropdown('navProducts');
+  document.addEventListener('click',function(e){['navServices','navProducts'].forEach(function(id){const li=document.getElementById(id);if(li&&!li.contains(e.target))li.classList.remove('open');});});
 })();
 
 /* ── Hamburger ── */
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobileMenu');
-const mobCta = document.getElementById('mobCta');
+const hamburger=document.getElementById('hamburger');
+const mobileMenu=document.getElementById('mobileMenu');
+const mobCta=document.getElementById('mobCta');
 function closeMobile(){hamburger.classList.remove('open');mobileMenu.classList.remove('open');document.body.style.overflow='';}
 hamburger.addEventListener('click',function(){const isOpen=hamburger.classList.toggle('open');mobileMenu.classList.toggle('open',isOpen);document.body.style.overflow=isOpen?'hidden':'';});
 mobCta.addEventListener('click',closeMobile);
 document.querySelectorAll('.mob-link,.mob-sub-link').forEach(function(el){el.addEventListener('click',closeMobile);});
 
-/* ── Orbital Widget ── */
+/* ══════════════════════════════════════════════
+   UPDATED ORBITAL — 10 services
+   ══════════════════════════════════════════════ */
 (function(){
-  const wrap=document.querySelector('.orbital-wrap');
-  const icons=document.querySelectorAll('.orbit-icon');
-  const screen=document.getElementById('deviceScreen');
-  const idle=document.getElementById('circleIdle');
-  const info=document.getElementById('circleInfo');
-  const ciName=document.getElementById('ciName');
-  const ciTag=document.getElementById('ciTagline');
-  const ciIcon=document.getElementById('ciIconWrap');
-  const tapHint=document.getElementById('ciTapHint');
-  const N=icons.length;let leaveTimer=null,active=null,isTouchDevice=false;
-  function place(){const W=wrap.offsetWidth,r=W*.46,cx=W/2,cy=W/2;icons.forEach(function(el,i){const a=-Math.PI/2+(2*Math.PI/N)*i;el.style.left=(cx+r*Math.cos(a))+'px';el.style.top=(cy+r*Math.sin(a))+'px';});}
-  place();window.addEventListener('resize',place);
-  function showInfo(el){if(leaveTimer){clearTimeout(leaveTimer);leaveTimer=null;}if(active===el)return;if(active)active.classList.remove('selected');active=el;el.classList.add('selected');const color=el.dataset.color||'#c084fc';const svg=el.querySelector('svg').cloneNode(true);ciName.textContent=el.dataset.name;ciTag.textContent=el.dataset.tag;ciIcon.innerHTML='';ciIcon.appendChild(svg);ciIcon.style.borderColor=color+'80';ciIcon.style.background=color+'18';tapHint.style.display=isTouchDevice?'block':'none';idle.style.opacity='0';idle.style.pointerEvents='none';info.classList.add('show');screen.classList.add('active');}
-  function hideInfo(){info.classList.remove('show');screen.classList.remove('active');setTimeout(function(){idle.style.opacity='1';idle.style.pointerEvents='';},350);if(active){active.classList.remove('selected');active=null;}}
-  function navigateTo(href){if(!href)return;const target=document.querySelector(href);if(target){target.scrollIntoView({behavior:'smooth',block:'start'});}}
-  icons.forEach(function(el){
-    el.addEventListener('mouseenter',function(){if(!isTouchDevice)showInfo(el);});
-    el.addEventListener('mouseleave',function(){if(!isTouchDevice)leaveTimer=setTimeout(hideInfo,320);});
-    el.addEventListener('click',function(){if(!isTouchDevice)navigateTo(el.dataset.href);});
-    el.addEventListener('touchstart',function(e){isTouchDevice=true;e.preventDefault();if(active===el){navigateTo(el.dataset.href);hideInfo();}else{showInfo(el);}},{passive:false});
+  const SERVICES=[
+    {num:'01',name:'Full-Stack Custom Dev',tag:'End-to-end custom websites engineered for performance, scalability, and your exact business needs',label:'Full-Stack',svg:'<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>',target:'svc-card-8'},
+    {num:'02',name:'Front-End Development',tag:'Pixel-perfect UI built with React, Vue, or Angular — fast, responsive, and beautifully crafted',label:'Front-End',svg:'<rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>',target:'svc-card-2'},
+    {num:'03',name:'Back-End Development',tag:'Robust server-side logic with Node.js, Django, or Laravel — secure APIs and clean architecture',label:'Back-End',svg:'<rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/>',target:'svc-card-3'},
+    {num:'04',name:'Custom CMS Dev',tag:'Headless CMS and WordPress solutions giving your team full, effortless control over all content',label:'CMS',svg:'<path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>',target:'svc-card-4'},
+    {num:'05',name:'E-Commerce Dev',tag:'High-converting online stores with secure checkout, product management, and payment gateways',label:'E-Commerce',svg:'<circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>',target:'svc-card-7'},
+    {num:'06',name:'API Dev & Integrations',tag:'RESTful & GraphQL APIs connecting your platforms — CRMs, ERPs, and third-party services',label:'API',svg:'<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>',target:'svc-card-1'},
+    {num:'07',name:'Web Portals & Enterprise',tag:'Scalable enterprise portals with role-based access, analytics, and real-time data management',label:'Portals',svg:'<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>',target:'svc-card-10'},
+    {num:'08',name:'PWAs & Web Apps',tag:'Progressive Web Apps with native app speed, offline capability, and cross-device reliability',label:'PWA',svg:'<rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>',target:'svc-card-9'},
+    {num:'09',name:'Performance Optimization',tag:'Core Web Vitals, CDN integration, lazy loading, and caching for lightning-fast load times',label:'Speed',svg:'<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',target:'svc-card-6'},
+    {num:'10',name:'Migration & Upgradation',tag:'Zero-data-loss platform migrations and upgrades keeping your site secure and future-ready',label:'Migrate',svg:'<polyline points="1 4 1 10 7 10"/><polyline points="23 20 23 14 17 14"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"/>',target:'svc-card-5'}
+  ];
+
+  const stage    = document.getElementById('orbStage');
+  const screen   = document.getElementById('deviceScreen');
+  const idle     = document.getElementById('circleIdle');
+  const info     = document.getElementById('circleInfo');
+  const ciIcon   = document.getElementById('ciIconWrap');
+  const ciNum    = document.getElementById('ciNum');
+  const ciName   = document.getElementById('ciName');
+  const panel    = document.getElementById('orbInfoPanel');
+
+  let active=null, leaveTimer=null, isTouchDevice=false;
+  const icons=[];
+
+  /* Build icon elements */
+  SERVICES.forEach(function(svc,i){
+    const el=document.createElement('div');
+    el.className='orbit-icon';
+    el.dataset.idx=i;
+    el.setAttribute('role','link');
+    el.setAttribute('tabindex','0');
+    el.setAttribute('aria-label','Go to '+svc.name+' section');
+    el.innerHTML='<svg viewBox="0 0 24 24">'+svc.svg+'</svg><span class="oi-label">'+svc.label+'</span>';
+    stage.appendChild(el);
+    icons.push(el);
   });
-  screen.addEventListener('click',function(){if(active&&active.dataset.href){navigateTo(active.dataset.href);hideInfo();}});
+
+  /* Position icons around orbit */
+  function placeIcons(){
+    const W=stage.offsetWidth, H=stage.offsetHeight;
+    const cx=W/2, cy=H/2, r=W*0.455;
+    icons.forEach(function(el,i){
+      const angle=-Math.PI/2+(2*Math.PI/SERVICES.length)*i;
+      el.style.left=(cx+r*Math.cos(angle))+'px';
+      el.style.top =(cy+r*Math.sin(angle))+'px';
+    });
+  }
+  placeIcons();
+  window.addEventListener('resize',placeIcons);
+
+  function showService(idx){
+    if(leaveTimer){clearTimeout(leaveTimer);leaveTimer=null;}
+    const svc=SERVICES[idx];
+    if(active!==null)icons[active].classList.remove('selected');
+    active=idx;
+    icons[active].classList.add('selected');
+    /* update center */
+    ciIcon.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">'+svc.svg+'</svg>';
+    ciNum.textContent=svc.num;
+    ciName.textContent=svc.name;
+    idle.style.opacity='0';idle.style.pointerEvents='none';
+    info.classList.add('show');screen.classList.add('active');
+    /* update panel */
+    panel.innerHTML='<div class="orb-panel-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">'+svc.svg+'</svg></div><div><div class="orb-panel-num">Service '+svc.num+'</div><div class="orb-panel-name">'+svc.name+'</div><div class="orb-panel-tag">'+svc.tag+'</div></div>';
+  }
+
+  function hideService(){
+    if(active!==null)icons[active].classList.remove('selected');
+    active=null;
+    info.classList.remove('show');screen.classList.remove('active');
+    setTimeout(function(){idle.style.opacity='1';idle.style.pointerEvents='';},340);
+    panel.innerHTML='<div class="orb-panel-empty">Hover or tap a service icon to explore</div>';
+  }
+
+  function goToService(idx){
+    const svc=SERVICES[idx];
+    const targetEl=document.getElementById(svc.target);
+    if(targetEl){
+      targetEl.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+  }
+
+  icons.forEach(function(el,i){
+    el.addEventListener('mouseenter',function(){if(!isTouchDevice)showService(i);});
+    el.addEventListener('mouseleave',function(){if(!isTouchDevice)leaveTimer=setTimeout(hideService,350);});
+    el.addEventListener('click',function(e){e.preventDefault();goToService(i);});
+    el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();goToService(i);}});
+    el.addEventListener('touchstart',function(e){isTouchDevice=true;e.preventDefault();if(active===i)hideService();else showService(i);},{passive:false});
+    el.addEventListener('touchend',function(e){e.preventDefault();},{passive:false});
+  });
   screen.addEventListener('mouseenter',function(){if(!isTouchDevice&&leaveTimer){clearTimeout(leaveTimer);leaveTimer=null;}});
-  screen.addEventListener('mouseleave',function(){if(!isTouchDevice)leaveTimer=setTimeout(hideInfo,320);});
-  document.addEventListener('touchstart',function(e){if(!wrap.contains(e.target)&&active)hideInfo();});
+  screen.addEventListener('mouseleave',function(){if(!isTouchDevice)leaveTimer=setTimeout(hideService,350);});
+  document.addEventListener('touchstart',function(e){if(!stage.contains(e.target)&&active!==null)hideService();});
 })();
+/* ══ END ORBITAL ══ */
 
 /* ── Scroll Reveal ── */
 const observer=new IntersectionObserver(function(entries){entries.forEach(function(entry,i){if(entry.isIntersecting){setTimeout(function(){entry.target.classList.add('visible');},i*80);}});},{threshold:0.1});
@@ -1729,51 +1903,45 @@ function resetForm(){document.getElementById('formBody').style.display='';const 
 /* ── HOW WE WORK ── */
 (function(){
   const steps=[
-    {num:'01',label:'Requirements & Design',title:'Requirements & Design Analysis',desc:'We start by deeply understanding your business goals, target users, and technical constraints. Our team conducts in-depth discovery sessions and creates a solid blueprint that aligns technology with your vision.',subs:[{title:'Business Analysis',desc:'Understand goals and pain points',icon:'<path d="M3 3h18v18H3zM3 9h18M9 21V9"/>'},{title:'Requirement Gathering',desc:'Collect and document all requirements',icon:'<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>'},{title:'UI/UX Planning',desc:'Create wireframes and user flows',icon:'<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>'},{title:'Tech Stack Selection',desc:'Choose the best technology fit',icon:'<path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/>'}],deliverables:['Project scope document','Technical architecture plan','Wireframes & mockups','Sprint roadmap'],illus:`<svg viewBox="0 0 180 140" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="i1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#c084fc"/></linearGradient></defs><ellipse cx="90" cy="130" rx="70" ry="12" fill="rgba(124,58,237,.18)"/><rect x="25" y="45" width="130" height="82" rx="8" fill="#0d1b4b" stroke="url(#i1)" stroke-width="1.5"/><rect x="25" y="45" width="130" height="16" rx="8" fill="#1a0842"/><rect x="35" y="52" width="8" height="8" rx="2" fill="#7c3aed"/><rect x="48" y="55" width="50" height="3" rx="2" fill="rgba(192,132,252,.4)"/><rect x="35" y="72" width="50" height="4" rx="2" fill="rgba(147,51,234,.4)"/><rect x="35" y="82" width="40" height="4" rx="2" fill="rgba(147,51,234,.2)"/><rect x="35" y="92" width="45" height="4" rx="2" fill="rgba(147,51,234,.2)"/><rect x="95" y="68" width="48" height="52" rx="4" fill="rgba(124,58,237,.1)" stroke="rgba(147,51,234,.3)" stroke-width="1"/><path d="M102 115 L110 100 L120 93 L132 98 L138 88" fill="none" stroke="#c084fc" stroke-width="1.5" stroke-linecap="round"/><circle cx="55" cy="24" r="16" fill="#1a0842" stroke="url(#i1)" stroke-width="1.5"/><path d="M48 24 L53 29 L63 19" fill="none" stroke="#c084fc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`},
-    {num:'02',label:'Project Setup',title:'Project Setup & Configuration',desc:'We lay a solid technical foundation — environment setup, build tool configuration, and CI/CD pipelines — ensuring every developer can work efficiently from day one.',subs:[{title:'Environment Setup',desc:'Configure dev, staging, production',icon:'<rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/>'},{title:'Build Tools',desc:'Webpack, Vite, and bundler setup',icon:'<circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M4.93 4.93l1.41 1.41"/>'},{title:'CI/CD Pipeline',desc:'Automate builds, tests, deploys',icon:'<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>'},{title:'Code Standards',desc:'Linting, formatting, conventions',icon:'<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>'}],deliverables:['Dev environment ready','CI/CD pipeline live','Code style guide','Project scaffolding'],illus:`<svg viewBox="0 0 180 140" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="i2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00cfff"/><stop offset="100%" stop-color="#7c3aed"/></linearGradient></defs><ellipse cx="90" cy="130" rx="65" ry="10" fill="rgba(0,207,255,.12)"/><circle cx="90" cy="65" r="45" fill="#0a0e24" stroke="url(#i2)" stroke-width="2"/><circle cx="90" cy="65" r="35" fill="#060b1a"/><text x="90" y="60" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="12" font-weight="900" fill="url(#i2)">SETUP</text><text x="90" y="76" text-anchor="middle" font-size="7.5" fill="#8b93b8" font-family="Nunito Sans">&lt;config /&gt;</text><rect x="10" y="40" width="36" height="18" rx="5" fill="#1a0842" stroke="#7c3aed" stroke-width="1"/><text x="28" y="52" text-anchor="middle" font-size="7" fill="#c084fc" font-family="Nunito Sans">Node.js</text><rect x="134" y="40" width="36" height="18" rx="5" fill="#1a0842" stroke="#00cfff" stroke-width="1"/><text x="152" y="52" text-anchor="middle" font-size="7" fill="#00cfff" font-family="Nunito Sans">Docker</text></svg>`},
-    {num:'03',label:'Component Dev',title:'Component Development',desc:'We build reusable, modular, and accessible UI components following atomic design principles. Each component is crafted for flexibility, scalability, and a consistent experience across the entire application.',subs:[{title:'Component Library',desc:'Build modular, reusable UI blocks',icon:'<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>'},{title:'State Management',desc:'Redux, Zustand, or Context API',icon:'<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>'},{title:'API Integration',desc:'Connect to REST and GraphQL APIs',icon:'<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>'},{title:'Design System',desc:'Tokens, themes, consistent visuals',icon:'<circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="9"/>'}],deliverables:['Component library','State management','API layer','Design tokens'],illus:`<svg viewBox="0 0 180 140" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="i3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#9333ea"/><stop offset="100%" stop-color="#e879f9"/></linearGradient></defs><ellipse cx="90" cy="130" rx="65" ry="10" fill="rgba(147,51,234,.15)"/><rect x="15" y="25" width="65" height="46" rx="6" fill="#0d1b4b" stroke="url(#i3)" stroke-width="1.5"/><rect x="23" y="34" width="28" height="4" rx="2" fill="#9333ea" opacity=".8"/><rect x="23" y="44" width="48" height="3" rx="2" fill="rgba(192,132,252,.25)"/><rect x="23" y="52" width="40" height="3" rx="2" fill="rgba(192,132,252,.18)"/><rect x="100" y="25" width="65" height="46" rx="6" fill="#0d1b4b" stroke="url(#i3)" stroke-width="1.5"/><rect x="108" y="34" width="28" height="4" rx="2" fill="#e879f9" opacity=".7"/><rect x="108" y="44" width="45" height="3" rx="2" fill="rgba(232,121,249,.2)"/><rect x="57" y="86" width="65" height="46" rx="6" fill="#0d1b4b" stroke="url(#i3)" stroke-width="1.5"/><rect x="65" y="95" width="32" height="4" rx="2" fill="#c084fc" opacity=".8"/><line x1="48" y1="48" x2="100" y2="48" stroke="rgba(147,51,234,.5)" stroke-width="1" stroke-dasharray="4 3"/><line x1="48" y1="70" x2="90" y2="86" stroke="rgba(147,51,234,.5)" stroke-width="1" stroke-dasharray="4 3"/><line x1="132" y1="70" x2="90" y2="86" stroke="rgba(147,51,234,.5)" stroke-width="1" stroke-dasharray="4 3"/></svg>`},
-    {num:'04',label:'Testing & Optimization',title:'Testing & Optimization',desc:'We run comprehensive automated and manual tests, then optimize for Lighthouse scores, Core Web Vitals, and cross-browser compatibility. Every release meets our strict quality gates before it ships.',subs:[{title:'Unit Testing',desc:'Jest, Vitest component tests',icon:'<polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>'},{title:'Performance',desc:'Lighthouse & Core Web Vitals',icon:'<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>'},{title:'Cross-Browser',desc:'Chrome, Firefox, Safari, Edge',icon:'<circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"/>'},{title:'Security Audit',desc:'OWASP checks, pen testing',icon:'<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>'}],deliverables:['Test coverage report','Lighthouse 90+ score','0 critical bugs','Security clearance'],illus:`<svg viewBox="0 0 180 140" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="i4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00cfff"/><stop offset="100%" stop-color="#ff3cac"/></linearGradient></defs><ellipse cx="90" cy="130" rx="60" ry="10" fill="rgba(0,207,255,.1)"/><circle cx="90" cy="66" r="48" fill="#060b1a" stroke="url(#i4)" stroke-width="2"/><circle cx="90" cy="66" r="38" fill="none" stroke="#1a2a60" stroke-width="8"/><path d="M54 92 A38 38 0 1 1 126 92" fill="none" stroke="url(#i4)" stroke-width="8" stroke-linecap="round"/><line x1="90" y1="66" x2="114" y2="42" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/><circle cx="90" cy="66" r="4" fill="#7c3aed"/><text x="90" y="76" text-anchor="middle" font-size="18" font-family="Orbitron,sans-serif" font-weight="900" fill="#00cfff">98</text><text x="90" y="98" text-anchor="middle" font-size="7.5" fill="#8b93b8" font-family="Nunito Sans">Lighthouse Score</text></svg>`},
-    {num:'05',label:'Deployment & Launch',title:'Deployment & Launch',desc:'We use zero-downtime deployment strategies with CDN configuration, SSL setup, and real-time monitoring to ensure your application goes live smoothly, securely, and at peak performance.',subs:[{title:'Production Deploy',desc:'Zero-downtime deployment strategy',icon:'<path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>'},{title:'CDN & Caching',desc:'Global content delivery network',icon:'<path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>'},{title:'Monitoring',desc:'Uptime, errors, performance alerts',icon:'<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>'},{title:'SSL & Security',desc:'HTTPS, headers, WAF setup',icon:'<rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>'}],deliverables:['Live production site','SSL certificate','CDN configured','Monitoring dashboard'],illus:`<svg viewBox="0 0 180 140" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="i5" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#00cfff"/></linearGradient></defs><ellipse cx="90" cy="132" rx="65" ry="10" fill="rgba(123,47,247,.12)"/><ellipse cx="90" cy="90" rx="50" ry="32" fill="#0a0e24" stroke="url(#i5)" stroke-width="2"/><ellipse cx="90" cy="90" rx="40" ry="24" fill="#060b1a"/><path d="M68 90 L90 65 L112 90" fill="none" stroke="#00cfff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="90" y1="65" x2="90" y2="103" stroke="#00cfff" stroke-width="2.5" stroke-linecap="round"/><rect x="30" y="108" width="120" height="6" rx="3" fill="#1a2a60"/><rect x="30" y="108" width="90" height="6" rx="3" fill="url(#i5)" opacity=".9"/><text x="90" y="125" text-anchor="middle" font-size="8" font-family="Rajdhani,sans-serif" font-weight="600" fill="#00cfff">Deployment: 78% Complete</text><circle cx="145" cy="40" r="16" fill="#0d1b4b" stroke="url(#i5)" stroke-width="1.5"/><path d="M139 41 L143 45 L152 35" fill="none" stroke="#c084fc" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`},
-    {num:'06',label:'Maintenance',title:'Maintenance & Iteration',desc:"Our relationship doesn't end at launch. We provide ongoing maintenance, dependency updates, feature enhancements, and continuous performance monitoring to keep your application secure and evolving.",subs:[{title:'Dependency Updates',desc:'Keep all packages current & safe',icon:'<polyline points="1 4 1 10 7 10"/><polyline points="23 20 23 14 17 14"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"/>'},{title:'Feature Releases',desc:'Agile sprints for new features',icon:'<circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>'},{title:'Performance Watch',desc:'Monthly audits and optimization',icon:'<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>'},{title:'24/7 Support',desc:'SLA-backed bug fixes and patches',icon:'<path d="M12 22v-4M12 2v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83"/>'}],deliverables:['Monthly update report','Performance metrics','Feature changelog','Support response SLA'],illus:`<svg viewBox="0 0 180 140" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="i6" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#c084fc"/><stop offset="100%" stop-color="#7c3aed"/></linearGradient></defs><ellipse cx="90" cy="130" rx="65" ry="10" fill="rgba(192,132,252,.12)"/><circle cx="90" cy="68" r="46" fill="none" stroke="rgba(147,51,234,.15)" stroke-width="1.5" stroke-dasharray="5 4"/><circle cx="90" cy="68" r="32" fill="none" stroke="rgba(192,132,252,.2)" stroke-width="1.5" stroke-dasharray="4 5"/><circle cx="90" cy="68" r="46" fill="none" stroke="url(#i6)" stroke-width="2" stroke-dasharray="10 6" style="animation:spin-slow 10s linear infinite"/><circle cx="90" cy="68" r="20" fill="#0d1b4b" stroke="url(#i6)" stroke-width="2"/><text x="90" y="63" text-anchor="middle" font-size="10" font-family="Orbitron,sans-serif" font-weight="900" fill="#c084fc">24/7</text><text x="90" y="77" text-anchor="middle" font-size="6.5" fill="#8b93b8" font-family="Nunito Sans">Support</text><circle cx="136" cy="28" r="12" fill="#1a0842" stroke="#c084fc" stroke-width="1.5"/><text x="136" y="33" text-anchor="middle" font-size="10">🔄</text><circle cx="44" cy="28" r="12" fill="#1a0842" stroke="#7c3aed" stroke-width="1.5"/><text x="44" y="33" text-anchor="middle" font-size="10">⚙</text><rect x="50" y="115" width="80" height="14" rx="5" fill="#0d1b4b" stroke="url(#i6)" stroke-width="1"/><text x="90" y="125" text-anchor="middle" font-size="7.5" fill="#c084fc" font-family="Rajdhani,sans-serif" font-weight="600">Continuous Improvement</text></svg>`}
+    {num:'01',label:'Requirements & Design',title:'Requirements & Design Analysis',desc:'',subs:[{title:'Business Analysis',desc:'Understand goals and pain points',icon:'<path d="M3 3h18v18H3zM3 9h18M9 21V9"/>'},{title:'Requirement Gathering',desc:'Collect and document all requirements',icon:'<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>'},{title:'UI/UX Planning',desc:'Create wireframes and user flows',icon:'<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>'},{title:'Tech Stack Selection',desc:'Choose the best technology fit',icon:'<path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/>'}],deliverables:['Project scope document','Technical architecture plan','Wireframes & mockups','Sprint roadmap'],illus:'<svg viewBox="0 0 180 140" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="i1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#c084fc"/></linearGradient></defs><ellipse cx="90" cy="130" rx="70" ry="12" fill="rgba(124,58,237,.18)"/><rect x="25" y="45" width="130" height="82" rx="8" fill="#0d1b4b" stroke="url(#i1)" stroke-width="1.5"/><rect x="25" y="45" width="130" height="16" rx="8" fill="#1a0842"/><rect x="35" y="52" width="8" height="8" rx="2" fill="#7c3aed"/><rect x="48" y="55" width="50" height="3" rx="2" fill="rgba(192,132,252,.4)"/><rect x="35" y="72" width="50" height="4" rx="2" fill="rgba(147,51,234,.4)"/><rect x="35" y="82" width="40" height="4" rx="2" fill="rgba(147,51,234,.2)"/><rect x="35" y="92" width="45" height="4" rx="2" fill="rgba(147,51,234,.2)"/><rect x="95" y="68" width="48" height="52" rx="4" fill="rgba(124,58,237,.1)" stroke="rgba(147,51,234,.3)" stroke-width="1"/><path d="M102 115 L110 100 L120 93 L132 98 L138 88" fill="none" stroke="#c084fc" stroke-width="1.5" stroke-linecap="round"/><circle cx="55" cy="24" r="16" fill="#1a0842" stroke="url(#i1)" stroke-width="1.5"/><path d="M48 24 L53 29 L63 19" fill="none" stroke="#c084fc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'},
+    {num:'02',label:'Project Setup',title:'Project Setup & Configuration',desc:'We lay a solid technical foundation — environment setup, build tool configuration, and CI/CD pipelines — ensuring every developer can work efficiently from day one.',subs:[{title:'Environment Setup',desc:'Configure dev, staging, production',icon:'<rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/>'},{title:'Build Tools',desc:'Webpack, Vite, and bundler setup',icon:'<circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M4.93 4.93l1.41 1.41"/>'},{title:'CI/CD Pipeline',desc:'Automate builds, tests, deploys',icon:'<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>'},{title:'Code Standards',desc:'Linting, formatting, conventions',icon:'<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>'}],deliverables:['Dev environment ready','CI/CD pipeline live','Code style guide','Project scaffolding'],illus:'<svg viewBox="0 0 180 140" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="i2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00cfff"/><stop offset="100%" stop-color="#7c3aed"/></linearGradient></defs><ellipse cx="90" cy="130" rx="65" ry="10" fill="rgba(0,207,255,.12)"/><circle cx="90" cy="65" r="45" fill="#0a0e24" stroke="url(#i2)" stroke-width="2"/><circle cx="90" cy="65" r="35" fill="#060b1a"/><text x="90" y="60" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="12" font-weight="900" fill="url(#i2)">SETUP</text><text x="90" y="76" text-anchor="middle" font-size="7.5" fill="#8b93b8" font-family="Nunito Sans">&lt;config /&gt;</text><rect x="10" y="40" width="36" height="18" rx="5" fill="#1a0842" stroke="#7c3aed" stroke-width="1"/><text x="28" y="52" text-anchor="middle" font-size="7" fill="#c084fc" font-family="Nunito Sans">Node.js</text><rect x="134" y="40" width="36" height="18" rx="5" fill="#1a0842" stroke="#00cfff" stroke-width="1"/><text x="152" y="52" text-anchor="middle" font-size="7" fill="#00cfff" font-family="Nunito Sans">Docker</text></svg>'},
+    {num:'03',label:'Component Dev',title:'Component Development',desc:'We build reusable, modular, and accessible UI components following atomic design principles. Each component is crafted for flexibility, scalability, and a consistent experience across the entire application.',subs:[{title:'Component Library',desc:'Build modular, reusable UI blocks',icon:'<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>'},{title:'State Management',desc:'Redux, Zustand, or Context API',icon:'<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>'},{title:'API Integration',desc:'Connect to REST and GraphQL APIs',icon:'<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>'},{title:'Design System',desc:'Tokens, themes, consistent visuals',icon:'<circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="9"/>'}],deliverables:['Component library','State management','API layer','Design tokens'],illus:'<svg viewBox="0 0 180 140" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="i3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#9333ea"/><stop offset="100%" stop-color="#e879f9"/></linearGradient></defs><ellipse cx="90" cy="130" rx="65" ry="10" fill="rgba(147,51,234,.15)"/><rect x="15" y="25" width="65" height="46" rx="6" fill="#0d1b4b" stroke="url(#i3)" stroke-width="1.5"/><rect x="23" y="34" width="28" height="4" rx="2" fill="#9333ea" opacity=".8"/><rect x="23" y="44" width="48" height="3" rx="2" fill="rgba(192,132,252,.25)"/><rect x="23" y="52" width="40" height="3" rx="2" fill="rgba(192,132,252,.18)"/><rect x="100" y="25" width="65" height="46" rx="6" fill="#0d1b4b" stroke="url(#i3)" stroke-width="1.5"/><rect x="108" y="34" width="28" height="4" rx="2" fill="#e879f9" opacity=".7"/><rect x="108" y="44" width="45" height="3" rx="2" fill="rgba(232,121,249,.2)"/><rect x="57" y="86" width="65" height="46" rx="6" fill="#0d1b4b" stroke="url(#i3)" stroke-width="1.5"/><rect x="65" y="95" width="32" height="4" rx="2" fill="#c084fc" opacity=".8"/><line x1="48" y1="48" x2="100" y2="48" stroke="rgba(147,51,234,.5)" stroke-width="1" stroke-dasharray="4 3"/><line x1="48" y1="70" x2="90" y2="86" stroke="rgba(147,51,234,.5)" stroke-width="1" stroke-dasharray="4 3"/><line x1="132" y1="70" x2="90" y2="86" stroke="rgba(147,51,234,.5)" stroke-width="1" stroke-dasharray="4 3"/></svg>'},
+    {num:'04',label:'Testing & Optimization',title:'Testing & Optimization',desc:'We run comprehensive automated and manual tests, then optimize for Lighthouse scores, Core Web Vitals, and cross-browser compatibility. Every release meets our strict quality gates before it ships.',subs:[{title:'Unit Testing',desc:'Jest, Vitest component tests',icon:'<polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>'},{title:'Performance',desc:'Lighthouse & Core Web Vitals',icon:'<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>'},{title:'Cross-Browser',desc:'Chrome, Firefox, Safari, Edge',icon:'<circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"/>'},{title:'Security Audit',desc:'OWASP checks, pen testing',icon:'<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>'}],deliverables:['Test coverage report','Lighthouse 90+ score','0 critical bugs','Security clearance'],illus:'<svg viewBox="0 0 180 140" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="i4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00cfff"/><stop offset="100%" stop-color="#ff3cac"/></linearGradient></defs><ellipse cx="90" cy="130" rx="60" ry="10" fill="rgba(0,207,255,.1)"/><circle cx="90" cy="66" r="48" fill="#060b1a" stroke="url(#i4)" stroke-width="2"/><circle cx="90" cy="66" r="38" fill="none" stroke="#1a2a60" stroke-width="8"/><path d="M54 92 A38 38 0 1 1 126 92" fill="none" stroke="url(#i4)" stroke-width="8" stroke-linecap="round"/><line x1="90" y1="66" x2="114" y2="42" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/><circle cx="90" cy="66" r="4" fill="#7c3aed"/><text x="90" y="76" text-anchor="middle" font-size="18" font-family="Orbitron,sans-serif" font-weight="900" fill="#00cfff">98</text><text x="90" y="98" text-anchor="middle" font-size="7.5" fill="#8b93b8" font-family="Nunito Sans">Lighthouse Score</text></svg>'},
+    {num:'05',label:'Deployment & Launch',title:'Deployment & Launch',desc:'We use zero-downtime deployment strategies with CDN configuration, SSL setup, and real-time monitoring to ensure your application goes live smoothly, securely, and at peak performance.',subs:[{title:'Production Deploy',desc:'Zero-downtime deployment strategy',icon:'<path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>'},{title:'CDN & Caching',desc:'Global content delivery network',icon:'<path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>'},{title:'Monitoring',desc:'Uptime, errors, performance alerts',icon:'<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>'},{title:'SSL & Security',desc:'HTTPS, headers, WAF setup',icon:'<rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>'}],deliverables:['Live production site','SSL certificate','CDN configured','Monitoring dashboard'],illus:'<svg viewBox="0 0 180 140" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="i5" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#00cfff"/></linearGradient></defs><ellipse cx="90" cy="132" rx="65" ry="10" fill="rgba(123,47,247,.12)"/><ellipse cx="90" cy="90" rx="50" ry="32" fill="#0a0e24" stroke="url(#i5)" stroke-width="2"/><ellipse cx="90" cy="90" rx="40" ry="24" fill="#060b1a"/><path d="M68 90 L90 65 L112 90" fill="none" stroke="#00cfff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="90" y1="65" x2="90" y2="103" stroke="#00cfff" stroke-width="2.5" stroke-linecap="round"/><rect x="30" y="108" width="120" height="6" rx="3" fill="#1a2a60"/><rect x="30" y="108" width="90" height="6" rx="3" fill="url(#i5)" opacity=".9"/><text x="90" y="125" text-anchor="middle" font-size="8" font-family="Rajdhani,sans-serif" font-weight="600" fill="#00cfff">Deployment: 78% Complete</text><circle cx="145" cy="40" r="16" fill="#0d1b4b" stroke="url(#i5)" stroke-width="1.5"/><path d="M139 41 L143 45 L152 35" fill="none" stroke="#c084fc" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>'},
+    {num:'06',label:'Maintenance',title:'Maintenance & Iteration',desc:"Our relationship doesn't end at launch. We provide ongoing maintenance, dependency updates, feature enhancements, and continuous performance monitoring to keep your application secure and evolving.",subs:[{title:'Dependency Updates',desc:'Keep all packages current & safe',icon:'<polyline points="1 4 1 10 7 10"/><polyline points="23 20 23 14 17 14"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"/>'},{title:'Feature Releases',desc:'Agile sprints for new features',icon:'<circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>'},{title:'Performance Watch',desc:'Monthly audits and optimization',icon:'<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>'},{title:'24/7 Support',desc:'SLA-backed bug fixes and patches',icon:'<path d="M12 22v-4M12 2v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83"/>'}],deliverables:['Monthly update report','Performance metrics','Feature changelog','Support response SLA'],illus:'<svg viewBox="0 0 180 140" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="i6" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#c084fc"/><stop offset="100%" stop-color="#7c3aed"/></linearGradient></defs><ellipse cx="90" cy="130" rx="65" ry="10" fill="rgba(192,132,252,.12)"/><circle cx="90" cy="68" r="46" fill="none" stroke="rgba(147,51,234,.15)" stroke-width="1.5" stroke-dasharray="5 4"/><circle cx="90" cy="68" r="32" fill="none" stroke="rgba(192,132,252,.2)" stroke-width="1.5" stroke-dasharray="4 5"/><circle cx="90" cy="68" r="46" fill="none" stroke="url(#i6)" stroke-width="2" stroke-dasharray="10 6" style="animation:spin-slow 10s linear infinite"/><circle cx="90" cy="68" r="20" fill="#0d1b4b" stroke="url(#i6)" stroke-width="2"/><text x="90" y="63" text-anchor="middle" font-size="10" font-family="Orbitron,sans-serif" font-weight="900" fill="#c084fc">24/7</text><text x="90" y="77" text-anchor="middle" font-size="6.5" fill="#8b93b8" font-family="Nunito Sans">Support</text><circle cx="136" cy="28" r="12" fill="#1a0842" stroke="#c084fc" stroke-width="1.5"/><text x="136" y="33" text-anchor="middle" font-size="10">🔄</text><circle cx="44" cy="28" r="12" fill="#1a0842" stroke="#7c3aed" stroke-width="1.5"/><text x="44" y="33" text-anchor="middle" font-size="10">⚙</text><rect x="50" y="115" width="80" height="14" rx="5" fill="#0d1b4b" stroke="url(#i6)" stroke-width="1"/><text x="90" y="125" text-anchor="middle" font-size="7.5" fill="#c084fc" font-family="Rajdhani,sans-serif" font-weight="600">Continuous Improvement</text></svg>'}
   ];
 
-  const tabsEl = document.getElementById('hwwTabs');
-  const contentEl = document.getElementById('hwwContent');
-  let current = 0;
+  const tabsEl=document.getElementById('hwwTabs');
+  const contentEl=document.getElementById('hwwContent');
+  let current=0;
 
-  steps.forEach(function(s, i){
-    const t = document.createElement('div');
-    t.className = 'hww-tab' + (i === 0 ? ' active' : '');
-    t.dataset.idx = i;
-    t.innerHTML = '<div class="hww-tab-num">'+s.num+'</div><div class="hww-tab-label">'+s.label+'</div>';
+  steps.forEach(function(s,i){
+    const t=document.createElement('div');
+    t.className='hww-tab'+(i===0?' active':'');
+    t.dataset.idx=i;
+    t.innerHTML='<div class="hww-tab-num">'+s.num+'</div><div class="hww-tab-label">'+s.label+'</div>';
     tabsEl.appendChild(t);
   });
 
-  steps.forEach(function(s, i){
-    const panel = document.createElement('div');
-    panel.className = 'hww-panel-item' + (i === 0 ? ' active' : '');
-    panel.innerHTML =
-      '<div class="hww-ph"><div class="hww-badge"><span class="hww-badge-num">'+s.num+'</span></div><div class="hww-ph-text"><h3>'+s.title+'</h3><p>'+s.desc+'</p></div></div>'+
-      '<div class="hww-divider"></div>'+
-      '<div class="hww-subs">'+s.subs.map(function(sub){return '<div class="hww-sub"><div class="hww-sub-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">'+sub.icon+'</svg></div><div class="hww-sub-title">'+sub.title+'</div><div class="hww-sub-desc">'+sub.desc+'</div></div>';}).join('')+'</div>'+
-      '<div class="hww-bottom"><div class="hww-illus">'+s.illus+'</div><div class="hww-deliverables"><div class="hww-del-label">What we deliver</div><div class="hww-del-grid">'+s.deliverables.map(function(d){return '<div class="hww-del-item">'+d+'</div>';}).join('')+'</div></div></div>';
+  steps.forEach(function(s,i){
+    const panel=document.createElement('div');
+    panel.className='hww-panel-item'+(i===0?' active':'');
+    panel.innerHTML='<div class="hww-ph"><div class="hww-badge"><span class="hww-badge-num">'+s.num+'</span></div><div class="hww-ph-text"><h3>'+s.title+'</h3><p>'+s.desc+'</p></div></div>'+'<div class="hww-divider"></div>'+'<div class="hww-subs">'+s.subs.map(function(sub){return '<div class="hww-sub"><div class="hww-sub-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">'+sub.icon+'</svg></div><div class="hww-sub-title">'+sub.title+'</div><div class="hww-sub-desc">'+sub.desc+'</div></div>';}).join('')+'</div>'+'<div class="hww-bottom"><div class="hww-illus">'+s.illus+'</div><div class="hww-deliverables"><div class="hww-del-label">What we deliver</div><div class="hww-del-grid">'+s.deliverables.map(function(d){return '<div class="hww-del-item">'+d+'</div>';}).join('')+'</div></div></div>';
     contentEl.appendChild(panel);
   });
 
-  const panels = contentEl.querySelectorAll('.hww-panel-item');
-
+  const panels=contentEl.querySelectorAll('.hww-panel-item');
   function activate(idx){
-    if(idx === current) return;
+    if(idx===current)return;
     document.querySelectorAll('.hww-tab').forEach(function(t){t.classList.remove('active');});
     panels[current].classList.remove('active');
-    current = idx;
+    current=idx;
     panels[current].classList.add('active');
     document.querySelectorAll('.hww-tab[data-idx="'+idx+'"]').forEach(function(t){t.classList.add('active');});
   }
-
   document.querySelectorAll('.hww-tab').forEach(function(el){
-    el.addEventListener('click', function(){activate(+el.dataset.idx);});
-    el.addEventListener('mouseenter', function(){activate(+el.dataset.idx);});
+    el.addEventListener('click',function(){activate(+el.dataset.idx);});
+    el.addEventListener('mouseenter',function(){activate(+el.dataset.idx);});
   });
 })();
 </script>
