@@ -332,8 +332,8 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
   width:100%;
   min-height:68px;
   background:rgba(147,51,234,.08);
-  border:1px solid rgba(147,51,234,.28);
-  border-radius:14px;
+  border:4px solid rgba(147,51,234,.28);
+  border-radius:74px;
   padding:12px 16px;
   display:flex;
   align-items:center;
@@ -353,7 +353,7 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
 .orb-panel-empty{width:100%;text-align:center;font-size:.7rem;color:var(--text-muted);letter-spacing:.3px}
 
 .orbit-cards-mobile{display:none;grid-template-columns:repeat(2,1fr);gap:10px;padding:0 4%;margin-top:-10px;margin-bottom:20px}
-.orb-card{background:rgba(147,51,234,.08);border:1px solid rgba(147,51,234,.3);border-radius:12px;padding:12px;display:flex;align-items:center;gap:10px;cursor:pointer;text-decoration:none;transition:border-color .2s,background .2s}
+.orb-card{background:rgba(147,51,234,.08);border:1px solid rgba(147,51,234,.3);border-radius:12px;padding:2px;display:flex;align-items:center;gap:10px;cursor:pointer;text-decoration:none;transition:border-color .2s,background .2s}
 .orb-card:hover{border-color:rgba(192,132,252,.5);background:rgba(147,51,234,.14)}
 .orb-card-icon{width:36px;height:36px;border-radius:50%;background:rgba(147,51,234,.15);border:1px solid rgba(147,51,234,.4);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .orb-card-icon svg{width:18px;height:18px;fill:none;stroke:#c084fc;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
@@ -415,8 +415,25 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
 .card-btns{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
 .svc-btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--purple);color:#fff;border:none;border-radius:6px;padding:11px 22px;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap;transition:background .2s,box-shadow .2s,transform .15s;text-decoration:none;}
 .svc-btn-primary:hover{background:var(--violet);box-shadow:0 0 20px var(--glow-p);transform:translateY(-1px)}
-.svc-btn-link{color:var(--grey);font-size:13px;font-weight:600;text-decoration:none;letter-spacing:.3px;transition:color .2s;}
+.svc-btn-link{display:inline-flex;align-items:center;gap:5px;color:var(--grey);font-size:13px;font-weight:600;text-decoration:none;letter-spacing:.3px;transition:color .2s;cursor:pointer;background:none;border:none;font-family:'Exo 2',sans-serif;padding:0}
 .svc-btn-link:hover{color:var(--cyan)}
+.svc-btn-link .rm-chevron{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s;flex-shrink:0}
+.svc-btn-link.expanded .rm-chevron{transform:rotate(180deg)}
+
+/* Read More expanding content */
+.card-desc-extra{
+  max-height:0;
+  opacity:0;
+  overflow:hidden;
+  color:var(--grey);
+  font-size:14px;
+  line-height:1.7;
+  transition:max-height .5s cubic-bezier(.4,0,.2,1),opacity .4s ease,margin-top .4s ease;
+}
+.card-desc-extra.open{
+  opacity:1;
+  margin-top:14px;
+}
 .card-visual{flex:1 1 0;display:flex;align-items:center;justify-content:center;position:relative;}
 .illus-wrap{width:100%;max-width:320px;aspect-ratio:5/4;position:relative;}
 .illus-wrap svg{width:100%;height:100%;overflow:visible}
@@ -475,8 +492,8 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
 .cta-btns{display:flex;gap:.9rem;flex-wrap:wrap}
 
 .sections{width:100%;max-width:3000px;margin:0 auto;display:flex;align-items:flex-start;justify-content:center;gap:6px;position:relative;overflow:visible;padding:82px 20px}
-.left{flex:1;padding:0 74px 0 40px;display:flex;flex-direction:column;justify-content:flex-start;position:sticky;top:var(--nav-h);align-self:flex-start;z-index:1;max-height:calc(100vh - 90px);overflow:hidden}
-.villan-badge{display:inline-block;border:1px solid rgba(147,51,234,.6);color:#c084fc;font-size:9.5px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;padding:5px 11px;border-radius:3px;margin-bottom:10px;width:fit-content}
+.left{flex:1;padding:0 74px 0 70px;display:flex;flex-direction:column;justify-content:flex-start;position:sticky;top:var(--nav-h);align-self:flex-start;z-index:1;max-height:calc(100vh - 90px);overflow:hidden}
+.villan-badge{display:inline-block;border:1px solid rgba(147,51,234,.6);color:#c084fc;font-size:9.5px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;padding:5px 11px;border-radius:3px;margin-bottom:20px;width:fit-content}
 .left-title{font-family:'Exo 2',sans-serif;font-size:clamp(22px,3vw,34px);font-weight:1800;color:#e8e0ff;line-height:1.18;margin-bottom:14px}
 .left-title .purple{color:#9333ea}
 .title-underline{width:40px;height:3px;background:linear-gradient(90deg,#9333ea,#c084fc);margin:16px 0 20px;border-radius:2px}
@@ -911,7 +928,6 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
       <a href="#contact" class="btn-primary">Start Your Project</a>
       <a href="#services" class="btn-outline">Explore Services</a>
     </div>
-
   </div>
 
   <div class="orbital-wrap fade-in delay-3">
@@ -922,7 +938,6 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
         <circle class="dot-ring dot-ring-3" cx="250" cy="250" r="165" fill="none" stroke="#e879f9" stroke-width="2" stroke-dasharray="4 16" stroke-linecap="round"/>
       </svg>
       <div class="ring-glow"></div>
-      <div class="orb-svc-badge"><span>10</span> Services</div>
       <div class="center-device">
         <div class="device-glow"></div>
         <div class="device-screen" id="deviceScreen">
@@ -943,24 +958,24 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
       </div>
       <div class="platform"></div>
     </div>
+    <br>
     <div class="orb-info-panel" id="orbInfoPanel">
       <div class="orb-panel-empty">Hover or tap a service icon to explore</div>
     </div>
   </div>
 </section>
 
-
 <div class="orbit-cards-mobile">
-  <a href="svc card2" class="orb-card"><div class="orb-card-icon"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><div><div class="orb-card-name">Full-Stack Dev</div><div class="orb-card-tag">End-to-end custom build</div></div></a>
-  <a href="#services" class="orb-card"><div class="orb-card-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><div><div class="orb-card-name">Front-End</div><div class="orb-card-tag">React, Vue, Angular</div></div></a>
-  <a href="#services" class="orb-card"><div class="orb-card-icon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/></svg></div><div><div class="orb-card-name">Back-End</div><div class="orb-card-tag">APIs & server logic</div></div></a>
-  <a href="#services" class="orb-card"><div class="orb-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div><div><div class="orb-card-name">Custom CMS</div><div class="orb-card-tag">Full content control</div></div></a>
-  <a href="#services" class="orb-card"><div class="orb-card-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div><div><div class="orb-card-name">E-Commerce</div><div class="orb-card-tag">High-converting stores</div></div></a>
-  <a href="#services" class="orb-card"><div class="orb-card-icon"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div><div><div class="orb-card-name">API & Integrations</div><div class="orb-card-tag">REST & GraphQL</div></div></a>
-  <a href="#services" class="orb-card"><div class="orb-card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></div><div><div class="orb-card-name">Web Portals</div><div class="orb-card-tag">Enterprise solutions</div></div></a>
-  <a href="#services" class="orb-card"><div class="orb-card-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div><div><div class="orb-card-name">PWAs & Web Apps</div><div class="orb-card-tag">Offline-ready apps</div></div></a>
-  <a href="#services" class="orb-card"><div class="orb-card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="orb-card-name">Performance Opt</div><div class="orb-card-tag">Core Web Vitals</div></div></a>
-  <a href="#services" class="orb-card"><div class="orb-card-icon"><svg viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><polyline points="23 20 23 14 17 14"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"/></svg></div><div><div class="orb-card-name">Migration</div><div class="orb-card-tag">Zero data loss</div></div></a>
+  <a href="#svc-card-1" class="orb-card"><div class="orb-card-icon"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><div><div class="orb-card-name">Full-Stack Dev</div><div class="orb-card-tag">End-to-end custom build</div></div></a>
+  <a href="#svc-card-2" class="orb-card"><div class="orb-card-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><div><div class="orb-card-name">Front-End</div><div class="orb-card-tag">React, Vue, Angular</div></div></a>
+  <a href="#svc-card-3" class="orb-card"><div class="orb-card-icon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/></svg></div><div><div class="orb-card-name">Back-End</div><div class="orb-card-tag">APIs & server logic</div></div></a>
+  <a href="#svc-card-4" class="orb-card"><div class="orb-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div><div><div class="orb-card-name">Custom CMS</div><div class="orb-card-tag">Full content control</div></div></a>
+  <a href="#svc-card-5" class="orb-card"><div class="orb-card-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div><div><div class="orb-card-name">E-Commerce</div><div class="orb-card-tag">High-converting stores</div></div></a>
+  <a href="#svc-card-6" class="orb-card"><div class="orb-card-icon"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div><div><div class="orb-card-name">API & Integrations</div><div class="orb-card-tag">REST & GraphQL</div></div></a>
+  <a href="#svc-card-7" class="orb-card"><div class="orb-card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></div><div><div class="orb-card-name">Web Portals</div><div class="orb-card-tag">Enterprise solutions</div></div></a>
+  <a href="#svc-card-8" class="orb-card"><div class="orb-card-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div><div><div class="orb-card-name">PWAs & Web Apps</div><div class="orb-card-tag">Offline-ready apps</div></div></a>
+  <a href="#svc-card-9" class="orb-card"><div class="orb-card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="orb-card-name">Performance Opt</div><div class="orb-card-tag">Core Web Vitals</div></div></a>
+  <a href="#svc-card-10" class="orb-card"><div class="orb-card-icon"><svg viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><polyline points="23 20 23 14 17 14"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"/></svg></div><div><div class="orb-card-name">Migration</div><div class="orb-card-tag">Zero data loss</div></div></a>
 </div>
 
 <!-- BANNER 1 -->
@@ -991,7 +1006,19 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
   </div>
 </div>
 
-<!-- SERVICES SECTION -->
+<!-- ═══════════════════════════════════════════
+     SERVICES SECTION — Correct order per Document 1
+     01. Full-Stack Custom Website Development
+     02. Front-End Development
+     03. Back-End Development
+     04. Custom CMS Development
+     05. E-Commerce Development
+     06. API Development & Third-Party Integrations
+     07. Custom Web Portals & Enterprise Solutions
+     08. Progressive Web Apps (PWAs) & Web Apps
+     09. Web Performance Optimization
+     10. Migration & Upgradation Services
+     ═══════════════════════════════════════════ -->
 <section class="services-section" id="services">
   <div class="services-section-head">
     <div class="section-tag">What We Do</div>
@@ -999,59 +1026,87 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
     <p class="section-sub" style="margin-bottom:0">End-to-end web solutions engineered for performance, scalability, and seamless connectivity across every platform.</p>
   </div>
 
-
-  
-  <!-- CARD 01 -->
+  <!-- CARD 01 — Full-Stack Custom Website Development -->
   <div class="service-card reveal" id="svc-card-1">
     <div class="card-text">
       <div class="card-num">01</div>
-      <h2 class="card-title">API Development & Third-Party Integrations</h2>
-      <p class="card-desc"> Seamless connectivity is the backbone of modern web applications, and WebSpide Technologies specializes in API development & third-party integrations to enhance your website’s functionality. Our custom web development services ensure secure and scalable API solutions that enable smooth communication between applications, platforms, and services. Whether you need a RESTful API, GraphQL integration, or third-party payment gateway, we design custom website development services tailored to your business needs. Our web development agency near me provides expert solutions for integrating CRM, ERP, social media, and cloud services, ensuring a unified digital experience. As a custom web design company, we focus on secure authentication, real-time data exchange, and robust API architecture, delivering high-performance solutions that streamline workflows and enhance user experience. Whether you’re building an enterprise platform or an eCommerce store, our custom website development agency ensures that third-party integrations improve efficiency, scalability, and overall functionality. With our expertise in web design and development, your business can leverage automation and enhanced connectivity to drive digital growth.</p>
-           <div class="card-btns">
-        <a href="#contact" class="svc-btn-primary">Connect Your Systems Seamlessly →</a>
-        <a href="#" class="svc-btn-link"></a>
+      <h2 class="card-title">Full-Stack Custom<br><span>Website Development</span></h2>
+      <p class="card-desc">At WebSpide Technologies, we build full-stack custom website development solutions that bring your design, functionality, and business goals together in one smooth digital experience. From the visible front-end to the powerful back-end, every part of your website is planned with care. Our custom web development services help businesses create secure, responsive, and scalable websites that are easy to use, fast to load, and ready to grow.</p>
+      <div class="card-desc-extra" data-extra>
+        <p>A good website should do more than just look professional. It should support your business, guide your visitors clearly, and work smoothly in the background. At WebSpide Technologies, our full-stack custom website development approach covers everything from UI planning and responsive design to database setup, admin panels, API connections, and performance optimization.</p><br>
+        <p>Our web design and development team works closely with your requirements to build websites that feel practical, modern, and user-friendly. Whether you need a company website, service-based website, eCommerce platform, booking system, or a custom web application, we create solutions that match your exact business needs.</p><br>
+        <p>As a custom web design company, we focus on clean layouts, mobile responsiveness, smooth navigation, and strong technical architecture. If you are looking for custom website development services or comparing web development companies near me, WebSpide Technologies can help you build a reliable online presence with a website that is secure, scalable, and built for long-term performance.</p>
+      </div>
+      <div class="card-btns">
+        <a href="#contact" class="svc-btn-primary">Request a Quote →</a>
+        <button type="button" class="svc-btn-link" data-readmore>Read More<svg class="rm-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
       </div>
     </div>
     <div class="card-visual">
-      <div class="illus-wrap float-anim">
+      <div class="illus-wrap float-anim-d2">
         <svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
-          <defs><radialGradient id="bg1" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#1a0a3e"/><stop offset="100%" stop-color="#060b1a"/></radialGradient><filter id="glow1"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter><linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7b2ff7"/><stop offset="100%" stop-color="#00cfff"/></linearGradient></defs>
-          <ellipse cx="150" cy="170" rx="120" ry="30" fill="rgba(123,47,247,0.18)"/>
-          <rect x="60" y="100" width="180" height="110" rx="8" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1.5"/>
-          <rect x="68" y="108" width="164" height="90" rx="4" fill="#060b1a"/>
-          <line x1="68" y1="130" x2="232" y2="130" stroke="#1a2a60" stroke-width=".8"/><line x1="68" y1="152" x2="232" y2="152" stroke="#1a2a60" stroke-width=".8"/><line x1="68" y1="174" x2="232" y2="174" stroke="#1a2a60" stroke-width=".8"/>
-          <line x1="110" y1="108" x2="110" y2="198" stroke="#1a2a60" stroke-width=".8"/><line x1="160" y1="108" x2="160" y2="198" stroke="#1a2a60" stroke-width=".8"/><line x1="200" y1="108" x2="200" y2="198" stroke="#1a2a60" stroke-width=".8"/>
-          <circle cx="150" cy="60" r="44" fill="#10064a" stroke="url(#lg1)" stroke-width="2" filter="url(#glow1)"/>
-          <circle cx="150" cy="60" r="36" fill="#0d1b4b" opacity=".8"/>
-          <circle cx="150" cy="60" r="44" fill="none" stroke="#7b2ff7" stroke-width="1" stroke-dasharray="8 5" class="spin" opacity=".5"/>
-          <text x="150" y="56" text-anchor="middle" font-family="Rajdhani,sans-serif" font-weight="700" font-size="20" fill="url(#lg1)" filter="url(#glow1)">API</text>
-          <text x="150" y="72" text-anchor="middle" font-family="Nunito Sans,sans-serif" font-size="8" fill="#a0b0cc">&lt;/&gt;</text>
-          <line x1="106" y1="60" x2="60" y2="60" stroke="#7b2ff7" stroke-width="1" stroke-dasharray="4 3" opacity=".7"/>
-          <line x1="194" y1="60" x2="240" y2="60" stroke="#00cfff" stroke-width="1" stroke-dasharray="4 3" opacity=".7"/>
-          <line x1="150" y1="104" x2="150" y2="115" stroke="#ff3cac" stroke-width="1" stroke-dasharray="4 3" opacity=".7"/>
-          <rect x="32" y="48" width="26" height="24" rx="5" fill="#1a0842" stroke="#7b2ff7" stroke-width="1.5"/><text x="45" y="63" text-anchor="middle" font-size="11" fill="#7b2ff7">☁</text>
-          <rect x="242" y="48" width="26" height="24" rx="5" fill="#1a0842" stroke="#00cfff" stroke-width="1.5"/><text x="255" y="63" text-anchor="middle" font-size="11" fill="#00cfff">⚡</text>
-          <circle cx="150" cy="60" r="52" fill="none" stroke="#7b2ff7" stroke-width="1" opacity=".3" style="animation:pulse-ring 2.4s ease-out infinite"/>
-          <rect x="18" y="88" width="52" height="20" rx="5" fill="#1a0842" stroke="#7b2ff7" stroke-width="1" class="float-anim-d"/><text x="44" y="101" text-anchor="middle" font-size="8" font-family="Nunito Sans" fill="#a0b0cc">REST</text>
-          <rect x="230" y="88" width="60" height="20" rx="5" fill="#1a0842" stroke="#00cfff" stroke-width="1" class="float-anim-d2"/><text x="260" y="101" text-anchor="middle" font-size="8" font-family="Nunito Sans" fill="#a0b0cc">GraphQL</text>
-          <text x="90" y="148" text-anchor="middle" font-size="14" fill="#7b2ff7" opacity=".8">🛡</text>
-          <text x="150" y="148" text-anchor="middle" font-size="14" fill="#00cfff" opacity=".8">🔗</text>
-          <text x="210" y="148" text-anchor="middle" font-size="14" fill="#ff3cac" opacity=".8">⚙</text>
+          <defs>
+            <linearGradient id="lg8" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#9333ea"/><stop offset="100%" stop-color="#e879f9"/></linearGradient>
+            <filter id="glow8"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <ellipse cx="150" cy="210" rx="110" ry="18" fill="rgba(147,51,234,0.14)"/>
+          <rect x="30" y="25" width="240" height="170" rx="8" fill="#0a0e24" stroke="url(#lg8)" stroke-width="1.5"/>
+          <rect x="30" y="25" width="28" height="170" rx="8" fill="#0d1b4b"/>
+          <circle cx="44" cy="45" r="6" fill="#9333ea" opacity=".8" filter="url(#glow8)"/>
+          <rect x="37" y="58" width="14" height="2" rx="1" fill="#1a2a60"/>
+          <rect x="37" y="64" width="14" height="2" rx="1" fill="#1a2a60"/>
+          <rect x="37" y="70" width="14" height="2" rx="1" fill="#1a2a60"/>
+          <circle cx="44" cy="82" r="4" fill="none" stroke="#c084fc" stroke-width="1.5"/>
+          <rect x="38" y="92" width="12" height="10" rx="2" fill="none" stroke="#7b2ff7" stroke-width="1.5"/>
+          <line x1="37" y1="110" x2="51" y2="110" stroke="#1a2a60" stroke-width="1.5"/>
+          <line x1="37" y1="116" x2="51" y2="116" stroke="#1a2a60" stroke-width="1.5" opacity=".5"/>
+          <rect x="62" y="32" width="200" height="156" rx="4" fill="#060b1a"/>
+          <rect x="70" y="40" width="185" height="50" rx="4" fill="rgba(147,51,234,.08)" stroke="rgba(147,51,234,.3)" stroke-width="1" stroke-dasharray="4 3"/>
+          <rect x="80" y="50" width="60" height="8" rx="2" fill="#9333ea" opacity=".5"/>
+          <rect x="80" y="64" width="100" height="4" rx="2" fill="#1a2a60" opacity=".7"/>
+          <rect x="80" y="73" width="80" height="4" rx="2" fill="#1a2a60" opacity=".4"/>
+          <rect x="185" y="55" width="52" height="22" rx="11" fill="#9333ea" opacity=".3" stroke="#9333ea" stroke-width="1"/>
+          <text x="211" y="69" text-anchor="middle" font-size="7" fill="#e879f9" font-family="Rajdhani" font-weight="600">CTA Button</text>
+          <rect x="70" y="97" width="56" height="40" rx="4" fill="rgba(147,51,234,.05)" stroke="rgba(147,51,234,.25)" stroke-width="1" stroke-dasharray="3 3"/>
+          <rect x="133" y="97" width="56" height="40" rx="4" fill="rgba(0,207,255,.05)" stroke="rgba(0,207,255,.25)" stroke-width="1" stroke-dasharray="3 3"/>
+          <rect x="196" y="97" width="56" height="40" rx="4" fill="rgba(255,60,172,.05)" stroke="rgba(255,60,172,.25)" stroke-width="1" stroke-dasharray="3 3"/>
+          <text x="98" y="121" text-anchor="middle" font-size="14">📐</text>
+          <text x="161" y="121" text-anchor="middle" font-size="14">🎨</text>
+          <text x="224" y="121" text-anchor="middle" font-size="14">✨</text>
+          <rect x="70" y="144" width="185" height="18" rx="3" fill="rgba(147,51,234,.06)" stroke="rgba(147,51,234,.2)" stroke-width="1"/>
+          <rect x="78" y="150" width="30" height="3" rx="1" fill="#1a2a60"/>
+          <rect x="115" y="150" width="30" height="3" rx="1" fill="#1a2a60"/>
+          <rect x="152" y="150" width="30" height="3" rx="1" fill="#1a2a60"/>
+          <circle cx="211" cy="66" r="3.5" fill="#fff" filter="url(#glow8)" class="float-anim-d" opacity=".8"/>
+          <rect x="0" y="55" width="52" height="52" rx="7" fill="#0d1b4b" stroke="#9333ea" stroke-width="1" class="float-anim-d"/>
+          <circle cx="11" cy="66" r="5" fill="#9333ea"/>
+          <circle cx="24" cy="66" r="5" fill="#e879f9"/>
+          <circle cx="37" cy="66" r="5" fill="#c084fc"/>
+          <circle cx="11" cy="79" r="5" fill="#00cfff"/>
+          <circle cx="24" cy="79" r="5" fill="#ff3cac"/>
+          <circle cx="37" cy="79" r="5" fill="#fff" opacity=".4"/>
+          <text x="26" y="96" text-anchor="middle" font-size="6.5" fill="#a0b0cc" font-family="Nunito Sans">Full Stack</text>
+          <rect x="248" y="95" width="50" height="22" rx="5" fill="#0d1b4b" stroke="#e879f9" stroke-width="1" class="float-anim-d2"/>
+          <text x="273" y="109" text-anchor="middle" font-size="7.5" fill="#e879f9" font-family="Nunito Sans">Scalable ✓</text>
         </svg>
       </div>
     </div>
   </div>
 
-  <!-- CARD 02 -->
+  <!-- CARD 02 — Front-End Development -->
   <div class="service-card reverse reveal" id="svc-card-2" style="background:rgba(9,14,34,0.6)">
     <div class="card-text">
       <div class="card-num">02</div>
-      <h2 class="card-title">Frontend Development</span></h2>
-      <p class="card-desc"> Enhance user engagement with visually stunning and interactive front-end development services from WebSpide Technologies. We specialize in crafting intuitive and responsive custom web design services, ensuring that your website provides a seamless user experience across all devices. Our expertise in modern frameworks allows us to create dynamic, fast-loading, and SEO-optimized websites that keep visitors engaged. As a leading custom web development company, we focus on building interactive user interfaces that align with your brand identity and business objectives. Whether you're launching a new website or revamping an existing one, our web development agency near me ensures pixel-perfect designs with optimized performance. We incorporate the latest technologies to deliver custom website development solutions that are visually appealing, functionally rich, and highly responsive. With a mobile-first approach, our custom web development services ensure that your website remains fully optimized for speed, accessibility, and usability. Let us transform your ideas into an engaging online experience that enhances user interaction and conversion rates.
-CTA: Get a Stunning UI</p>
+      <h2 class="card-title">Front-End<br><span>Development</span></h2>
+      <p class="card-desc">Your website's first impression depends on how it looks, feels, and responds to users. Our front-end development services focus on creating clean, attractive, and easy-to-use website interfaces that work smoothly on desktop, tablet, and mobile devices. At WebSpide Technologies, we design responsive layouts, smooth interactions, and fast-loading pages that reflect your brand clearly and help visitors move through your website with confidence.</p>
+      <div class="card-desc-extra" data-extra>
+        <p>Front-end development is where your users experience your brand directly. Every button, section, image, menu, form, and page layout plays a role in how visitors understand your business. At WebSpide Technologies, we create front-end designs that are not only visually appealing but also simple, structured, and comfortable to use.</p><br>
+        <p>Our custom web design services include responsive layouts, clean page sections, interactive elements, mobile-first design, optimized assets, and user-friendly navigation. We make sure your website looks professional across different screen sizes and browsers without affecting speed or usability.</p><br>
+        <p>As part of our website design and development services, we also keep SEO structure in mind. Proper heading usage, clean code, lightweight design, and fast-loading pages help improve both user experience and search visibility. Whether you are creating a new website or improving an existing one, our front-end development team builds designs that feel natural, modern, and conversion-focused.</p>
+      </div>
       <div class="card-btns">
-        <a href="#contact" class="svc-btn-primary">Build a Powerful Web Portal →</a>
-        <a href="#" class="svc-btn-link">Read More</a>
+        <a href="#contact" class="svc-btn-primary">Get a Stunning UI →</a>
+        <button type="button" class="svc-btn-link" data-readmore>Read More<svg class="rm-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
       </div>
     </div>
     <div class="card-visual">
@@ -1087,15 +1142,20 @@ CTA: Get a Stunning UI</p>
     </div>
   </div>
 
-  <!-- CARD 03 -->
+  <!-- CARD 03 — Back-End Development -->
   <div class="service-card reveal" id="svc-card-3">
     <div class="card-text">
       <div class="card-num">03</div>
-      <h2 class="card-title">BackEnd Development<br></h2>
-      <p class="card-desc"> A strong digital presence requires a robust and scalable back-end, and WebSpide Technologies specializes in back-end development that ensures seamless functionality and performance. Our custom web development team builds powerful server-side architectures that handle complex processes efficiently. Whether you need a secure database, API integration, or a custom content management system, we create reliable custom website development services tailored to your business needs. Our custom web design company ensures seamless communication between the front-end and back-end, providing an uninterrupted user experience. As a web development agency near me, we develop scalable solutions using modern frameworks, ensuring your website or application can handle growing traffic and business operations smoothly. We implement security best practices to safeguard your data while optimizing performance with advanced caching and server management techniques. With our custom web development services, your business can leverage high-performance architecture, seamless API integrations, and future-proof solutions to stay ahead in the digital landscape.</p>
+      <h2 class="card-title">Back-End<br><span>Development</span></h2>
+      <p class="card-desc">Behind every strong website, there is a reliable back-end system managing data, users, forms, workflows, and core functionality. WebSpide Technologies provides back-end development services that keep your website secure, stable, and scalable. From databases and APIs to admin panels and custom business logic, our team builds the technical foundation your website needs to perform smoothly and handle future business growth.</p>
+      <div class="card-desc-extra" data-extra>
+        <p>The back-end is the engine that keeps your website running properly. It manages how information is stored, how users interact with your platform, how requests are processed, and how different systems communicate. At WebSpide Technologies, we build back-end systems that are secure, organized, and developed around your actual business workflow.</p><br>
+        <p>Our custom web development services include database development, server-side programming, API integration, admin dashboard creation, user management, secure login systems, automation features, and content control modules. We also focus on performance, so your website or application can handle growing traffic and business activity without slowing down.</p><br>
+        <p>As a custom website development agency, we ensure the front-end and back-end work together without confusion or interruption. Whether you need a simple business dashboard, a custom CMS, a booking system, or a complex web application, our team builds back-end solutions that are practical, safe, and ready for long-term use.</p>
+      </div>
       <div class="card-btns">
-        <a href="#contact" class="svc-btn-primary">Build a High-Performance Web App →</a>
-        <a href="#" class="svc-btn-link">Read More</a>
+        <a href="#contact" class="svc-btn-primary">Strengthen Your Backend →</a>
+        <button type="button" class="svc-btn-link" data-readmore>Read More<svg class="rm-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
       </div>
     </div>
     <div class="card-visual">
@@ -1110,117 +1170,35 @@ CTA: Get a Stunning UI</p>
           <circle cx="150" cy="100" r="38" fill="#10064a" stroke="url(#lg3)" stroke-width="2" filter="url(#glow3)"/>
           <circle cx="150" cy="100" r="30" fill="#0d1b4b" opacity=".8"/>
           <circle cx="150" cy="100" r="38" fill="none" stroke="#7b2ff7" stroke-dasharray="6 4" stroke-width="1" class="spin" opacity=".5"/>
-          <text x="150" y="95" text-anchor="middle" font-family="Rajdhani" font-weight="700" font-size="18" fill="url(#lg3)" filter="url(#glow3)">PWA</text>
-          <text x="150" y="112" text-anchor="middle" font-size="9" fill="#a0b0cc" font-family="Nunito Sans">Web App</text>
+          <text x="150" y="95" text-anchor="middle" font-family="Rajdhani" font-weight="700" font-size="14" fill="url(#lg3)" filter="url(#glow3)">Back-End</text>
+          <text x="150" y="112" text-anchor="middle" font-size="9" fill="#a0b0cc" font-family="Nunito Sans">Server Logic</text>
           <rect x="103" y="150" width="30" height="22" rx="4" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1"/><text x="118" y="165" text-anchor="middle" font-size="10" fill="#7b2ff7">⚡</text>
-          <rect x="140" y="150" width="30" height="22" rx="4" fill="#0d1b4b" stroke="#00cfff" stroke-width="1"/><text x="155" y="165" text-anchor="middle" font-size="10" fill="#00cfff">📱</text>
-          <rect x="177" y="150" width="22" height="22" rx="4" fill="#0d1b4b" stroke="#ff3cac" stroke-width="1"/><text x="188" y="165" text-anchor="middle" font-size="10" fill="#ff3cac">🌐</text>
+          <rect x="140" y="150" width="30" height="22" rx="4" fill="#0d1b4b" stroke="#00cfff" stroke-width="1"/><text x="155" y="165" text-anchor="middle" font-size="10" fill="#00cfff">🗄</text>
+          <rect x="177" y="150" width="22" height="22" rx="4" fill="#0d1b4b" stroke="#ff3cac" stroke-width="1"/><text x="188" y="165" text-anchor="middle" font-size="10" fill="#ff3cac">🔒</text>
           <rect x="130" y="196" width="40" height="4" rx="2" fill="#1a2a60"/>
-          <rect x="12" y="70" width="68" height="22" rx="6" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1" class="float-anim-d"/><text x="46" y="85" text-anchor="middle" font-size="8" font-family="Nunito Sans" fill="#a0b0cc">Offline Ready</text>
-          <rect x="224" y="70" width="68" height="22" rx="6" fill="#0d1b4b" stroke="#00cfff" stroke-width="1" class="float-anim-d2"/><text x="258" y="85" text-anchor="middle" font-size="8" font-family="Nunito Sans" fill="#a0b0cc">Fast Load</text>
-          <circle cx="38" cy="112" r="14" fill="#1a0842" stroke="#7b2ff7" stroke-width="1.5" class="float-anim-d"/><text x="38" y="117" text-anchor="middle" font-size="12">📡</text>
+          <rect x="12" y="70" width="68" height="22" rx="6" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1" class="float-anim-d"/><text x="46" y="85" text-anchor="middle" font-size="8" font-family="Nunito Sans" fill="#a0b0cc">Secure APIs</text>
+          <rect x="224" y="70" width="68" height="22" rx="6" fill="#0d1b4b" stroke="#00cfff" stroke-width="1" class="float-anim-d2"/><text x="258" y="85" text-anchor="middle" font-size="8" font-family="Nunito Sans" fill="#a0b0cc">Scalable DB</text>
+          <circle cx="38" cy="112" r="14" fill="#1a0842" stroke="#7b2ff7" stroke-width="1.5" class="float-anim-d"/><text x="38" y="117" text-anchor="middle" font-size="12">⚙</text>
           <circle cx="262" cy="112" r="14" fill="#1a0842" stroke="#00cfff" stroke-width="1.5" class="float-anim-d2"/><text x="262" y="117" text-anchor="middle" font-size="12">🔒</text>
         </svg>
       </div>
     </div>
   </div>
 
-  <!-- CARD 04 -->
+  <!-- CARD 04 — Custom CMS Development -->
   <div class="service-card reverse reveal" id="svc-card-4" style="background:rgba(9,14,34,0.6)">
     <div class="card-text">
       <div class="card-num">04</div>
-      <h2 class="card-title">Custom CMS Development</span></h2>
-      <p class="card-desc"> Managing your website content efficiently is crucial for digital success, and WebSpide Technologies provides custom CMS development solutions tailored to your business needs. Our custom web development services ensure that your website is not only visually appealing but also easy to manage and update. Whether you need a bespoke custom website development solution or an advanced enterprise CMS, we create user-friendly platforms that allow you to control content with ease. Our custom web design services focus on creating intuitive dashboards, ensuring seamless navigation and efficient content management. As a trusted web development agency near me, we integrate advanced features like multi-user access, SEO tools, and security enhancements into our custom website development services. Our CMS platforms support scalability, making it easy for businesses to expand their online presence. Whether you require a CMS for blogging, eCommerce, or corporate websites, our team delivers a custom web development solution that aligns with your business objectives, ensuring flexibility and efficiency.</p>
+      <h2 class="card-title">Custom CMS<br><span>Development</span></h2>
+      <p class="card-desc">Managing your website should not always depend on a developer. WebSpide Technologies builds custom CMS development solutions that allow you to update pages, blogs, images, banners, SEO fields, and important website content with ease. Our custom website development services help businesses manage their digital content through a simple, secure, and flexible dashboard designed around their workflow, team structure, and future content needs.</p>
+      <div class="card-desc-extra" data-extra>
+        <p>A custom CMS gives your business better control over your website. Instead of adjusting your work to a fixed platform, we build a content management system that fits the way your team actually works. At WebSpide Technologies, our CMS solutions are designed to make content updates faster, easier, and more organized.</p><br>
+        <p>You can manage service pages, blog posts, images, banners, meta titles, meta descriptions, categories, media files, and other important website sections from one dashboard. We can also include user role access, content approval options, SEO management fields, upload controls, and custom modules depending on your requirements.</p><br>
+        <p>As a custom web design company, we make sure the CMS supports the front-end design properly. This means your website remains clean and consistent even when new content is added from the backend. Whether you need a CMS for a business website, corporate platform, blog, eCommerce store, or internal portal, our custom web development team builds it with flexibility, security, and easy management in mind.</p>
+      </div>
       <div class="card-btns">
-        <a href="#contact" class="svc-btn-primary">Optimize Your Website Performance →</a>
-        <a href="#" class="svc-btn-link">Read More</a>
-      </div>
-    </div>
-    <div class="card-visual">
-      <div class="illus-wrap float-anim-d">
-        <svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
-          <defs><linearGradient id="lg4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00cfff"/><stop offset="100%" stop-color="#ff3cac"/></linearGradient><filter id="glow4"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-          <ellipse cx="150" cy="200" rx="115" ry="20" fill="rgba(0,207,255,0.1)"/>
-          <rect x="45" y="40" width="170" height="120" rx="6" fill="#0a0e24" stroke="#00cfff" stroke-width="1.5"/>
-          <rect x="45" y="40" width="170" height="18" rx="6" fill="#0d1b4b"/>
-          <rect x="45" y="52" width="170" height="6" fill="#0a0e24"/>
-          <circle cx="58" cy="49" r="3" fill="#ff3cac"/><circle cx="70" cy="49" r="3" fill="#7b2ff7"/><circle cx="82" cy="49" r="3" fill="#00cfff"/>
-          <rect x="52" y="65" width="156" height="85" rx="3" fill="#070c1e"/>
-          <line x1="52" y1="90" x2="208" y2="90" stroke="#1a2a60" stroke-width=".8"/><line x1="52" y1="110" x2="208" y2="110" stroke="#1a2a60" stroke-width=".8"/><line x1="52" y1="130" x2="208" y2="130" stroke="#1a2a60" stroke-width=".8"/>
-          <path d="M58 145 L80 130 L100 118 L120 110 L140 95 L160 82 L175 72 L200 68" fill="none" stroke="#00cfff" stroke-width="2.5" filter="url(#glow4)"/>
-          <path d="M58 145 L80 130 L100 118 L120 110 L140 95 L160 82 L175 72 L200 68 L200 145 Z" fill="url(#lg4)" opacity=".12"/>
-          <circle cx="140" cy="95" r="4" fill="#00cfff" filter="url(#glow4)"/><circle cx="200" cy="68" r="4" fill="#ff3cac" filter="url(#glow4)"/>
-          <rect x="123" y="160" width="14" height="12" rx="2" fill="#0d1b4b"/><rect x="112" y="171" width="36" height="5" rx="3" fill="#0d1b4b"/>
-          <circle cx="240" cy="90" r="40" fill="#0a0e24" stroke="#7b2ff7" stroke-width="1.5"/>
-          <circle cx="240" cy="90" r="32" fill="#060b1a"/>
-          <path d="M212 108 A32 32 0 1 1 268 108" fill="none" stroke="#1a2a60" stroke-width="6" stroke-linecap="round"/>
-          <path d="M212 108 A32 32 0 0 1 255 62" fill="none" stroke="url(#lg4)" stroke-width="6" stroke-linecap="round" filter="url(#glow4)"/>
-          <line x1="240" y1="90" x2="255" y2="66" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
-          <circle cx="240" cy="90" r="4" fill="#7b2ff7"/>
-          <text x="240" y="102" text-anchor="middle" font-size="9" font-family="Rajdhani" font-weight="700" fill="#00cfff">98</text>
-          <text x="240" y="114" text-anchor="middle" font-size="7" fill="#a0b0cc">Score</text>
-          <rect x="12" y="120" width="60" height="20" rx="5" fill="#0d1b4b" stroke="#00cfff" stroke-width="1" class="float-anim-d"/><text x="42" y="133" text-anchor="middle" font-size="7.5" fill="#00cfff" font-family="Nunito Sans">CDN ✓</text>
-          <rect x="12" y="148" width="60" height="20" rx="5" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1" class="float-anim-d2"/><text x="42" y="161" text-anchor="middle" font-size="7.5" fill="#7b2ff7" font-family="Nunito Sans">Cache ✓</text>
-          <rect x="80" y="190" width="90" height="22" rx="6" fill="#0d1b4b" stroke="#00cfff" stroke-width="1"/>
-          <text x="125" y="205" text-anchor="middle" font-size="9" fill="#00cfff" font-family="Rajdhani" font-weight="600">⚡ 0.8s Load Time</text>
-        </svg>
-      </div>
-    </div>
-  </div>
-
-  <!-- CARD 05 -->
-  <div class="service-card reveal" id="svc-card-5">
-    <div class="card-text">
-      <div class="card-num">05</div>
-      <h2 class="card-title">Migration &amp;<br><span>Upgradation Services</span></h2>
-      <p class="card-desc"> Stay ahead in the digital landscape with our migration & upgradation services, ensuring your website remains updated, secure, and high-performing. WebSpide Technologies specializes in custom web development services that seamlessly migrate your website to the latest platforms and technologies without any downtime or data loss. Whether you need to upgrade your CMS, move to a more powerful hosting solution, or transition to a new framework, our custom website development agency ensures a smooth and efficient migration process. Our web development agency near me focuses on improving security, speed, and scalability while preserving your website’s integrity and functionality. As a custom web design company, we handle everything from database migration to UI/UX enhancements, ensuring that your website meets modern standards. Our custom web development team ensures that your website remains competitive with enhanced features, mobile responsiveness, and improved performance. Let us help you future-proof your website with seamless upgrades and secure migrations.</p>
-      <div class="card-btns">
-        <a href="#contact" class="svc-btn-primary">Upgrade Your Website Today →</a>
-        <a href="#" class="svc-btn-link">Read More</a>
-      </div>
-    </div>
-    <div class="card-visual">
-      <div class="illus-wrap float-anim-d2">
-        <svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
-          <defs><linearGradient id="lg5" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7b2ff7"/><stop offset="100%" stop-color="#00cfff"/></linearGradient><filter id="glow5"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-          <ellipse cx="150" cy="205" rx="115" ry="18" fill="rgba(123,47,247,0.12)"/>
-          <rect x="20" y="80" width="90" height="20" rx="5" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1.5"/><rect x="24" y="84" width="12" height="12" rx="2" fill="#7b2ff7" opacity=".7"/><rect x="40" y="87" width="40" height="4" rx="2" fill="#1a2a60"/><rect x="84" y="87" width="10" height="4" rx="2" fill="#7b2ff7" style="animation:blink 1.5s ease-in-out infinite"/>
-          <rect x="20" y="104" width="90" height="20" rx="5" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1.5"/><rect x="24" y="108" width="12" height="12" rx="2" fill="#7b2ff7" opacity=".5"/><rect x="40" y="111" width="35" height="4" rx="2" fill="#1a2a60"/><rect x="84" y="111" width="10" height="4" rx="2" fill="#7b2ff7" opacity=".5" style="animation:blink 1.8s ease-in-out infinite 0.5s"/>
-          <rect x="20" y="128" width="90" height="20" rx="5" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1.5"/><rect x="24" y="132" width="12" height="12" rx="2" fill="#7b2ff7" opacity=".3"/><rect x="40" y="135" width="30" height="4" rx="2" fill="#1a2a60"/>
-          <text x="65" y="78" text-anchor="middle" font-size="9" fill="#a0b0cc" font-family="Nunito Sans">Old Server</text>
-          <path d="M115 110 L180 110" stroke="url(#lg5)" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#arr)"/>
-          <path d="M115 125 L180 125" stroke="url(#lg5)" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#arr)"/>
-          <defs><marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#00cfff"/></marker></defs>
-          <ellipse cx="150" cy="55" rx="42" ry="26" fill="#0d1b4b" stroke="url(#lg5)" stroke-width="2" filter="url(#glow5)"/>
-          <path d="M138 55 L150 42 L162 55" fill="none" stroke="#00cfff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <line x1="150" y1="42" x2="150" y2="65" stroke="#00cfff" stroke-width="2.5" stroke-linecap="round"/>
-          <text x="150" y="78" text-anchor="middle" font-size="9" fill="#a0b0cc" font-family="Nunito Sans">Cloud Migration</text>
-          <rect x="190" y="80" width="90" height="20" rx="5" fill="#0d1b4b" stroke="#00cfff" stroke-width="1.5"/><rect x="194" y="84" width="12" height="12" rx="2" fill="#00cfff" opacity=".9"/><rect x="210" y="87" width="40" height="4" rx="2" fill="#1a2a60"/><rect x="254" y="87" width="10" height="4" rx="2" fill="#00cfff" style="animation:blink 1.2s ease-in-out infinite"/>
-          <rect x="190" y="104" width="90" height="20" rx="5" fill="#0d1b4b" stroke="#00cfff" stroke-width="1.5"/><rect x="194" y="108" width="12" height="12" rx="2" fill="#00cfff" opacity=".7"/><rect x="210" y="111" width="38" height="4" rx="2" fill="#1a2a60"/><rect x="254" y="111" width="10" height="4" rx="2" fill="#00cfff" opacity=".7" style="animation:blink 1.4s ease-in-out infinite 0.3s"/>
-          <rect x="190" y="128" width="90" height="20" rx="5" fill="#0d1b4b" stroke="#00cfff" stroke-width="1.5"/><rect x="194" y="132" width="12" height="12" rx="2" fill="#00cfff" opacity=".5"/><rect x="210" y="135" width="36" height="4" rx="2" fill="#1a2a60"/>
-          <text x="235" y="78" text-anchor="middle" font-size="9" fill="#a0b0cc" font-family="Nunito Sans">New Server</text>
-          <rect x="60" y="168" width="180" height="12" rx="6" fill="#0d1b4b"/><rect x="60" y="168" width="150" height="12" rx="6" fill="url(#lg5)" opacity=".85"/>
-          <text x="150" y="195" text-anchor="middle" font-size="9" fill="#00cfff" font-family="Rajdhani" font-weight="600">Migration: 83% Complete</text>
-          <rect x="104" y="215" width="92" height="18" rx="5" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1"/>
-          <text x="150" y="228" text-anchor="middle" font-size="8" fill="#7b2ff7" font-family="Nunito Sans">Zero Data Loss Guarantee</text>
-        </svg>
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══════════════════════════════════════════
-       5 NEW SERVICE CARDS (06–10)
-       ═══════════════════════════════════════════ -->
-
-  <!-- CARD 06 — WordPress & CMS Development -->
-  <div class="service-card reverse reveal" id="svc-card-6" style="background:rgba(9,14,34,0.6)">
-    <div class="card-text">
-      <div class="card-num">06</div>
-      <h2 class="card-title">Web Performance Optimization</span></h2>
-      <p class="card-desc"> Speed and performance are critical factors for online success, and WebSpide Technologies specializes in web performance optimization to enhance user experience and SEO rankings. Our custom web development services ensure that your website is optimized for speed, mobile responsiveness, and seamless navigation. As a leading custom web design company, we implement advanced techniques like image optimization, caching, lazy loading, and CDN integration to boost website speed. Our web development agency near me focuses on reducing page load times, improving server response, and ensuring smooth functionality across all devices. Whether you have an eCommerce store, a corporate website, or a web application, our custom website development services optimize site performance to reduce bounce rates and increase conversions. By leveraging the latest tools and technologies, we enhance the speed, security, and accessibility of your website, ensuring a seamless user experience. With our expertise in web design and development, your website will perform at its best, delivering an optimized experience that keeps visitors engaged.</p>
-      <div class="card-btns">
-        <a href="#contact" class="svc-btn-primary">Get a Custom CMS Built →</a>
-        <a href="#" class="svc-btn-link">Read More</a>
+        <a href="#contact" class="svc-btn-primary">Build a Custom CMS →</a>
+        <button type="button" class="svc-btn-link" data-readmore>Read More<svg class="rm-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
       </div>
     </div>
     <div class="card-visual">
@@ -1269,15 +1247,20 @@ CTA: Get a Stunning UI</p>
     </div>
   </div>
 
-  <!-- CARD 07 — E-Commerce Development -->
-  <div class="service-card reveal" id="svc-card-7">
+  <!-- CARD 05 — E-Commerce Development -->
+  <div class="service-card reveal" id="svc-card-5">
     <div class="card-text">
-      <div class="card-num">07</div>
+      <div class="card-num">05</div>
       <h2 class="card-title">E-Commerce<br><span>Development</span></h2>
-      <p class="card-desc"> Expand your online business with our expert eCommerce development services at WebSpide Technologies. We specialize in custom web development solutions that create powerful and scalable eCommerce platforms, ensuring a seamless shopping experience. Whether you're launching a new online store or upgrading an existing one, our custom website development services provide robust solutions with secure payment gateways, inventory management, and mobile-friendly interfaces. As a custom web design company, we focus on creating engaging product displays, easy navigation, and optimized checkout processes that enhance user experience and drive conversions. Our custom website development agency ensures seamless third-party integrations, allowing businesses to connect with CRM, ERP, and marketing tools effortlessly. With a focus on security and performance, our web development agency near me builds feature-rich eCommerce solutions that support business growth. From small businesses to large enterprises, our custom web development services help you establish a strong online presence and maximize your revenue potential.</p>
+      <p class="card-desc">WebSpide Technologies creates custom eCommerce development solutions that help businesses sell online with confidence. We build user-friendly online stores with product catalogs, secure checkout, payment gateway integration, inventory management, order tracking, and mobile-responsive design. Our custom website development services are focused on making the shopping experience simple for customers while helping business owners manage products, orders, and sales more efficiently.</p>
+      <div class="card-desc-extra" data-extra>
+        <p>A successful eCommerce website should make buying easy for customers and managing sales simple for business owners. At WebSpide Technologies, we create online stores that are clean, secure, fast, and built to support real business growth. From product discovery to checkout, every step is planned to reduce confusion and improve conversions.</p><br>
+        <p>Our eCommerce development services include product categories, filters, cart functionality, customer accounts, coupon management, payment gateway integration, shipping settings, order management, invoice generation, inventory control, and admin dashboards. We can also connect your online store with CRM, ERP, marketing tools, or other third-party systems when needed.</p><br>
+        <p>As a custom website development agency, we build eCommerce platforms for retailers, wholesalers, manufacturers, distributors, and growing brands. Our custom web design services focus on attractive product presentation, easy navigation, and mobile-friendly layouts. Along with design, our custom web development services support SEO-friendly product pages, faster loading speed, better security, and long-term scalability.</p>
+      </div>
       <div class="card-btns">
-        <a href="#contact" class="svc-btn-primary">Build Your Online Store →</a>
-        <a href="#" class="svc-btn-link">Read More</a>
+        <a href="#contact" class="svc-btn-primary">Launch Your E-Commerce Store →</a>
+        <button type="button" class="svc-btn-link" data-readmore>Read More<svg class="rm-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
       </div>
     </div>
     <div class="card-visual">
@@ -1333,78 +1316,128 @@ CTA: Get a Stunning UI</p>
     </div>
   </div>
 
-  <!-- CARD 08 — UI/UX Design -->
-  <div class="service-card reverse reveal" id="svc-card-8" style="background:rgba(9,14,34,0.6)">
+  <!-- CARD 06 — API Development & Third-Party Integrations -->
+  <div class="service-card reverse reveal" id="svc-card-6" style="background:rgba(9,14,34,0.6)">
     <div class="card-text">
-      <div class="card-num">08</div>
-      <h2 class="card-title">Full Stack<br><span>Web Development </span></h2>
-      <p class="card-desc">At WebSpide Technologies, we offer full-stack custom website development solutions designed to meet your business’s unique needs. Our expertise in web design and development ensures that both front-end and back-end systems work seamlessly together, delivering a high-performance website. Whether you're looking for a simple informational website or a complex web application, our team builds scalable, secure, and feature-rich solutions tailored to your goals. We use the latest technologies to create custom website development services that enhance user experience and optimize performance. As a custom web design company, we focus on delivering a responsive and engaging website that adapts to various devices effortlessly. Our web development agency near me provides integrated solutions, from interactive UI/UX designs to database management and API development. Whether you need a custom website development agency to build an enterprise-level platform or an eCommerce solution, we ensure robust architecture, seamless third-party integrations, and long-term scalability. Elevate your online presence with our custom web development services and experience a digital transformation that drives results.</p>
-            <div class="card-btns">
-        <a href="#contact" class="svc-btn-primary">Design Your Experience Today →</a>
-        <a href="#" class="svc-btn-link">Read More</a>
+      <div class="card-num">06</div>
+      <h2 class="card-title">API Development &amp;<br><span>Third-Party Integrations</span></h2>
+      <p class="card-desc">Modern websites often need to connect with other tools, platforms, and business systems. WebSpide Technologies provides API development and third-party integration services that connect your website with payment gateways, CRM, ERP, cloud platforms, booking systems, social media tools, and custom applications. Our custom web development services help improve automation, reduce manual work, and keep data moving smoothly across your digital ecosystem.</p>
+      <div class="card-desc-extra" data-extra>
+        <p>API development helps your website communicate with other platforms in a secure and structured way. At WebSpide Technologies, we create API solutions and third-party integrations that make your website more connected, useful, and efficient. Whether you need payment gateway integration, CRM connection, ERP integration, social media login, cloud storage, booking system integration, or custom software connectivity, we develop solutions based on your business process.</p><br>
+        <p>Our custom website development services include REST API development, GraphQL integration, secure authentication, real-time data exchange, automation workflows, and external platform connections. These integrations help reduce repetitive work, avoid manual errors, and improve operational speed.</p><br>
+        <p>As a custom web design company, we also make sure integrations do not disturb the user experience or website performance. Whether you are building an eCommerce platform, customer portal, enterprise solution, or web application, our web design and development team ensures every connection works smoothly. If you are searching for a reliable web development agency near me, WebSpide Technologies can help you build connected digital systems that support better productivity.</p>
+      </div>
+      <div class="card-btns">
+        <a href="#contact" class="svc-btn-primary">Connect Your Systems Seamlessly →</a>
+        <button type="button" class="svc-btn-link" data-readmore>Read More<svg class="rm-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
       </div>
     </div>
     <div class="card-visual">
-      <div class="illus-wrap float-anim-d2">
+      <div class="illus-wrap float-anim">
         <svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="lg8" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#9333ea"/><stop offset="100%" stop-color="#e879f9"/></linearGradient>
-            <filter id="glow8"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-          </defs>
-          <ellipse cx="150" cy="210" rx="110" ry="18" fill="rgba(147,51,234,0.14)"/>
-          <rect x="30" y="25" width="240" height="170" rx="8" fill="#0a0e24" stroke="url(#lg8)" stroke-width="1.5"/>
-          <rect x="30" y="25" width="28" height="170" rx="8" fill="#0d1b4b"/>
-          <circle cx="44" cy="45" r="6" fill="#9333ea" opacity=".8" filter="url(#glow8)"/>
-          <rect x="37" y="58" width="14" height="2" rx="1" fill="#1a2a60"/>
-          <rect x="37" y="64" width="14" height="2" rx="1" fill="#1a2a60"/>
-          <rect x="37" y="70" width="14" height="2" rx="1" fill="#1a2a60"/>
-          <circle cx="44" cy="82" r="4" fill="none" stroke="#c084fc" stroke-width="1.5"/>
-          <rect x="38" y="92" width="12" height="10" rx="2" fill="none" stroke="#7b2ff7" stroke-width="1.5"/>
-          <line x1="37" y1="110" x2="51" y2="110" stroke="#1a2a60" stroke-width="1.5"/>
-          <line x1="37" y1="116" x2="51" y2="116" stroke="#1a2a60" stroke-width="1.5" opacity=".5"/>
-          <rect x="62" y="32" width="200" height="156" rx="4" fill="#060b1a"/>
-          <rect x="70" y="40" width="185" height="50" rx="4" fill="rgba(147,51,234,.08)" stroke="rgba(147,51,234,.3)" stroke-width="1" stroke-dasharray="4 3"/>
-          <rect x="80" y="50" width="60" height="8" rx="2" fill="#9333ea" opacity=".5"/>
-          <rect x="80" y="64" width="100" height="4" rx="2" fill="#1a2a60" opacity=".7"/>
-          <rect x="80" y="73" width="80" height="4" rx="2" fill="#1a2a60" opacity=".4"/>
-          <rect x="185" y="55" width="52" height="22" rx="11" fill="#9333ea" opacity=".3" stroke="#9333ea" stroke-width="1"/>
-          <text x="211" y="69" text-anchor="middle" font-size="7" fill="#e879f9" font-family="Rajdhani" font-weight="600">CTA Button</text>
-          <rect x="70" y="97" width="56" height="40" rx="4" fill="rgba(147,51,234,.05)" stroke="rgba(147,51,234,.25)" stroke-width="1" stroke-dasharray="3 3"/>
-          <rect x="133" y="97" width="56" height="40" rx="4" fill="rgba(0,207,255,.05)" stroke="rgba(0,207,255,.25)" stroke-width="1" stroke-dasharray="3 3"/>
-          <rect x="196" y="97" width="56" height="40" rx="4" fill="rgba(255,60,172,.05)" stroke="rgba(255,60,172,.25)" stroke-width="1" stroke-dasharray="3 3"/>
-          <text x="98" y="121" text-anchor="middle" font-size="14">📐</text>
-          <text x="161" y="121" text-anchor="middle" font-size="14">🎨</text>
-          <text x="224" y="121" text-anchor="middle" font-size="14">✨</text>
-          <rect x="70" y="144" width="185" height="18" rx="3" fill="rgba(147,51,234,.06)" stroke="rgba(147,51,234,.2)" stroke-width="1"/>
-          <rect x="78" y="150" width="30" height="3" rx="1" fill="#1a2a60"/>
-          <rect x="115" y="150" width="30" height="3" rx="1" fill="#1a2a60"/>
-          <rect x="152" y="150" width="30" height="3" rx="1" fill="#1a2a60"/>
-          <circle cx="211" cy="66" r="3.5" fill="#fff" filter="url(#glow8)" class="float-anim-d" opacity=".8"/>
-          <line x1="196" y1="117" x2="168" y2="148" stroke="#9333ea" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/>
-          <rect x="0" y="55" width="52" height="52" rx="7" fill="#0d1b4b" stroke="#9333ea" stroke-width="1" class="float-anim-d"/>
-          <circle cx="11" cy="66" r="5" fill="#9333ea"/>
-          <circle cx="24" cy="66" r="5" fill="#e879f9"/>
-          <circle cx="37" cy="66" r="5" fill="#c084fc"/>
-          <circle cx="11" cy="79" r="5" fill="#00cfff"/>
-          <circle cx="24" cy="79" r="5" fill="#ff3cac"/>
-          <circle cx="37" cy="79" r="5" fill="#fff" opacity=".4"/>
-          <text x="26" y="96" text-anchor="middle" font-size="6.5" fill="#a0b0cc" font-family="Nunito Sans">Palette</text>
-          <rect x="248" y="95" width="50" height="22" rx="5" fill="#0d1b4b" stroke="#e879f9" stroke-width="1" class="float-anim-d2"/>
-          <text x="273" y="109" text-anchor="middle" font-size="7.5" fill="#e879f9" font-family="Nunito Sans">UX Audit ✓</text>
+          <defs><radialGradient id="bg1" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#1a0a3e"/><stop offset="100%" stop-color="#060b1a"/></radialGradient><filter id="glow1"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter><linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7b2ff7"/><stop offset="100%" stop-color="#00cfff"/></linearGradient></defs>
+          <ellipse cx="150" cy="170" rx="120" ry="30" fill="rgba(123,47,247,0.18)"/>
+          <rect x="60" y="100" width="180" height="110" rx="8" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1.5"/>
+          <rect x="68" y="108" width="164" height="90" rx="4" fill="#060b1a"/>
+          <line x1="68" y1="130" x2="232" y2="130" stroke="#1a2a60" stroke-width=".8"/><line x1="68" y1="152" x2="232" y2="152" stroke="#1a2a60" stroke-width=".8"/><line x1="68" y1="174" x2="232" y2="174" stroke="#1a2a60" stroke-width=".8"/>
+          <line x1="110" y1="108" x2="110" y2="198" stroke="#1a2a60" stroke-width=".8"/><line x1="160" y1="108" x2="160" y2="198" stroke="#1a2a60" stroke-width=".8"/><line x1="200" y1="108" x2="200" y2="198" stroke="#1a2a60" stroke-width=".8"/>
+          <circle cx="150" cy="60" r="44" fill="#10064a" stroke="url(#lg1)" stroke-width="2" filter="url(#glow1)"/>
+          <circle cx="150" cy="60" r="36" fill="#0d1b4b" opacity=".8"/>
+          <circle cx="150" cy="60" r="44" fill="none" stroke="#7b2ff7" stroke-width="1" stroke-dasharray="8 5" class="spin" opacity=".5"/>
+          <text x="150" y="56" text-anchor="middle" font-family="Rajdhani,sans-serif" font-weight="700" font-size="20" fill="url(#lg1)" filter="url(#glow1)">API</text>
+          <text x="150" y="72" text-anchor="middle" font-family="Nunito Sans,sans-serif" font-size="8" fill="#a0b0cc">&lt;/&gt;</text>
+          <line x1="106" y1="60" x2="60" y2="60" stroke="#7b2ff7" stroke-width="1" stroke-dasharray="4 3" opacity=".7"/>
+          <line x1="194" y1="60" x2="240" y2="60" stroke="#00cfff" stroke-width="1" stroke-dasharray="4 3" opacity=".7"/>
+          <line x1="150" y1="104" x2="150" y2="115" stroke="#ff3cac" stroke-width="1" stroke-dasharray="4 3" opacity=".7"/>
+          <rect x="32" y="48" width="26" height="24" rx="5" fill="#1a0842" stroke="#7b2ff7" stroke-width="1.5"/><text x="45" y="63" text-anchor="middle" font-size="11" fill="#7b2ff7">☁</text>
+          <rect x="242" y="48" width="26" height="24" rx="5" fill="#1a0842" stroke="#00cfff" stroke-width="1.5"/><text x="255" y="63" text-anchor="middle" font-size="11" fill="#00cfff">⚡</text>
+          <circle cx="150" cy="60" r="52" fill="none" stroke="#7b2ff7" stroke-width="1" opacity=".3" style="animation:pulse-ring 2.4s ease-out infinite"/>
+          <rect x="18" y="88" width="52" height="20" rx="5" fill="#1a0842" stroke="#7b2ff7" stroke-width="1" class="float-anim-d"/><text x="44" y="101" text-anchor="middle" font-size="8" font-family="Nunito Sans" fill="#a0b0cc">REST</text>
+          <rect x="230" y="88" width="60" height="20" rx="5" fill="#1a0842" stroke="#00cfff" stroke-width="1" class="float-anim-d2"/><text x="260" y="101" text-anchor="middle" font-size="8" font-family="Nunito Sans" fill="#a0b0cc">GraphQL</text>
+          <text x="90" y="148" text-anchor="middle" font-size="14" fill="#7b2ff7" opacity=".8">🛡</text>
+          <text x="150" y="148" text-anchor="middle" font-size="14" fill="#00cfff" opacity=".8">🔗</text>
+          <text x="210" y="148" text-anchor="middle" font-size="14" fill="#ff3cac" opacity=".8">⚙</text>
         </svg>
       </div>
     </div>
   </div>
 
-  <!-- CARD 09 — Mobile App Development -->
-  <div class="service-card reveal" id="svc-card-9">
+  <!-- CARD 07 — Custom Web Portals & Enterprise Solutions -->
+  <div class="service-card reveal" id="svc-card-7">
     <div class="card-text">
-      <div class="card-num">09</div>
-      <h2 class="card-title"> Progressive Web Apps (PWAs) & Web Apps</span></h2>
-      <p class="card-desc"> Enhance user experience with Progressive Web Apps (PWAs) & web apps that offer the speed and functionality of native applications. WebSpide Technologies specializes in custom web development solutions that create fast, reliable, and engaging web applications that work seamlessly across all devices. Our custom web design services ensure that PWAs load instantly, even in low-network conditions, providing users with an app-like experience. As a custom website development agency, we leverage the latest technologies to build highly responsive and feature-rich PWAs that drive engagement and retention. Our web development agency near me ensures that web apps are optimized for performance, security, and offline functionality, making them a cost-effective alternative to native apps. Whether you need an eCommerce PWA, an enterprise application, or a business-specific solution, our custom web development services guarantee an intuitive and smooth experience. Transform your website into a high-performing web application that keeps users engaged and improves conversions.</p>
+      <div class="card-num">07</div>
+      <h2 class="card-title">Custom Web Portals &amp;<br><span>Enterprise Solutions</span></h2>
+      <p class="card-desc">WebSpide Technologies develops custom web portals and enterprise solutions that help businesses manage users, data, workflows, and daily operations from one centralized platform. We build customer portals, employee dashboards, vendor portals, admin systems, and enterprise applications with secure login, role-based access, reports, and data management features. Our custom web development services help improve productivity, communication, and overall business efficiency.</p>
+      <div class="card-desc-extra" data-extra>
+        <p>A custom web portal is useful when your business needs a secure and organized platform for customers, employees, vendors, partners, or internal teams. At WebSpide Technologies, we create web portals that are designed around your workflow, user roles, data structure, and business process. The goal is to make daily operations easier, faster, and more transparent.</p><br>
+        <p>Our custom website development services include login systems, user dashboards, role-based access control, document uploads, service requests, approval workflows, notifications, reports, CRM integration, ERP integration, admin controls, and analytics features. These systems help reduce manual work, improve communication, and keep important activities in one place.</p><br>
+        <p>As a custom web design company, we also focus on building portal interfaces that are clean, responsive, and easy to use. Whether you need an internal business portal or a customer-facing enterprise platform, our website design and development services help you create a secure and scalable solution that supports long-term digital growth.</p>
+      </div>
       <div class="card-btns">
-        <a href="#contact" class="svc-btn-primary">Launch Your Mobile App →</a>
-        <a href="#" class="svc-btn-link">Read More</a>
+        <a href="#contact" class="svc-btn-primary">Build a Powerful Web Portal →</a>
+        <button type="button" class="svc-btn-link" data-readmore>Read More<svg class="rm-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+      </div>
+    </div>
+    <div class="card-visual">
+      <div class="illus-wrap float-anim-d">
+        <svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="lg10" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00cfff"/><stop offset="100%" stop-color="#7b2ff7"/></linearGradient>
+            <filter id="glow10"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <ellipse cx="150" cy="210" rx="115" ry="18" fill="rgba(0,207,255,0.12)"/>
+          <circle cx="150" cy="100" r="52" fill="#0a0e24" stroke="url(#lg10)" stroke-width="2" filter="url(#glow10)"/>
+          <circle cx="150" cy="100" r="42" fill="#060b1a"/>
+          <circle cx="150" cy="100" r="52" fill="none" stroke="#00cfff" stroke-dasharray="8 5" stroke-width="1" class="spin" opacity=".4"/>
+          <rect x="136" y="86" width="28" height="28" rx="4" fill="none" stroke="#00cfff" stroke-width="1.8"/>
+          <rect x="140" y="90" width="8" height="8" rx="1" fill="#00cfff" opacity=".6"/>
+          <rect x="152" y="90" width="8" height="8" rx="1" fill="#7b2ff7" opacity=".6"/>
+          <rect x="140" y="102" width="8" height="8" rx="1" fill="#ff3cac" opacity=".6"/>
+          <rect x="152" y="102" width="8" height="8" rx="1" fill="#c084fc" opacity=".6"/>
+          <text x="150" y="126" text-anchor="middle" font-size="7.5" fill="#a0b0cc" font-family="Nunito Sans">Enterprise Portal</text>
+          <rect x="36" y="62" width="72" height="76" rx="6" fill="#0d1b4b" stroke="rgba(0,207,255,.3)" stroke-width="1" class="float-anim-d"/>
+          <text x="72" y="78" text-anchor="middle" font-size="7.5" fill="#a0b0cc" font-family="Nunito Sans">Users</text>
+          <rect x="44" y="84" width="16" height="44" rx="2" fill="#1a2a60"/>
+          <rect x="44" y="107" width="16" height="21" rx="2" fill="#00cfff" opacity=".3"/>
+          <rect x="65" y="84" width="16" height="44" rx="2" fill="#1a2a60"/>
+          <rect x="65" y="97" width="16" height="31" rx="2" fill="#00cfff" opacity=".5"/>
+          <rect x="86" y="84" width="16" height="44" rx="2" fill="#1a2a60"/>
+          <rect x="86" y="88" width="16" height="40" rx="2" fill="#00cfff" opacity=".85" filter="url(#glow10)"/>
+          <text x="94" y="83" text-anchor="middle" font-size="7" fill="#00cfff" font-family="Rajdhani" font-weight="700">Active</text>
+          <rect x="196" y="62" width="72" height="76" rx="6" fill="#0d1b4b" stroke="rgba(123,47,247,.3)" stroke-width="1" class="float-anim-d2"/>
+          <text x="232" y="78" text-anchor="middle" font-size="7.5" fill="#a0b0cc" font-family="Nunito Sans">Access</text>
+          <path d="M204 127 L214 118 L222 108 L232 100 L240 90 L248 80 L258 72" fill="none" stroke="#7b2ff7" stroke-width="2" stroke-linecap="round"/>
+          <path d="M204 127 L214 118 L222 108 L232 100 L240 90 L248 80 L258 72 L258 127 Z" fill="url(#lg10)" opacity=".12"/>
+          <text x="232" y="124" text-anchor="middle" font-size="9" fill="#7b2ff7" font-family="Rajdhani" font-weight="700">Role-Based</text>
+          <rect x="38" y="155" width="46" height="18" rx="6" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1"/>
+          <text x="61" y="167" text-anchor="middle" font-size="7.5" fill="#c084fc" font-family="Nunito Sans">Admin</text>
+          <rect x="92" y="155" width="46" height="18" rx="6" fill="#0d1b4b" stroke="#00cfff" stroke-width="1"/>
+          <text x="115" y="167" text-anchor="middle" font-size="7.5" fill="#00cfff" font-family="Nunito Sans">Vendor</text>
+          <rect x="146" y="155" width="46" height="18" rx="6" fill="#0d1b4b" stroke="#ff3cac" stroke-width="1"/>
+          <text x="169" y="167" text-anchor="middle" font-size="7.5" fill="#ff3cac" font-family="Nunito Sans">Client</text>
+          <rect x="200" y="155" width="60" height="18" rx="6" fill="#0d1b4b" stroke="#9333ea" stroke-width="1"/>
+          <text x="230" y="167" text-anchor="middle" font-size="7.5" fill="#c084fc" font-family="Nunito Sans">Employee</text>
+          <rect x="100" y="185" width="100" height="22" rx="7" fill="#0d1b4b" stroke="#00cfff" stroke-width="1"/>
+          <text x="150" y="200" text-anchor="middle" font-size="9" fill="#00cfff" font-family="Rajdhani" font-weight="700">⚡ Secure & Scalable</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 08 — Progressive Web Apps (PWAs) & Web Apps -->
+  <div class="service-card reverse reveal" id="svc-card-8" style="background:rgba(9,14,34,0.6)">
+    <div class="card-text">
+      <div class="card-num">08</div>
+      <h2 class="card-title">Progressive Web Apps<br><span>(PWAs) &amp; Web Apps</span></h2>
+      <p class="card-desc">WebSpide Technologies builds Progressive Web Apps and custom web applications that deliver fast, smooth, and app-like experiences through the browser. Our custom web development services are suitable for eCommerce platforms, booking systems, dashboards, customer portals, and enterprise applications. We focus on speed, mobile performance, security, offline support, and user-friendly functionality to help businesses offer better digital experiences across all devices.</p>
+      <div class="card-desc-extra" data-extra>
+        <p>Progressive Web Apps are a practical choice for businesses that want app-like functionality without depending only on native mobile app development. At WebSpide Technologies, we develop PWAs and web applications that are fast, responsive, secure, and easy to use. These applications can support features like offline access, push notifications, quick loading, mobile responsiveness, and smooth browsing.</p><br>
+        <p>Our custom website development agency creates web apps for eCommerce businesses, service platforms, booking systems, internal dashboards, customer portals, and enterprise workflows. Each web app is developed with a focus on real user needs, business functionality, performance, and scalability.</p><br>
+        <p>As part of our custom web design services, we create clean and engaging interfaces that work well across desktop, tablet, and mobile devices. Our backend systems support secure login, stable data handling, and smooth application performance. With our custom web development services, your business can improve user engagement, increase retention, and provide a better digital experience without forcing users to install a separate app.</p>
+      </div>
+      <div class="card-btns">
+        <a href="#contact" class="svc-btn-primary">Build a High-Performance Web App →</a>
+        <button type="button" class="svc-btn-link" data-readmore>Read More<svg class="rm-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
       </div>
     </div>
     <div class="card-visual">
@@ -1419,13 +1452,13 @@ CTA: Get a Stunning UI</p>
           <rect x="100" y="22" width="100" height="191" rx="12" fill="#060b1a"/>
           <rect x="128" y="22" width="44" height="9" rx="4" fill="#0a0e24"/>
           <rect x="106" y="38" width="88" height="20" rx="4" fill="#0d1b4b"/>
-          <text x="150" y="51" text-anchor="middle" font-size="9" fill="#c084fc" font-family="Rajdhani" font-weight="700">Dashboard</text>
+          <text x="150" y="51" text-anchor="middle" font-size="9" fill="#c084fc" font-family="Rajdhani" font-weight="700">PWA Dashboard</text>
           <rect x="106" y="63" width="40" height="30" rx="4" fill="rgba(123,47,247,.15)" stroke="rgba(123,47,247,.4)" stroke-width="1"/>
-          <text x="126" y="74" text-anchor="middle" font-size="7.5" fill="#a0b0cc" font-family="Nunito Sans">Users</text>
-          <text x="126" y="86" text-anchor="middle" font-size="10" fill="#7b2ff7" font-family="Rajdhani" font-weight="700">2.4k</text>
+          <text x="126" y="74" text-anchor="middle" font-size="7.5" fill="#a0b0cc" font-family="Nunito Sans">Offline</text>
+          <text x="126" y="86" text-anchor="middle" font-size="10" fill="#7b2ff7" font-family="Rajdhani" font-weight="700">Ready</text>
           <rect x="154" y="63" width="40" height="30" rx="4" fill="rgba(0,207,255,.1)" stroke="rgba(0,207,255,.4)" stroke-width="1"/>
-          <text x="174" y="74" text-anchor="middle" font-size="7.5" fill="#a0b0cc" font-family="Nunito Sans">Sales</text>
-          <text x="174" y="86" text-anchor="middle" font-size="10" fill="#00cfff" font-family="Rajdhani" font-weight="700">98%</text>
+          <text x="174" y="74" text-anchor="middle" font-size="7.5" fill="#a0b0cc" font-family="Nunito Sans">Speed</text>
+          <text x="174" y="86" text-anchor="middle" font-size="10" fill="#00cfff" font-family="Rajdhani" font-weight="700">Fast</text>
           <rect x="106" y="99" width="88" height="40" rx="4" fill="rgba(123,47,247,.06)" stroke="rgba(123,47,247,.25)" stroke-width="1"/>
           <path d="M112 132 L120 124 L130 118 L140 122 L150 112 L160 106 L170 100 L185 96" fill="none" stroke="#7b2ff7" stroke-width="1.8" stroke-linecap="round"/>
           <path d="M112 132 L120 124 L130 118 L140 122 L150 112 L160 106 L170 100 L185 96 L185 138 L112 138 Z" fill="url(#lg9)" opacity=".1"/>
@@ -1440,65 +1473,104 @@ CTA: Get a Stunning UI</p>
           <rect x="122" y="183" width="48" height="3" rx="1" fill="#1a2a60"/>
           <rect x="132" y="200" width="36" height="4" rx="2" fill="#1a2a60"/>
           <rect x="5" y="80" width="72" height="24" rx="7" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1" class="float-anim-d"/>
-          <text x="41" y="94" text-anchor="middle" font-size="8.5" fill="#c084fc" font-family="Nunito Sans"> iOS &amp; Android</text>
+          <text x="41" y="94" text-anchor="middle" font-size="8.5" fill="#c084fc" font-family="Nunito Sans">iOS &amp; Android</text>
           <rect x="225" y="80" width="68" height="24" rx="7" fill="#0d1b4b" stroke="#ff3cac" stroke-width="1" class="float-anim-d2"/>
-          <text x="259" y="94" text-anchor="middle" font-size="8" fill="#ff3cac" font-family="Nunito Sans">React Native</text>
+          <text x="259" y="94" text-anchor="middle" font-size="8" fill="#ff3cac" font-family="Nunito Sans">Push Notify</text>
           <rect x="225" y="112" width="68" height="24" rx="7" fill="#0d1b4b" stroke="#00cfff" stroke-width="1" class="float-anim-d"/>
-          <text x="259" y="127" text-anchor="middle" font-size="8.5" fill="#00cfff" font-family="Nunito Sans">Flutter ✓</text>
+          <text x="259" y="127" text-anchor="middle" font-size="8.5" fill="#00cfff" font-family="Nunito Sans">Offline ✓</text>
         </svg>
       </div>
     </div>
   </div>
 
-  <!-- CARD 10 — Digital Marketing & SEO -->
-  <div class="service-card reverse reveal" id="svc-card-10" style="background:rgba(9,14,34,0.6)">
+  <!-- CARD 09 — Web Performance Optimization -->
+  <div class="service-card reveal" id="svc-card-9">
     <div class="card-text">
-      <div class="card-num">10</div>
-      <h2 class="card-title"><br>Custom Web Portals<span>&amp; & Enterprise Solutions</span></h2>
-      <p class="card-desc"> Empower your business with custom web portals & enterprise solutions designed to streamline operations and enhance user engagement. WebSpide Technologies provides custom web development services that build scalable, secure, and interactive web portals tailored to specific business needs. Whether you require a customer portal, employee dashboard, or an enterprise-level solution, our web design and development experts create feature-rich applications that improve accessibility and efficiency. As a custom web design company, we ensure seamless data management, role-based access control, and advanced analytics to help businesses manage their workflows effortlessly. Our custom website development services include integration with CRMs, ERPs, and third-party tools, ensuring smooth business operations. Whether you’re looking for an internal enterprise portal or a customer-facing solution, our web development agency near me delivers high-performance platforms that optimize business processes. With our expertise in custom website development, we ensure a seamless, user-friendly experience that enhances productivity and drives business growth.</p>
-            <div class="card-btns">
-        <a href="#contact" class="svc-btn-primary">Grow Your Digital Presence →</a>
-        <a href="#" class="svc-btn-link">Read More</a>
+      <div class="card-num">09</div>
+      <h2 class="card-title">Web Performance<br><span>Optimization</span></h2>
+      <p class="card-desc">Website speed plays an important role in user experience, SEO, and conversions. WebSpide Technologies provides web performance optimization services that improve loading speed, mobile responsiveness, Core Web Vitals, server response, image size, caching, and page structure. Our custom web development services help reduce bounce rates, improve search visibility, and ensure your website performs smoothly across different devices, browsers, and screen sizes.</p>
+      <div class="card-desc-extra" data-extra>
+        <p>A slow website can make visitors leave before they even understand your business. It can also affect SEO performance, lead generation, and online sales. At WebSpide Technologies, we provide web performance optimization services to make your website faster, smoother, and more reliable across desktop and mobile devices.</p><br>
+        <p>Our team reviews your website structure, images, scripts, code, server response, database performance, and mobile loading speed. Based on the findings, we improve areas that slow down the website. Our custom web development services include image optimization, lazy loading, CSS and JavaScript optimization, caching setup, CDN integration, database optimization, mobile performance fixes, server-side improvements, and Core Web Vitals enhancement.</p><br>
+        <p>As a custom web design company, we make sure performance improvements do not affect the look and feel of your website. Whether you have a business website, eCommerce store, web portal, or web application, our web design and development team helps improve speed, stability, SEO performance, and overall user experience.</p>
+      </div>
+      <div class="card-btns">
+        <a href="#contact" class="svc-btn-primary">Optimize Your Website Performance →</a>
+        <button type="button" class="svc-btn-link" data-readmore>Read More<svg class="rm-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
       </div>
     </div>
     <div class="card-visual">
       <div class="illus-wrap float-anim-d">
         <svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="lg10" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00cfff"/><stop offset="100%" stop-color="#7b2ff7"/></linearGradient>
-            <filter id="glow10"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-          </defs>
-          <ellipse cx="150" cy="210" rx="115" ry="18" fill="rgba(0,207,255,0.12)"/>
-          <circle cx="150" cy="100" r="52" fill="#0a0e24" stroke="url(#lg10)" stroke-width="2" filter="url(#glow10)"/>
-          <circle cx="150" cy="100" r="42" fill="#060b1a"/>
-          <circle cx="150" cy="100" r="52" fill="none" stroke="#00cfff" stroke-dasharray="8 5" stroke-width="1" class="spin" opacity=".4"/>
-          <circle cx="147" cy="97" r="10" fill="none" stroke="#00cfff" stroke-width="2.2"/>
-          <line x1="154" y1="104" x2="161" y2="111" stroke="#00cfff" stroke-width="2.5" stroke-linecap="round"/>
-          <text x="150" y="118" text-anchor="middle" font-size="7.5" fill="#a0b0cc" font-family="Nunito Sans">SEO Engine</text>
-          <rect x="36" y="62" width="72" height="76" rx="6" fill="#0d1b4b" stroke="rgba(0,207,255,.3)" stroke-width="1" class="float-anim-d"/>
-          <text x="72" y="78" text-anchor="middle" font-size="7.5" fill="#a0b0cc" font-family="Nunito Sans">SERP Rank</text>
-          <rect x="44" y="84" width="16" height="44" rx="2" fill="#1a2a60"/>
-          <rect x="44" y="107" width="16" height="21" rx="2" fill="#00cfff" opacity=".3"/>
-          <rect x="65" y="84" width="16" height="44" rx="2" fill="#1a2a60"/>
-          <rect x="65" y="97" width="16" height="31" rx="2" fill="#00cfff" opacity=".5"/>
-          <rect x="86" y="84" width="16" height="44" rx="2" fill="#1a2a60"/>
-          <rect x="86" y="88" width="16" height="40" rx="2" fill="#00cfff" opacity=".85" filter="url(#glow10)"/>
-          <text x="94" y="83" text-anchor="middle" font-size="7" fill="#00cfff" font-family="Rajdhani" font-weight="700">#1</text>
-          <rect x="196" y="62" width="72" height="76" rx="6" fill="#0d1b4b" stroke="rgba(123,47,247,.3)" stroke-width="1" class="float-anim-d2"/>
-          <text x="232" y="78" text-anchor="middle" font-size="7.5" fill="#a0b0cc" font-family="Nunito Sans">Traffic</text>
-          <path d="M204 127 L214 118 L222 108 L232 100 L240 90 L248 80 L258 72" fill="none" stroke="#7b2ff7" stroke-width="2" stroke-linecap="round"/>
-          <path d="M204 127 L214 118 L222 108 L232 100 L240 90 L248 80 L258 72 L258 127 Z" fill="url(#lg10)" opacity=".12"/>
-          <text x="232" y="124" text-anchor="middle" font-size="9" fill="#7b2ff7" font-family="Rajdhani" font-weight="700">+380%</text>
-          <rect x="38" y="155" width="46" height="18" rx="6" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1"/>
-          <text x="61" y="167" text-anchor="middle" font-size="7.5" fill="#c084fc" font-family="Nunito Sans">SEO</text>
-          <rect x="92" y="155" width="46" height="18" rx="6" fill="#0d1b4b" stroke="#00cfff" stroke-width="1"/>
-          <text x="115" y="167" text-anchor="middle" font-size="7.5" fill="#00cfff" font-family="Nunito Sans">PPC</text>
-          <rect x="146" y="155" width="46" height="18" rx="6" fill="#0d1b4b" stroke="#ff3cac" stroke-width="1"/>
-          <text x="169" y="167" text-anchor="middle" font-size="7.5" fill="#ff3cac" font-family="Nunito Sans">Social</text>
-          <rect x="200" y="155" width="60" height="18" rx="6" fill="#0d1b4b" stroke="#9333ea" stroke-width="1"/>
-          <text x="230" y="167" text-anchor="middle" font-size="7.5" fill="#c084fc" font-family="Nunito Sans">Content</text>
-          <rect x="100" y="185" width="100" height="22" rx="7" fill="#0d1b4b" stroke="#00cfff" stroke-width="1"/>
-          <text x="150" y="200" text-anchor="middle" font-size="9" fill="#00cfff" font-family="Rajdhani" font-weight="700">⚡ Avg. ROI 320%</text>
+          <defs><linearGradient id="lg4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00cfff"/><stop offset="100%" stop-color="#ff3cac"/></linearGradient><filter id="glow4"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+          <ellipse cx="150" cy="200" rx="115" ry="20" fill="rgba(0,207,255,0.1)"/>
+          <rect x="45" y="40" width="170" height="120" rx="6" fill="#0a0e24" stroke="#00cfff" stroke-width="1.5"/>
+          <rect x="45" y="40" width="170" height="18" rx="6" fill="#0d1b4b"/>
+          <rect x="45" y="52" width="170" height="6" fill="#0a0e24"/>
+          <circle cx="58" cy="49" r="3" fill="#ff3cac"/><circle cx="70" cy="49" r="3" fill="#7b2ff7"/><circle cx="82" cy="49" r="3" fill="#00cfff"/>
+          <rect x="52" y="65" width="156" height="85" rx="3" fill="#070c1e"/>
+          <line x1="52" y1="90" x2="208" y2="90" stroke="#1a2a60" stroke-width=".8"/><line x1="52" y1="110" x2="208" y2="110" stroke="#1a2a60" stroke-width=".8"/><line x1="52" y1="130" x2="208" y2="130" stroke="#1a2a60" stroke-width=".8"/>
+          <path d="M58 145 L80 130 L100 118 L120 110 L140 95 L160 82 L175 72 L200 68" fill="none" stroke="#00cfff" stroke-width="2.5" filter="url(#glow4)"/>
+          <path d="M58 145 L80 130 L100 118 L120 110 L140 95 L160 82 L175 72 L200 68 L200 145 Z" fill="url(#lg4)" opacity=".12"/>
+          <circle cx="140" cy="95" r="4" fill="#00cfff" filter="url(#glow4)"/><circle cx="200" cy="68" r="4" fill="#ff3cac" filter="url(#glow4)"/>
+          <rect x="123" y="160" width="14" height="12" rx="2" fill="#0d1b4b"/><rect x="112" y="171" width="36" height="5" rx="3" fill="#0d1b4b"/>
+          <circle cx="240" cy="90" r="40" fill="#0a0e24" stroke="#7b2ff7" stroke-width="1.5"/>
+          <circle cx="240" cy="90" r="32" fill="#060b1a"/>
+          <path d="M212 108 A32 32 0 1 1 268 108" fill="none" stroke="#1a2a60" stroke-width="6" stroke-linecap="round"/>
+          <path d="M212 108 A32 32 0 0 1 255 62" fill="none" stroke="url(#lg4)" stroke-width="6" stroke-linecap="round" filter="url(#glow4)"/>
+          <line x1="240" y1="90" x2="255" y2="66" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="240" cy="90" r="4" fill="#7b2ff7"/>
+          <text x="240" y="102" text-anchor="middle" font-size="9" font-family="Rajdhani" font-weight="700" fill="#00cfff">98</text>
+          <text x="240" y="114" text-anchor="middle" font-size="7" fill="#a0b0cc">Score</text>
+          <rect x="12" y="120" width="60" height="20" rx="5" fill="#0d1b4b" stroke="#00cfff" stroke-width="1" class="float-anim-d"/><text x="42" y="133" text-anchor="middle" font-size="7.5" fill="#00cfff" font-family="Nunito Sans">CDN ✓</text>
+          <rect x="12" y="148" width="60" height="20" rx="5" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1" class="float-anim-d2"/><text x="42" y="161" text-anchor="middle" font-size="7.5" fill="#7b2ff7" font-family="Nunito Sans">Cache ✓</text>
+          <rect x="80" y="190" width="90" height="22" rx="6" fill="#0d1b4b" stroke="#00cfff" stroke-width="1"/>
+          <text x="125" y="205" text-anchor="middle" font-size="9" fill="#00cfff" font-family="Rajdhani" font-weight="600">⚡ 0.8s Load Time</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 10 — Migration & Upgradation Services -->
+  <div class="service-card reverse reveal" id="svc-card-10" style="background:rgba(9,14,34,0.6)">
+    <div class="card-text">
+      <div class="card-num">10</div>
+      <h2 class="card-title">Migration &amp;<br><span>Upgradation Services</span></h2>
+      <p class="card-desc">WebSpide Technologies helps businesses upgrade and migrate websites safely without losing important data, design flow, or performance. We handle CMS upgrades, hosting migration, database migration, framework updates, UI/UX improvements, security enhancements, and performance optimization. Our custom website development services ensure your website becomes faster, safer, mobile-responsive, and ready for future growth while maintaining a smooth experience for users.</p>
+      <div class="card-desc-extra" data-extra>
+        <p>Outdated websites can create problems with speed, security, usability, and business growth. At WebSpide Technologies, we provide migration and upgradation services that help businesses move from old platforms to modern, secure, and scalable systems. We carefully plan the process to reduce downtime, protect data, and maintain important website functions.</p><br>
+        <p>Our custom web development services include website migration, CMS migration, hosting transfer, database migration, framework upgrades, plugin replacement, UI/UX improvement, security fixes, mobile responsiveness updates, broken link checking, redirect setup, and performance optimization. We also review important SEO elements during migration so your website does not lose unnecessary visibility.</p><br>
+        <p>As a custom website development agency, we make sure your upgraded website is easier to manage, faster to load, safer to use, and better prepared for future updates. Whether you want to redesign an old website, move to better hosting, upgrade your technology stack, or improve website performance, our team helps you complete the process smoothly and professionally.</p>
+      </div>
+      <div class="card-btns">
+        <a href="#contact" class="svc-btn-primary">Upgrade Your Website Today →</a>
+        <button type="button" class="svc-btn-link" data-readmore>Read More<svg class="rm-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+      </div>
+    </div>
+    <div class="card-visual">
+      <div class="illus-wrap float-anim-d2">
+        <svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="lg5" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7b2ff7"/><stop offset="100%" stop-color="#00cfff"/></linearGradient><filter id="glow5"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+          <ellipse cx="150" cy="205" rx="115" ry="18" fill="rgba(123,47,247,0.12)"/>
+          <rect x="20" y="80" width="90" height="20" rx="5" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1.5"/><rect x="24" y="84" width="12" height="12" rx="2" fill="#7b2ff7" opacity=".7"/><rect x="40" y="87" width="40" height="4" rx="2" fill="#1a2a60"/><rect x="84" y="87" width="10" height="4" rx="2" fill="#7b2ff7" style="animation:blink 1.5s ease-in-out infinite"/>
+          <rect x="20" y="104" width="90" height="20" rx="5" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1.5"/><rect x="24" y="108" width="12" height="12" rx="2" fill="#7b2ff7" opacity=".5"/><rect x="40" y="111" width="35" height="4" rx="2" fill="#1a2a60"/><rect x="84" y="111" width="10" height="4" rx="2" fill="#7b2ff7" opacity=".5" style="animation:blink 1.8s ease-in-out infinite 0.5s"/>
+          <rect x="20" y="128" width="90" height="20" rx="5" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1.5"/><rect x="24" y="132" width="12" height="12" rx="2" fill="#7b2ff7" opacity=".3"/><rect x="40" y="135" width="30" height="4" rx="2" fill="#1a2a60"/>
+          <text x="65" y="78" text-anchor="middle" font-size="9" fill="#a0b0cc" font-family="Nunito Sans">Old Server</text>
+          <path d="M115 110 L180 110" stroke="url(#lg5)" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#arr)"/>
+          <path d="M115 125 L180 125" stroke="url(#lg5)" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#arr)"/>
+          <defs><marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#00cfff"/></marker></defs>
+          <ellipse cx="150" cy="55" rx="42" ry="26" fill="#0d1b4b" stroke="url(#lg5)" stroke-width="2" filter="url(#glow5)"/>
+          <path d="M138 55 L150 42 L162 55" fill="none" stroke="#00cfff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="150" y1="42" x2="150" y2="65" stroke="#00cfff" stroke-width="2.5" stroke-linecap="round"/>
+          <text x="150" y="78" text-anchor="middle" font-size="9" fill="#a0b0cc" font-family="Nunito Sans">Cloud Migration</text>
+          <rect x="190" y="80" width="90" height="20" rx="5" fill="#0d1b4b" stroke="#00cfff" stroke-width="1.5"/><rect x="194" y="84" width="12" height="12" rx="2" fill="#00cfff" opacity=".9"/><rect x="210" y="87" width="40" height="4" rx="2" fill="#1a2a60"/><rect x="254" y="87" width="10" height="4" rx="2" fill="#00cfff" style="animation:blink 1.2s ease-in-out infinite"/>
+          <rect x="190" y="104" width="90" height="20" rx="5" fill="#0d1b4b" stroke="#00cfff" stroke-width="1.5"/><rect x="194" y="108" width="12" height="12" rx="2" fill="#00cfff" opacity=".7"/><rect x="210" y="111" width="38" height="4" rx="2" fill="#1a2a60"/><rect x="254" y="111" width="10" height="4" rx="2" fill="#00cfff" opacity=".7" style="animation:blink 1.4s ease-in-out infinite 0.3s"/>
+          <rect x="190" y="128" width="90" height="20" rx="5" fill="#0d1b4b" stroke="#00cfff" stroke-width="1.5"/><rect x="194" y="132" width="12" height="12" rx="2" fill="#00cfff" opacity=".5"/><rect x="210" y="135" width="36" height="4" rx="2" fill="#1a2a60"/>
+          <text x="235" y="78" text-anchor="middle" font-size="9" fill="#a0b0cc" font-family="Nunito Sans">New Server</text>
+          <rect x="60" y="168" width="180" height="12" rx="6" fill="#0d1b4b"/><rect x="60" y="168" width="150" height="12" rx="6" fill="url(#lg5)" opacity=".85"/>
+          <text x="150" y="195" text-anchor="middle" font-size="9" fill="#00cfff" font-family="Rajdhani" font-weight="600">Migration: 83% Complete</text>
+          <rect x="104" y="215" width="92" height="18" rx="5" fill="#0d1b4b" stroke="#7b2ff7" stroke-width="1"/>
+          <text x="150" y="228" text-anchor="middle" font-size="8" fill="#7b2ff7" font-family="Nunito Sans">Zero Data Loss Guarantee</text>
         </svg>
       </div>
     </div>
@@ -1598,11 +1670,12 @@ CTA: Get a Stunning UI</p>
 <!-- WHY CHOOSE US -->
 <div class="sections">
   <div class="left">
+    <br>
     <div class="villan-badge">Why Choose Webspide</div>
     <div class="left-title">Why Choose<br>Webspide For<br><span class="purple">Custom Web<br>Development<br>Services?</span></div>
     <div class="title-underline"></div>
-    <p class="left-desc"> At WebSpide Technologies, we specialize in custom website development tailored to meet unique business needs. Our team ensures cutting-edge web design and development with a focus on innovation, scalability, and seamless performance. As a trusted custom web design company, we deliver high-performing solutions that align with industry trends, providing businesses with custom website development services that enhance digital success.</p>
-         <div class="illustration">
+    <p class="left-desc">At WebSpide Technologies, we specialize in custom website development tailored to meet unique business needs. Our team ensures cutting-edge web design and development with a focus on innovation, scalability, and seamless performance. As a trusted custom web design company, we deliver high-performing solutions that align with industry trends, providing businesses with custom website development services that enhance digital success.</p>
+    <div class="illustration">
       <div class="gear-left">⚙</div>
       <div class="gear-sm">⚙</div>
       <div class="code-tag">&lt;/&gt;</div>
@@ -1623,7 +1696,7 @@ CTA: Get a Stunning UI</p>
         <div class="icon-circle"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 8l3 3-3 3M11 14h6"/></svg></div>
         <div class="feature-content">
           <div class="feature-title">Expertise in <span class="accent">Full-Stack Development</span></div>
-          <p class="feature-desc"> Our custom web development services cover the full spectrum of front-end and back-end technologies, ensuring a cohesive and high-performing website. As a custom website development agency, we build robust web applications with intuitive custom web design services that enhance user experience. Whether it’s interactive UI or scalable server-side architecture, our web development agency near me ensures flawless execution.</p>
+          <p class="feature-desc">Our custom web development services cover the full spectrum of front-end and back-end technologies, ensuring a cohesive and high-performing website. As a custom website development agency, we build robust web applications with intuitive custom web design services that enhance user experience. Whether it's interactive UI or scalable server-side architecture, our web development agency near me ensures flawless execution.</p>
         </div>
       </div>
       <div class="feature-row">
@@ -1632,8 +1705,8 @@ CTA: Get a Stunning UI</p>
         <div class="icon-circle"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><polyline points="3 20 21 20"/></svg></div>
         <div class="feature-content">
           <div class="feature-title">Data-Driven <span class="accent">Approach</span></div>
-          <p class="feature-desc"> We integrate advanced analytics into our custom website development services, ensuring data-driven improvements for better user engagement. By analyzing visitor behavior, conversion rates, and performance metrics, our custom web design company optimizes websites for higher engagement and sales. As a web development agency near me, we ensure strategic improvements that enhance user interaction and business growth.</p>
-         </div>
+          <p class="feature-desc">We integrate advanced analytics into our custom website development services, ensuring data-driven improvements for better user engagement. By analyzing visitor behavior, conversion rates, and performance metrics, our custom web design company optimizes websites for higher engagement and sales. As a web development agency near me, we ensure strategic improvements that enhance user interaction and business growth.</p>
+        </div>
       </div>
       <div class="feature-row">
         <div class="num">03</div>
@@ -1641,7 +1714,8 @@ CTA: Get a Stunning UI</p>
         <div class="icon-circle"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
         <div class="feature-content">
           <div class="feature-title">Security-First <span class="accent">Development</span></div>
-          <p class="feature-desc">Security is at the core of our custom web development approach. We implement advanced encryption, firewalls, and multi-layer authentication to protect sensitive data. As a custom website development agency, we ensure compliance with security standards, safeguarding websites from cyber threats. Our custom web design company prioritizes safe transactions, data privacy, and secure integrations for seamless operations.</p>  </div>
+          <p class="feature-desc">Security is at the core of our custom web development approach. We implement advanced encryption, firewalls, and multi-layer authentication to protect sensitive data. As a custom website development agency, we ensure compliance with security standards, safeguarding websites from cyber threats. Our custom web design company prioritizes safe transactions, data privacy, and secure integrations for seamless operations.</p>
+        </div>
       </div>
       <div class="feature-row">
         <div class="num">04</div>
@@ -1649,7 +1723,8 @@ CTA: Get a Stunning UI</p>
         <div class="icon-circle"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg></div>
         <div class="feature-content">
           <div class="feature-title">Scalable &amp; <span class="accent">Future-Proof Solutions</span></div>
-          <p class="feature-desc"> Our custom website development solutions are designed for long-term success, ensuring flexibility for future enhancements. As a custom web development company, we build scalable websites that grow with your business needs. Our custom web design services focus on responsive layouts, cloud-based architecture, and modular components that enable seamless upgrades and optimizations.</p> </div>
+          <p class="feature-desc">Our custom website development solutions are designed for long-term success, ensuring flexibility for future enhancements. As a custom web development company, we build scalable websites that grow with your business needs. Our custom web design services focus on responsive layouts, cloud-based architecture, and modular components that enable seamless upgrades and optimizations.</p>
+        </div>
       </div>
       <div class="feature-row">
         <div class="num">05</div>
@@ -1657,7 +1732,8 @@ CTA: Get a Stunning UI</p>
         <div class="icon-circle"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
         <div class="feature-content">
           <div class="feature-title">Dedicated <span class="accent">Support &amp; Maintenance</span></div>
-          <p class="feature-desc">We provide continuous post-launch support, ensuring your website remains optimized, updated, and secure. Our custom web development services include bug fixes, performance monitoring, and feature enhancements for long-term stability. As a custom website development agency, we offer proactive solutions to minimize downtime and ensure smooth operations. With WebSpide’s web development agency near me, your website stays future-ready.</p>  </div>
+          <p class="feature-desc">We provide continuous post-launch support, ensuring your website remains optimized, updated, and secure. Our custom web development services include bug fixes, performance monitoring, and feature enhancements for long-term stability. As a custom website development agency, we offer proactive solutions to minimize downtime and ensure smooth operations. With WebSpide's web development agency near me, your website stays future-ready.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -1791,20 +1867,99 @@ mobCta.addEventListener('click',closeMobile);
 document.querySelectorAll('.mob-link,.mob-sub-link').forEach(function(el){el.addEventListener('click',closeMobile);});
 
 /* ══════════════════════════════════════════════
-   UPDATED ORBITAL — 10 services
+   READ MORE / READ LESS — service cards
+   Visible Content shows by default.
+   Clicking "Read More" reveals the Hidden Expanded
+   Content. Any scrolling automatically closes the
+   currently expanded card (collapses back).
+   ══════════════════════════════════════════════ */
+(function(){
+  const readMoreBtns=document.querySelectorAll('[data-readmore]');
+  let openExtra=null, openBtn=null;
+  let scrollCloseArmed=false;
+
+  function closeOpen(){
+    if(openExtra){
+      openExtra.classList.remove('open');
+      openExtra.style.maxHeight='0px';
+    }
+    if(openBtn){
+      openBtn.classList.remove('expanded');
+      openBtn.childNodes[0].textContent='Read More';
+    }
+    openExtra=null;openBtn=null;
+    scrollCloseArmed=false;
+  }
+
+  readMoreBtns.forEach(function(btn){
+    const card=btn.closest('.service-card');
+    const extra=card?card.querySelector('[data-extra]'):null;
+    if(!extra)return;
+
+    btn.addEventListener('click',function(){
+      const isThisOpen=extra.classList.contains('open');
+
+      /* close whichever card (if any) is currently open */
+      if(openExtra && openExtra!==extra){
+        closeOpen();
+      }
+
+      if(isThisOpen){
+        /* collapse this one */
+        extra.style.maxHeight='0px';
+        extra.classList.remove('open');
+        btn.classList.remove('expanded');
+        btn.childNodes[0].textContent='Read More';
+        openExtra=null;openBtn=null;
+        scrollCloseArmed=false;
+      }else{
+        /* expand this one */
+        extra.classList.add('open');
+        extra.style.maxHeight=extra.scrollHeight+'px';
+        btn.classList.add('expanded');
+        btn.childNodes[0].textContent='Read Less';
+        openExtra=extra;openBtn=btn;
+        /* arm scroll-close slightly after opening so the
+           scroll caused by layout shift doesn't immediately
+           re-close it */
+        scrollCloseArmed=false;
+        setTimeout(function(){scrollCloseArmed=true;},450);
+      }
+    });
+  });
+
+  /* close the open card as soon as the user starts scrolling */
+  let scrollTimeout=null;
+  window.addEventListener('scroll',function(){
+    if(scrollCloseArmed && openExtra){
+      closeOpen();
+    }
+  },{passive:true});
+
+  /* keep max-height correct if window resizes while open */
+  window.addEventListener('resize',function(){
+    if(openExtra){
+      openExtra.style.maxHeight=openExtra.scrollHeight+'px';
+    }
+  });
+})();
+/* ══ END READ MORE ══ */
+
+/* ══════════════════════════════════════════════
+   ORBITAL — 10 services in correct order
    ══════════════════════════════════════════════ */
 (function(){
   const SERVICES=[
-    {num:'01',name:'Full-Stack Custom Dev',tag:'End-to-end custom websites engineered for performance, scalability, and your exact business needs',label:'Full-Stack',svg:'<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>',target:'svc-card-8'},
-    {num:'02',name:'Front-End Development',tag:'Pixel-perfect UI built with React, Vue, or Angular — fast, responsive, and beautifully crafted',label:'Front-End',svg:'<rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>',target:'svc-card-2'},
-    {num:'03',name:'Back-End Development',tag:'Robust server-side logic with Node.js, Django, or Laravel — secure APIs and clean architecture',label:'Back-End',svg:'<rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/>',target:'svc-card-3'},
-    {num:'04',name:'Custom CMS Dev',tag:'Headless CMS and WordPress solutions giving your team full, effortless control over all content',label:'CMS',svg:'<path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>',target:'svc-card-4'},
-    {num:'05',name:'E-Commerce Dev',tag:'High-converting online stores with secure checkout, product management, and payment gateways',label:'E-Commerce',svg:'<circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>',target:'svc-card-7'},
-    {num:'06',name:'API Dev & Integrations',tag:'RESTful & GraphQL APIs connecting your platforms — CRMs, ERPs, and third-party services',label:'API',svg:'<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>',target:'svc-card-1'},
-    {num:'07',name:'Web Portals & Enterprise',tag:'Scalable enterprise portals with role-based access, analytics, and real-time data management',label:'Portals',svg:'<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>',target:'svc-card-10'},
-    {num:'08',name:'PWAs & Web Apps',tag:'Progressive Web Apps with native app speed, offline capability, and cross-device reliability',label:'PWA',svg:'<rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>',target:'svc-card-9'},
-    {num:'09',name:'Performance Optimization',tag:'Core Web Vitals, CDN integration, lazy loading, and caching for lightning-fast load times',label:'Speed',svg:'<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',target:'svc-card-6'},
-    {num:'10',name:'Migration & Upgradation',tag:'Zero-data-loss platform migrations and upgrades keeping your site secure and future-ready',label:'Migrate',svg:'<polyline points="1 4 1 10 7 10"/><polyline points="23 20 23 14 17 14"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"/>',target:'svc-card-5'}
+    {num:'01',name:'Full-Stack Custom Dev',tag:'End-to-end custom websites — from UI design to database architecture, engineered for performance and scale',label:'Full-Stack',svg:'<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>',target:'svc-card-1'},
+    {num:'02',name:'Front-End Development',tag:'Pixel-perfect responsive UI built with React, Vue, or Angular — fast, beautiful, and conversion-focused',label:'Front-End',svg:'<rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>',target:'svc-card-2'},
+    {num:'03',name:'Back-End Development',tag:'Robust server-side logic with Node.js, Django, or Laravel — secure APIs and scalable architecture',label:'Back-End',svg:'<rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/>',target:'svc-card-3'},
+    {num:'04',name:'Custom CMS Dev',tag:'Tailored content management systems giving your team effortless control over every page and asset',label:'CMS',svg:'<path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>',target:'svc-card-4'},
+    {num:'05',name:'E-Commerce Dev',tag:'High-converting online stores with secure checkout, inventory management, and payment gateway integration',label:'E-Commerce',svg:'<circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>',target:'svc-card-4'},
+    {num:'06',name:'API Dev & Integrations',tag:'RESTful & GraphQL APIs connecting your platforms — CRMs, ERPs, payment gateways, and third-party services',label:'API',svg:'<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>',target:'svc-card-5'},
+    {num:'07',name:'Web Portals & Enterprise',tag:'Scalable enterprise portals with role-based access, analytics dashboards, and real-time data management',label:'Portals',svg:'<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>',target:'svc-card-7'},
+    {num:'08',name:'PWAs & Web Apps',tag:'Progressive Web Apps with native app speed, offline capability, and seamless cross-device reliability',label:'PWA',svg:'<rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>',target:'svc-card-8'},
+    {num:'09',name:'Performance Optimization',tag:'Core Web Vitals, CDN integration, lazy loading, and caching for lightning-fast load times',label:'Speed',svg:'<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',target:'svc-card-9'},
+    {num:'10',name:'Migration & Upgradation',tag:'Zero-data-loss platform migrations and upgrades keeping your site secure and future-ready',label:'Migrate',svg:'<polyline points="1 4 1 10 7 10"/><polyline points="23 20 23 14 17 14"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"/>',target:'svc-card-10'}
   ];
 
   const stage    = document.getElementById('orbStage');
