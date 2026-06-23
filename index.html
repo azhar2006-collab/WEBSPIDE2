@@ -17,35 +17,35 @@ URL: https://www.webspide.com/custom-web-development ">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --navy:#06051a;--deep:#0a0820;--mid:#120d3a;
-  --purple:#9333ea;--cyan:#c084fc;--pink:#e879f9;
-  --accent1:#7c3aed;--accent2:#c026d3;
-  --text-main:#ede9fe;--text-muted:#a78bca;
-  --card-bg:rgba(147,51,234,0.07);--card-border:rgba(147,51,234,0.3);
+  --navy:#060a1a;--deep:#080c22;--mid:#0d1540;
+  --purple:#4a5ec0;--cyan:#7ba4d4;--pink:#c084fc;
+  --accent1:#3b5cc8;--accent2:#9333ea;
+  --text-main:#e2e8f8;--text-muted:#8ba0c8;
+  --card-bg:rgba(58,92,200,0.07);--card-border:rgba(58,92,200,0.3);
   --nav-h:70px;
-  --white:#fff;--grey:#a78bca;--violet:#7c3aed;
-  --glow-p:rgba(123,47,247,0.4);--glow-c:rgba(0,207,255,0.3);
+  --white:#fff;--grey:#8ba0c8;--violet:#4a5ec0;
+  --glow-p:rgba(58,92,200,0.4);--glow-c:rgba(123,164,212,0.3);
 }
 html{scroll-behavior:smooth}
 body{background:var(--navy);color:var(--text-main);font-family:'Exo 2',sans-serif;overflow-x:hidden;min-height:100vh}
 
 .bg-layer{position:fixed;inset:0;z-index:0;pointer-events:none;
-  background:radial-gradient(ellipse 80% 60% at 70% 20%,rgba(99,40,200,.28) 0%,transparent 60%),
-             radial-gradient(ellipse 60% 50% at 20% 70%,rgba(147,51,234,.22) 0%,transparent 55%),
-             radial-gradient(ellipse 50% 40% at 85% 80%,rgba(192,38,211,.18) 0%,transparent 50%),
-             linear-gradient(160deg,#06051a 0%,#0a0820 40%,#120d3a 70%,#070519 100%)}
+  background:radial-gradient(ellipse 80% 60% at 70% 20%,rgba(30,58,110,.28) 0%,transparent 60%),
+             radial-gradient(ellipse 60% 50% at 20% 70%,rgba(74,94,192,.22) 0%,transparent 55%),
+             radial-gradient(ellipse 50% 40% at 85% 80%,rgba(147,51,234,.18) 0%,transparent 50%),
+             linear-gradient(160deg,#060a1a 0%,#080c22 40%,#0d1540 70%,#050819 100%)}
 .bg-grid{position:fixed;inset:0;z-index:0;pointer-events:none;
-  background-image:linear-gradient(rgba(99,40,200,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(99,40,200,.07) 1px,transparent 1px);
+  background-image:linear-gradient(rgba(58,92,200,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(58,92,200,.07) 1px,transparent 1px);
   background-size:60px 60px}
 
 .site-header{
   position:fixed;top:0;left:0;right:0;z-index:200;
   background:rgba(6,5,26,0.98);backdrop-filter:blur(22px);
-  border-bottom:1px solid rgba(147,51,234,.28);
+  border-bottom:1px solid rgba(58,92,200,.28);
 }
 .site-header::before{
   content:'';position:absolute;top:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,transparent,#7c3aed 20%,#c084fc 50%,#e879f9 70%,transparent);
+  background:linear-gradient(90deg,transparent,#3b5cc8 20%,#7ba4d4 40%,#c084fc 60%,#e879f9 80%,transparent);
   background-size:200% 100%;animation:headerLine 4s linear infinite;
 }
 @keyframes headerLine{0%{background-position:200% 0}100%{background-position:-200% 0}}
@@ -55,7 +55,8 @@ body{background:var(--navy);color:var(--text-main);font-family:'Exo 2',sans-seri
   padding:0 24px;height:var(--nav-h);max-width:1600px;margin:0 auto;gap:12px;
 }
 .logo-wrap{display:flex;align-items:center;gap:.55rem;text-decoration:none;flex-shrink:0}
-.logo-name{font-family:'Orbitron',sans-serif;font-size:1.15rem;font-weight:900;background:linear-gradient(90deg,#c084fc,#e879f9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:2px;white-space:nowrap}
+.logo-name{font-family:'Orbitron',sans-serif;font-size:1.15rem;font-weight:900;background:linear-gradient(90deg,#7ba4d4,#c084fc,#e879f9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:2px;white-space:nowrap;display:inline-flex;align-items:center}
+.logo-name .w-logo{height:1.95rem;width:auto;margin-right:-1px;vertical-align:middle;object-fit:contain;display:inline-block}
 .logo-sub{font-size:.55rem;font-weight:600;letter-spacing:2.5px;color:#a78bca;text-transform:uppercase;display:block;margin-top:1px}
 
 .nav-links-new{display:flex;align-items:center;gap:2px;list-style:none;flex:1;justify-content:center}
@@ -69,26 +70,26 @@ body{background:var(--navy);color:var(--text-main);font-family:'Exo 2',sans-seri
   cursor:pointer;background:transparent;border:none;font-family:'Exo 2',sans-serif;
 }
 .nav-links-new a:hover,
-.nav-links-new>li>button:hover{color:#fff;background:rgba(147,51,234,.18)}
-.nav-icon{width:15px;height:15px;stroke:#9575cd;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:stroke .2s;flex-shrink:0}
+.nav-links-new>li>button:hover{color:#fff;background:rgba(58,92,200,.18)}
+.nav-icon{width:15px;height:15px;stroke:#6b8cc4;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:stroke .2s;flex-shrink:0}
 .nav-links-new a:hover .nav-icon,
 .nav-links-new>li>button:hover .nav-icon{stroke:#c084fc}
-.nav-arrow{width:13px;height:13px;stroke:#9575cd;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s,stroke .2s;flex-shrink:0}
+.nav-arrow{width:13px;height:13px;stroke:#6b8cc4;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s,stroke .2s;flex-shrink:0}
 
 .nav-item-services>button{
-  background:rgba(124,58,237,.22);border:1px solid rgba(147,51,234,.55);
+  background:rgba(59,92,200,.22);border:1px solid rgba(58,92,200,.55);
   color:#fff;animation:svcPulse 3s ease-in-out infinite;
 }
 @keyframes svcPulse{
-  0%,100%{border-color:rgba(147,51,234,.55)}
-  50%{border-color:rgba(192,132,252,.8);box-shadow:0 0 12px rgba(147,51,234,.25)}
+  0%,100%{border-color:rgba(58,92,200,.55)}
+  50%{border-color:rgba(123,164,212,.8);box-shadow:0 0 12px rgba(58,92,200,.25)}
 }
 .nav-item-services>button .nav-icon,
 .nav-item-services>button .nav-arrow{stroke:#c084fc}
 .nav-item-services.open>button .nav-arrow,
 .nav-item-products.open>button .nav-arrow{transform:rotate(180deg)}
 .nav-item-services.open>button,
-.nav-item-services>button:hover{background:rgba(124,58,237,.32)}
+.nav-item-services>button:hover{background:rgba(59,92,200,.32)}
 
 .nav-item-products>button{
   display:flex;align-items:center;gap:6px;color:#c8c0e8;font-size:.82rem;
@@ -311,7 +312,8 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
 .idle-bar:nth-child(2){animation-delay:.3s;opacity:.7;width:80%}
 .idle-bar:nth-child(3){animation-delay:.6s;opacity:.5;width:60%}
 @keyframes barPulse{0%,100%{transform:scaleX(.6);opacity:.5}50%{transform:scaleX(1);opacity:1}}
-.idle-label{font-family:'Orbitron',sans-serif;font-size:.38rem;letter-spacing:2px;color:#c084fc}
+.idle-label{font-family:'Orbitron',sans-serif;font-size:.38rem;letter-spacing:2px;color:#c084fc;display:inline-flex;align-items:center}
+.idle-label .w-logo{height:.5rem;width:auto;margin-right:-0.5px;vertical-align:middle;object-fit:contain;display:inline-block}
 .circle-info{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3rem;padding:1rem;text-align:center;opacity:0;transform:scale(.85);transition:opacity .35s,transform .35s;pointer-events:none}
 .circle-info.show{opacity:1;transform:scale(1);pointer-events:auto}
 .ci-icon-wrap{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(192,132,252,.12);border:1.5px solid rgba(192,132,252,.4);margin-bottom:.1rem;flex-shrink:0}
@@ -628,7 +630,8 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
 .footer-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:2.5rem;padding:3.5rem 0 2.5rem;border-bottom:1px solid rgba(147,51,234,.12)}
 .ft-brand{display:flex;flex-direction:column;gap:.9rem}
 .ft-logo{display:flex;align-items:center;gap:.55rem}
-.ft-logo-text{font-family:'Orbitron',sans-serif;font-size:1.15rem;font-weight:900;background:linear-gradient(90deg,#c084fc,#e879f9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:2px}
+.ft-logo-text{font-family:'Orbitron',sans-serif;font-size:1.15rem;font-weight:900;background:linear-gradient(90deg,#c084fc,#e879f9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:2px;display:inline-flex;align-items:center}
+.ft-logo-text .w-logo{height:1.35rem;width:auto;margin-right:-1px;vertical-align:middle;object-fit:contain;display:inline-block}
 .ft-desc{font-size:.78rem;color:var(--text-muted);line-height:1.8;max-width:270px}
 .ft-contact{display:flex;flex-direction:column;gap:.6rem;margin-top:.25rem}
 .ft-contact-item{display:flex;align-items:flex-start;gap:.55rem}
@@ -794,7 +797,7 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
         <path d="M13 16 L17 30 L23 22 L29 30 L33 16" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity=".95"/>
       </svg>
       <div class="logo-text-block">
-        <span class="logo-name">WEBSPIDE</span>
+        <span class="logo-name"><img src="w-logo.png" alt="W" class="w-logo">EBSPIDE</span>
         <span class="logo-sub">Technology</span>
       </div>
     </a>
@@ -947,7 +950,7 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
               <div class="idle-bar"></div>
               <div class="idle-bar"></div>
             </div>
-            <div class="idle-label">WEBSPIDE</div>
+            <div class="idle-label"><img src="w-logo.png" alt="W" class="w-logo">EBSPIDE</div>
           </div>
           <div class="circle-info" id="circleInfo">
             <div class="ci-icon-wrap" id="ciIconWrap"></div>
@@ -1829,7 +1832,7 @@ section,.cta-section,.contact-section,.sections,.banner{scroll-margin-top:var(--
 <footer class="site-footer">
   <div class="footer-top">
     <div class="ft-brand">
-      <div class="ft-logo"><span class="ft-logo-text">Webspide</span></div>
+      <div class="ft-logo"><span class="ft-logo-text"><img src="w-logo.png" alt="W" class="w-logo">ebspide</span></div>
       <p class="ft-desc">A global digital transformation company helping businesses scale through innovative web, mobile, and marketing solutions.</p>
       <div class="ft-contact">
         <div class="ft-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>69A/47, Thomas Colony, S S Colony Road, Madurai – 625016, Tamil Nadu, India.</span></div>
